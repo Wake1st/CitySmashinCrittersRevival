@@ -15,6 +15,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [ ] upon contact, health is deducted from collision body
 - [ ] power up: special attack
   - [ ] each character has a different power up, thus, different requirements for said power up
+  - [ ] special displays its name in big letters while the announcers sound out the name
   - [ ] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
   - [ ] final shot is far above, high FOV, focused on the path of destruction, vfx and sfx to note the moment
   - [ ] after final shot, camera zips to characer with correct FOV
@@ -50,6 +51,8 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [ ] voice lines on focused
 - [ ] start screen: critter AI attacking buildings in background
   - [ ] random level, random critter, random attacks, no specials
+- [ ] 3D UI: existing in the world
+  - [ ] structure health bars
 - [ ] music: metal (Judas Priest, KGLW)
   - [ ] menu music: layers
     - [ ] main: sets a thump beat
@@ -57,9 +60,12 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
     - [ ] settings: adds chimes/piano
     - [ ] credits: adds singing
   - [ ] levels: layers
-    - [ ] idle: sets a bass beat
-    - [ ] strike: adds drums
-    - [ ] special: adds a guitar
+    - [ ] idle: sets a simple beat
+    - [ ] movement: adds another layer
+    - [ ] striking: more layers
+    - [ ] special-charging: the higher the meter, the more complex the soundtrack
+    - [ ] special-charged: when charged, starts building a bridge
+    - [ ] special-execution: big finaly!
   - [ ] characters: each their own theme
     - [ ] Big Slamma: grunge metal, throat singing
     - [ ] Crazy Teri: psychadelic prog rock, harmony vocals
@@ -74,12 +80,15 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [ ] shader that adjusts vertcies per height level
   - [ ] area 3d for collision
   - [ ] adjust health function
+  - [ ] need UI in world health bar
 - [ ] writing: for the story (just stick with announcers for the jam)
   - [ ] authoritarian government, monster to fight the tyrany
   - [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
 - [ ] voice acting: sports commentors (data and feels)
   - [ ] data: give statistics, more factual and clear innuciated
   - [ ] feels: loosy goosy, "psychological" factor
+  - [ ] excitement matches destruction per minute
+  - [ ] scream out the special names
 - [ ] levels: 9
   - [ ] 1) Plainsville: 
   - [ ] 2) Hill Top Town:
