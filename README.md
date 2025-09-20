@@ -32,6 +32,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
     - [ ] fast movement: cartwheels!
     - [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
 - [ ] score system: score = damage / time
+  - [ ] ranking system
 - [ ] score UI: card showing viewport of posing critter, overlayed with metrics. buttons to replay, menu, or continue
   - [ ] viewport without UI: can/should it be framed?
   - [ ] slide in UI
