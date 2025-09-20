@@ -18,7 +18,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [ ] characters: 3 varieties
   - [ ] Big Slamma: heavy attacks, slow movement, Slamma-Stomp special
   - [ ] Crazy Teri: random attacks, med movement, Teri-Twister special
-  - [ ] Slicer Sue: quick attacks, fast movement, Concussive Shock Wall special
+  - [ ] Sue Slicer: quick attacks, fast movement, Concussive Wall Shock special
 - [ ] score system: score = damage / time
 - [ ] score UI: card showing viewport of posing critter, overlayed with metrics. buttons to replay, menu, or continue
   - [ ] viewport without UI: can/should it be framed?
@@ -47,6 +47,10 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
     - [ ] idle: sets a bass beat
     - [ ] strike: adds drums
     - [ ] special: adds a guitar
+  - [ ] characters: each their own theme
+    - [ ] Big Slamma: grunge metal, throat singing
+    - [ ] Crazy Teri: psychadelic prog rock, harmony vocals
+    - [ ] Sue Slicer: jungle dnb, gregorian vocals
 - [ ] sfx: hit sounds, power up
 - [ ] character animations: 3 spritesheets of 72 frames (12x6 sized spritesheets)
   - [ ] 3 characters
