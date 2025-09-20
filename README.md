@@ -15,10 +15,22 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [ ] upon contact, health is deducted from collision body
 - [ ] power up: special attack
   - [ ] each character has a different power up, thus, different requirements for said power up
+  - [ ] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
+  - [ ] final shot is far above, high FOV, focused on the path of destruction, vfx and sfx to note the moment
+  - [ ] after final shot, camera zips to characer with correct FOV
 - [ ] characters: 3 varieties
-  - [ ] Big Slamma: heavy attacks, slow movement, Slamma-Stomp special
-  - [ ] Crazy Teri: random attacks, med movement, Teri-Twister special
-  - [ ] Sue Slicer: quick attacks, fast movement, Concussive Wall Shock special
+  - [ ] Big Slamma: thicc, sumo fury, circular shaped, serious eyes
+    - [ ] heavy attack: punching with wide stance
+    - [ ] slow movement: bow legged swagger
+    - [ ] Slamma-Stomp special: jumps up and slams down, destroying in a wave
+  - [ ] Crazy Teri: floppy and spinny, triangular shaped, silly eyes
+    - [ ] random attacks: twirl and wobble
+    - [ ] med movement: arm windmills while power walking
+    - [ ] Teri-Twister special:  random pattern of destruction
+  - [ ] Sue Slicer: tall and slender, like an axe handle, mad eyes
+    - [ ] quick attacks: chops shapped like an axe
+    - [ ] fast movement: cartwheels!
+    - [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
 - [ ] score system: score = damage / time
 - [ ] score UI: card showing viewport of posing critter, overlayed with metrics. buttons to replay, menu, or continue
   - [ ] viewport without UI: can/should it be framed?
