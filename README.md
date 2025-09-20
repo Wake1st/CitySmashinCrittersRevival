@@ -65,16 +65,16 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [ ] voice acting: sports commentors (data and feels)
   - [ ] data: give statistics, more factual and clear innuciated
   - [ ] feels: loosy goosy, "psychological" factor
-- [ ] levels: 9? (small flat, small hills, cliff, med flat, med river, med tiers, large trench, large port, large walls)
-  - [ ] 1:
-  - [ ] 2:
-  - [ ] 3:
-  - [ ] 4:
-  - [ ] 5:
-  - [ ] 6:
-  - [ ] 7:
-  - [ ] 8:
-  - [ ] 9:
+- [ ] levels: 9
+  - [ ] 1) Plainsville: 
+  - [ ] 2) Hill Top Town:
+  - [ ] 3) Sea Cliff Village:
+  - [ ] 4) Woody Valley:
+  - [ ] 5) Sludge Corp:
+  - [ ] 6) Copperton:
+  - [ ] 7) Plant Hell:
+  - [ ] 8) The Garden:
+  - [ ] 9) Serpents Tower: small 
 - [ ] 3D assets: rectangle buildings, cars, trees, special buildings
   - [ ] low poly, simple
   - [ ] should be quirky shaped already
