@@ -74,7 +74,9 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [ ] shader that adjusts vertcies per height level
   - [ ] area 3d for collision
   - [ ] adjust health function
-- [ ] writing: authoritarian government, monster to fight the tyrany
+- [ ] writing: for the story (just stick with announcers for the jam)
+  - [ ] authoritarian government, monster to fight the tyrany
+  - [ ] summons Buddha, who purifies the corrupt with beams of pure light
 - [ ] voice acting: sports commentors (data and feels)
   - [ ] data: give statistics, more factual and clear innuciated
   - [ ] feels: loosy goosy, "psychological" factor
