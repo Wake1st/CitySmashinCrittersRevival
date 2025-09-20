@@ -76,7 +76,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [ ] adjust health function
 - [ ] writing: for the story (just stick with announcers for the jam)
   - [ ] authoritarian government, monster to fight the tyrany
-  - [ ] summons Buddha, who purifies the corrupt with beams of pure light
+  - [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
 - [ ] voice acting: sports commentors (data and feels)
   - [ ] data: give statistics, more factual and clear innuciated
   - [ ] feels: loosy goosy, "psychological" factor
