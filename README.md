@@ -34,6 +34,10 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
     - [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
 - [ ] score system: score = damage / time
   - [ ] ranking system
+- [ ] level objective types
+  - [ ] quota: cause a number of damage before timer runs out
+  - [ ] clock: destroy as much as possible in the given time
+  - [ ] target: destroy a specific target before the timer runs out
 - [ ] score UI: card showing viewport of posing critter, overlayed with metrics. buttons to replay, menu, or continue
   - [ ] viewport without UI: can/should it be framed?
   - [ ] slide in UI
