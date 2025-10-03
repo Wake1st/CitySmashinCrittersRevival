@@ -13,4 +13,3 @@ script = ExtResource("1_yusks")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4240439, 2.3960629)
 
 [node name="Building" parent="." instance=ExtResource("2_yusks")]
-rumble_dampen = 0.14

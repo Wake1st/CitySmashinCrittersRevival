@@ -11,8 +11,9 @@ const RUMBLE_AMPLITUDE: float = 0.0024
 @export var health: float = 100
 @export var cost: float = 400
 
-@export var rumble_dampen: float = 0.01
+@export var rumble_dampen: float = 0.14
 
+var starting_position: Vector3
 var rumble_magnitude: float
 var is_collapsing: bool
 
@@ -29,12 +30,16 @@ func damage(value: float) -> void:
 		is_collapsing = true
 
 
+func _ready() -> void:
+	starting_position = position
+
+
 func _process(delta) -> void:
 	# shake n bake
 	if rumble_magnitude > 0:
 		# set random position in XZ plane
-		position.x = randf_range(-rumble_magnitude, rumble_magnitude)
-		position.z = randf_range(-rumble_magnitude, rumble_magnitude)
+		position.x = starting_position.x + randf_range(-rumble_magnitude, rumble_magnitude)
+		position.z = starting_position.z + randf_range(-rumble_magnitude, rumble_magnitude)
 		
 		# reduce magnitude
 		rumble_magnitude -= rumble_dampen * delta

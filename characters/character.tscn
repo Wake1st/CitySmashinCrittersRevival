@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5y6nutqjbaxg"]
+[gd_scene load_steps=7 format=3 uid="uid://c5y6nutqjbaxg"]
 
 [ext_resource type="Script" uid="uid://drnyabnrvjydg" path="res://characters/character.gd" id="1_54qew"]
+[ext_resource type="PackedScene" uid="uid://dr34yrocsq121" path="res://characters/hit_box.tscn" id="2_qqr4u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3xfap"]
 
@@ -10,17 +11,33 @@ albedo_color = Color(0.7802575, 0.124847166, 0.64385957, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3xfap"]
 material = SubResource("StandardMaterial3D_3xfap")
 
+[sub_resource type="BoxMesh" id="BoxMesh_qqr4u"]
+size = Vector3(0.8, 0.2, 0.4)
+
 [node name="Character" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_54qew")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_3xfap")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_3xfap")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.826211, 2.3652823)
 fov = 85.0
+
+[node name="Pivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_3xfap")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45227087, -0.41095126)
+mesh = SubResource("BoxMesh_qqr4u")
+
+[node name="HitBox" parent="Pivot" instance=ExtResource("2_qqr4u")]
+unique_name_in_owner = true

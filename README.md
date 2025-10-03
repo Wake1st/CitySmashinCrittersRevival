@@ -6,13 +6,12 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 ## Requirements
 
-- [ ] character controller: locked axis translation in xz-plane, camera rotate in 90 degree pivots (4 angles)
+- [x] character controller: locked axis translation in xz-plane, camera rotate in 90 degree pivots (4 angles)
 	- [x] WASD/arrow keys for movement
 	- [x] Q,E keys for turning
-	- [ ] z/x keys for attacking
-- [ ] attack/health: critter can strike buildings, buildings crumble when health passes zero
-	- [ ] hit boxes appear when hitting
-	- [ ] upon contact, health is deducted from collision body
+	- [x] space key for attacking
+- [x] attack/health: critter can strike buildings, buildings crumble when health passes zero
+	- [x] upon contact, health is deducted from destructable
 - [ ] power up: special attack
 	- [ ] each character has a different power up, thus, different requirements for said power up
 	- [ ] special displays its name in big letters while the announcers sound out the name

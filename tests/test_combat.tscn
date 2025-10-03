@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://s4xp23xf8ip1"]
+
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_ec73p"]
+[ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_xwni2"]
+[ext_resource type="PackedScene" uid="uid://cuxp1tk3ucica" path="res://destructables/building.tscn" id="3_4lgrw"]
+
+[node name="TestCombat" type="Node"]
+
+[node name="TestEnvironment" parent="." instance=ExtResource("1_ec73p")]
+
+[node name="Character" parent="." instance=ExtResource("2_xwni2")]
+
+[node name="Destructables" type="Node3D" parent="."]
+
+[node name="Building" parent="Destructables" instance=ExtResource("3_4lgrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Building2" parent="Destructables" instance=ExtResource("3_4lgrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Building3" parent="Destructables" instance=ExtResource("3_4lgrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Building4" parent="Destructables" instance=ExtResource("3_4lgrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Building5" parent="Destructables" instance=ExtResource("3_4lgrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
+
+[node name="Building6" parent="Destructables" instance=ExtResource("3_4lgrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="Building7" parent="Destructables" instance=ExtResource("3_4lgrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="Building8" parent="Destructables" instance=ExtResource("3_4lgrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)

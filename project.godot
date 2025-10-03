@@ -71,6 +71,13 @@ special={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="floor"
+3d_physics/layer_2="character"
+3d_physics/layer_3="destructable"
+3d_physics/layer_4="hit"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

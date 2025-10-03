@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr34yrocsq121"]
+
+[ext_resource type="Script" uid="uid://62fl54b6x3qc" path="res://characters/hit_box.gd" id="1_pbnct"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_54qew"]
+
+[node name="HitBox" type="Area3D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_pbnct")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+shape = SubResource("SphereShape3D_54qew")
+debug_color = Color(12.835265, 14.877706, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
