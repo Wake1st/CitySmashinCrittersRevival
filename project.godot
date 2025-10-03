@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 folder_colors={
 "res://assets/": "gray",
 "res://characters/": "purple",
+"res://destructables/": "purple",
 "res://scenes/": "pink",
 "res://tests/": "red"
 }
