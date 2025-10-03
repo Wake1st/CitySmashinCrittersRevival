@@ -8,3 +8,4 @@
 [node name="TestEnvironment" parent="." instance=ExtResource("1_nafe7")]
 
 [node name="Character" parent="." instance=ExtResource("2_mtrd8")]
+strafe_speed = 20.0

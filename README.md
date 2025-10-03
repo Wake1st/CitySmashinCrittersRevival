@@ -7,47 +7,47 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 ## Requirements
 
 - [ ] character controller: locked axis translation in xz-plane, camera rotate in 90 degree pivots (4 angles)
-  - [ ] arrow keys for movement
-  - [ ] a/s keys for turning
-  - [ ] z/x keys for attacking
+	- [x] WASD/arrow keys for movement
+	- [x] Q,E keys for turning
+	- [ ] z/x keys for attacking
 - [ ] attack/health: critter can strike buildings, buildings crumble when health passes zero
-  - [ ] hit boxes appear when hitting
-  - [ ] upon contact, health is deducted from collision body
+	- [ ] hit boxes appear when hitting
+	- [ ] upon contact, health is deducted from collision body
 - [ ] power up: special attack
-  - [ ] each character has a different power up, thus, different requirements for said power up
-  - [ ] special displays its name in big letters while the announcers sound out the name
-  - [ ] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
-  - [ ] final shot is far above, high FOV, focused on the path of destruction, vfx and sfx to note the moment
-  - [ ] after final shot, camera zips to characer with correct FOV
+	- [ ] each character has a different power up, thus, different requirements for said power up
+	- [ ] special displays its name in big letters while the announcers sound out the name
+	- [ ] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
+	- [ ] final shot is far above, high FOV, focused on the path of destruction, vfx and sfx to note the moment
+	- [ ] after final shot, camera zips to characer with correct FOV
 - [ ] characters: 3 varieties
-  - [ ] Big Slamma: thicc, sumo fury, circular shaped, serious eyes
-    - [ ] heavy attack: punching with wide stance
-    - [ ] slow movement: bow legged swagger
-    - [ ] Slamma-Stomp special: jumps up and slams down, destroying in a wave
-  - [ ] Crazy Teri: floppy and spinny, triangular shaped, silly eyes
-    - [ ] random attacks: twirl and wobble
-    - [ ] med movement: arm windmills while power walking
-    - [ ] Teri-Twister special:  random pattern of destruction
-  - [ ] Sue Slicer: tall and slender, like an axe handle, mad eyes
-    - [ ] quick attacks: chops shapped like an axe
-    - [ ] fast movement: cartwheels!
-    - [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
+	- [ ] Big Slamma: thicc, sumo fury, circular shaped, serious eyes
+		- [ ] heavy attack: punching with wide stance
+		- [ ] slow movement: bow legged swagger
+		- [ ] Slamma-Stomp special: jumps up and slams down, destroying in a wave
+	- [ ] Crazy Teri: floppy and spinny, triangular shaped, silly eyes
+		- [ ] random attacks: twirl and wobble
+		- [ ] med movement: arm windmills while power walking
+		- [ ] Teri-Twister special:  random pattern of destruction
+	- [ ] Sue Slicer: tall and slender, like an axe handle, mad eyes
+		- [ ] quick attacks: chops shapped like an axe
+		- [ ] fast movement: cartwheels!
+		- [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
 - [ ] score system: score = damage / time
-  - [ ] ranking system
+	- [ ] ranking system
 - [ ] level objective types
-  - [ ] quota: cause a number of damage before timer runs out
-  - [ ] clock: destroy as much as possible in the given time
-  - [ ] target: destroy a specific target before the timer runs out
+	- [ ] quota: cause a number of damage before timer runs out
+	- [ ] clock: destroy as much as possible in the given time
+	- [ ] target: destroy a specific target before the timer runs out
 - [ ] score UI: card showing viewport of posing critter, overlayed with metrics. buttons to replay, menu, or continue
-  - [ ] viewport without UI: can/should it be framed?
-  - [ ] slide in UI
-  - [ ] camera in different scene with the character, must slide and snap into stable (use animation player)
-  - [ ] score values should overlay, each counting upward, playing rising sfx (a little jiggle when done?)
-  - [ ] allow skipping counting if any button pressed
-  - [ ] after counting finished, display buttons for: MENU, RESTART, NEXT
+	- [ ] viewport without UI: can/should it be framed?
+	- [ ] slide in UI
+	- [ ] camera in different scene with the character, must slide and snap into stable (use animation player)
+	- [ ] score values should overlay, each counting upward, playing rising sfx (a little jiggle when done?)
+	- [ ] allow skipping counting if any button pressed
+	- [ ] after counting finished, display buttons for: MENU, RESTART, NEXT
 - [ ] HUD UI: avatar, power level, time, damage
-  - [ ] avatar in top left
-  - [ ] power bar starting in top left, stretching across the middle, doesn't hit the right
+	- [ ] avatar in top left
+	- [ ] power bar starting in top left, stretching across the middle, doesn't hit the right
   - [ ] time in top right
   - [ ] damage under the time
 - [ ] menu UI: levels, settings, credits
