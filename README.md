@@ -1,0 +1,111 @@
+# CitySmashinCrittersRevival
+
+Made for the Society of Play's [Revival Jam 2025](https://itch.io/jam/revival-jam-2025).
+
+I choose to revive the first 3d game I worked on - [City Smashin Critters](https://github.com/Wake1st/CitySmashinCritters). This time around, I'm using Godot instead of Unity.
+
+## Requirements
+
+- [ ] character controller: locked axis translation in xz-plane, camera rotate in 90 degree pivots (4 angles)
+  - [ ] arrow keys for movement
+  - [ ] a/s keys for turning
+  - [ ] z/x keys for attacking
+- [ ] attack/health: critter can strike buildings, buildings crumble when health passes zero
+  - [ ] hit boxes appear when hitting
+  - [ ] upon contact, health is deducted from collision body
+- [ ] power up: special attack
+  - [ ] each character has a different power up, thus, different requirements for said power up
+  - [ ] special displays its name in big letters while the announcers sound out the name
+  - [ ] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
+  - [ ] final shot is far above, high FOV, focused on the path of destruction, vfx and sfx to note the moment
+  - [ ] after final shot, camera zips to characer with correct FOV
+- [ ] characters: 3 varieties
+  - [ ] Big Slamma: thicc, sumo fury, circular shaped, serious eyes
+    - [ ] heavy attack: punching with wide stance
+    - [ ] slow movement: bow legged swagger
+    - [ ] Slamma-Stomp special: jumps up and slams down, destroying in a wave
+  - [ ] Crazy Teri: floppy and spinny, triangular shaped, silly eyes
+    - [ ] random attacks: twirl and wobble
+    - [ ] med movement: arm windmills while power walking
+    - [ ] Teri-Twister special:  random pattern of destruction
+  - [ ] Sue Slicer: tall and slender, like an axe handle, mad eyes
+    - [ ] quick attacks: chops shapped like an axe
+    - [ ] fast movement: cartwheels!
+    - [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
+- [ ] score system: score = damage / time
+  - [ ] ranking system
+- [ ] level objective types
+  - [ ] quota: cause a number of damage before timer runs out
+  - [ ] clock: destroy as much as possible in the given time
+  - [ ] target: destroy a specific target before the timer runs out
+- [ ] score UI: card showing viewport of posing critter, overlayed with metrics. buttons to replay, menu, or continue
+  - [ ] viewport without UI: can/should it be framed?
+  - [ ] slide in UI
+  - [ ] camera in different scene with the character, must slide and snap into stable (use animation player)
+  - [ ] score values should overlay, each counting upward, playing rising sfx (a little jiggle when done?)
+  - [ ] allow skipping counting if any button pressed
+  - [ ] after counting finished, display buttons for: MENU, RESTART, NEXT
+- [ ] HUD UI: avatar, power level, time, damage
+  - [ ] avatar in top left
+  - [ ] power bar starting in top left, stretching across the middle, doesn't hit the right
+  - [ ] time in top right
+  - [ ] damage under the time
+- [ ] menu UI: levels, settings, credits
+  - [ ] transparent overlay
+  - [ ] voice lines on focused
+- [ ] start screen: critter AI attacking buildings in background
+  - [ ] random level, random critter, random attacks, no specials
+- [ ] 3D UI: existing in the world
+  - [ ] structure health bars
+- [ ] music: metal (Judas Priest, KGLW)
+  - [ ] menu music: layers
+    - [ ] main: sets a thump beat
+    - [ ] levels: adds a guitar
+    - [ ] settings: adds chimes/piano
+    - [ ] credits: adds singing
+  - [ ] levels: layers
+    - [ ] idle: sets a simple beat
+    - [ ] movement: adds another layer
+    - [ ] striking: more layers
+    - [ ] special-charging: the higher the meter, the more complex the soundtrack
+    - [ ] special-charged: when charged, starts building a bridge
+    - [ ] special-execution: big finaly!
+  - [ ] characters: each their own theme
+    - [ ] Big Slamma: grunge metal, throat singing
+    - [ ] Crazy Teri: psychadelic prog rock, harmony vocals
+    - [ ] Sue Slicer: jungle dnb, gregorian vocals
+- [ ] sfx: hit sounds, power up
+- [ ] character animations: 3 spritesheets of 72 frames (12x6 sized spritesheets)
+  - [ ] 3 characters
+  - [ ] 3 directions: front, back, left/right (those can be mirrored)
+  - [ ] 4 sets (idle, walking, striking, special)
+  - [ ] 6 frames per cycle?
+- [ ] buildings: need 3d mesh that jiggles, hit box, health
+  - [ ] shader that adjusts vertcies per height level
+  - [ ] area 3d for collision
+  - [ ] adjust health function
+  - [ ] need UI in world health bar
+- [ ] writing: for the story (just stick with announcers for the jam)
+  - [ ] authoritarian government, monster to fight the tyrany
+  - [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
+- [ ] voice acting: sports commentors (data and feels)
+  - [ ] data: give statistics, more factual and clear innuciated
+  - [ ] feels: loosy goosy, "psychological" factor
+  - [ ] excitement matches destruction per minute
+  - [ ] scream out the special names
+- [ ] levels: 9
+  - [ ] 1) Plainsville:
+  - [ ] 2) Hill Top Town:
+  - [ ] 3) Sea Cliff Village:
+  - [ ] 4) Woody Valley:
+  - [ ] 5) Sludge Corp:
+  - [ ] 6) Copperton:
+  - [ ] 7) Plant Hell:
+  - [ ] 8) The Garden:
+  - [ ] 9) Serpents Tower: small
+- [ ] 3D assets: rectangle buildings, cars, trees, special buildings
+  - [ ] low poly, simple
+  - [ ] should be quirky shaped already
+- [ ] terrain: simple mesh
+  - [ ] nothing complicated
+  - [ ] the texture should be hand drawn
