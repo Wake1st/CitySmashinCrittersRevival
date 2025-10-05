@@ -14,48 +14,45 @@ enum State {
 @onready var character: Character = $Character
 @onready var destructables: Node3D = $Destructables
 @onready var level_timer: Timer = $LevelTimer
-@onready var countdown_timer: CountdownTimer = $CountdownTimer
 
 @onready var hud: HUD = %HUD
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var score_menu: ScoreMenu = %ScoreMenu
+@onready var countdown_overlay: CountdownOverlay = %CountdownOverlay
+@onready var finished_overlay: FinishedOverlay = %FinishedOverlay
 
 var mission: Mission
 var state: State = State.SETUP
 var score: Score = Score.new()
 
 
-func setup(miss: Mission) -> void:
-	print("\tEXECUTE: setup")
+func setup(miss: Mission, reset_level: Callable, next_level: Callable) -> void:
 	state = State.SETUP
 	mission = miss
 	
 	hud.update_time(mission.level_time)
 	pause_menu.setup(_handle_unpause, _handle_exit)
+	score_menu.setup(reset_level, _handle_exit, next_level)
 
 
 func countdown() -> void:
-	print("\tEXECUTE: countdown")
 	state = State.COUNTDOWN
 	
 	# display countdown
-	countdown_timer.run()
+	countdown_overlay.run()
 
 
 func start() -> void:
-	print("\tEXECUTE: start")
 	level_timer.start(mission.level_time)
 	play()
 
 
 func play() -> void:
-	print("\tEXECUTE: play")
 	state = State.PLAY
 	get_tree().paused = false
 
 
 func pause() -> void:
-	print("\tEXECUTE: pause")
 	state = State.PAUSE
 	get_tree().paused = true
 	
@@ -64,7 +61,6 @@ func pause() -> void:
 
 
 func special() -> void:
-	print("\tEXECUTE: special")
 	state = State.SPECIAL
 	level_timer.paused = true
 	
@@ -72,20 +68,18 @@ func special() -> void:
 
 
 func finish() -> void:
-	print("\tEXECUTE: finish")
 	state = State.FINISHED
 	
-	# correct the HUD
-	hud.update_time(level_timer.time_left)
+	# calculate correct time
+	var final_time = level_timer.time_left
+	score.time = mission.level_time - final_time
 	
-	# display score menu
-	score.time = mission.level_time - level_timer.time_left
-	score_menu.display(score)
+	# correct the HUD
+	hud.update_time(final_time)
+	finished_overlay.reveal()
 
 
 func _ready() -> void:
-	countdown_timer.finished.connect(_handle_countdown_finished)
-	
 	for destructable: Building in destructables.get_children():
 		destructable.destroyed.connect(_handle_destruction)
 
@@ -109,9 +103,6 @@ func _process(delta) -> void:
 				finish()
 
 
-func _handle_countdown_finished() -> void:
-	start()
-
 func _handle_unpause() -> void:
 	play()
 
@@ -125,6 +116,12 @@ func _handle_destruction(value: float) -> void:
 	hud.update_damage(score.damage)
 
 
+func _on_countdown_overlay_finished() -> void:
+	start()
+
 func _on_level_timer_timeout() -> void:
 	if state != State.FINISHED:
 		finish()
+
+func _on_finished_overlay_finished() -> void:
+	score_menu.display(score, mission.check_win(score))

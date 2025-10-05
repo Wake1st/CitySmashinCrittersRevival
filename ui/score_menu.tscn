@@ -2,6 +2,31 @@
 
 [ext_resource type="Script" uid="uid://c31mvqjd7uvqq" path="res://ui/score_menu.gd" id="1_xv7ky"]
 
+[sub_resource type="Animation" id="Animation_7kfo8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1225, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-685, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_xv7ky"]
 resource_name = "open"
 length = 0.2
@@ -28,31 +53,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2)
 }
 
-[sub_resource type="Animation" id="Animation_7kfo8"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1225, -0.1, 0, 0.1, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-685, -0.1, 0, 0.1, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d4see"]
 _data = {
 &"RESET": SubResource("Animation_7kfo8"),
@@ -73,6 +73,9 @@ script = ExtResource("1_xv7ky")
 libraries = {
 &"": SubResource("AnimationLibrary_d4see")
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -156,6 +159,7 @@ text = "DAMAGE"
 
 [node name="DamageLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "*value*"
 
@@ -169,6 +173,7 @@ text = "TIME"
 
 [node name="TimeLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "*value*"
 
@@ -182,5 +187,101 @@ text = "TOTAL"
 
 [node name="TotalLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "*value*"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="ReplayBtn" type="Button" parent="MarginContainer/Panel/ButtonContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "REPLAY LEVEL"
+
+[node name="MenuBtn" type="Button" parent="MarginContainer/Panel/ButtonContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="NextBtn" type="Button" parent="MarginContainer/Panel/ButtonContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "NEXT LEVEL"
+
+[node name="PassPanel" type="Panel" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.5
+offset_top = -39.5
+offset_right = 130.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.3083527
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/PassPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "PASS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FailPanel" type="Panel" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.5
+offset_top = -39.5
+offset_right = 130.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.3083527
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/FailPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "FAIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/ReplayBtn" to="." method="_on_replay_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/NextBtn" to="." method="_on_next_btn_pressed"]

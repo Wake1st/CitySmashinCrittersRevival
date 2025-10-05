@@ -55,49 +55,49 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [ ] power bar starting in top left, stretching across the middle, doesn't hit the right
 	- [ ] avatar in top left
 - [ ] menu UI: levels, settings, credits
-  - [ ] transparent overlay
-  - [ ] voice lines on focused
+	- [ ] transparent overlay
+	- [ ] voice lines on focused
 - [ ] start screen: critter AI attacking buildings in background
-  - [ ] random level, random critter, random attacks, no specials
+	- [ ] random level, random critter, random attacks, no specials
 - [ ] music: metal (Judas Priest, KGLW)
-  - [ ] menu music: layers
-    - [ ] main: sets a thump beat
-    - [ ] levels: adds a guitar
-    - [ ] settings: adds chimes/piano
-    - [ ] credits: adds singing
-  - [ ] levels: layers
-    - [ ] idle: sets a simple beat
-    - [ ] movement: adds another layer
-    - [ ] striking: more layers
-    - [ ] special-charging: the higher the meter, the more complex the soundtrack
-    - [ ] special-charged: when charged, starts building a bridge
-    - [ ] special-execution: big finaly!
-  - [ ] characters: each their own theme
-    - [ ] Big Slamma: grunge metal, throat singing
-    - [ ] Crazy Teri: psychadelic prog rock, harmony vocals
-    - [ ] Sue Slicer: jungle dnb, gregorian vocals
+	- [ ] menu music: layers
+		- [ ] main: sets a thump beat
+		- [ ] levels: adds a guitar
+		- [ ] settings: adds chimes/piano
+		- [ ] credits: adds singing
+	- [ ] levels: layers
+		- [ ] idle: sets a simple beat
+		- [ ] movement: adds another layer
+		- [ ] striking: more layers
+		- [ ] special-charging: the higher the meter, the more complex the soundtrack
+		- [ ] special-charged: when charged, starts building a bridge
+		- [ ] special-execution: big finaly!
+	- [ ] characters: each their own theme
+		- [ ] Big Slamma: grunge metal, throat singing
+		- [ ] Crazy Teri: psychadelic prog rock, harmony vocals
+		- [ ] Sue Slicer: jungle dnb, gregorian vocals
 - [ ] sfx: hit sounds, power up
 - [ ] writing: for the story (just stick with announcers for the jam)
-  - [ ] authoritarian government, monster to fight the tyrany
-  - [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
+	- [ ] authoritarian government, monster to fight the tyrany
+	- [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
 - [ ] voice acting: sports commentors (data and feels)
-  - [ ] data: give statistics, more factual and clear innuciated
-  - [ ] feels: loosy goosy, "psychological" factor
-  - [ ] excitement matches destruction per minute
-  - [ ] scream out the special names
+	- [ ] data: give statistics, more factual and clear innuciated
+	- [ ] feels: loosy goosy, "psychological" factor
+	- [ ] excitement matches destruction per minute
+	- [ ] scream out the special names
 - [ ] levels: 9
-  - [ ] 1) Plainsville:
-  - [ ] 2) Hill Top Town (Frog Town?):
-  - [ ] 3) Sea Cliff Village:
-  - [ ] 4) Woody Valley:
-  - [ ] 5) Sludge Corp:
-  - [ ] 6) Copperton:
-  - [ ] 7) Plant Hell:
-  - [ ] 8) The Garden:
-  - [ ] 9) Serpents Tower: small
+	- [ ] 1) Plainsville:
+	- [ ] 2) Hill Top Town (Frog Town?):
+	- [ ] 3) Sea Cliff Village:
+	- [ ] 4) Woody Valley:
+	- [ ] 5) Sludge Corp:
+	- [ ] 6) Copperton:
+	- [ ] 7) Plant Hell:
+	- [ ] 8) The Garden:
+	- [ ] 9) Serpents Tower: small
 - [ ] 3D assets: rectangle buildings, cars, trees, special buildings
-  - [ ] low poly, simple
-  - [ ] should be quirky shaped already
+	- [ ] low poly, simple
+	- [ ] should be quirky shaped already
 - [ ] terrain: simple mesh
-  - [ ] nothing complicated
-  - [ ] the texture should be hand drawn
+	- [ ] nothing complicated
+	- [ ] the texture should be hand drawn

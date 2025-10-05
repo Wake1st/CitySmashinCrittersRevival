@@ -7,8 +7,17 @@ extends Node
 @onready var level: Level = $Level
 
 
-func _input(_event) -> void:
-	if Input.is_key_pressed(KEY_0):
-		level.setup(QuotaMission.new(test_time, test_amount))
-	elif Input.is_key_pressed(KEY_1):
-		level.countdown()
+func _ready() -> void:
+	level.setup(
+		QuotaMission.new(test_time, test_amount), 
+		_handle_replay_level, 
+		_handle_next_level
+	)
+	level.countdown()
+
+
+func _handle_replay_level() -> void:
+	print("replay level")
+
+func _handle_next_level() -> void:
+	print("next level")
