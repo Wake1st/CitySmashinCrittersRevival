@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://d0qsic6lwc4pl"]
+
+[node name="InstantReplaySystem" type="Node3D"]

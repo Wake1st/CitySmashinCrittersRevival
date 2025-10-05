@@ -23,6 +23,7 @@ folder_colors={
 "res://levels/": "pink",
 "res://resources/": "gray",
 "res://scenes/": "pink",
+"res://systems/": "green",
 "res://tests/": "red",
 "res://ui/": "orange"
 }
