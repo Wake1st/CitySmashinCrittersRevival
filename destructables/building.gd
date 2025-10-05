@@ -19,6 +19,10 @@ var is_collapsing: bool
 
 
 func damage(value: float) -> void:
+	# no more damage if already destroyed
+	if is_collapsing:
+		return
+	
 	health -= value
 	
 	# animate rumble

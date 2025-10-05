@@ -14,7 +14,7 @@ var is_rotating: bool
 var rotation_target: float
 
 
-func _process(delta) -> void:
+func process(delta) -> void:
 	# strafing
 	var direction = CharacterController.get_movement()
 	if direction != Vector2.ZERO:

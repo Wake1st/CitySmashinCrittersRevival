@@ -1,0 +1,329 @@
+[gd_scene load_steps=6 format=3 uid="uid://h5ooflav8yup"]
+
+[ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/pause_menu.gd" id="1_50142"]
+
+[sub_resource type="Animation" id="Animation_d4see"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1213, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PauseContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-690, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SettingsContainer:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1213, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SettingsContainer:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-690, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_xv7ky"]
+resource_name = "open_pause"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-1213, -0.1, 0, 0.2, -2.248291, 0, -0.1, -11.0248165, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PauseContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-690, -0.1, 0, 0.2, 26.407166, 0, -0.1, -4.297311, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SettingsContainer:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1213, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SettingsContainer:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-690, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7kfo8"]
+resource_name = "open_settings"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.06666667, 1181.2123, 1213, -0.1, -14.338257, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PauseContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.06666667, 681.9081, 690, -0.1, -1.3644409, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SettingsContainer:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-1213, -0.25, 0, 0.2, 24.661743, 0, -0.1, -4.297311, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SettingsContainer:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-690, -0.25, 0, 0.2, 46.58972, 0, -0.1, -4.297311, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d4see"]
+_data = {
+&"RESET": SubResource("Animation_d4see"),
+&"open_pause": SubResource("Animation_xv7ky"),
+&"open_settings": SubResource("Animation_7kfo8")
+}
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_50142")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d4see")
+}
+
+[node name="PauseContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1213.0
+offset_top = -690.0
+offset_right = -1212.998
+offset_bottom = -689.99866
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 127
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 128
+
+[node name="Panel" type="Panel" parent="PauseContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSE MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="SettingsBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="MenuBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MENU"
+
+[node name="SettingsContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1213.0
+offset_top = -690.0
+offset_right = -1213.0
+offset_bottom = -690.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 127
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 128
+
+[node name="Panel" type="Panel" parent="SettingsContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 160
+
+[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+text = "Main Volume"
+
+[node name="MainVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 160
+
+[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 160
+
+[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SfxVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSplitContainer4" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 160
+
+[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4"]
+layout_mode = 2
+text = "Voice Volume"
+
+[node name="VoiceVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ReturnBtn" type="Button" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "RETURN"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="drag_ended" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer/MainVolume" to="." method="_on_main_volume_drag_ended"]
+[connection signal="value_changed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer/MainVolume" to="." method="_on_main_volume_value_changed"]
+[connection signal="drag_ended" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2/MusicVolume" to="." method="_on_music_volume_drag_ended"]
+[connection signal="value_changed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="drag_ended" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3/SfxVolume" to="." method="_on_sfx_volume_drag_ended"]
+[connection signal="value_changed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3/SfxVolume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="drag_ended" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4/VoiceVolume" to="." method="_on_voice_volume_drag_ended"]
+[connection signal="value_changed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4/VoiceVolume" to="." method="_on_voice_volume_value_changed"]
+[connection signal="pressed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/ReturnBtn" to="." method="_on_return_btn_pressed"]

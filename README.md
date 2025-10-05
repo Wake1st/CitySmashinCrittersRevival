@@ -10,8 +10,18 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] WASD/arrow keys for movement
 	- [x] Q,E keys for turning
 	- [x] space key for attacking
+- [x] buildings: need 3d mesh that jiggles, hit box, health
+	- [x] area 3d for collision
+	- [x] adjust health function
+	- [x] wobbles
 - [x] attack/health: critter can strike buildings, buildings crumble when health passes zero
 	- [x] upon contact, health is deducted from destructable
+- [x] score system: score = damage / time
+	- [ ] ranking system
+- [ ] mission types
+	- [x] quota: cause a number of damage before timer runs out
+	- [x] timed: destroy as much as possible in the given time
+	- [ ] target: destroy a specific target before the timer runs out
 - [ ] power up: special attack
 	- [ ] each character has a different power up, thus, different requirements for said power up
 	- [ ] special displays its name in big letters while the announcers sound out the name
@@ -31,31 +41,24 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 		- [ ] quick attacks: chops shapped like an axe
 		- [ ] fast movement: cartwheels!
 		- [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
-- [ ] score system: score = damage / time
-	- [ ] ranking system
-- [ ] level objective types
-	- [ ] quota: cause a number of damage before timer runs out
-	- [ ] clock: destroy as much as possible in the given time
-	- [ ] target: destroy a specific target before the timer runs out
+- [x] pause UI
 - [ ] score UI: card showing viewport of posing critter, overlayed with metrics. buttons to replay, menu, or continue
-	- [ ] viewport without UI: can/should it be framed?
-	- [ ] slide in UI
+	- [x] slide in UI
+	- [x] score values should overlay, each counting upward, playing rising sfx (a little jiggle when done?)
+	- [x] viewport without UI: can/should it be framed?
 	- [ ] camera in different scene with the character, must slide and snap into stable (use animation player)
-	- [ ] score values should overlay, each counting upward, playing rising sfx (a little jiggle when done?)
 	- [ ] allow skipping counting if any button pressed
 	- [ ] after counting finished, display buttons for: MENU, RESTART, NEXT
 - [ ] HUD UI: avatar, power level, time, damage
-	- [ ] avatar in top left
+	- [x] time in top right
+	- [x] damage under the time
 	- [ ] power bar starting in top left, stretching across the middle, doesn't hit the right
-  - [ ] time in top right
-  - [ ] damage under the time
+	- [ ] avatar in top left
 - [ ] menu UI: levels, settings, credits
   - [ ] transparent overlay
   - [ ] voice lines on focused
 - [ ] start screen: critter AI attacking buildings in background
   - [ ] random level, random critter, random attacks, no specials
-- [ ] 3D UI: existing in the world
-  - [ ] structure health bars
 - [ ] music: metal (Judas Priest, KGLW)
   - [ ] menu music: layers
     - [ ] main: sets a thump beat
@@ -74,16 +77,6 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
     - [ ] Crazy Teri: psychadelic prog rock, harmony vocals
     - [ ] Sue Slicer: jungle dnb, gregorian vocals
 - [ ] sfx: hit sounds, power up
-- [ ] character animations: 3 spritesheets of 72 frames (12x6 sized spritesheets)
-  - [ ] 3 characters
-  - [ ] 3 directions: front, back, left/right (those can be mirrored)
-  - [ ] 4 sets (idle, walking, striking, special)
-  - [ ] 6 frames per cycle?
-- [ ] buildings: need 3d mesh that jiggles, hit box, health
-  - [ ] shader that adjusts vertcies per height level
-  - [ ] area 3d for collision
-  - [ ] adjust health function
-  - [ ] need UI in world health bar
 - [ ] writing: for the story (just stick with announcers for the jam)
   - [ ] authoritarian government, monster to fight the tyrany
   - [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
@@ -94,7 +87,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [ ] scream out the special names
 - [ ] levels: 9
   - [ ] 1) Plainsville:
-  - [ ] 2) Hill Top Town:
+  - [ ] 2) Hill Top Town (Frog Town?):
   - [ ] 3) Sea Cliff Village:
   - [ ] 4) Woody Valley:
   - [ ] 5) Sludge Corp:

@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://brksoipmibqja"]
+
+[ext_resource type="Script" uid="uid://ccrw4cedtbspm" path="res://ui/hud.gd" id="1_rbyyf"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_rbyyf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -405.0
+offset_top = 16.0
+offset_right = -23.0
+offset_bottom = 80.0
+grow_horizontal = 0
+rotation = -0.012280256
+
+[node name="DamageLbl" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -326.0
+offset_top = -2.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "00000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 136.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "DAMAGE"
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -315.99994
+offset_top = 87.0
+offset_right = -18.0
+offset_bottom = 151.0
+grow_horizontal = 0
+rotation = 0.018217297
+
+[node name="TimeLbl" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -9.5
+offset_bottom = 9.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "000.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 136.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "TIME"
+vertical_alignment = 1
