@@ -62,12 +62,9 @@ func _ready() -> void:
 	
 	screen_material = StandardMaterial3D.new()
 	screen_material.albedo_color = Color(1,1,1,1)
-	#screen_material.emission_enabled = true
-	#screen_material.emission_energy_multiplier = 1.0
 	
 	var viewport_texture: ViewportTexture = viewpath.get_texture()
 	screen_material.albedo_texture = viewport_texture
-	#screen_material.emission_texture = viewport_texture
 	
 	texture_rect.material = screen_material
 
@@ -96,6 +93,7 @@ func _process(delta) -> void:
 				stop_playback()
 			else:
 				_display_frame(current_frame)
+
 
 func _capture_frame() -> void:
 	var frame: Image = viewpath.get_texture().get_image()

@@ -1,6 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjk0rsklbs68f"]
+[gd_scene load_steps=7 format=3 uid="uid://bjk0rsklbs68f"]
 
 [ext_resource type="Script" uid="uid://cc4o1ab7rjunn" path="res://ui/finished_overlay.gd" id="1_6t8so"]
+[ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_8fm76"]
+
+[sub_resource type="Animation" id="Animation_g5ip0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(900, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_6t8so"]
 resource_name = "slideIn"
@@ -12,8 +27,8 @@ tracks/0/path = NodePath("Panel:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(720, -0.1, 0, 0.2, -12.549377, 174, -0.1, 3.2169952, 0, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(900, 0, 0, 0.2, -6.661743, 219.49994, -0.1, 0.64482117, 0, 0),
 "times": PackedFloat32Array(0, 0.2)
 }
 
@@ -27,23 +42,9 @@ tracks/0/path = NodePath("Panel:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(174, -0.1, 0, 0.2, -11.421539, -380, -0.1, 3.2661438, 0, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(219.49988, 0, 0, 0.2, -2.8073883, -480, -0.1, 0.2579956, 0, 0),
 "times": PackedFloat32Array(0, 0.2)
-}
-
-[sub_resource type="Animation" id="Animation_g5ip0"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(720, -0.1, 0, 0.1, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7wab1"]
@@ -69,7 +70,7 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5999999999999999
+wait_time = 1.6
 one_shot = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -79,10 +80,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = 396.0
-offset_right = 400.0
-offset_bottom = 696.0002
+offset_left = -580.25
+offset_top = 480.0
+offset_right = 580.25
+offset_bottom = 881.0006
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -93,8 +94,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 140
-text = "FINISHED!"
+theme_override_fonts/font = ExtResource("2_8fm76")
+theme_override_font_sizes/font_size = 120
+text = "FINISHED"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr4wkylln1cmw"]
+[gd_scene load_steps=3 format=3 uid="uid://cr4wkylln1cmw"]
 
 [ext_resource type="Script" uid="uid://df21iqxcknmvd" path="res://ui/countdown_overlay.gd" id="1_yu6kj"]
+[ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_sjfxj"]
 
 [node name="CountdownOverlay" type="Control"]
 layout_mode = 3
@@ -37,7 +38,8 @@ offset_right = 27.5
 offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 280
+theme_override_fonts/font = ExtResource("2_sjfxj")
+theme_override_font_sizes/font_size = 660
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -64,7 +66,8 @@ offset_right = 102.5
 offset_bottom = 245.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 280
+theme_override_fonts/font = ExtResource("2_sjfxj")
+theme_override_font_sizes/font_size = 660
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -91,7 +94,8 @@ offset_right = 102.5
 offset_bottom = 245.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 280
+theme_override_fonts/font = ExtResource("2_sjfxj")
+theme_override_font_sizes/font_size = 660
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -118,7 +122,8 @@ offset_right = 102.5
 offset_bottom = 245.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 280
+theme_override_fonts/font = ExtResource("2_sjfxj")
+theme_override_font_sizes/font_size = 180
 text = "SMASH"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://h5ooflav8yup"]
+[gd_scene load_steps=9 format=3 uid="uid://h5ooflav8yup"]
 
 [ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/pause_menu.gd" id="1_50142"]
+[ext_resource type="FontFile" uid="uid://gva1yhdd0t4h" path="res://assets/fonts/Quantico/Quantico-Italic.ttf" id="2_ejwgg"]
+[ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_button_theme.tres" id="3_fob5h"]
 
 [sub_resource type="Animation" id="Animation_d4see"]
 length = 0.001
@@ -11,7 +13,7 @@ tracks/0/path = NodePath("PauseContainer:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
+"handle_modes": PackedInt32Array(2),
 "points": PackedFloat32Array(-1213, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
@@ -22,8 +24,8 @@ tracks/1/path = NodePath("PauseContainer:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-690, -0.1, 0, 0.1, 0),
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(-859, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
@@ -33,7 +35,7 @@ tracks/2/path = NodePath("SettingsContainer:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
+"handle_modes": PackedInt32Array(2),
 "points": PackedFloat32Array(-1213, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
@@ -44,8 +46,8 @@ tracks/3/path = NodePath("SettingsContainer:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-690, -0.1, 0, 0.1, 0),
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(-859, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -59,8 +61,8 @@ tracks/0/path = NodePath("PauseContainer:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-1213, -0.1, 0, 0.2, -2.248291, 0, -0.1, -11.0248165, 0, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-1213, 0, 0, 0.033333335, 202.16667, 0, -0.1, -11.0248165, 0, 0),
 "times": PackedFloat32Array(0, 0.2)
 }
 tracks/1/type = "bezier"
@@ -70,8 +72,8 @@ tracks/1/path = NodePath("PauseContainer:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-690, -0.1, 0, 0.2, 26.407166, 0, -0.1, -4.297311, 0, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-859, 0, 0, 0.033333335, 143.16667, 0, -0.1, -4.297311, 0, 0),
 "times": PackedFloat32Array(0, 0.2)
 }
 tracks/2/type = "bezier"
@@ -81,7 +83,7 @@ tracks/2/path = NodePath("SettingsContainer:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
+"handle_modes": PackedInt32Array(2),
 "points": PackedFloat32Array(-1213, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
@@ -92,8 +94,8 @@ tracks/3/path = NodePath("SettingsContainer:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-690, -0.1, 0, 0.1, 0),
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(-859, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -129,8 +131,8 @@ tracks/2/path = NodePath("SettingsContainer:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-1213, -0.25, 0, 0.2, 24.661743, 0, -0.1, -4.297311, 0, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-1213, 0, 0, 0.033333335, 202.16667, 0, -0.06666666, -1207.839, 0, 0),
 "times": PackedFloat32Array(0, 0.2)
 }
 tracks/3/type = "bezier"
@@ -140,8 +142,8 @@ tracks/3/path = NodePath("SettingsContainer:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-690, -0.25, 0, 0.2, 46.58972, 0, -0.1, -4.297311, 0, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-859, 0, 0, 0.033333335, 143.16667, 0, -0.06666666, -689.82135, 0, 0),
 "times": PackedFloat32Array(0, 0.2)
 }
 
@@ -151,6 +153,10 @@ _data = {
 &"open_pause": SubResource("Animation_xv7ky"),
 &"open_settings": SubResource("Animation_7kfo8")
 }
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ejwgg"]
+color = Color(0, 0.972549, 0, 1)
+thickness = 4
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -174,9 +180,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1213.0
-offset_top = -690.0
-offset_right = -1212.998
-offset_bottom = -689.99866
+offset_top = -859.0
+offset_right = -1212.9971
+offset_bottom = -858.99817
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 256
@@ -194,31 +200,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
+theme_override_constants/margin_left = 96
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
+theme_override_constants/margin_right = 96
 theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/Panel/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 28
 
 [node name="Label" type="Label" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ejwgg")
+theme_override_font_sizes/font_size = 72
 text = "PAUSE MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HSeparator" type="HSeparator" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
+
 [node name="ResumeBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_fob5h")
 text = "RESUME"
 
 [node name="SettingsBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_fob5h")
 text = "SETTINGS"
 
 [node name="MenuBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_fob5h")
 text = "MENU"
 
 [node name="SettingsContainer" type="MarginContainer" parent="."]
@@ -227,9 +243,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1213.0
-offset_top = -690.0
+offset_top = -859.0
 offset_right = -1213.0
-offset_bottom = -690.0
+offset_bottom = -859.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 256
@@ -247,71 +263,109 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
+theme_override_constants/margin_left = 96
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
+theme_override_constants/margin_right = 96
 theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/Panel/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 28
 
 [node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ejwgg")
+theme_override_font_sizes/font_size = 64
 text = "SETTINGS MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HSeparator" type="HSeparator" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
+
 [node name="HSplitContainer" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-split_offset = 160
+split_offset = 180
 
 [node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("3_fob5h")
+theme_override_font_sizes/font_size = 20
 text = "Main Volume"
 
 [node name="MainVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("3_fob5h")
+max_value = 1.0
+step = 0.01
 
 [node name="HSplitContainer2" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-split_offset = 160
+split_offset = 180
 
 [node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
 layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("3_fob5h")
+theme_override_font_sizes/font_size = 20
 text = "Music Volume"
 
 [node name="MusicVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
 
 [node name="HSplitContainer3" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-split_offset = 160
+split_offset = 180
 
 [node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
 layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("3_fob5h")
+theme_override_font_sizes/font_size = 20
 text = "SFX Volume"
 
 [node name="SfxVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
 
 [node name="HSplitContainer4" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-split_offset = 160
+split_offset = 180
 
 [node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4"]
 layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("3_fob5h")
+theme_override_font_sizes/font_size = 20
 text = "Voice Volume"
 
 [node name="VoiceVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+
+[node name="HSeparator2" type="HSeparator" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
 
 [node name="ReturnBtn" type="Button" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_fob5h")
 text = "RETURN"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
