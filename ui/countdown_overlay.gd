@@ -7,10 +7,10 @@ signal finished()
 @export var countdown: float = 3.0
 
 @onready var timer: Timer = $Timer
-@onready var panel_3: Panel = $Panel_3
-@onready var panel_2: Panel = $Panel_2
-@onready var panel_1: Panel = $Panel_1
-@onready var panel_0: Panel = $Panel_0
+@onready var panel_3: ColorRect = $Panel_3
+@onready var panel_2: ColorRect = $Panel_2
+@onready var panel_1: ColorRect = $Panel_1
+@onready var panel_0: ColorRect = $Panel_0
 
 var tick: float = countdown / 3.0
 var remaining: float

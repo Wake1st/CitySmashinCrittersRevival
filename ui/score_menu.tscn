@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ycmi7iov5vux"]
+[gd_scene load_steps=10 format=3 uid="uid://ycmi7iov5vux"]
 
 [ext_resource type="Script" uid="uid://c31mvqjd7uvqq" path="res://ui/score_menu.gd" id="1_xv7ky"]
-[ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_button_theme.tres" id="2_7kfo8"]
+[ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="2_7kfo8"]
+[ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="3_d4see"]
+[ext_resource type="StyleBox" uid="uid://sxwbs5al0nli" path="res://assets/themes/btn_bg_normal.tres" id="4_0h8qq"]
+[ext_resource type="StyleBox" uid="uid://c5245q3vo46do" path="res://assets/themes/btn_bg_pressed.tres" id="5_vc7if"]
+[ext_resource type="StyleBox" uid="uid://bm1hufi44t4oo" path="res://assets/themes/btn_bg_hover.tres" id="6_b4d5r"]
 
 [sub_resource type="Animation" id="Animation_7kfo8"]
 length = 0.001
@@ -94,8 +98,9 @@ theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="Panel" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
+color = Color(0.19199999, 0.5504, 0.96, 0.6666667)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/Panel"]
 layout_mode = 1
@@ -128,6 +133,8 @@ offset_right = 288.0
 offset_bottom = 104.0
 grow_horizontal = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
+theme_override_fonts/font = ExtResource("3_d4see")
 theme_override_font_sizes/font_size = 72
 text = "FINAL SCORE"
 horizontal_alignment = 1
@@ -159,6 +166,8 @@ split_offset = 180
 [node name="NameLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "DAMAGE"
 
@@ -167,6 +176,8 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "00000"
 
@@ -177,6 +188,8 @@ split_offset = 180
 [node name="NameLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "TIME"
 
@@ -185,6 +198,8 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "000.00"
 
@@ -195,6 +210,8 @@ split_offset = 180
 [node name="NameLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "TOTAL"
 
@@ -203,10 +220,12 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "000.00"
 
-[node name="PassPanel" type="Panel" parent="MarginContainer/Panel"]
+[node name="PassPanel" type="ColorRect" parent="MarginContainer/Panel"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -222,6 +241,7 @@ offset_bottom = 178.33203
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.20943952
+color = Color(0.101960786, 0.75686276, 1, 0.3529412)
 
 [node name="Label" type="Label" parent="MarginContainer/Panel/PassPanel"]
 layout_mode = 1
@@ -231,12 +251,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.7, 0.93000007, 1, 1)
 theme_override_font_sizes/font_size = 142
 text = "PASS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FailPanel" type="Panel" parent="MarginContainer/Panel"]
+[node name="FailPanel" type="ColorRect" parent="MarginContainer/Panel"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -252,6 +273,7 @@ offset_bottom = 178.33203
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.20943952
+color = Color(0.94, 0.0564, 0.0564, 0.54901963)
 
 [node name="Label" type="Label" parent="MarginContainer/Panel/FailPanel"]
 layout_mode = 1
@@ -261,6 +283,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.14132491, 2.1538512e-05, 0.15081763, 1)
 theme_override_font_sizes/font_size = 142
 text = "FAIL"
 horizontal_alignment = 1
@@ -285,12 +308,26 @@ alignment = 1
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
+theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
+theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_styles/normal = ExtResource("4_0h8qq")
+theme_override_styles/pressed = ExtResource("5_vc7if")
+theme_override_styles/hover = ExtResource("6_b4d5r")
 text = "REPLAY"
 
 [node name="MenuBtn" type="Button" parent="MarginContainer/Panel/ButtonContainer"]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
+theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
+theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_styles/normal = ExtResource("4_0h8qq")
+theme_override_styles/pressed = ExtResource("5_vc7if")
+theme_override_styles/hover = ExtResource("6_b4d5r")
 text = "QUIT"
 
 [node name="NextBtn" type="Button" parent="MarginContainer/Panel/ButtonContainer"]
@@ -298,6 +335,13 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
+theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
+theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_styles/normal = ExtResource("4_0h8qq")
+theme_override_styles/pressed = ExtResource("5_vc7if")
+theme_override_styles/hover = ExtResource("6_b4d5r")
 text = "NEXT"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

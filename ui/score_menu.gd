@@ -21,8 +21,8 @@ const CYCLE_TIME: float = 0.8
 @onready var damage_lbl: Label = %DamageLbl
 @onready var time_lbl: Label = %TimeLbl
 @onready var total_lbl: Label = %TotalLbl
-@onready var pass_panel: Panel = %PassPanel
-@onready var fail_panel: Panel = %FailPanel
+@onready var pass_panel: ColorRect = %PassPanel
+@onready var fail_panel: ColorRect = %FailPanel
 @onready var buttons: HBoxContainer = %ButtonContainer
 @onready var next_btn: Button = %NextBtn
 

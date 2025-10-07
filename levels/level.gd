@@ -30,6 +30,7 @@ func setup(miss: Mission, reset_level: Callable, next_level: Callable) -> void:
 	state = State.SETUP
 	mission = miss
 	
+	character.power_updated.connect(hud.update_power)
 	hud.update_time(mission.level_time)
 	pause_menu.setup(_handle_unpause, _handle_exit)
 	score_menu.setup(reset_level, _handle_exit, next_level)
@@ -97,6 +98,10 @@ func _process(delta) -> void:
 			
 			# update time display
 			hud.update_time(level_timer.time_left)
+			
+			# check power updates when draining
+			if character.special_ready:
+				hud.update_power(character.get_drain_ratio())
 			
 			# check finished condition
 			if mission.check_completion(score):

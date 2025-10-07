@@ -18,10 +18,10 @@ var rumble_magnitude: float
 var is_collapsing: bool
 
 
-func damage(value: float) -> void:
+func damage(value: float) -> bool:
 	# no more damage if already destroyed
 	if is_collapsing:
-		return
+		return false
 	
 	health -= value
 	
@@ -32,6 +32,9 @@ func damage(value: float) -> void:
 	if health <= 0:
 		destroyed.emit(cost)
 		is_collapsing = true
+		return false
+	else:
+		return true
 
 
 func _ready() -> void:

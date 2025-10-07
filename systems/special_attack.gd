@@ -1,16 +1,15 @@
-class_name HitBox
+class_name SpecialAttack
 extends Area3D
 
+
+const MAX_ATTACK: float = 100
 
 var destructables: Array[Building]
 
 
-func attack(value: float) -> bool:
-	# attack any destructable
-	var any_damage: bool
+func attack() -> void:
 	for destructable in destructables:
-		any_damage = any_damage || destructable.damage(value)
-	return any_damage
+		destructable.damage(MAX_ATTACK)
 
 
 func _on_body_entered(body: Building) -> void:
