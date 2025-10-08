@@ -16,6 +16,10 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] wobbles
 - [x] attack/health: critter can strike buildings, buildings crumble when health passes zero
 	- [x] upon contact, health is deducted from destructable
+- [x] HUD UI: avatar, power level, time, damage
+	- [x] time in top right
+	- [x] damage under the time
+	- [x] power bar starting in top left, stretching across the middle, doesn't hit the right
 - [x] score system: score = damage / time
 	- [ ] ranking system
 - [ ] mission types
@@ -23,9 +27,8 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] timed: destroy as much as possible in the given time
 	- [ ] target: destroy a specific target before the timer runs out
 - [ ] power up: special attack
-	- [ ] each character has a different power up, thus, different requirements for said power up
 	- [ ] special displays its name in big letters while the announcers sound out the name
-	- [ ] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
+	- [x] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
 	- [ ] final shot is far above, high FOV, focused on the path of destruction, vfx and sfx to note the moment
 	- [ ] after final shot, camera zips to characer with correct FOV
 - [ ] characters: 3 varieties
@@ -49,11 +52,6 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [ ] camera in different scene with the character, must slide and snap into stable (use animation player)
 	- [ ] allow skipping counting if any button pressed
 	- [ ] after counting finished, display buttons for: MENU, RESTART, NEXT
-- [ ] HUD UI: avatar, power level, time, damage
-	- [x] time in top right
-	- [x] damage under the time
-	- [ ] power bar starting in top left, stretching across the middle, doesn't hit the right
-	- [ ] avatar in top left
 - [ ] menu UI: levels, settings, credits
 	- [ ] transparent overlay
 	- [ ] voice lines on focused
@@ -80,9 +78,9 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [ ] writing: for the story (just stick with announcers for the jam)
 	- [ ] authoritarian government, monster to fight the tyrany
 	- [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
-- [ ] voice acting: sports commentors (data and feels)
-	- [ ] data: give statistics, more factual and clear innuciated
-	- [ ] feels: loosy goosy, "psychological" factor
+- [ ] voice acting: sports commentors (facts and feels)
+	- [ ] facts (Gene Okerlund): give statistics, more factual and clear innuciated
+	- [ ] feels (John Madden): loosy goosy, "psychological" factor
 	- [ ] excitement matches destruction per minute
 	- [ ] scream out the special names
 - [ ] levels: 9

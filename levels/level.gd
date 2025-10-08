@@ -21,6 +21,7 @@ enum State {
 @onready var score_menu: ScoreMenu = %ScoreMenu
 @onready var countdown_overlay: CountdownOverlay = %CountdownOverlay
 @onready var finished_overlay: FinishedOverlay = %FinishedOverlay
+@onready var cinematic_frame: CinematicFrame = %CinematicFrame
 
 var mission: Mission
 var state: State = State.SETUP
@@ -33,6 +34,8 @@ func setup(miss: Mission, reset_level: Callable, next_level: Callable) -> void:
 	
 	character.power_updated.connect(hud.update_power)
 	character.special_activated.connect(_handle_special_activated)
+	instant_replay_system.finished.connect(_handle_special_ended)
+	
 	hud.update_time(mission.level_time)
 	pause_menu.setup(_handle_unpause, _handle_exit)
 	score_menu.setup(reset_level, _handle_exit, next_level)
@@ -53,6 +56,7 @@ func start() -> void:
 func play() -> void:
 	state = State.PLAY
 	get_tree().paused = false
+	level_timer.paused = false
 
 
 func pause() -> void:
@@ -68,6 +72,8 @@ func special() -> void:
 	level_timer.paused = true
 	
 	# enter special mode
+	cinematic_frame.frame_on()
+	instant_replay_system.run()
 
 
 func finish() -> void:
@@ -96,6 +102,11 @@ func _input(event) -> void:
 func _process(delta) -> void:
 	match state:
 		State.PLAY:
+			# first - check finished condition
+			if mission.check_completion(score):
+				finish()
+			
+			# allow user input on character
 			character.process(delta)
 			
 			# update time display
@@ -104,10 +115,6 @@ func _process(delta) -> void:
 			# check power updates when draining
 			if character.special_ready:
 				hud.update_power(character.get_drain_ratio())
-			
-			# check finished condition
-			if mission.check_completion(score):
-				finish()
 
 
 func _handle_unpause() -> void:
@@ -124,7 +131,18 @@ func _handle_destruction(value: float) -> void:
 
 func _handle_special_activated(destroyed: Array[Building]) -> void:
 	instant_replay_system.setup(destroyed)
-	instant_replay_system.run()
+	
+	special()
+
+func _handle_special_ended() -> void:
+	# disable special stuff
+	cinematic_frame.frame_off()
+	
+	# lets first see if we won
+	if mission.check_completion(score):
+		finish()
+	else:
+		play()
 
 
 func _on_countdown_overlay_finished() -> void:

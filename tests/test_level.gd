@@ -8,6 +8,8 @@ extends Node
 
 
 func _ready() -> void:
+	DataAccess.load_user_data()
+	
 	level.setup(
 		QuotaMission.new(test_time, test_amount), 
 		_handle_replay_level, 

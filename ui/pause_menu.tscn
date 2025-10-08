@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://h5ooflav8yup"]
+[gd_scene load_steps=15 format=3 uid="uid://h5ooflav8yup"]
 
 [ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/pause_menu.gd" id="1_50142"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="2_avurv"]
@@ -6,6 +6,9 @@
 [ext_resource type="StyleBox" uid="uid://sxwbs5al0nli" path="res://assets/themes/btn_bg_normal.tres" id="4_j3kxr"]
 [ext_resource type="StyleBox" uid="uid://c5245q3vo46do" path="res://assets/themes/btn_bg_pressed.tres" id="5_vovkw"]
 [ext_resource type="StyleBox" uid="uid://bm1hufi44t4oo" path="res://assets/themes/btn_bg_hover.tres" id="6_jyvtb"]
+[ext_resource type="Texture2D" uid="uid://dlqldn6pi6atq" path="res://assets/images/slider icon.png" id="7_fijdv"]
+[ext_resource type="StyleBox" uid="uid://d13rv4w82fbt3" path="res://assets/themes/slider.tres" id="7_vovkw"]
+[ext_resource type="StyleBox" uid="uid://djh5fvhpsx5wu" path="res://assets/themes/slider_area.tres" id="8_vovkw"]
 
 [sub_resource type="Animation" id="Animation_d4see"]
 length = 0.001
@@ -329,7 +332,12 @@ text = "Main Volume"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
-theme = ExtResource("3_fob5h")
+theme_override_icons/grabber = ExtResource("7_fijdv")
+theme_override_icons/grabber_highlight = ExtResource("7_fijdv")
+theme_override_icons/grabber_disabled = ExtResource("7_fijdv")
+theme_override_styles/slider = ExtResource("7_vovkw")
+theme_override_styles/grabber_area = ExtResource("8_vovkw")
+theme_override_styles/grabber_area_highlight = ExtResource("8_vovkw")
 max_value = 1.0
 step = 0.01
 
@@ -349,6 +357,12 @@ text = "Music Volume"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("7_fijdv")
+theme_override_icons/grabber_highlight = ExtResource("7_fijdv")
+theme_override_icons/grabber_disabled = ExtResource("7_fijdv")
+theme_override_styles/slider = ExtResource("7_vovkw")
+theme_override_styles/grabber_area = ExtResource("8_vovkw")
+theme_override_styles/grabber_area_highlight = ExtResource("8_vovkw")
 max_value = 1.0
 step = 0.01
 
@@ -368,6 +382,12 @@ text = "SFX Volume"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("7_fijdv")
+theme_override_icons/grabber_highlight = ExtResource("7_fijdv")
+theme_override_icons/grabber_disabled = ExtResource("7_fijdv")
+theme_override_styles/slider = ExtResource("7_vovkw")
+theme_override_styles/grabber_area = ExtResource("8_vovkw")
+theme_override_styles/grabber_area_highlight = ExtResource("8_vovkw")
 max_value = 1.0
 step = 0.01
 
@@ -387,6 +407,12 @@ text = "Voice Volume"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("7_fijdv")
+theme_override_icons/grabber_highlight = ExtResource("7_fijdv")
+theme_override_icons/grabber_disabled = ExtResource("7_fijdv")
+theme_override_styles/slider = ExtResource("7_vovkw")
+theme_override_styles/grabber_area = ExtResource("8_vovkw")
+theme_override_styles/grabber_area_highlight = ExtResource("8_vovkw")
 max_value = 1.0
 step = 0.01
 

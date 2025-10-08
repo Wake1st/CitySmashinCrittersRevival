@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b77ra4n6ajjgj"]
+[gd_scene load_steps=12 format=3 uid="uid://b77ra4n6ajjgj"]
 
 [ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_bovvr"]
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_xb4v1"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/pause_menu.tscn" id="7_rtcij"]
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/score_menu.tscn" id="8_ukwr8"]
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/finished_overlay.tscn" id="9_rtcij"]
+[ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/cinematic_frame.tscn" id="11_pb8y7"]
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_xb4v1")
@@ -58,6 +59,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="FinishedOverlay" parent="Node" instance=ExtResource("9_rtcij")]
+unique_name_in_owner = true
+
+[node name="CinematicFrame" parent="Node" instance=ExtResource("11_pb8y7")]
 unique_name_in_owner = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

@@ -53,7 +53,7 @@ func _on_settings_btn_pressed() -> void:
 	animation_player.play("open_settings")
 
 func _on_return_btn_pressed():
-		animation_player.play_backwards("open_settings")
+	animation_player.play_backwards("open_settings")
 
 func _on_menu_btn_pressed() -> void:
 	menu_callable.call()
@@ -92,16 +92,16 @@ func _on_main_volume_drag_ended(value_changed):
 
 func _on_music_volume_drag_ended(value_changed):
 	if value_changed:
-		UserData.mainVolume = main_volume.value
+		UserData.musicVolume = music_volume.value
 		DataAccess.save_user_data()
 
 func _on_sfx_volume_drag_ended(value_changed):
 	if value_changed:
-		UserData.mainVolume = main_volume.value
+		UserData.sfxVolume = sfx_volume.value
 		DataAccess.save_user_data()
 
 func _on_voice_volume_drag_ended(value_changed):
 	if value_changed:
-		UserData.mainVolume = main_volume.value
+		UserData.voiceVolume = voice_volume.value
 		DataAccess.save_user_data()
 #endregion
