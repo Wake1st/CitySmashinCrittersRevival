@@ -10,7 +10,8 @@ signal playback_finished()
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var viewpath: SubViewport = %SubViewport
-@onready var camera_3d: Camera3D = %Camera3D
+@onready var arm: Node3D = %Arm
+@onready var camera: Camera3D = %Camera3D
 @onready var texture_rect: TextureRect = %TextureRect
 
 var frame_time: float = 1.0 / frames_per_second
@@ -23,6 +24,29 @@ var recorded_frames: Array[Image]
 var is_playing: bool
 var current_frame: int
 var screen_material: Material
+
+
+func setup(settings: ReplaySettings) -> void:
+	# the Y angle should always be random
+	arm.rotation.y = randf_range(0, 2*PI)
+	
+	# the recording length needs a bit of variety
+	recording_length = randf_range(0.4, 0.6)
+	max_frame_count = floor(recording_length * frames_per_second)
+	
+	# camera arm settings
+	arm.rotation.x = randf_range(
+		settings.min_sitting_angle * PI/180, 
+		settings.max_sitting_angle * PI/180
+	)
+	
+	# camera settings
+	camera.position.z = randf_range(settings.min_distance, settings.max_distance)
+	camera.rotation.x = randf_range(
+		settings.min_facing_angle * PI/180, 
+		settings.max_facing_angle * PI/180
+	)
+	camera.fov = randf_range(settings.min_pov, settings.max_pov)
 
 
 func start_recording() -> void:

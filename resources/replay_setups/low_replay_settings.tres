@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="ReplaySetup" load_steps=2 format=3 uid="uid://dxj56pg3x63ev"]
+[gd_resource type="Resource" script_class="ReplaySettings" load_steps=2 format=3 uid="uid://dxj56pg3x63ev"]
 
-[ext_resource type="Script" uid="uid://crotkb0doi1bq" path="res://resources/ReplaySetup.gd" id="1_nbjf3"]
+[ext_resource type="Script" uid="uid://crotkb0doi1bq" path="res://resources/ReplaySettings.gd" id="1_nbjf3"]
 
 [resource]
 script = ExtResource("1_nbjf3")

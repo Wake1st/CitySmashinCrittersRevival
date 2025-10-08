@@ -1,5 +1,5 @@
 @icon("res://assets/images/replay_setup_icon.png")
-class_name ReplaySetup
+class_name ReplaySettings
 extends Resource
 
 

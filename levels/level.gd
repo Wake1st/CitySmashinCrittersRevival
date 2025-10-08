@@ -14,6 +14,7 @@ enum State {
 @onready var character: Character = $Character
 @onready var destructables: Node3D = $Destructables
 @onready var level_timer: Timer = $LevelTimer
+@onready var instant_replay_system: InstantReplaySystem = $InstantReplaySystem
 
 @onready var hud: HUD = %HUD
 @onready var pause_menu: PauseMenu = %PauseMenu
@@ -31,6 +32,7 @@ func setup(miss: Mission, reset_level: Callable, next_level: Callable) -> void:
 	mission = miss
 	
 	character.power_updated.connect(hud.update_power)
+	character.special_activated.connect(_handle_special_activated)
 	hud.update_time(mission.level_time)
 	pause_menu.setup(_handle_unpause, _handle_exit)
 	score_menu.setup(reset_level, _handle_exit, next_level)
@@ -119,6 +121,10 @@ func _handle_destruction(value: float) -> void:
 	
 	# update damage display
 	hud.update_damage(score.damage)
+
+func _handle_special_activated(destroyed: Array[Building]) -> void:
+	instant_replay_system.setup(destroyed)
+	instant_replay_system.run()
 
 
 func _on_countdown_overlay_finished() -> void:

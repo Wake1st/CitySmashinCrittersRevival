@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbv1yr7v11eg6"]
+
+[ext_resource type="Script" uid="uid://dp3mk8fha5mv7" path="res://tests/test_replay_system.gd" id="1_f846r"]
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_kwjbp"]
+[ext_resource type="PackedScene" uid="uid://cuxp1tk3ucica" path="res://destructables/building.tscn" id="2_wfctk"]
+[ext_resource type="PackedScene" uid="uid://bpdidtl6tvpva" path="res://systems/special_attack.tscn" id="3_wfctk"]
+[ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="4_wn3tb"]
+
+[node name="TestReplaySystem" type="Node"]
+script = ExtResource("1_f846r")
+
+[node name="TestEnvironment" parent="." instance=ExtResource("1_kwjbp")]
+
+[node name="Destructables" type="Node3D" parent="."]
+
+[node name="Building" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5027817, 0, -1.9464369)
+
+[node name="Building2" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.928548, 0, -5.659371)
+
+[node name="Building3" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6465827, 0, 2.429521)
+
+[node name="Building4" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2984114, 0, 0.40729856)
+
+[node name="Building5" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6465827, 0, 0.075785875)
+
+[node name="Building6" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0830127, 0, -1.9464369)
+
+[node name="Building7" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18792832, 0, 4.3191395)
+
+[node name="Building8" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0608892, 0, 2.727882)
+
+[node name="Building9" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5027838, 0, -4.1012645)
+
+[node name="Building10" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6633406, 0, 3.7224178)
+
+[node name="Building11" parent="Destructables" instance=ExtResource("2_wfctk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.049962, 0, -0.5540867)
+
+[node name="SpecialAttack" parent="." instance=ExtResource("3_wfctk")]
+
+[node name="InstantReplaySystem" parent="." instance=ExtResource("4_wn3tb")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.55802023, 0.8298273, 0, -0.8298273, 0.55802023, 0, 5.721118, 3.9882808)
+fov = 100.0

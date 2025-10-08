@@ -1,11 +1,15 @@
 extends Node
 
 
+@export var settings: ReplaySettings
+
 @onready var building: Building = $Building
 @onready var replay_camera: ReplayCamera = $ReplayCamera
 
 
 func _ready() -> void:
+	replay_camera.setup(settings)
+	
 	replay_camera.recording_finished.connect(_handle_recording_finished)
 	replay_camera.playback_finished.connect(_handle_playback_finished)
 

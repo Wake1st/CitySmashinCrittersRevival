@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b77ra4n6ajjgj"]
+[gd_scene load_steps=11 format=3 uid="uid://b77ra4n6ajjgj"]
 
 [ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_bovvr"]
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://cuxp1tk3ucica" path="res://destructables/building.tscn" id="2_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="4_urvlt"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/countdown_overlay.tscn" id="5_d5x7l"]
+[ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="5_ukwr8"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/hud.tscn" id="6_d5x7l"]
 [ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/pause_menu.tscn" id="7_rtcij"]
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/score_menu.tscn" id="8_ukwr8"]
@@ -14,6 +15,8 @@
 script = ExtResource("1_xb4v1")
 
 [node name="TestEnvironment" parent="." instance=ExtResource("1_bovvr")]
+
+[node name="InstantReplaySystem" parent="." instance=ExtResource("5_ukwr8")]
 
 [node name="Destructables" type="Node3D" parent="."]
 
