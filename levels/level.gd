@@ -8,6 +8,7 @@ enum State {
 	PLAY,
 	PAUSE,
 	SPECIAL,
+	POST_SPECIAL,
 	FINISHED
 }
 
@@ -34,7 +35,9 @@ func setup(miss: Mission, reset_level: Callable, next_level: Callable) -> void:
 	
 	character.power_updated.connect(hud.update_power)
 	character.special_activated.connect(_handle_special_activated)
-	instant_replay_system.finished.connect(_handle_special_ended)
+	character.special_fired.connect(_handle_special_fired)
+	instant_replay_system.playing_back.connect(_handle_replay_playback)
+	instant_replay_system.finished.connect(_handle_replay_finished)
 	
 	hud.update_time(mission.level_time)
 	pause_menu.setup(_handle_unpause, _handle_exit)
@@ -73,7 +76,6 @@ func special() -> void:
 	
 	# enter special mode
 	cinematic_frame.frame_on()
-	instant_replay_system.run()
 
 
 func finish() -> void:
@@ -97,6 +99,8 @@ func _input(event) -> void:
 	# toggle pause
 	if event.is_action_pressed("pause") && state != State.FINISHED:
 		pause()
+	elif event.is_action_pressed("attack") && state == State.POST_SPECIAL:
+		_end_post_special()
 
 
 func _process(delta) -> void:
@@ -129,13 +133,23 @@ func _handle_destruction(value: float) -> void:
 	# update damage display
 	hud.update_damage(score.damage)
 
-func _handle_special_activated(destroyed: Array[Building]) -> void:
-	instant_replay_system.setup(destroyed)
-	
+func _handle_special_activated() -> void:
 	special()
 
-func _handle_special_ended() -> void:
+func _handle_special_fired(destroyed: Array[Building]) -> void:
+	instant_replay_system.setup(destroyed)
+	instant_replay_system.run()
+
+func _handle_replay_playback() -> void:
+	character.setup_post_special()
+
+func _handle_replay_finished() -> void:
+	state = State.POST_SPECIAL
+	character.post_special()
+
+func _end_post_special() -> void:
 	# disable special stuff
+	character.resume_normal()
 	cinematic_frame.frame_off()
 	
 	# lets first see if we won

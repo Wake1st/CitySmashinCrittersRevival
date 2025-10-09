@@ -5,6 +5,6 @@
 
 [node name="TestLevel" type="Node"]
 script = ExtResource("1_je2ln")
-test_amount = 1600.0
+test_amount = 3000.0
 
 [node name="Level" parent="." instance=ExtResource("1_yetws")]

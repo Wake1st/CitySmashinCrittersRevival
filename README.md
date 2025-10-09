@@ -4,6 +4,10 @@ Made for the Society of Play's [Revival Jam 2025](https://itch.io/jam/revival-ja
 
 I choose to revive the first 3d game I worked on - [City Smashin Critters](https://github.com/Wake1st/CitySmashinCritters). This time around, I'm using Godot instead of Unity.
 
+## Issues
+
+>NONE
+
 ## Requirements
 
 - [x] character controller: locked axis translation in xz-plane, camera rotate in 90 degree pivots (4 angles)
@@ -27,10 +31,12 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] timed: destroy as much as possible in the given time
 	- [ ] target: destroy a specific target before the timer runs out
 - [ ] power up: special attack
-	- [ ] special displays its name in big letters while the announcers sound out the name
+	- [x] character charges up special move
+	- [ ] special name is displayed in big words while the announcers sound out the name
 	- [x] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
-	- [ ] final shot is far above, high FOV, focused on the path of destruction, vfx and sfx to note the moment
-	- [ ] after final shot, camera zips to characer with correct FOV
+	- [x] final shot is far above, high FOV, focused on the path of destruction
+	- [x] after final shot, camera zips to characer with correct FOV
+	- [ ] vfx and sfx to note the moment
 - [ ] characters: 3 varieties
 	- [ ] Big Slamma: thicc, sumo fury, circular shaped, serious eyes
 		- [ ] heavy attack: punching with wide stance

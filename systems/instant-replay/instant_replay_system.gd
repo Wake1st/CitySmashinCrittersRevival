@@ -2,6 +2,7 @@ class_name InstantReplaySystem
 extends Node3D
 
 
+signal playing_back()
 signal finished()
 
 const REPLAY_CAMERA = preload("uid://bjeqskns26av4")
@@ -57,6 +58,7 @@ func _handle_camera_recording_finished() -> void:
 	recorded_counter += 1
 	if recorded_counter == camara_count:
 		_playback()
+		playing_back.emit()
 
 
 func _handle_camera_playback_finished() -> void:
