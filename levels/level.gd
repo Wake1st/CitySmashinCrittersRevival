@@ -146,6 +146,7 @@ func _handle_replay_playback() -> void:
 func _handle_replay_finished() -> void:
 	state = State.POST_SPECIAL
 	character.post_special()
+	cinematic_frame.show_hint()
 
 func _end_post_special() -> void:
 	# disable special stuff
