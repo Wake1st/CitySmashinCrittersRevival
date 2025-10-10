@@ -16,8 +16,6 @@ var playback_index: int
 
 
 func setup(destructables: Array[Building]) -> void:
-	print("setup")
-	
 	# get the total cameras for replay
 	camara_count = destructables.size()
 	

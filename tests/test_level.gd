@@ -1,13 +1,17 @@
+class_name TestLevel
 extends Node
 
 
 @export var test_time: float = 30
 @export var test_amount: float = 1000
 
-@onready var level: Level = $Level
+var level: Level
 
 
 func _ready() -> void:
+	# there should only be one
+	level = get_child(0) as Level
+	
 	DataAccess.load_user_data()
 	
 	level.setup(

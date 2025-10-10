@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4k7sfuyoqjji"]
+
+[ext_resource type="Script" uid="uid://bdpbpbjpuu3y" path="res://tests/test_level.gd" id="1_idri8"]
+[ext_resource type="PackedScene" uid="uid://dkvb0fgb3pxmq" path="res://levels/plainsview_level.tscn" id="2_lmk3d"]
+
+[node name="TestLevelSpecific" type="Node"]
+script = ExtResource("1_idri8")
+test_time = 90.0
+test_amount = 4000.0
+metadata/_custom_type_script = "uid://bdpbpbjpuu3y"
+
+[node name="PlainsviewLevel" parent="." instance=ExtResource("2_lmk3d")]
