@@ -9,7 +9,9 @@ var destructables: Array[Building]
 
 func attack() -> void:
 	for destructable in destructables:
-		destructable.damage(MAX_ATTACK)
+		# we cant attack a destroyed building
+		if not destructable.is_collapsing:
+			destructable.damage(MAX_ATTACK)
 
 
 func _on_body_entered(body: Building) -> void:

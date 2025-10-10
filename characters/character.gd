@@ -6,12 +6,12 @@ signal power_updated(value: float)
 signal special_activated()
 signal special_fired(destructables: Array[Building])
 
-@export var strafe_speed: float = 2
+@export var strafe_speed: float = 80
 @export var rotate_speed: float = 0.3
 
-@export var attack: float = 15
-@export var special_cost: float = 100
-@export var drain_time: float = 4.0
+@export var attack: float = 5
+@export var special_cost: float = 300
+@export var drain_time: float = 8.0
 
 @onready var camera_animations: AnimationPlayer = %CameraAnimations
 @onready var character_animations: AnimationPlayer = %CharacterAnimations
@@ -37,7 +37,8 @@ func process(delta) -> void:
 	if direction != Vector2.ZERO:
 		# translate
 		var dir_3d: Vector3 = Vector3(direction.x, 0, -direction.y)
-		move_and_collide(global_basis * dir_3d * strafe_speed * delta)
+		velocity = global_basis * dir_3d * strafe_speed * delta
+		move_and_slide()
 		
 		# set facing direction
 		_set_pivot_face(direction)

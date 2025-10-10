@@ -457,11 +457,11 @@ size = Vector3(0.8, 0.2, 0.4)
 [node name="Character" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
+wall_min_slide_angle = 0.6981317
+floor_constant_speed = true
+floor_max_angle = 0.87266463
+floor_snap_length = 1.0
 script = ExtResource("1_54qew")
-strafe_speed = 1.4
-attack = 5.0
-special_cost = 200.0
-drain_time = 8.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

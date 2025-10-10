@@ -30,11 +30,11 @@ func setup(destructables: Array[Building]) -> void:
 		var settings_index: int = randi_range(0, 2)
 		match settings_index:
 			0:
-				camera.setup(LOW_REPLAY_SETTINGS)
+				camera.setup(LOW_REPLAY_SETTINGS, destructable.global_position)
 			1:
-				camera.setup(MID_REPLAY_SETTINGS)
+				camera.setup(MID_REPLAY_SETTINGS, destructable.global_position)
 			2:
-				camera.setup(HIGH_REPLAY_SETTINGS)
+				camera.setup(HIGH_REPLAY_SETTINGS, destructable.global_position)
 
 
 func run() -> void:

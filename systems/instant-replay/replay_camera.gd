@@ -26,7 +26,10 @@ var current_frame: int
 var screen_material: Material
 
 
-func setup(settings: ReplaySettings) -> void:
+func setup(settings: ReplaySettings, location: Vector3) -> void:
+	# ensure the camera arm is set to the correct position
+	arm.global_position = location
+	
 	# the Y angle should always be random
 	arm.rotation.y = randf_range(0, 2*PI)
 	

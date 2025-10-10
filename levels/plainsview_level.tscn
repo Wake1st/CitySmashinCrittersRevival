@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkvb0fgb3pxmq"]
+[gd_scene load_steps=18 format=3 uid="uid://dkvb0fgb3pxmq"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_cx31d"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_cjusc"]
@@ -14,6 +14,20 @@
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/score_menu.tscn" id="12_odevf"]
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/finished_overlay.tscn" id="13_mk8om"]
 [ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/cinematic_frame.tscn" id="14_rwck1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j47ap"]
+sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)
+sky_horizon_color = Color(0.8964001, 0.99790335, 1.2561009, 1)
+ground_bottom_color = Color(0.35000002, 0.59916663, 1, 1)
+ground_horizon_color = Color(0.8964001, 0.99790335, 1.2561009, 1)
+
+[sub_resource type="Sky" id="Sky_5wrwu"]
+sky_material = SubResource("ProceduralSkyMaterial_j47ap")
+
+[sub_resource type="Environment" id="Environment_gaxeu"]
+background_mode = 2
+sky = SubResource("Sky_5wrwu")
+tonemap_mode = 2
 
 [node name="PlainsviewLevel" type="Node3D"]
 script = ExtResource("1_cx31d")
@@ -165,6 +179,14 @@ metadata/_edit_use_anchors_ = true
 [node name="CinematicFrame" parent="Node" instance=ExtResource("14_rwck1")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gaxeu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.91733336, 1, 0.38, 1)
+shadow_enabled = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]
