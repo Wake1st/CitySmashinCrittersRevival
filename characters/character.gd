@@ -100,6 +100,10 @@ func resume_normal() -> void:
 	camera_animations.play("return_to_normal")
 
 
+func face_player() -> void:
+	pivot.rotation.y = PI
+
+
 func _set_pivot_face(direction: Vector2) -> void:
 	if direction.x > 0:
 		pivot.rotation.y = -PI/2

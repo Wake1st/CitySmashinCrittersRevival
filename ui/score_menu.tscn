@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ycmi7iov5vux"]
+[gd_scene load_steps=11 format=3 uid="uid://ycmi7iov5vux"]
 
 [ext_resource type="Script" uid="uid://c31mvqjd7uvqq" path="res://ui/score_menu.gd" id="1_xv7ky"]
 [ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="2_7kfo8"]
+[ext_resource type="PackedScene" uid="uid://ct5fwjfyxld6l" path="res://systems/profile_camera.tscn" id="2_vc7if"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="3_d4see"]
 [ext_resource type="StyleBox" uid="uid://sxwbs5al0nli" path="res://assets/themes/btn_bg_normal.tres" id="4_0h8qq"]
 [ext_resource type="StyleBox" uid="uid://c5245q3vo46do" path="res://assets/themes/btn_bg_pressed.tres" id="5_vc7if"]
@@ -89,7 +90,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1225.0
 offset_top = -600.0
-offset_right = 1225.0
+offset_right = 1225.0005
 offset_bottom = -600.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -118,10 +119,12 @@ grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="MarginContainer/Panel/SubViewportContainer"]
-unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(842, 441)
 render_target_update_mode = 4
+
+[node name="ProfileCamera" parent="MarginContainer/Panel/SubViewportContainer/SubViewport" instance=ExtResource("2_vc7if")]
+unique_name_in_owner = true
 
 [node name="Label" type="Label" parent="MarginContainer/Panel"]
 layout_mode = 1

@@ -1,0 +1,221 @@
+[gd_scene load_steps=9 format=3 uid="uid://ct5fwjfyxld6l"]
+
+[ext_resource type="Script" uid="uid://th3p5h0edr0y" path="res://systems/profile_camera.gd" id="1_mpe2o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_srgjs"]
+sky_top_color = Color(0.038199987, 0.020999998, 0.15, 1)
+sky_horizon_color = Color(0.25406307, 0.26851305, 0.31951305, 1)
+ground_bottom_color = Color(0.15, 0.22500001, 0.3, 1)
+ground_horizon_color = Color(0.25406307, 0.26851305, 0.31951305, 1)
+
+[sub_resource type="Sky" id="Sky_mpe2o"]
+sky_material = SubResource("ProceduralSkyMaterial_srgjs")
+
+[sub_resource type="Environment" id="Environment_4pwkv"]
+background_mode = 2
+sky = SubResource("Sky_mpe2o")
+tonemap_mode = 2
+
+[sub_resource type="Animation" id="Animation_mpe2o"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.688776, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.5081735, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.7769825, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(70, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FocalPoint:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.9654534, 1.4153314, 0.5541253)]
+}
+
+[sub_resource type="Animation" id="Animation_ist4x"]
+resource_name = "failed_shot"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(3.688776, -0.25, 0, 0.26666668, -1.8008326, -3.0521963, -0.17182228, 0.6025882, 0.12678592, -0.44464377, -0.38021028, 0, -2.0693974, 0, 0),
+"times": PackedFloat32Array(0, 0.6, 0.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(2.5081735, -0.25, 0, 0.23333333, -0.10264349, 1.4037268, -0.13333336, 0.6459625, 0.06621566, -0.3207962, 3.467638, -0.005437076, -2.201283, 0, 0),
+"times": PackedFloat32Array(0, 0.6, 0.8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1.7769825, -0.25, 0, 0.24257281, -1.2939926, 2.1939313, -0.11561425, -1.0962621, 0.06666666, 0.6321378, 0.88955474, -0.005437076, 2.1443932, 0, 0),
+"times": PackedFloat32Array(0, 0.6, 0.8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(70, -0.25, 0, 0.25, 0, 70, -0.10000001, 0, 0, 0, 80, -0.03333333, -1.6666667, 0, 0),
+"times": PackedFloat32Array(0, 0.6, 0.8)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FocalPoint:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.9654534, 1.4153314, 0.78875494)]
+}
+
+[sub_resource type="Animation" id="Animation_4pwkv"]
+resource_name = "passed_shot"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(3.688776, -0.25, 0, 0.23333333, -2.192302, -1.645004, -0.20000002, 0.46531892, 0.034537558, -0.08035489, -0.78653836, -0.017396748, -0.832265, 0, 0),
+"times": PackedFloat32Array(0, 0.4666667, 0.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1.0126203, -0.25, 0, 0.25, 0, 1.7204025, -0.10101238, -0.19843541, 0.0333333, 0.06548214, 0.34657168, -0.017396748, 1.6903298, 0, 0),
+"times": PackedFloat32Array(0, 0.4666667, 0.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1.7769825, -0.25, 0, 0.26666668, 0.12115002, 2.3249037, -0.100000024, -0.28957915, 0.048841186, 0.14143388, 1.4395565, -0.017396748, 1.0593296, 0, 0),
+"times": PackedFloat32Array(0, 0.4666667, 0.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(70, -0.25, 0, 0.25, 0, 70, -0.07777779, -2.3333335, 0.02222222, 0.66666657, 88, -0.10000001, -3, 0, 0),
+"times": PackedFloat32Array(0, 0.4666667, 0.6)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FocalPoint:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.4665949, 1.4153314, 0.35191894)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sgq8q"]
+_data = {
+&"RESET": SubResource("Animation_mpe2o"),
+&"failed_shot": SubResource("Animation_ist4x"),
+&"passed_shot": SubResource("Animation_4pwkv")
+}
+
+[node name="ProfileCamera" type="Node3D"]
+script = ExtResource("1_mpe2o")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4pwkv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sgq8q")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.40962964, -0.31360206, 0.85665464, 0, 0.93905497, 0.34376696, -0.9122519, -0.14081714, 0.38466474, 3.688776, 2.5081735, 1.7769825)
+fov = 70.0
+
+[node name="FocalPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9654534, 1.4153314, 0.5541253)

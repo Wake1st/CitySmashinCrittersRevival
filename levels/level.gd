@@ -81,6 +81,9 @@ func special() -> void:
 func finish() -> void:
 	state = State.FINISHED
 	
+	# face the player
+	character.face_player()
+	
 	# calculate correct time
 	var final_time = level_timer.time_left
 	score.time = mission.level_time - final_time
@@ -168,4 +171,9 @@ func _on_level_timer_timeout() -> void:
 		finish()
 
 func _on_finished_overlay_finished() -> void:
-	score_menu.display(score, mission.check_win(score))
+	score_menu.display(
+		score, 
+		mission.check_win(score), 
+		character.global_position,
+		character.rotation.y
+	)

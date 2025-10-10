@@ -16,8 +16,8 @@ const CYCLE_TIME: float = 0.8
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
+@onready var profile_camera: ProfileCamera = %ProfileCamera
 
-@onready var sub_viewport: SubViewport = %SubViewport
 @onready var damage_lbl: Label = %DamageLbl
 @onready var time_lbl: Label = %TimeLbl
 @onready var total_lbl: Label = %TotalLbl
@@ -40,7 +40,7 @@ func setup(reset: Callable, menu: Callable, next: Callable) -> void:
 	next_callable = next
 
 
-func display(score: Score, passed: bool) -> void:
+func display(score: Score, passed: bool, location: Vector3, rotate_y: float) -> void:
 	state = State.OPENING
 	passed_level = passed
 	
@@ -49,6 +49,7 @@ func display(score: Score, passed: bool) -> void:
 	total_lbl.text = "%6.2f" % score.total
 	
 	animation_player.play("open")
+	profile_camera.action(passed, location, rotate_y)
 
 
 func damage() -> void:

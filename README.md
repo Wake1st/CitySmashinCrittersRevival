@@ -6,7 +6,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 ## Issues
 
-- [ ] there seems to be an animation issue with using the special a second time
+- [ ] there seems to be an issue when using the special a second time
 
 ## Requirements
 
