@@ -457,9 +457,11 @@ size = Vector3(0.8, 0.2, 0.4)
 [node name="Character" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 wall_min_slide_angle = 0.6981317
 floor_constant_speed = true
-floor_max_angle = 0.87266463
+floor_max_angle = 0.6981317
 floor_snap_length = 1.0
 script = ExtResource("1_54qew")
 
@@ -503,6 +505,7 @@ unique_name_in_owner = true
 
 [node name="SpecialAttack" parent="." instance=ExtResource("3_3fwhk")]
 unique_name_in_owner = true
+visible = false
 
 [node name="DrainTimer" type="Timer" parent="SpecialAttack"]
 unique_name_in_owner = true

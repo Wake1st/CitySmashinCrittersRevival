@@ -19,7 +19,7 @@ func _ready() -> void:
 		_handle_replay_level, 
 		_handle_next_level
 	)
-	level.countdown()
+	level.countdown() 
 
 
 func _handle_replay_level() -> void:

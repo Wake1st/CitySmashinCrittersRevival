@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqcyaxf3cbqt6"]
+[gd_scene load_steps=22 format=3 uid="uid://cqcyaxf3cbqt6"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_7dsjh"]
 [ext_resource type="PackedScene" uid="uid://bqf8sua8m8w82" path="res://levels/models/seacliffcity_ground.tscn" id="2_hof66"]
@@ -18,6 +18,23 @@
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/score_menu.tscn" id="16_fpg8i"]
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/finished_overlay.tscn" id="17_u6tl7"]
 [ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/cinematic_frame.tscn" id="18_aa5ik"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pkwk6"]
+sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)
+sky_horizon_color = Color(0.8964001, 0.99790335, 1.2561009, 1)
+ground_bottom_color = Color(0.35000002, 0.59916663, 1, 1)
+ground_horizon_color = Color(0.8964001, 0.99790335, 1.2561009, 1)
+
+[sub_resource type="Sky" id="Sky_poph2"]
+sky_material = SubResource("ProceduralSkyMaterial_pkwk6")
+
+[sub_resource type="Environment" id="Environment_iuyxh"]
+background_mode = 2
+sky = SubResource("Sky_poph2")
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.80256045, 0.8809795, 0.99535185, 1)
+fog_light_energy = 0.6
 
 [node name="SeaCliffCityLevel" type="Node3D"]
 script = ExtResource("1_7dsjh")
@@ -250,6 +267,14 @@ metadata/_edit_use_anchors_ = true
 [node name="CinematicFrame" parent="Node" instance=ExtResource("18_aa5ik")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iuyxh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.5638107, -0.20834276, 0.79919374, -0.27970007, 0.9586459, 0.052589294, -0.77710056, -0.1938842, -0.5987684, 0, 0, 0)
+light_color = Color(0.91733336, 1, 0.38, 1)
+shadow_enabled = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]

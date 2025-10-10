@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://clgswhp85jlim"]
+[gd_scene load_steps=19 format=3 uid="uid://clgswhp85jlim"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_46jfc"]
 [ext_resource type="PackedScene" uid="uid://bdaq3xll7lesr" path="res://levels/models/hilltoptown_ground.tscn" id="2_llss2"]
@@ -16,6 +16,20 @@
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/finished_overlay.tscn" id="14_xnwwk"]
 [ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/cinematic_frame.tscn" id="15_hp8hp"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p3idi"]
+sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)
+sky_horizon_color = Color(0.8964001, 0.99790335, 1.2561009, 1)
+ground_bottom_color = Color(0.35000002, 0.59916663, 1, 1)
+ground_horizon_color = Color(0.8964001, 0.99790335, 1.2561009, 1)
+
+[sub_resource type="Sky" id="Sky_5wrwu"]
+sky_material = SubResource("ProceduralSkyMaterial_p3idi")
+
+[sub_resource type="Environment" id="Environment_lb1k2"]
+background_mode = 2
+sky = SubResource("Sky_5wrwu")
+tonemap_mode = 2
+
 [node name="HillTopTownLevel" type="Node3D"]
 script = ExtResource("1_46jfc")
 metadata/_custom_type_script = "uid://r5e2o1b1h4ks"
@@ -24,7 +38,8 @@ metadata/_custom_type_script = "uid://r5e2o1b1h4ks"
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
 [node name="Character" parent="." instance=ExtResource("3_cw8ye")]
-transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -13.225298, 0.48172283, -11.821329)
+transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, -13.225298, 0.48172283, -11.821329)
+start_facing = 3
 
 [node name="Destructables" type="Node3D" parent="."]
 
@@ -169,6 +184,14 @@ metadata/_edit_use_anchors_ = true
 [node name="CinematicFrame" parent="Node" instance=ExtResource("15_hp8hp")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lb1k2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.91733336, 1, 0.38, 1)
+shadow_enabled = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]

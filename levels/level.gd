@@ -103,7 +103,7 @@ func _input(event) -> void:
 		_end_post_special()
 
 
-func _process(delta) -> void:
+func _physics_process(delta) -> void:
 	match state:
 		State.PLAY:
 			# first - check finished condition

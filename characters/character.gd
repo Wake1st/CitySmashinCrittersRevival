@@ -6,6 +6,9 @@ signal power_updated(value: float)
 signal special_activated()
 signal special_fired(destructables: Array[Building])
 
+const GRAVITY: float = 0.06
+const TARGET_CUTOFF: float = 0.0000001
+
 @export var strafe_speed: float = 80
 @export var rotate_speed: float = 0.3
 
@@ -32,28 +35,40 @@ var special_ready: bool
 
 
 func process(delta) -> void:
+	# always have gravity
+	velocity.x = 0.0
+	velocity.z = 0.0
+	velocity.y -= GRAVITY
+	
 	# strafing
 	var direction = CharacterController.get_movement()
 	if direction != Vector2.ZERO:
 		# translate
 		var dir_3d: Vector3 = Vector3(direction.x, 0, -direction.y)
-		velocity = global_basis * dir_3d * strafe_speed * delta
-		move_and_slide()
+		velocity += global_basis * dir_3d * strafe_speed * delta
 		
 		# set facing direction
 		_set_pivot_face(direction)
 	
+	# translate with physics engine
+	move_and_slide()
+	
 	# rotation
 	var rotation_direction = CharacterController.get_rotation()
 	if !is_rotating && rotation_direction != 0.0:
-		rotation_target = rotation.y + rotation_direction * PI/2
 		is_rotating = true
+		
+		# shift in 90 degree angles
+		rotation_target = rotation_target + rotation_direction * PI/2
+		
+		# get the target that falls within the angle range
+		rotation_target = _loop_angle(rotation_target)
 	
 	if is_rotating:
 		rotation.y = lerp_angle(rotation.y, rotation_target, rotate_speed)
 		if is_equal_approx(rotation.y, rotation_target):
-			rotation.y = rotation_target
 			is_rotating = false
+			rotation.y = rotation_target
 	
 	# attack
 	if CharacterController.get_attack():
@@ -145,3 +160,11 @@ func _on_camera_animations_animation_finished(anim_name):
 		_special_charge()
 	elif anim_name == "special_charging":
 		_special_fire()
+
+
+func _loop_angle(angle : float) -> float:
+	if angle > PI:
+		angle -= PI * 2
+	elif angle < -PI:
+		angle += PI * 2
+	return angle
