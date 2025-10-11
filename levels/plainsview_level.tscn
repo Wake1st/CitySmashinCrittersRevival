@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_cx31d"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_cjusc"]
 [ext_resource type="PackedScene" uid="uid://bui8pcpdmysge" path="res://levels/models/plainsview_ground.tscn" id="2_u40pl"]
-[ext_resource type="PackedScene" uid="uid://cuxp1tk3ucica" path="res://destructables/building.tscn" id="3_u0ai6"]
 [ext_resource type="PackedScene" uid="uid://c4hc1gk6gukco" path="res://destructables/models/building_e.tscn" id="5_2e7c1"]
 [ext_resource type="PackedScene" uid="uid://dy4tsxpytht7s" path="res://destructables/models/building_b.tscn" id="5_ecacx"]
 [ext_resource type="PackedScene" uid="uid://d1p7a8pryskly" path="res://destructables/models/building_g.tscn" id="7_aig1u"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/score_menu.tscn" id="12_odevf"]
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/finished_overlay.tscn" id="13_mk8om"]
 [ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/cinematic_frame.tscn" id="14_rwck1"]
+[ext_resource type="PackedScene" uid="uid://cbqgy1h06pfms" path="res://destructables/building_proc.tscn" id="15_5wrwu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j47ap"]
 sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)
@@ -33,122 +33,51 @@ tonemap_mode = 2
 script = ExtResource("1_cx31d")
 metadata/_custom_type_script = "uid://r5e2o1b1h4ks"
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gaxeu")
+
 [node name="plainsview_ground" parent="." instance=ExtResource("2_u40pl")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
 [node name="Character" parent="." instance=ExtResource("2_cjusc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.246394, 0.40138268, 11.279823)
-start_facing = 3
 
 [node name="Destructables" type="Node3D" parent="."]
-
-[node name="Building" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.793944, 0.20609534, 11.99398)
-
-[node name="Building2" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.557623, 0.16185951, 12.364317)
-
-[node name="Building3" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7104, 0.33998764, 10.308112)
-
-[node name="Building4" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2877812, 0.7732123, 4.643746)
-
-[node name="Building18" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.468266, 0.4069761, 4.643746)
-
-[node name="Building19" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.22839, 0.6473998, 1.6397266)
-
-[node name="Building20" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5720043, 0.75951946, 3.313281)
-
-[node name="Building31" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5720043, 0.29377544, 1.8831816)
-
-[node name="Building32" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.9627314, 0.09539735, 11.217527)
-
-[node name="Building33" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.5326319, 0.41034353, 11.368863)
-
-[node name="Building26" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.384264, 0.2447946, -1.9694047)
-
-[node name="Building5" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.543073, 0.41933155, -11.790353)
-
-[node name="Building6" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511634, 0.46689463, -8.489611)
-
-[node name="Building7" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4820933, 0.25526214, -9.256775)
-
-[node name="Building8" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2877812, 0.6675093, -9.256775)
-
-[node name="Building21" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4820933, 0.46754313, -6.274134)
-
-[node name="Building22" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2877812, 0.23918438, -6.274134)
-
-[node name="Building9" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.482488, 0.5370929, -6.862748)
-
-[node name="Building29" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1828165, -0.14439976, -12.211019)
-
-[node name="Building30" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24340153, 0.36853278, -7.283414)
-
-[node name="Building10" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.057074, 0.77283764, -9.256775)
-
-[node name="Building13" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.611521, 0.60505176, -8.57961)
-
-[node name="Building27" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.861999, 0.33986855, -7.329594)
-
-[node name="Building28" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.416446, 0.8177073, -6.652429)
-
-[node name="Building14" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.057074, 0.9383584, -3.1211286)
-
-[node name="Building15" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.365074, 0.77283764, -1.8832431)
-
-[node name="Building23" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0988603, 0.51255894, 8.61279)
-
-[node name="Building11" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90872526, 0.29466426, 2.8906221)
-
-[node name="Building12" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1698546, 0.45842302, 4.643746)
-
-[node name="Building24" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.950694, 0.7126609, 4.397749)
-
-[node name="Building25" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.703818, 0.95501983, 3.1366193)
-
-[node name="Building16" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88919044, 0.48914194, 10.037398)
-
-[node name="Building17" parent="Destructables" instance=ExtResource("3_u0ai6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88919044, 0.10686433, 12.247386)
 
 [node name="BuildingB" parent="Destructables" instance=ExtResource("5_ecacx")]
 transform = Transform3D(-0.86602545, 0, -0.49999994, 0, 1, 0, 0.49999994, 0, -0.86602545, 6.856827, 0.8024019, 2.3747811)
 
 [node name="BuildingE" parent="Destructables" instance=ExtResource("5_2e7c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.142236, 0.95839655, -2.8654442)
+cost = 200.0
 
 [node name="BuildingG" parent="Destructables" instance=ExtResource("7_aig1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.627121, 0.5023146, 10.913905)
+
+[node name="BuildingProc" parent="Destructables" instance=ExtResource("15_5wrwu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.600184, 0.36021972, 10.281294)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingProc2" parent="Destructables" instance=ExtResource("15_5wrwu")]
+transform = Transform3D(0.1836254, 0, 0.98299634, 0, 1, 0, -0.98299634, 0, 0.1836254, 11.351812, 0.1717785, 13.645028)
+health = 10.0
+cost = 100.0
+
+[node name="BuildingProc3" parent="Destructables" instance=ExtResource("15_5wrwu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3237658, 0.36021984, 9.9751835)
+health = 10.0
+cost = 100.0
+
+[node name="BuildingProc4" parent="Destructables" instance=ExtResource("15_5wrwu")]
+transform = Transform3D(-0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, -0.9659258, 7.2838597, 0.25037205, 12.882426)
+health = 15.0
+cost = 150.0
+
+[node name="BuildingProc5" parent="Destructables" instance=ExtResource("15_5wrwu")]
+transform = Transform3D(-2.9802322e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -2.9802322e-08, 2.3036227, 0.25037205, 9.254865)
+health = 15.0
+cost = 150.0
 
 [node name="InstantReplaySystem" parent="." instance=ExtResource("8_wu2dn")]
 
@@ -180,9 +109,6 @@ metadata/_edit_use_anchors_ = true
 [node name="CinematicFrame" parent="Node" instance=ExtResource("14_rwck1")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_gaxeu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)

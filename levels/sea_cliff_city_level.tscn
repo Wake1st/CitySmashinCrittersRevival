@@ -40,6 +40,9 @@ fog_light_energy = 0.6
 script = ExtResource("1_7dsjh")
 metadata/_custom_type_script = "uid://r5e2o1b1h4ks"
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iuyxh")
+
 [node name="seacliffcity_ground" parent="." instance=ExtResource("2_hof66")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
@@ -267,9 +270,6 @@ metadata/_edit_use_anchors_ = true
 [node name="CinematicFrame" parent="Node" instance=ExtResource("18_aa5ik")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_iuyxh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.5638107, -0.20834276, 0.79919374, -0.27970007, 0.9586459, 0.052589294, -0.77710056, -0.1938842, -0.5987684, 0, 0, 0)

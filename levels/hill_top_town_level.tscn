@@ -34,12 +34,14 @@ tonemap_mode = 2
 script = ExtResource("1_46jfc")
 metadata/_custom_type_script = "uid://r5e2o1b1h4ks"
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lb1k2")
+
 [node name="hilltoptown_ground" parent="." instance=ExtResource("2_llss2")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
 [node name="Character" parent="." instance=ExtResource("3_cw8ye")]
 transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, -13.225298, 0.48172283, -11.821329)
-start_facing = 3
 
 [node name="Destructables" type="Node3D" parent="."]
 
@@ -184,9 +186,6 @@ metadata/_edit_use_anchors_ = true
 [node name="CinematicFrame" parent="Node" instance=ExtResource("15_hp8hp")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lb1k2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)

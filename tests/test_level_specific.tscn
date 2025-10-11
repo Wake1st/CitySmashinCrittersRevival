@@ -5,7 +5,7 @@
 
 [node name="TestLevelSpecific" type="Node"]
 script = ExtResource("1_idri8")
-test_time = 300.0
+test_time = 10.0
 test_amount = 12000.0
 metadata/_custom_type_script = "uid://bdpbpbjpuu3y"
 
