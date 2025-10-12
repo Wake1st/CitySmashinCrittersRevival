@@ -1,13 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://clgswhp85jlim"]
+[gd_scene load_steps=18 format=3 uid="uid://clgswhp85jlim"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_46jfc"]
 [ext_resource type="PackedScene" uid="uid://bdaq3xll7lesr" path="res://levels/models/hilltoptown_ground.tscn" id="2_llss2"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="3_cw8ye"]
-[ext_resource type="PackedScene" uid="uid://cn5qifuwodakn" path="res://destructables/models/building_a.tscn" id="4_ehu5d"]
-[ext_resource type="PackedScene" uid="uid://cxecnd2at0o1r" path="res://destructables/models/building_c.tscn" id="5_8wyfq"]
-[ext_resource type="PackedScene" uid="uid://cuxp1tk3ucica" path="res://destructables/building.tscn" id="6_ajacu"]
-[ext_resource type="PackedScene" uid="uid://bbvxuws6t7we4" path="res://destructables/models/building_d.tscn" id="7_t62e6"]
-[ext_resource type="PackedScene" uid="uid://dvyqojeq1n3xm" path="res://destructables/models/building_f.tscn" id="8_1dvpu"]
+[ext_resource type="PackedScene" uid="uid://cn5qifuwodakn" path="res://destructables/buildings/unique/building_uni_a.tscn" id="4_ehu5d"]
+[ext_resource type="PackedScene" uid="uid://cxecnd2at0o1r" path="res://destructables/buildings/unique/building_uni_c.tscn" id="5_8wyfq"]
+[ext_resource type="PackedScene" uid="uid://bbvxuws6t7we4" path="res://destructables/buildings/unique/building_uni_d.tscn" id="7_t62e6"]
+[ext_resource type="PackedScene" uid="uid://dvyqojeq1n3xm" path="res://destructables/buildings/unique/building_uni_f.tscn" id="8_1dvpu"]
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="9_p3idi"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/countdown_overlay.tscn" id="10_lb1k2"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/hud.tscn" id="11_vtyh4"]
@@ -51,110 +50,11 @@ transform = Transform3D(-0.81611735, 0, 0.57788616, 0, 1, 0, -0.57788616, 0, -0.
 [node name="BuildingC" parent="Destructables" instance=ExtResource("5_8wyfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.750909, 3.5870175, 9.01086)
 
-[node name="Building" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7912302, 3.5870175, 8.32724)
-
-[node name="Building18" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7099452, 2.9617782, 9.428558)
-
-[node name="Building2" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1709614, 3.2424498, 6.8369875)
-
-[node name="Building19" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3343415, 2.9105082, 10.804869)
-
-[node name="Building20" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.479933, 2.6424499, 9.380787)
-
-[node name="Building3" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5360894, 3.3466597, 7.1354113)
-
-[node name="Building4" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.638146, 1.3602669, -3.9135303)
-
-[node name="Building5" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8780046, 1.0604231, -5.1788425)
-
-[node name="Building13" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6317687, 1.9832795, 0.054550648)
-
-[node name="Building15" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.357151, 2.9464247, 4.2146697)
-
-[node name="Building16" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175181, 3.1141994, 4.2146697)
-
-[node name="Building17" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5671343, 2.753991, 6.110861)
-
-[node name="Building14" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2226295, 1.6834357, -1.2107615)
-
-[node name="Building6" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4650445, 0.9131079, -10.997616)
-
-[node name="Building7" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.422836, 0.7187469, -9.077994)
-
-[node name="Building12" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.118446, 1.0810769, -7.9308124)
-
-[node name="Building8" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6650753, 1.1128323, -10.2329)
-
-[node name="Building9" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9353542, 1.7108016, -11.244434)
-
-[node name="Building10" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1439707, 1.7108016, -7.7907286)
-
-[node name="Building11" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34001, 1.1315906, -5.8775554)
-
 [node name="BuildingD" parent="Destructables" instance=ExtResource("7_t62e6")]
 transform = Transform3D(-0.36948732, 0, 0.92923576, 0, 1, 0, -0.92923576, 0, -0.36948732, 12.360352, 1.8691368, 11.242716)
 
-[node name="Building21" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.390709, 3.1191525, -6.911343)
-
-[node name="Building22" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0931168, 2.822134, -8.76037)
-
-[node name="Building23" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0931168, 2.5006423, -12.245596)
-
-[node name="Building24" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.079397, 1.8309585, 12.1267185)
-
-[node name="Building25" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.319562, 1.531458, 11.341042)
-
 [node name="BuildingF" parent="Destructables" instance=ExtResource("8_1dvpu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.84745, 2.0957725, -1.7729174)
-
-[node name="Building26" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(0.7544118, 0, -0.65640146, 0, 1, 0, 0.65640146, 0, 0.7544118, 10.324446, 2.713513, -11.5801525)
-
-[node name="Building27" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.290809, 2.6100793, -10.100975)
-
-[node name="Building28" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.165311, 1.2805161, 10.093476)
-
-[node name="Building29" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8619986, 1.0124936, 7.415634)
-
-[node name="Building30" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.821588, 1.1057242, 8.564629)
-
-[node name="Building31" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.303641, 1.2805161, 6.314699)
-
-[node name="Building32" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.211697, 2.7764635, -6.9971147)
-
-[node name="Building33" parent="Destructables" instance=ExtResource("6_ajacu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.634424, 2.0555098, -2.1310048)
 
 [node name="InstantReplaySystem" parent="." instance=ExtResource("9_p3idi")]
 

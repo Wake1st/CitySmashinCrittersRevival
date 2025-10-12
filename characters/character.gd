@@ -13,6 +13,7 @@ const TARGET_CUTOFF: float = 0.0000001
 @export var rotate_speed: float = 0.3
 
 @export var attack: float = 5
+@export var attack_speed: float = 0.4
 @export var special_cost: float = 300
 @export var drain_time: float = 8.0
 
@@ -21,8 +22,8 @@ const TARGET_CUTOFF: float = 0.0000001
 @onready var camera: Camera3D = %Camera3D
 
 @onready var pivot: Node3D = %Pivot
-@onready var character_mesh: MeshInstance3D = %CharacterMesh
 @onready var hit_box: HitBox = %HitBox
+@onready var big_slamma: BigSlamma = %BigSlamma
 
 @onready var special_attack: SpecialAttack = %SpecialAttack
 @onready var drain_timer: Timer = %DrainTimer
@@ -49,6 +50,11 @@ func process(delta) -> void:
 		
 		# set facing direction
 		_set_pivot_face(direction)
+		
+		# animate
+		big_slamma.walk()
+	elif not big_slamma.is_attacking():
+		big_slamma.idle()
 	
 	# translate with physics engine
 	move_and_slide()
@@ -72,10 +78,13 @@ func process(delta) -> void:
 	
 	# attack
 	if CharacterController.get_attack():
-		var did_damage = hit_box.attack(attack)
-		if did_damage:
-			special_power += 10
-			power_updated.emit(special_power / special_cost)
+		# cant attack when already attacking
+		if not big_slamma.is_attacking():
+			big_slamma.attack()
+			var did_damage = hit_box.attack(attack)
+			if did_damage:
+				special_power += 10
+				power_updated.emit(special_power / special_cost)
 	
 	# special
 	if not special_ready && special_power >= special_cost:
@@ -100,7 +109,8 @@ func resume_normal() -> void:
 	camera_animations.play("return_to_normal")
 
 
-func face_player() -> void:
+func end_level_pose() -> void:
+	big_slamma.idle()
 	pivot.rotation.y = PI
 
 
@@ -130,6 +140,7 @@ func _special_activated() -> void:
 	special_activated.emit()
 	
 	# start chain of animations
+	big_slamma.off()
 	camera_animations.play("special_focus")
 	
 	# face character forward

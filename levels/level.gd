@@ -82,7 +82,7 @@ func finish() -> void:
 	state = State.FINISHED
 	
 	# face the player
-	character.face_player()
+	character.end_level_pose()
 	
 	# calculate correct time
 	var final_time = level_timer.time_left

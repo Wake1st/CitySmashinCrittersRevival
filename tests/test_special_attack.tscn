@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://df3rd6071wne5" path="res://tests/test_special_attack.gd" id="1_jcbug"]
 [ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_y6pa6"]
 [ext_resource type="PackedScene" uid="uid://bpdidtl6tvpva" path="res://systems/special_attack.tscn" id="2_26bd2"]
-[ext_resource type="PackedScene" uid="uid://cuxp1tk3ucica" path="res://destructables/building.tscn" id="3_26bd2"]
+[ext_resource type="PackedScene" uid="uid://b8ee0g43b4tny" path="res://destructables/buildings/common/building_com_big_a.tscn" id="4_jcbug"]
 
 [node name="TestSpecialAttack" type="Node"]
 script = ExtResource("1_jcbug")
@@ -18,20 +18,5 @@ fov = 110.0
 
 [node name="Destructables" type="Node3D" parent="."]
 
-[node name="Building" parent="Destructables" instance=ExtResource("3_26bd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-
-[node name="Building2" parent="Destructables" instance=ExtResource("3_26bd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-
-[node name="Building3" parent="Destructables" instance=ExtResource("3_26bd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
-
-[node name="Building4" parent="Destructables" instance=ExtResource("3_26bd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-
-[node name="Building5" parent="Destructables" instance=ExtResource("3_26bd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
-
-[node name="Building6" parent="Destructables" instance=ExtResource("3_26bd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+[node name="Building" parent="Destructables" instance=ExtResource("4_jcbug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.819974)

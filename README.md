@@ -4,6 +4,30 @@ Made for the Society of Play's [Revival Jam 2025](https://itch.io/jam/revival-ja
 
 I choose to revive the first 3d game I worked on - [City Smashin Critters](https://github.com/Wake1st/CitySmashinCritters). This time around, I'm using Godot instead of Unity.
 
+## Contributions
+
+- fork this repo
+- clone the fork with the clone command: `git clone *repo address*`
+- fetch remote branches: `git fetch origin`
+- checkout the prototype branch: `git checkout prototype`
+- create a new branch off of prototype: `git checkout -b *branch name*`
+- make changes
+- track changes: `git add .`
+- create a commit: `git commit -m "commit message"`
+- push commit to remote: `git push origin *branch name*`
+- when finished, notify dev or create a Pull Request in GitHub
+
+## Model Importing
+
+- add to the "assets/models/"
+- double click the model file to open the advanced import settings
+- select each animation real and set the `Loop Mode` to "Linear"
+
+## Big Slamma Editing
+
+- these changes should be kept to the "Big Slamma" imported scene and attached script
+- make sure any animation name changes are updated in the script
+
 ## Issues
 
 - [ ] there seems to be an issue when using the special a second time
@@ -127,3 +151,8 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [ ] 3D assets: rectangle buildings, cars, trees, special buildings
 	- [ ] low poly, simple
 	- [ ] should be quirky shaped already
+- [ ] common building generator 
+	- [ ] editor inputs for file name
+	- [ ] grey out the colors more?
+	- [ ] configure health and cost with size enums
+- [ ] add boundries to each level

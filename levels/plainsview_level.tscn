@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dkvb0fgb3pxmq"]
+[gd_scene load_steps=30 format=3 uid="uid://dkvb0fgb3pxmq"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_cx31d"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_cjusc"]
 [ext_resource type="PackedScene" uid="uid://bui8pcpdmysge" path="res://levels/models/plainsview_ground.tscn" id="2_u40pl"]
-[ext_resource type="PackedScene" uid="uid://c4hc1gk6gukco" path="res://destructables/models/building_e.tscn" id="5_2e7c1"]
-[ext_resource type="PackedScene" uid="uid://dy4tsxpytht7s" path="res://destructables/models/building_b.tscn" id="5_ecacx"]
-[ext_resource type="PackedScene" uid="uid://d1p7a8pryskly" path="res://destructables/models/building_g.tscn" id="7_aig1u"]
+[ext_resource type="PackedScene" uid="uid://c4hc1gk6gukco" path="res://destructables/buildings/unique/building_uni_e.tscn" id="5_2e7c1"]
+[ext_resource type="PackedScene" uid="uid://dy4tsxpytht7s" path="res://destructables/buildings/unique/building_uni_b.tscn" id="5_ecacx"]
+[ext_resource type="PackedScene" uid="uid://d1p7a8pryskly" path="res://destructables/buildings/unique/building_uni_g.tscn" id="7_aig1u"]
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="8_wu2dn"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/countdown_overlay.tscn" id="9_j47ap"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/hud.tscn" id="10_5wrwu"]
@@ -13,7 +13,19 @@
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/score_menu.tscn" id="12_odevf"]
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/finished_overlay.tscn" id="13_mk8om"]
 [ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/cinematic_frame.tscn" id="14_rwck1"]
-[ext_resource type="PackedScene" uid="uid://cbqgy1h06pfms" path="res://destructables/building_proc.tscn" id="15_5wrwu"]
+[ext_resource type="PackedScene" uid="uid://b8ee0g43b4tny" path="res://destructables/buildings/common/building_com_big_a.tscn" id="14_u77vd"]
+[ext_resource type="PackedScene" uid="uid://yhh343ykhyg0" path="res://destructables/buildings/common/building_com_med_b.tscn" id="15_tbpxm"]
+[ext_resource type="PackedScene" uid="uid://dpofytnouuyki" path="res://destructables/buildings/common/building_com_sml_c.tscn" id="16_muaku"]
+[ext_resource type="PackedScene" uid="uid://dpfdj6kump0gi" path="res://destructables/buildings/common/building_com_sml_e.tscn" id="17_g6ctc"]
+[ext_resource type="PackedScene" uid="uid://cw3hfxjtoh2v3" path="res://destructables/buildings/common/building_com_med_g.tscn" id="18_60imy"]
+[ext_resource type="PackedScene" uid="uid://bmrtjnsao3mfi" path="res://destructables/buildings/common/building_com_med_f.tscn" id="19_kvwvr"]
+[ext_resource type="PackedScene" uid="uid://cvx8daiusf14g" path="res://destructables/buildings/common/building_com_big_j.tscn" id="20_pnnh7"]
+[ext_resource type="PackedScene" uid="uid://cnt8rbgaw85dp" path="res://destructables/buildings/common/building_com_big_b.tscn" id="21_nmx57"]
+[ext_resource type="PackedScene" uid="uid://bkxw6840nvc4m" path="res://destructables/buildings/common/building_com_med_c.tscn" id="22_gawcb"]
+[ext_resource type="PackedScene" uid="uid://bpsnqjwyacyua" path="res://destructables/buildings/common/building_com_sml_b.tscn" id="23_fwv7x"]
+[ext_resource type="PackedScene" uid="uid://dl20fcxexbdk2" path="res://destructables/buildings/common/building_com_med_i.tscn" id="24_21n1m"]
+[ext_resource type="PackedScene" uid="uid://smxvsi36xdw0" path="res://destructables/buildings/common/building_com_big_h.tscn" id="26_7ei0b"]
+[ext_resource type="PackedScene" uid="uid://cytbyilrg734w" path="res://destructables/buildings/common/building_com_sml_i.tscn" id="27_o5slf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j47ap"]
 sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)
@@ -54,30 +66,47 @@ cost = 200.0
 [node name="BuildingG" parent="Destructables" instance=ExtResource("7_aig1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.627121, 0.5023146, 10.913905)
 
-[node name="BuildingProc" parent="Destructables" instance=ExtResource("15_5wrwu")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.600184, 0.36021972, 10.281294)
-health = 20.0
-cost = 200.0
+[node name="BuildingComBigA" parent="Destructables" instance=ExtResource("14_u77vd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.656948, 0.3278287, 10.050544)
 
-[node name="BuildingProc2" parent="Destructables" instance=ExtResource("15_5wrwu")]
-transform = Transform3D(0.1836254, 0, 0.98299634, 0, 1, 0, -0.98299634, 0, 0.1836254, 11.351812, 0.1717785, 13.645028)
-health = 10.0
-cost = 100.0
+[node name="BuildingComMedB" parent="Destructables" instance=ExtResource("15_tbpxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.225822, 0.37108064, 10.810947)
 
-[node name="BuildingProc3" parent="Destructables" instance=ExtResource("15_5wrwu")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3237658, 0.36021984, 9.9751835)
-health = 10.0
-cost = 100.0
+[node name="BuildingComSmlC" parent="Destructables" instance=ExtResource("16_muaku")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.2045918, 0.34369624, 12.341056)
 
-[node name="BuildingProc4" parent="Destructables" instance=ExtResource("15_5wrwu")]
-transform = Transform3D(-0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, -0.9659258, 7.2838597, 0.25037205, 12.882426)
-health = 15.0
-cost = 150.0
+[node name="BuildingComSmlE" parent="Destructables" instance=ExtResource("17_g6ctc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.17741, 0.80240154, 5.783803)
 
-[node name="BuildingProc5" parent="Destructables" instance=ExtResource("15_5wrwu")]
-transform = Transform3D(-2.9802322e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -2.9802322e-08, 2.3036227, 0.25037205, 9.254865)
-health = 15.0
-cost = 150.0
+[node name="BuildingComMedG" parent="Destructables" instance=ExtResource("18_60imy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.979389, 0.8026984, 0.7485604)
+
+[node name="BuildingComMedF" parent="Destructables" instance=ExtResource("19_kvwvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.873694, 0.80240154, 4.2146544)
+
+[node name="BuildingComBigJ" parent="Destructables" instance=ExtResource("20_pnnh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4304075, 0.6777487, -8.44411)
+
+[node name="BuildingComBigB" parent="Destructables" instance=ExtResource("21_nmx57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.707892, 0.6777482, -11.952805)
+
+[node name="BuildingComMedC" parent="Destructables" instance=ExtResource("22_gawcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.145852, 0.6777482, -7.6287065)
+
+[node name="BuildingComSmlE2" parent="Destructables" instance=ExtResource("17_g6ctc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.201582, 0.6777482, -10.247986)
+
+[node name="BuildingComSmlB" parent="Destructables" instance=ExtResource("23_fwv7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.098531, 0.6777482, -8.837111)
+
+[node name="BuildingComMedI" parent="Destructables" instance=ExtResource("24_21n1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.202412, 0.6777482, -7.5128026)
+
+[node name="BuildingComBigH" parent="Destructables" instance=ExtResource("26_7ei0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.130572, 0.6148141, -12.4307575)
+
+[node name="BuildingComSmlI" parent="Destructables" instance=ExtResource("27_o5slf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.666078, 0.6777482, -11.880355)
 
 [node name="InstantReplaySystem" parent="." instance=ExtResource("8_wu2dn")]
 
@@ -114,6 +143,9 @@ metadata/_edit_use_anchors_ = true
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_color = Color(0.91733336, 1, 0.38, 1)
 shadow_enabled = true
+
+[node name="BuildingG" parent="." instance=ExtResource("7_aig1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49147, 0.6777478, -9.928853)
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]
