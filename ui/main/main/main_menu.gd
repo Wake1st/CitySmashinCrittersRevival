@@ -1,5 +1,5 @@
 class_name MainMenu
-extends Node3D
+extends Menu
 
 
 enum State {
@@ -18,6 +18,20 @@ var current_state: State
 var options: Array[Option3D]
 
 
+func input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_focus_next") || event.is_action_pressed("ui_down"):
+		_update_focus(1)
+	elif event.is_action_pressed("ui_focus_prev") || event.is_action_pressed("ui_up"):
+		_update_focus(-1)
+	elif event.is_action_pressed("ui_accept"):
+		options[current_state].select()
+		selection.emit(current_state)
+
+
+func reset_focus() -> void:
+	options[current_state].focus()
+
+
 func _ready() -> void:
 	# store options
 	for child in get_children():
@@ -27,16 +41,6 @@ func _ready() -> void:
 	levels_option.focus()
 	settings_option.normal()
 	credits_option.normal()
-
-
-func _input(event) -> void:
-	if event.is_action_pressed("ui_focus_next") || event.is_action_pressed("ui_down"):
-		_update_focus(1)
-	elif event.is_action_pressed("ui_focus_prev") || event.is_action_pressed("ui_up"):
-		_update_focus(-1)
-	elif event.is_action_pressed("ui_accept"):
-		options[current_state].select()
-		selection.emit(current_state)
 
 
 func _update_focus(direction: int) -> void:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhj4c1yavcspp"]
 
-[ext_resource type="Script" uid="uid://bp7lovkj2wsue" path="res://ui/main/letters/letter.gd" id="1_8lrfl"]
+[ext_resource type="Script" uid="uid://bp7lovkj2wsue" path="res://ui/main/main/letters/letter.gd" id="1_8lrfl"]
 
 [node name="Letter" type="CSGCombiner3D"]
 script = ExtResource("1_8lrfl")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bi8pyclgdislr"]
 
-[ext_resource type="Script" uid="uid://bp7lovkj2wsue" path="res://ui/main/letters/letter.gd" id="1_ohvn3"]
+[ext_resource type="Script" uid="uid://bp7lovkj2wsue" path="res://ui/main/main/letters/letter.gd" id="1_ohvn3"]
 
 [node name="LetterR" type="CSGCombiner3D"]
 script = ExtResource("1_ohvn3")

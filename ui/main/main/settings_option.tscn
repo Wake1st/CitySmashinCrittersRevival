@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://s05ax7umh7sa"]
 
-[ext_resource type="Script" uid="uid://dj4fvqa1gmv8n" path="res://ui/main/option_3d.gd" id="1_7j7u7"]
-[ext_resource type="PackedScene" uid="uid://d1j2hwfkcpici" path="res://ui/main/letters/letter_s.tscn" id="1_fih3o"]
-[ext_resource type="PackedScene" uid="uid://csvdsbhplcg02" path="res://ui/main/letters/letter_e.tscn" id="2_7j7u7"]
-[ext_resource type="PackedScene" uid="uid://b4egcfuaqiniw" path="res://ui/main/letters/letter_t.tscn" id="3_4um0y"]
-[ext_resource type="PackedScene" uid="uid://dyhpviikhk71o" path="res://ui/main/letters/letter_i.tscn" id="4_dcbj1"]
-[ext_resource type="PackedScene" uid="uid://dpoo41r0rgdk2" path="res://ui/main/letters/letter_n.tscn" id="5_sd3a5"]
-[ext_resource type="PackedScene" uid="uid://ctc7nn1lxou5q" path="res://ui/main/letters/letter_g.tscn" id="6_0v3ds"]
+[ext_resource type="Script" uid="uid://dj4fvqa1gmv8n" path="res://ui/main/main/option_3d.gd" id="1_7j7u7"]
+[ext_resource type="PackedScene" uid="uid://d1j2hwfkcpici" path="res://ui/main/main/letters/letter_s.tscn" id="1_fih3o"]
+[ext_resource type="PackedScene" uid="uid://csvdsbhplcg02" path="res://ui/main/main/letters/letter_e.tscn" id="2_7j7u7"]
+[ext_resource type="PackedScene" uid="uid://b4egcfuaqiniw" path="res://ui/main/main/letters/letter_t.tscn" id="3_4um0y"]
+[ext_resource type="PackedScene" uid="uid://dyhpviikhk71o" path="res://ui/main/main/letters/letter_i.tscn" id="4_dcbj1"]
+[ext_resource type="PackedScene" uid="uid://dpoo41r0rgdk2" path="res://ui/main/main/letters/letter_n.tscn" id="5_sd3a5"]
+[ext_resource type="PackedScene" uid="uid://ctc7nn1lxou5q" path="res://ui/main/main/letters/letter_g.tscn" id="6_0v3ds"]
 
 [node name="SettingsOption" type="Node3D"]
 script = ExtResource("1_7j7u7")

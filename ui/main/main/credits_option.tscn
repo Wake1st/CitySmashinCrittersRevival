@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://di01hfitma640"]
 
-[ext_resource type="Script" uid="uid://dj4fvqa1gmv8n" path="res://ui/main/option_3d.gd" id="1_484gy"]
-[ext_resource type="PackedScene" uid="uid://df6txb3uvdcuh" path="res://ui/main/letters/letter_c.tscn" id="1_jeysc"]
-[ext_resource type="PackedScene" uid="uid://bi8pyclgdislr" path="res://ui/main/letters/letter_r.tscn" id="2_484gy"]
-[ext_resource type="PackedScene" uid="uid://csvdsbhplcg02" path="res://ui/main/letters/letter_e.tscn" id="3_khbg4"]
-[ext_resource type="PackedScene" uid="uid://d3eicndnujngp" path="res://ui/main/letters/letter_d.tscn" id="4_84q8i"]
-[ext_resource type="PackedScene" uid="uid://dyhpviikhk71o" path="res://ui/main/letters/letter_i.tscn" id="5_qv0s0"]
-[ext_resource type="PackedScene" uid="uid://b4egcfuaqiniw" path="res://ui/main/letters/letter_t.tscn" id="6_ga6m4"]
-[ext_resource type="PackedScene" uid="uid://d1j2hwfkcpici" path="res://ui/main/letters/letter_s.tscn" id="7_n0s4r"]
+[ext_resource type="Script" uid="uid://dj4fvqa1gmv8n" path="res://ui/main/main/option_3d.gd" id="1_484gy"]
+[ext_resource type="PackedScene" uid="uid://df6txb3uvdcuh" path="res://ui/main/main/letters/letter_c.tscn" id="1_jeysc"]
+[ext_resource type="PackedScene" uid="uid://bi8pyclgdislr" path="res://ui/main/main/letters/letter_r.tscn" id="2_484gy"]
+[ext_resource type="PackedScene" uid="uid://csvdsbhplcg02" path="res://ui/main/main/letters/letter_e.tscn" id="3_khbg4"]
+[ext_resource type="PackedScene" uid="uid://d3eicndnujngp" path="res://ui/main/main/letters/letter_d.tscn" id="4_84q8i"]
+[ext_resource type="PackedScene" uid="uid://dyhpviikhk71o" path="res://ui/main/main/letters/letter_i.tscn" id="5_qv0s0"]
+[ext_resource type="PackedScene" uid="uid://b4egcfuaqiniw" path="res://ui/main/main/letters/letter_t.tscn" id="6_ga6m4"]
+[ext_resource type="PackedScene" uid="uid://d1j2hwfkcpici" path="res://ui/main/main/letters/letter_s.tscn" id="7_n0s4r"]
 
 [node name="CreditsOption" type="Node3D"]
 script = ExtResource("1_484gy")

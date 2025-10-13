@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1ylalus71lt6"]
 
-[ext_resource type="Script" uid="uid://dj4fvqa1gmv8n" path="res://ui/main/option_3d.gd" id="1_0p5sg"]
-[ext_resource type="PackedScene" uid="uid://bsipnf2omxscs" path="res://ui/main/letters/letter_l.tscn" id="1_rhd08"]
-[ext_resource type="PackedScene" uid="uid://csvdsbhplcg02" path="res://ui/main/letters/letter_e.tscn" id="2_0p5sg"]
-[ext_resource type="PackedScene" uid="uid://dkdpikqdrd2wc" path="res://ui/main/letters/letter_v.tscn" id="3_uavhx"]
-[ext_resource type="PackedScene" uid="uid://d1j2hwfkcpici" path="res://ui/main/letters/letter_s.tscn" id="4_407qr"]
+[ext_resource type="Script" uid="uid://dj4fvqa1gmv8n" path="res://ui/main/main/option_3d.gd" id="1_0p5sg"]
+[ext_resource type="PackedScene" uid="uid://bsipnf2omxscs" path="res://ui/main/main/letters/letter_l.tscn" id="1_rhd08"]
+[ext_resource type="PackedScene" uid="uid://csvdsbhplcg02" path="res://ui/main/main/letters/letter_e.tscn" id="2_0p5sg"]
+[ext_resource type="PackedScene" uid="uid://dkdpikqdrd2wc" path="res://ui/main/main/letters/letter_v.tscn" id="3_uavhx"]
+[ext_resource type="PackedScene" uid="uid://d1j2hwfkcpici" path="res://ui/main/main/letters/letter_s.tscn" id="4_407qr"]
 
 [node name="LevelsOption" type="Node3D"]
 script = ExtResource("1_0p5sg")

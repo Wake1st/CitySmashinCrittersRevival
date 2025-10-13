@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dilh4ugihc05i"]
 
-[ext_resource type="PackedScene" uid="uid://c1ylalus71lt6" path="res://ui/main/levels_option.tscn" id="1_kjq2u"]
-[ext_resource type="Script" uid="uid://bsack2tsdc7q3" path="res://ui/main/main_menu.gd" id="1_okkvt"]
-[ext_resource type="PackedScene" uid="uid://s05ax7umh7sa" path="res://ui/main/settings_option.tscn" id="2_okkvt"]
-[ext_resource type="PackedScene" uid="uid://di01hfitma640" path="res://ui/main/credits_option.tscn" id="3_aapff"]
+[ext_resource type="PackedScene" uid="uid://c1ylalus71lt6" path="res://ui/main/main/levels_option.tscn" id="1_kjq2u"]
+[ext_resource type="Script" uid="uid://bsack2tsdc7q3" path="res://ui/main/main/main_menu.gd" id="1_okkvt"]
+[ext_resource type="PackedScene" uid="uid://s05ax7umh7sa" path="res://ui/main/main/settings_option.tscn" id="2_okkvt"]
+[ext_resource type="PackedScene" uid="uid://di01hfitma640" path="res://ui/main/main/credits_option.tscn" id="3_aapff"]
 
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_okkvt")
