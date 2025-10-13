@@ -156,3 +156,6 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [ ] grey out the colors more?
 	- [ ] configure health and cost with size enums
 - [ ] add boundries to each level
+
+
+- LEVELS, SETTINGS, CREDITS: [L, E, V, T, I, N, G, C, R, D, S]

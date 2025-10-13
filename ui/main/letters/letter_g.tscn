@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctc7nn1lxou5q"]
+
+[ext_resource type="Script" uid="uid://bp7lovkj2wsue" path="res://ui/main/letters/letter.gd" id="1_cp2v8"]
+
+[node name="LetterG" type="CSGCombiner3D"]
+script = ExtResource("1_cp2v8")
+metadata/_custom_type_script = "uid://bp7lovkj2wsue"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9275596, 0.24798584, -0.008069932)
+size = Vector3(1.503418, 1.4959717, 0.8048096)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+radius = 1.581
+height = 1.0
+sides = 18
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCylinder3D"]
+operation = 2
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D/CSGCombiner3D"]
+radius = 0.779
+sides = 18
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D/CSGCombiner3D"]
+transform = Transform3D(0.4984577, 0, 0.8669144, 0, 1, 0, -0.8669144, 0, 0.4984577, 0.9711185, 0, -0.672459)
+size = Vector3(1.3043518, 1, 1.5616455)

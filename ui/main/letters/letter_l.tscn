@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsipnf2omxscs"]
+
+[ext_resource type="Script" uid="uid://bp7lovkj2wsue" path="res://ui/main/letters/letter.gd" id="1_tvfu8"]
+
+[node name="LetterL" type="CSGCombiner3D"]
+script = ExtResource("1_tvfu8")
+metadata/_custom_type_script = "uid://bp7lovkj2wsue"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09448242, 0.12738037, -0.92871094)
+size = Vector3(0.81103516, 1.2547607, 2.8574219)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9184674, 0, 0.09692383)
+size = Vector3(1.3126221, 1, 0.80615234)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1iuipmfg66t0"]
+
+[ext_resource type="Script" uid="uid://ysunuwsvghfm" path="res://tests/test_main_menu.gd" id="1_swgdr"]
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_wwqv3"]
+[ext_resource type="PackedScene" uid="uid://dilh4ugihc05i" path="res://ui/main/main_menu.tscn" id="2_swgdr"]
+
+[node name="TestMainMenu" type="Node"]
+script = ExtResource("1_swgdr")
+
+[node name="TestEnvironment" parent="." instance=ExtResource("1_wwqv3")]
+
+[node name="MainMenu" parent="." instance=ExtResource("2_swgdr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48283434, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1541586, 0.98804617, 0, -0.98804617, 0.1541586, 0, 77.168015, 11.206749)
+fov = 12.0
+
+[connection signal="selection" from="MainMenu" to="." method="_on_main_menu_selection"]
