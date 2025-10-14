@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ysunuwsvghfm" path="res://tests/test_main_menu.gd" id="1_swgdr"]
 [ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_wwqv3"]
-[ext_resource type="PackedScene" uid="uid://dilh4ugihc05i" path="res://ui/main/main/main_menu.tscn" id="2_swgdr"]
+[ext_resource type="PackedScene" uid="uid://dilh4ugihc05i" path="res://ui/start/main/main_menu.tscn" id="2_swgdr"]
 
 [node name="TestMainMenu" type="Node"]
 script = ExtResource("1_swgdr")
