@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://debvnmjo4se4u"]
+
+[ext_resource type="Script" uid="uid://csjas4u8kcqsh" path="res://tests/test_settings_menu.gd" id="1_6lnyf"]
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_klnvs"]
+[ext_resource type="PackedScene" uid="uid://bga5qj6twxupd" path="res://ui/start/settings/settings_menu.tscn" id="2_45w6a"]
+
+[node name="TestSettingsMenu" type="Node"]
+script = ExtResource("1_6lnyf")
+
+[node name="TestEnvironment" parent="." instance=ExtResource("1_klnvs")]
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_45w6a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004520893, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.34214854, 1.3066354, 0.4259966)

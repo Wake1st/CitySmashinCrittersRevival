@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvkxuouuf70ye"]
+[gd_scene load_steps=8 format=3 uid="uid://bga5qj6twxupd"]
 
-[ext_resource type="Script" uid="uid://cttdlysftf2ha" path="res://ui/start/credits_menu.gd" id="1_1qjht"]
-[ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="1_t3qtb"]
-[ext_resource type="AudioStream" uid="uid://5o6kvy8rm63p" path="res://assets/audio/perfect blue cover.ogg" id="2_5evho"]
+[ext_resource type="Script" uid="uid://cx5nfendr74eb" path="res://ui/start/settings/settings_menu.gd" id="1_cn7um"]
+[ext_resource type="PackedScene" uid="uid://cbobjnevufop" path="res://ui/start/settings/slider_3d/slider_3d.tscn" id="2_fh607"]
+[ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="3_ghaot"]
 
 [sub_resource type="Animation" id="Animation_0hh1g"]
 length = 0.001
@@ -188,52 +188,29 @@ _data = {
 &"selected": SubResource("Animation_4xdhh")
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_mkese"]
-size = Vector3(1.5, 0.8, 1.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkese"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_t3qtb"]
-material = SubResource("StandardMaterial3D_mkese")
-size = Vector2(0.78, 0.38)
-
-[node name="CreditsMenu" type="Node3D"]
-script = ExtResource("1_1qjht")
+[node name="SettingsMenu" type="Node3D"]
+script = ExtResource("1_cn7um")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_0hh1g")
 }
 
-[node name="CreditsMusic" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23818606, 0.8197006, 0.53007525)
-stream = ExtResource("2_5evho")
-volume_db = -26.6
-bus = &"Music"
+[node name="MasterSlider" parent="." instance=ExtResource("2_fh607")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.10198894)
+value_name = "Master"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
-mesh = SubResource("BoxMesh_mkese")
+[node name="MusicSlider" parent="." instance=ExtResource("2_fh607")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.36888707)
+value_name = "Music"
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="MeshInstance3D"]
+[node name="SfxSlider" parent="." instance=ExtResource("2_fh607")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.63604414)
+value_name = "Sfx"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="MeshInstance3D/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051374912, 0.6918762, -0.5057598)
-size = Vector3(0.8232422, 0.43756104, 0.059448242)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36, -0.26, 0)
-radius = 0.01
-height = 0.1
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36, -0.26, 0)
-radius = 0.01
-height = 0.1
-
-[node name="Billboard" type="MeshInstance3D" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.029830813)
-mesh = SubResource("QuadMesh_t3qtb")
+[node name="VoiceSlider" parent="." instance=ExtResource("2_fh607")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9008472)
+value_name = "Voice"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -257,7 +234,7 @@ offset_top = -122.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.096800014, 0.88, 0.31870663, 0)
-theme_override_fonts/font = ExtResource("1_t3qtb")
+theme_override_fonts/font = ExtResource("3_ghaot")
 theme_override_font_sizes/font_size = 44
 text = "PRESS 'SPACE' TO START"
 horizontal_alignment = 1
@@ -284,9 +261,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 0)
-theme_override_fonts/font = ExtResource("1_t3qtb")
+theme_override_fonts/font = ExtResource("3_ghaot")
 theme_override_font_sizes/font_size = 44
 text = "PRESS 'ESC' TO RETURN"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[connection signal="value_changed" from="MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="VoiceSlider" to="." method="_on_voice_slider_value_changed"]

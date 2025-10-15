@@ -15,6 +15,7 @@ signal load_level(option: LevelsMenu.State)
 @onready var start_menu: StartMenu = $StartMenu
 @onready var main_menu: MainMenu = $MainMenu
 @onready var levels_menu: LevelsMenu = $LevelsMenu
+@onready var settings_menu: SettingsMenu = $SettingsMenu
 @onready var credits_menu: CreditsMenu = $CreditsMenu
 @onready var camera_animations: AnimationPlayer = %CameraAnimations
 
@@ -47,11 +48,13 @@ func _on_main_menu_selection(option: MainMenu.State) -> void:
 			camera_animations.play("main_to_levels")
 		MainMenu.State.SETTINGS:
 			state = State.SETTINGS
-			print("SETTINGS")
+			current_menu = settings_menu
+			camera_animations.play("main_to_settings")
 		MainMenu.State.CREDITS:
 			state = State.CREDITS
 			current_menu = credits_menu
 			camera_animations.play("main_to_credits")
+			credits_menu.start_music()
 
 
 func _on_levels_menu_level_selected(option: LevelsMenu.State):
@@ -66,17 +69,18 @@ func _on_levels_menu_level_selected(option: LevelsMenu.State):
 	load_level.emit(option)
 
 
-func _on_levels_menu_cancel_selected():
-	state = State.MAIN
-	main_menu.reset_focus()
-	current_menu = main_menu
+func _on_levels_menu_cancel_selected() -> void:
+	_return_to_main()
 	camera_animations.play_backwards("main_to_levels")
 
 
+func _on_settings_menu_canceled() -> void:
+	_return_to_main()
+	camera_animations.play_backwards("main_to_settings")
+
+
 func _on_credits_menu_selected() -> void:
-	state = State.MAIN
-	main_menu.reset_focus()
-	current_menu = main_menu
+	_return_to_main()
 	camera_animations.play_backwards("main_to_credits")
 
 
@@ -84,7 +88,16 @@ func _on_camera_animations_animation_finished(_anim_name: String) -> void:
 	match state:
 		State.MAIN:
 			current_menu = main_menu
+			main_menu.reset_focus()
 		State.LEVELS:
 			levels_menu.display()
+		State.SETTINGS:
+			settings_menu.display()
 		State.CREDITS:
 			credits_menu.display()
+
+
+func _return_to_main() -> void:
+	state = State.MAIN
+	main_menu.reset_focus()
+	current_menu = main_menu

@@ -5,6 +5,12 @@ extends Menu
 signal selected()
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var credits_music: AudioStreamPlayer3D = $CreditsMusic
+
+
+func start_music() -> void:
+	if not credits_music.playing:
+		credits_music.play()
 
 
 func display() -> void:

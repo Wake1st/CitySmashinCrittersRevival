@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://coiuegrlakvy5"]
+
+[ext_resource type="Script" uid="uid://c38brx6rxrgli" path="res://ui/start/settings/slider_3d/slider_knob_3d.gd" id="1_n71vu"]
+[ext_resource type="Material" uid="uid://code2do8xta0j" path="res://assets/materials/start_background.tres" id="2_yxoba"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxoba"]
+size = Vector3(0.2, 0.14, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bbicj"]
+material = ExtResource("2_yxoba")
+size = Vector3(0.2, 0.14, 0.2)
+
+[node name="SliderKnob3D" type="StaticBody3D"]
+collision_mask = 0
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_n71vu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.069722466, 0)
+shape = SubResource("BoxShape3D_yxoba")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0)
+mesh = SubResource("BoxMesh_bbicj")
+skeleton = NodePath("")

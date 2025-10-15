@@ -29,6 +29,12 @@ func input(event: InputEvent) -> void:
 
 
 func reset_focus() -> void:
+	# return all to normal
+	levels_option.normal()
+	settings_option.normal()
+	credits_option.normal()
+	
+	# ensure last selection is still focused
 	options[current_state].focus()
 
 
@@ -36,11 +42,6 @@ func _ready() -> void:
 	# store options
 	for child in get_children():
 		options.push_back(child)
-	
-	# manually set the initial focus
-	levels_option.focus()
-	settings_option.normal()
-	credits_option.normal()
 
 
 func _update_focus(direction: int) -> void:

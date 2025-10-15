@@ -26,6 +26,12 @@ var options: Array[LevelOption]
 
 func display() -> void:
 	animation_player.play("display_hint")
+	current_state = State.PLAINSVIEW
+	
+	# manually set the initial focus
+	plainsview_option.focus()
+	hilltop_option.normal()
+	seacliff_option.normal()
 
 
 func input(event: InputEvent) -> void:
@@ -46,20 +52,11 @@ func input(event: InputEvent) -> void:
 		cancel_selected.emit()
 
 
-func reset_focus() -> void:
-	options[current_state].focus()
-
-
 func _ready() -> void:
 	# store options
 	for child in get_children():
 		if child is LevelOption:
 			options.push_back(child)
-	
-	# manually set the initial focus
-	plainsview_option.focus()
-	hilltop_option.normal()
-	seacliff_option.normal()
 
 
 func _update_focus(direction: int) -> void:
