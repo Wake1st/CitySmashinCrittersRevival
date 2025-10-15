@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://x56m7oe7wwmj"]
 
-[ext_resource type="Script" uid="uid://xy4nb2ouo1jj" path="res://ui/cinematic_frame.gd" id="1_1t4bl"]
+[ext_resource type="Script" uid="uid://xy4nb2ouo1jj" path="res://ui/level/cinematic_frame.gd" id="1_1t4bl"]
 [ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_kwqu8"]
 
 [sub_resource type="Animation" id="Animation_1t4bl"]
@@ -129,7 +129,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 0)
+theme_override_colors/font_color = Color(0.09803922, 0.8784314, 0.29411766, 0)
 theme_override_fonts/font = ExtResource("2_kwqu8")
 theme_override_font_sizes/font_size = 44
 text = "PRESS 'SPACE' WHEN READY"

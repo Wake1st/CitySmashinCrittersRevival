@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1ylalus71lt6"]
+
+[ext_resource type="Script" uid="uid://dj4fvqa1gmv8n" path="res://ui/start/main/option_3d.gd" id="1_0p5sg"]
+[ext_resource type="PackedScene" uid="uid://bsipnf2omxscs" path="res://ui/start/main/letters/letter_l.tscn" id="1_rhd08"]
+[ext_resource type="PackedScene" uid="uid://csvdsbhplcg02" path="res://ui/start/main/letters/letter_e.tscn" id="2_0p5sg"]
+[ext_resource type="PackedScene" uid="uid://dkdpikqdrd2wc" path="res://ui/start/main/letters/letter_v.tscn" id="3_uavhx"]
+[ext_resource type="PackedScene" uid="uid://d1j2hwfkcpici" path="res://ui/start/main/letters/letter_s.tscn" id="4_407qr"]
+
+[node name="LevelsOption" type="Node3D"]
+script = ExtResource("1_0p5sg")
+metadata/_custom_type_script = "uid://dj4fvqa1gmv8n"
+
+[node name="LetterL" parent="." instance=ExtResource("1_rhd08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.231496, 0, 0.11858767)
+
+[node name="LetterE" parent="." instance=ExtResource("2_0p5sg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.998386, 0, -1.5343994)
+
+[node name="LetterV" parent="." instance=ExtResource("3_uavhx")]
+
+[node name="LetterE2" parent="." instance=ExtResource("2_0p5sg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9724894, 0, -1.5628579)
+
+[node name="LetterL2" parent="." instance=ExtResource("1_rhd08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2910247, 0, 0.07452536)
+
+[node name="LetterS" parent="." instance=ExtResource("4_407qr")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 6.987254, 0, -0.81160676)

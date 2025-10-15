@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjk0rsklbs68f"]
 
-[ext_resource type="Script" uid="uid://cc4o1ab7rjunn" path="res://ui/finished_overlay.gd" id="1_6t8so"]
+[ext_resource type="Script" uid="uid://cc4o1ab7rjunn" path="res://ui/level/finished_overlay.gd" id="1_6t8so"]
 [ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_8fm76"]
 
 [sub_resource type="Animation" id="Animation_g5ip0"]

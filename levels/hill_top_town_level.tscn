@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bbvxuws6t7we4" path="res://destructables/buildings/unique/building_uni_d.tscn" id="7_t62e6"]
 [ext_resource type="PackedScene" uid="uid://dvyqojeq1n3xm" path="res://destructables/buildings/unique/building_uni_f.tscn" id="8_1dvpu"]
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="9_p3idi"]
-[ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/countdown_overlay.tscn" id="10_lb1k2"]
-[ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/hud.tscn" id="11_vtyh4"]
-[ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/pause_menu.tscn" id="12_17lmw"]
-[ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/score_menu.tscn" id="13_4txpn"]
-[ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/finished_overlay.tscn" id="14_xnwwk"]
-[ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/cinematic_frame.tscn" id="15_hp8hp"]
+[ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/level/countdown_overlay.tscn" id="10_lb1k2"]
+[ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/level/hud.tscn" id="11_vtyh4"]
+[ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/level/pause_menu.tscn" id="12_17lmw"]
+[ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/level/score_menu.tscn" id="13_4txpn"]
+[ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/level/finished_overlay.tscn" id="14_xnwwk"]
+[ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/level/cinematic_frame.tscn" id="15_hp8hp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p3idi"]
 sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)

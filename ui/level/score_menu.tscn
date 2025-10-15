@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ycmi7iov5vux"]
 
-[ext_resource type="Script" uid="uid://c31mvqjd7uvqq" path="res://ui/score_menu.gd" id="1_xv7ky"]
+[ext_resource type="Script" uid="uid://c31mvqjd7uvqq" path="res://ui/level/score_menu.gd" id="1_xv7ky"]
 [ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="2_7kfo8"]
 [ext_resource type="PackedScene" uid="uid://ct5fwjfyxld6l" path="res://systems/profile_camera.tscn" id="2_vc7if"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="3_d4see"]

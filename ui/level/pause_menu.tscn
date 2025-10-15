@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://h5ooflav8yup"]
 
-[ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/pause_menu.gd" id="1_50142"]
+[ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/level/pause_menu.gd" id="1_50142"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="2_avurv"]
 [ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="3_fob5h"]
 [ext_resource type="StyleBox" uid="uid://sxwbs5al0nli" path="res://assets/themes/btn_bg_normal.tres" id="4_j3kxr"]

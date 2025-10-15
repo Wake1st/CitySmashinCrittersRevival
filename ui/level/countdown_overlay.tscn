@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cr4wkylln1cmw"]
 
-[ext_resource type="Script" uid="uid://df21iqxcknmvd" path="res://ui/countdown_overlay.gd" id="1_yu6kj"]
+[ext_resource type="Script" uid="uid://df21iqxcknmvd" path="res://ui/level/countdown_overlay.gd" id="1_yu6kj"]
 [ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_sjfxj"]
 
 [node name="CountdownOverlay" type="Control"]
