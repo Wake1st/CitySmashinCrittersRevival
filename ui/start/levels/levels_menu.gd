@@ -15,6 +15,8 @@ signal cancel_selected()
 @onready var hilltop_option: LevelOption = $HilltopOption
 @onready var seacliff_option: LevelOption = $SeacliffOption
 
+@onready var lbl_level: Label = %LblLevel
+
 var current_state: State
 var options: Array[LevelOption]
 
@@ -33,11 +35,13 @@ func input(event: InputEvent) -> void:
 		_update_focus(-1)
 	elif event.is_action_pressed("ui_accept"):
 		options[current_state].select()
+		animation_player.play("level_selected")
+		
 		level_selected.emit(current_state)
 	elif event.is_action_pressed("ui_cancel"):
 		# dont show the selection play if the hint isn't displayed
 		if animation_player.is_playing():
-			animation_player.play("selected")
+			animation_player.play("cancel_selected")
 		
 		cancel_selected.emit()
 
@@ -68,3 +72,4 @@ func _update_focus(direction: int) -> void:
 		current_state = index as State
 	
 	options[current_state].focus()
+	lbl_level.text = options[current_state].level_name.to_upper()

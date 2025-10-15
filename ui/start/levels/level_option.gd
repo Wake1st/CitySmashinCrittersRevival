@@ -7,6 +7,8 @@ const NORMAL_MATERIAL: StandardMaterial3D = preload("uid://bb1k5b3ve34cv")
 const FOCUS_MATERIAL: StandardMaterial3D = preload("uid://jqyjkmfoe5t2")
 const SELECT_MATERIAL: StandardMaterial3D = preload("uid://cs5er0jkakasj")
 
+@export var level_name: String
+
 @onready var mesh: MeshInstance3D = $HighlightMesh
 
 

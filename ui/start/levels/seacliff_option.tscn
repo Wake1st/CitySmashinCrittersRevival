@@ -1,19 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://gk3vckrvb2d2"]
+[gd_scene load_steps=7 format=3 uid="uid://gk3vckrvb2d2"]
 
 [ext_resource type="Script" uid="uid://npa02i58ix63" path="res://ui/start/levels/level_option.gd" id="1_gnu03"]
 [ext_resource type="PackedScene" uid="uid://bqf8sua8m8w82" path="res://levels/models/seacliffcity_ground.tscn" id="1_lqgf3"]
 [ext_resource type="Material" uid="uid://cs5er0jkakasj" path="res://assets/materials/level_option_select.tres" id="3_g2xk3"]
+[ext_resource type="PackedScene" uid="uid://d1p7a8pryskly" path="res://destructables/buildings/unique/building_uni_g.tscn" id="4_ysijh"]
+[ext_resource type="PackedScene" uid="uid://cxecnd2at0o1r" path="res://destructables/buildings/unique/building_uni_c.tscn" id="5_tssga"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_nt3jx"]
 material = ExtResource("3_g2xk3")
-size = Vector3(2, 1, 2)
+size = Vector3(2, 1.6, 2)
 
 [node name="SeacliffOption" type="Node3D"]
 script = ExtResource("1_gnu03")
+level_name = "Seacliff City"
 metadata/_custom_type_script = "uid://npa02i58ix63"
 
 [node name="seacliffcity_ground" parent="." instance=ExtResource("1_lqgf3")]
 
 [node name="HighlightMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = SubResource("BoxMesh_nt3jx")
+
+[node name="BuildingG" parent="." instance=ExtResource("4_ysijh")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.6791971, 0.52396095, -0.47974682)
+
+[node name="BuildingC" parent="." instance=ExtResource("5_tssga")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.015575498, 0.08173692, 0.5811761)
