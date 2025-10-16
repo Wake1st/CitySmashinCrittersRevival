@@ -65,4 +65,4 @@ func set_slider(value: float) -> void:
 	knob.position.x = (weight - 0.5) * PROGRESS_SIZE
 	
 	# notify listener
-	emit_signal("value_changed", weight)
+	emit_signal("value_changed", value)

@@ -29,7 +29,7 @@ var state: State = State.SETUP
 var score: Score = Score.new()
 
 
-func setup(miss: Mission, reset_level: Callable, next_level: Callable) -> void:
+func setup(miss: Mission, reset_level: Callable, next_level: Callable, exit_level: Callable) -> void:
 	state = State.SETUP
 	mission = miss
 	
@@ -40,8 +40,8 @@ func setup(miss: Mission, reset_level: Callable, next_level: Callable) -> void:
 	instant_replay_system.finished.connect(_handle_replay_finished)
 	
 	hud.update_time(mission.level_time)
-	pause_menu.setup(_handle_unpause, _handle_exit)
-	score_menu.setup(reset_level, _handle_exit, next_level)
+	pause_menu.setup(_handle_unpause, exit_level)
+	score_menu.setup(reset_level, exit_level, next_level)
 
 
 func countdown() -> void:
@@ -126,9 +126,6 @@ func _physics_process(delta) -> void:
 
 func _handle_unpause() -> void:
 	play()
-
-func _handle_exit() -> void:
-	print("leaving level")
 
 func _handle_destruction(value: float) -> void:
 	score.damage += value

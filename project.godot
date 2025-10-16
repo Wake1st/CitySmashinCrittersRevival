@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="City Smashin Critters"
-run/main_scene="uid://cg873fwlthtn5"
+run/main_scene="uid://41iv1krat4s4"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.14132491, 2.1538512e-05, 0.15081763, 1)
 config/icon="res://assets/images/icon.svg"
 
 [display]
@@ -98,3 +99,4 @@ pause={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.14132491, 2.1538512e-05, 0.15081763, 1)

@@ -395,66 +395,6 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_k2urg"]
-resource_name = "start_to_main"
-length = 3.8
-step = 0.02
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 0, 0),
-"points": PackedFloat32Array(-2.432, 0, 0, 0.37333333, 0.62544286, 1.3206573, -0.29158762, -3.8366888, 0.60532075, 7.964766, 80, -0.0064451694, -55.21421, 0, 0),
-"times": PackedFloat32Array(0, 2.24, 3.8)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:z")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 0, 0, 0),
-"points": PackedFloat32Array(1.69, 0, 0, 0.37333333, 0, 1.69, -0.101214044, 0.029123235, 0.13441062, -0.03867519, 1.362593, -0.1614325, 0.15532649, 0.08014337, -0.077112034, 0, 0, 0.9931772, 0, 0),
-"times": PackedFloat32Array(0, 2.24, 3.6, 3.8)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(2, 0, 0, 0),
-"points": PackedFloat32Array(0.55850536, 0, 0, 0.3, 0, 0.55850536, -0.0232864, 0.013094548, 0.016529322, -0.0092948675, 0.159, -0.02347064, 0.11582641, 0.11918857, -0.5881895, -1.5572876, -0.20476425, 0.029828072, 0, 0),
-"times": PackedFloat32Array(0, 1.8, 1.8599999, 3.8)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:rotation:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(2, 0, 0, 0),
-"points": PackedFloat32Array(-0.40666175, 0, 0, 0.3, 0, -0.40666175, -0.088359326, -0.00339058, 0.033735957, 0.0012945373, -0.32982212, -0.016663896, -0.057023067, 0.101744115, 0.34816352, 0, -0.71853983, 0.0008559355, 0, 0),
-"times": PackedFloat32Array(0, 1.8, 1.8799999, 3.8)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:fov")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(90, -0.25, 0, 0.25, 0, 90, -0.097268924, 0.19575305, 0.27824545, -0.55996704, 14, -0.03839314, 58.47609, 0, 0),
-"times": PackedFloat32Array(0, 2.64, 3.8)
-}
-
 [sub_resource type="Animation" id="Animation_ig5xn"]
 resource_name = "main_to_settings"
 length = 0.8
@@ -569,6 +509,66 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_k2urg"]
+resource_name = "start_to_main"
+length = 3.8
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(-2.432, 0, 0, 0.37333333, 0.62544286, 1.3206573, -0.29158762, -3.8366888, 0.60532075, 7.964766, 80, -0.0064451694, -55.21421, 0, 0),
+"times": PackedFloat32Array(0, 2.24, 3.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(1.69, 0, 0, 0.37333333, 0, 1.69, -0.101214044, 0.029123235, 0.13441062, -0.03867519, 1.362593, -0.1614325, 0.15532649, 0.08014337, -0.077112034, 0, 0, 0.9931772, 0, 0),
+"times": PackedFloat32Array(0, 2.24, 3.6, 3.8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(0.55850536, 0, 0, 0.3, 0, 0.55850536, -0.0232864, 0.013094548, 0.016529322, -0.0092948675, 0.159, -0.02347064, 0.11582641, 0.11918857, -0.5881895, -1.5572876, -0.20476425, 0.029828072, 0, 0),
+"times": PackedFloat32Array(0, 1.8, 1.8599999, 3.8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(-0.40666175, 0, 0, 0.3, 0, -0.40666175, -0.088359326, -0.00339058, 0.033735957, 0.0012945373, -0.32982212, -0.016663896, -0.057023067, 0.101744115, 0.34816352, 0, -0.71853983, 0.0008559355, 0, 0),
+"times": PackedFloat32Array(0, 1.8, 1.8799999, 3.8)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:fov")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(90, -0.25, 0, 0.25, 0, 90, -0.097268924, 0.19575305, 0.27824545, -0.55996704, 14, -0.03839314, 58.47609, 0, 0),
+"times": PackedFloat32Array(0, 2.64, 3.8)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jreqs"]
 _data = {
 &"RESET": SubResource("Animation_jreqs"),
@@ -608,7 +608,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraArm"]
-transform = Transform3D(0.9184463, -0.20960717, -0.33544156, 0, 0.848048, -0.52991915, 0.3955455, 0.48670235, 0.7788865, 0, -2.4323542, 1.6897486)
+transform = Transform3D(0.91844624, -0.20960715, -0.33544156, 0, 0.8480479, -0.52991915, 0.39554548, 0.4867023, 0.7788865, 0, -2.4323542, 1.6897486)
 fov = 90.0
 
 [node name="CameraAnimations" type="AnimationPlayer" parent="CameraArm/Camera3D"]
@@ -730,13 +730,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.274569, 0, 3.806757)
 [node name="BuildingComSmlJ" parent="FillerBuildings" instance=ExtResource("37_gqm7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.773241, 0, 7.754163)
 
-[node name="BuildingComSmlI" parent="." instance=ExtResource("36_aanvx")]
+[node name="BuildingComSmlI2" parent="FillerBuildings" instance=ExtResource("36_aanvx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.483525, -9.536743e-07, -3.649294)
 
-[node name="BuildingComSmlJ" parent="." instance=ExtResource("37_gqm7m")]
+[node name="BuildingComSmlJ2" parent="FillerBuildings" instance=ExtResource("37_gqm7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5465827, 0, -7.600247)
 
-[node name="BuildingComSmlE" parent="." instance=ExtResource("32_drcq0")]
+[node name="BuildingComSmlE2" parent="FillerBuildings" instance=ExtResource("32_drcq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2359047, 9.536743e-07, 0.12450683)
 
 [connection signal="animation_finished" from="CameraArm/Camera3D/CameraAnimations" to="." method="_on_camera_animations_animation_finished"]

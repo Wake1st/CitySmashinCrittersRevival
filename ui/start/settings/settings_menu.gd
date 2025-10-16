@@ -24,32 +24,6 @@ var current_state: State
 var sliders: Array[Slider3D]
 
 
-func setup() -> void:
-	# set initial volume values
-	master_slider.set_slider(UserData.mainVolume)
-	music_slider.set_slider(UserData.musicVolume)
-	sfx_slider.set_slider(UserData.sfxVolume)
-	voice_slider.set_slider(UserData.voiceVolume)
-
-	# set initial values
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index("Master"), 
-		UserData.mainVolume
-	)
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index("Music"), 
-		UserData.musicVolume
-	)
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index("SFX"), 
-		UserData.sfxVolume
-	)
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index("Voice"), 
-		UserData.voiceVolume
-	)
-
-
 func display() -> void:
 	animation_player.play("display_hint")
 	current_state = State.MASTER
@@ -78,27 +52,17 @@ func input(event: InputEvent) -> void:
 		canceled.emit()
 
 
-func _on_master_slider_value_changed(value):
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)
-
-func _on_music_slider_value_changed(value):
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), value)
-
-func _on_sfx_slider_value_changed(value):
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), value)
-
-func _on_voice_slider_value_changed(value):
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Voice"), value)
-
-
 func _ready() -> void:
-	# pull user settings
-	DataAccess.load_user_data()
-	
 	# store sliders
 	for child in get_children():
 		if child is Slider3D:
 			sliders.push_back(child)
+	
+	# set initial volume values
+	master_slider.set_slider(UserData.mainVolume)
+	music_slider.set_slider(UserData.musicVolume)
+	sfx_slider.set_slider(UserData.sfxVolume)
+	voice_slider.set_slider(UserData.voiceVolume)
 
 
 func _update_focus(direction: int) -> void:
@@ -111,3 +75,37 @@ func _update_focus(direction: int) -> void:
 		current_state = index as State
 	
 	sliders[current_state].focus()
+
+
+func _on_master_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)
+
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), value)
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), value)
+
+func _on_voice_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Voice"), value)
+
+
+func _on_main_volume_drag_ended(value_changed: float) -> void:
+	if value_changed:
+		UserData.mainVolume = master_slider.value
+		DataAccess.save_user_data()
+
+func _on_music_volume_drag_ended(value_changed: float) -> void:
+	if value_changed:
+		UserData.musicVolume = music_slider.value
+		DataAccess.save_user_data()
+
+func _on_sfx_volume_drag_ended(value_changed: float) -> void:
+	if value_changed:
+		UserData.sfxVolume = sfx_slider.value
+		DataAccess.save_user_data()
+
+func _on_voice_volume_drag_ended(value_changed: float) -> void:
+	if value_changed:
+		UserData.voiceVolume = voice_slider.value
+		DataAccess.save_user_data()

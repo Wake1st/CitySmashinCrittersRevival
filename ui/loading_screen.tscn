@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjy88qmvly1am"]
+
+[ext_resource type="Script" uid="uid://xo7o7n1r8sgl" path="res://ui/loading_screen.gd" id="1_e66os"]
+[ext_resource type="Texture2D" uid="uid://curgsr4hgar4e" path="res://assets/images/CSC - title v2.png" id="1_pojjl"]
+[ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_1kfex"]
+
+[sub_resource type="Animation" id="Animation_e66os"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.34509805, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Label:theme_override_colors/font_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_1kfex"]
+resource_name = "display"
+length = 2.8
+loop_mode = 1
+step = 0.04
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.099999994, 0, 0, -0.09995551, -0.0228502, 0.3249786, 0.07429131, 0.34535176, -0.24678575, 0.01999203, 0.18585491, -0.015056044, 0.3453523, -0.20020394, -0.0053645032, 0.30664968, 0.008216739, 0, -0.3686409, 0.09756461, 0, 0),
+"times": PackedFloat32Array(0, 0.59999996, 1.08, 2.32, 2.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Label:theme_override_colors/font_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.099999994, 0, 0, -0.09999473, -0.001329313, 0.40152615, 0.0053378204, 1, -0.1872586, -0.00013185789, 0.25275838, 0.00017797947, 1, -0.27420187, -0.00053679943, 0.20431574, 0.00039998474, 0, -0.3999765, 0.0053378427, 0, 0),
+"times": PackedFloat32Array(0, 0.59999996, 1.1999999, 2.2, 2.8)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e66os"]
+_data = {
+&"RESET": SubResource("Animation_e66os"),
+&"display": SubResource("Animation_1kfex")
+}
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_e66os")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e66os")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pojjl")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0585, 0.10272498, 0.15, 0.34509805)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = -95.0
+offset_right = 564.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8392157, 1, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_1kfex")
+theme_override_font_sizes/font_size = 128
+text = "LOADING..."
+horizontal_alignment = 1
+vertical_alignment = 1

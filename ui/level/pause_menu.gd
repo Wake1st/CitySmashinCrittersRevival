@@ -56,51 +56,52 @@ func _on_return_btn_pressed():
 	animation_player.play_backwards("open_settings")
 
 func _on_menu_btn_pressed() -> void:
+	get_tree().paused = false
 	menu_callable.call()
 
 
 #region VolumeSliders
-func _on_main_volume_value_changed(value) -> void:
+func _on_main_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(
 		AudioServer.get_bus_index("Master"), 
 		value
 	)
 
-func _on_music_volume_value_changed(value) -> void:
+func _on_music_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(
 		AudioServer.get_bus_index("Music"), 
 		value
 	)
 
-func _on_sfx_volume_value_changed(value) -> void:
+func _on_sfx_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(
 		AudioServer.get_bus_index("SFX"), 
 		value
 	)
 
-func _on_voice_volume_value_changed(value) -> void:
+func _on_voice_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(
 		AudioServer.get_bus_index("Voice"), 
 		value
 	)
 
 
-func _on_main_volume_drag_ended(value_changed):
+func _on_main_volume_drag_ended(value_changed: float) -> void:
 	if value_changed:
 		UserData.mainVolume = main_volume.value
 		DataAccess.save_user_data()
 
-func _on_music_volume_drag_ended(value_changed):
+func _on_music_volume_drag_ended(value_changed: float) -> void:
 	if value_changed:
 		UserData.musicVolume = music_volume.value
 		DataAccess.save_user_data()
 
-func _on_sfx_volume_drag_ended(value_changed):
+func _on_sfx_volume_drag_ended(value_changed: float) -> void:
 	if value_changed:
 		UserData.sfxVolume = sfx_volume.value
 		DataAccess.save_user_data()
 
-func _on_voice_volume_drag_ended(value_changed):
+func _on_voice_volume_drag_ended(value_changed: float) -> void:
 	if value_changed:
 		UserData.voiceVolume = voice_volume.value
 		DataAccess.save_user_data()

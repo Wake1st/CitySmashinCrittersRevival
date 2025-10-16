@@ -17,7 +17,8 @@ func _ready() -> void:
 	level.setup(
 		QuotaMission.new(test_time, test_amount), 
 		_handle_replay_level, 
-		_handle_next_level
+		_handle_next_level,
+		_handle_exit_level
 	)
 	level.countdown() 
 
@@ -27,3 +28,6 @@ func _handle_replay_level() -> void:
 
 func _handle_next_level() -> void:
 	print("next level")
+
+func _handle_exit_level() -> void:
+	print("exit level")
