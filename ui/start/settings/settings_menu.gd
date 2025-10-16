@@ -40,10 +40,6 @@ func input(event: InputEvent) -> void:
 		_update_focus(1)
 	elif event.is_action_pressed("ui_focus_prev") || event.is_action_pressed("ui_up"):
 		_update_focus(-1)
-	elif event.is_action_pressed("ui_right"):
-		sliders[current_state].adjust(SLIDER_INCREMENT)
-	elif event.is_action_pressed("ui_left"):
-		sliders[current_state].adjust(-SLIDER_INCREMENT)
 	if event.is_action_pressed("ui_cancel"):
 		# dont show the selection play if the hint isn't displayed
 		if animation_player.is_playing():
@@ -65,6 +61,13 @@ func _ready() -> void:
 	voice_slider.set_slider(UserData.voiceVolume)
 
 
+func _process(_delta) -> void:
+	# we want the user to hold to adjust
+	if Input.is_action_pressed("ui_right"):
+		sliders[current_state].adjust(SLIDER_INCREMENT)
+	elif Input.is_action_pressed("ui_left"):
+		sliders[current_state].adjust(-SLIDER_INCREMENT)
+
 func _update_focus(direction: int) -> void:
 	sliders[current_state].normal()
 	
@@ -79,33 +82,20 @@ func _update_focus(direction: int) -> void:
 
 func _on_master_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)
+	UserData.mainVolume = value
+	DataAccess.save_user_data()
 
 func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), value)
+	UserData.musicVolume = value
+	DataAccess.save_user_data()
 
 func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), value)
+	UserData.sfxVolume = value
+	DataAccess.save_user_data()
 
 func _on_voice_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Voice"), value)
-
-
-func _on_main_volume_drag_ended(value_changed: float) -> void:
-	if value_changed:
-		UserData.mainVolume = master_slider.value
-		DataAccess.save_user_data()
-
-func _on_music_volume_drag_ended(value_changed: float) -> void:
-	if value_changed:
-		UserData.musicVolume = music_slider.value
-		DataAccess.save_user_data()
-
-func _on_sfx_volume_drag_ended(value_changed: float) -> void:
-	if value_changed:
-		UserData.sfxVolume = sfx_slider.value
-		DataAccess.save_user_data()
-
-func _on_voice_volume_drag_ended(value_changed: float) -> void:
-	if value_changed:
-		UserData.voiceVolume = voice_slider.value
-		DataAccess.save_user_data()
+	UserData.voiceVolume = value
+	DataAccess.save_user_data()
