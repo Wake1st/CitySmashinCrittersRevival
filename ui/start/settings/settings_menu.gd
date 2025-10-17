@@ -61,12 +61,13 @@ func _ready() -> void:
 	voice_slider.set_slider(UserData.voiceVolume)
 
 
-func _process(_delta) -> void:
+func _process(_delta: float) -> void:
 	# we want the user to hold to adjust
 	if Input.is_action_pressed("ui_right"):
 		sliders[current_state].adjust(SLIDER_INCREMENT)
 	elif Input.is_action_pressed("ui_left"):
 		sliders[current_state].adjust(-SLIDER_INCREMENT)
+
 
 func _update_focus(direction: int) -> void:
 	sliders[current_state].normal()

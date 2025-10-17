@@ -28,6 +28,10 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - these changes should be kept to the "Big Slamma" imported scene and attached script
 - make sure any animation name changes are updated in the script
 
+## Special Thanks
+
+- [Universal Transition Shader](https://github.com/cashew-olddew/Universal-Transition-Shader)
+
 ## Issues
 
 - [ ] there seems to be an issue when using the special a second time

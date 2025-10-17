@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://h5ooflav8yup"]
+[gd_scene load_steps=13 format=3 uid="uid://h5ooflav8yup"]
 
 [ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/level/pause_menu.gd" id="1_50142"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="2_avurv"]
@@ -6,9 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://sxwbs5al0nli" path="res://assets/themes/btn_bg_normal.tres" id="4_j3kxr"]
 [ext_resource type="StyleBox" uid="uid://c5245q3vo46do" path="res://assets/themes/btn_bg_pressed.tres" id="5_vovkw"]
 [ext_resource type="StyleBox" uid="uid://bm1hufi44t4oo" path="res://assets/themes/btn_bg_hover.tres" id="6_jyvtb"]
-[ext_resource type="Texture2D" uid="uid://dlqldn6pi6atq" path="res://assets/images/slider icon.png" id="7_fijdv"]
-[ext_resource type="StyleBox" uid="uid://d13rv4w82fbt3" path="res://assets/themes/slider.tres" id="7_vovkw"]
-[ext_resource type="StyleBox" uid="uid://djh5fvhpsx5wu" path="res://assets/themes/slider_area.tres" id="8_vovkw"]
+[ext_resource type="PackedScene" uid="uid://i25ni6j2vywn" path="res://ui/level/settings_menu.tscn" id="7_1br0k"]
 
 [sub_resource type="Animation" id="Animation_d4see"]
 length = 0.001
@@ -37,7 +35,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SettingsContainer:position:x")
+tracks/2/path = NodePath("SettingsMenu:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -48,7 +46,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("SettingsContainer:position:y")
+tracks/3/path = NodePath("SettingsMenu:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -85,7 +83,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SettingsContainer:position:x")
+tracks/2/path = NodePath("SettingsMenu:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -96,7 +94,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("SettingsContainer:position:y")
+tracks/3/path = NodePath("SettingsMenu:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -133,7 +131,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SettingsContainer:position:x")
+tracks/2/path = NodePath("SettingsMenu:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -144,7 +142,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("SettingsContainer:position:y")
+tracks/3/path = NodePath("SettingsMenu:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -231,7 +229,12 @@ theme_override_constants/separation = 24
 theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
 
 [node name="ResumeBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../MenuBtn")
+focus_neighbor_bottom = NodePath("../SettingsBtn")
+focus_next = NodePath("../SettingsBtn")
+focus_previous = NodePath("../MenuBtn")
 theme = ExtResource("3_fob5h")
 theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
 theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
@@ -243,7 +246,12 @@ theme_override_styles/hover = ExtResource("6_jyvtb")
 text = "RESUME"
 
 [node name="SettingsBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeBtn")
+focus_neighbor_bottom = NodePath("../MenuBtn")
+focus_next = NodePath("../MenuBtn")
+focus_previous = NodePath("../ResumeBtn")
 theme = ExtResource("3_fob5h")
 theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
 theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
@@ -255,7 +263,12 @@ theme_override_styles/hover = ExtResource("6_jyvtb")
 text = "SETTINGS"
 
 [node name="MenuBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../SettingsBtn")
+focus_neighbor_bottom = NodePath("../ResumeBtn")
+focus_next = NodePath("../ResumeBtn")
+focus_previous = NodePath("../SettingsBtn")
 theme = ExtResource("3_fob5h")
 theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
 theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
@@ -266,183 +279,21 @@ theme_override_styles/pressed = ExtResource("5_vovkw")
 theme_override_styles/hover = ExtResource("6_jyvtb")
 text = "MENU"
 
-[node name="SettingsContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="SettingsMenu" parent="." instance=ExtResource("7_1br0k")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -1213.0
 offset_top = -859.0
-offset_right = -1213.0
-offset_bottom = -859.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 256
-theme_override_constants/margin_top = 127
-theme_override_constants/margin_right = 256
-theme_override_constants/margin_bottom = 128
-
-[node name="Panel" type="ColorRect" parent="SettingsContainer"]
-layout_mode = 2
-color = Color(0.19199999, 0.5504, 0.96, 0.6666667)
-
-[node name="MarginContainer" type="MarginContainer" parent="SettingsContainer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 80
-theme_override_constants/margin_bottom = 24
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/Panel/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 24
-
-[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_fonts/font = ExtResource("2_avurv")
-theme_override_font_sizes/font_size = 64
-text = "SETTINGS MENU"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
-
-[node name="HSplitContainer" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-split_offset = 200
-
-[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme = ExtResource("3_fob5h")
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_font_sizes/font_size = 28
-text = "Main Volume"
-
-[node name="MainVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_icons/grabber = ExtResource("7_fijdv")
-theme_override_icons/grabber_highlight = ExtResource("7_fijdv")
-theme_override_icons/grabber_disabled = ExtResource("7_fijdv")
-theme_override_styles/slider = ExtResource("7_vovkw")
-theme_override_styles/grabber_area = ExtResource("8_vovkw")
-theme_override_styles/grabber_area_highlight = ExtResource("8_vovkw")
-max_value = 1.0
-step = 0.01
-
-[node name="HSplitContainer2" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-split_offset = 200
-
-[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
-layout_mode = 2
-size_flags_vertical = 1
-theme = ExtResource("3_fob5h")
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_font_sizes/font_size = 28
-text = "Music Volume"
-
-[node name="MusicVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_icons/grabber = ExtResource("7_fijdv")
-theme_override_icons/grabber_highlight = ExtResource("7_fijdv")
-theme_override_icons/grabber_disabled = ExtResource("7_fijdv")
-theme_override_styles/slider = ExtResource("7_vovkw")
-theme_override_styles/grabber_area = ExtResource("8_vovkw")
-theme_override_styles/grabber_area_highlight = ExtResource("8_vovkw")
-max_value = 1.0
-step = 0.01
-
-[node name="HSplitContainer3" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-split_offset = 200
-
-[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
-layout_mode = 2
-size_flags_vertical = 1
-theme = ExtResource("3_fob5h")
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_font_sizes/font_size = 28
-text = "SFX Volume"
-
-[node name="SfxVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_icons/grabber = ExtResource("7_fijdv")
-theme_override_icons/grabber_highlight = ExtResource("7_fijdv")
-theme_override_icons/grabber_disabled = ExtResource("7_fijdv")
-theme_override_styles/slider = ExtResource("7_vovkw")
-theme_override_styles/grabber_area = ExtResource("8_vovkw")
-theme_override_styles/grabber_area_highlight = ExtResource("8_vovkw")
-max_value = 1.0
-step = 0.01
-
-[node name="HSplitContainer4" type="HSplitContainer" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-split_offset = 200
-
-[node name="Label" type="Label" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4"]
-layout_mode = 2
-size_flags_vertical = 1
-theme = ExtResource("3_fob5h")
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_font_sizes/font_size = 28
-text = "Voice Volume"
-
-[node name="VoiceVolume" type="HSlider" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_icons/grabber = ExtResource("7_fijdv")
-theme_override_icons/grabber_highlight = ExtResource("7_fijdv")
-theme_override_icons/grabber_disabled = ExtResource("7_fijdv")
-theme_override_styles/slider = ExtResource("7_vovkw")
-theme_override_styles/grabber_area = ExtResource("8_vovkw")
-theme_override_styles/grabber_area_highlight = ExtResource("8_vovkw")
-max_value = 1.0
-step = 0.01
-
-[node name="HSeparator2" type="HSeparator" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
-
-[node name="ReturnBtn" type="Button" parent="SettingsContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_fob5h")
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
-theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
-theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
-theme_override_styles/normal = ExtResource("4_j3kxr")
-theme_override_styles/pressed = ExtResource("5_vovkw")
-theme_override_styles/hover = ExtResource("6_jyvtb")
-text = "RETURN"
+offset_right = -13.0
+offset_bottom = -19.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
-[connection signal="drag_ended" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer/MainVolume" to="." method="_on_main_volume_drag_ended"]
-[connection signal="value_changed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer/MainVolume" to="." method="_on_main_volume_value_changed"]
-[connection signal="drag_ended" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2/MusicVolume" to="." method="_on_music_volume_drag_ended"]
-[connection signal="value_changed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2/MusicVolume" to="." method="_on_music_volume_value_changed"]
-[connection signal="drag_ended" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3/SfxVolume" to="." method="_on_sfx_volume_drag_ended"]
-[connection signal="value_changed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3/SfxVolume" to="." method="_on_sfx_volume_value_changed"]
-[connection signal="drag_ended" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4/VoiceVolume" to="." method="_on_voice_volume_drag_ended"]
-[connection signal="value_changed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer4/VoiceVolume" to="." method="_on_voice_volume_value_changed"]
-[connection signal="pressed" from="SettingsContainer/Panel/MarginContainer/VBoxContainer/ReturnBtn" to="." method="_on_return_btn_pressed"]
+[connection signal="closed" from="SettingsMenu" to="." method="_on_settings_menu_closed"]
