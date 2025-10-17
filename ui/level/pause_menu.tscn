@@ -253,9 +253,9 @@ focus_neighbor_bottom = NodePath("../SettingsBtn")
 focus_next = NodePath("../SettingsBtn")
 focus_previous = NodePath("../MenuBtn")
 theme = ExtResource("3_fob5h")
+button_mask = 0
 texture_normal = ExtResource("5_6bm6f")
 texture_pressed = ExtResource("6_yvv33")
-texture_hover = ExtResource("7_7omwr")
 texture_focused = ExtResource("7_7omwr")
 stretch_mode = 0
 
@@ -279,9 +279,9 @@ focus_neighbor_bottom = NodePath("../MenuBtn")
 focus_next = NodePath("../MenuBtn")
 focus_previous = NodePath("../ResumeBtn")
 theme = ExtResource("3_fob5h")
+button_mask = 0
 texture_normal = ExtResource("5_6bm6f")
 texture_pressed = ExtResource("6_yvv33")
-texture_hover = ExtResource("7_7omwr")
 texture_focused = ExtResource("7_7omwr")
 stretch_mode = 0
 
@@ -305,9 +305,9 @@ focus_neighbor_bottom = NodePath("../ResumeBtn")
 focus_next = NodePath("../ResumeBtn")
 focus_previous = NodePath("../SettingsBtn")
 theme = ExtResource("3_fob5h")
+button_mask = 0
 texture_normal = ExtResource("5_6bm6f")
 texture_pressed = ExtResource("6_yvv33")
-texture_hover = ExtResource("7_7omwr")
 texture_focused = ExtResource("7_7omwr")
 stretch_mode = 0
 

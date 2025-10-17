@@ -18,8 +18,6 @@ var resume_callable: Callable
 var menu_callable: Callable
 
 var is_closing: bool
-var current_option: Options
-var options: Array[Options]
 
 
 func setup(resume: Callable, menu: Callable) -> void:
@@ -62,6 +60,6 @@ func _on_menu_btn_pressed() -> void:
 	menu_callable.call()
 
 
-func _on_settings_menu_closed():
+func _on_settings_menu_closed() -> void:
 	animation_player.play_backwards("open_settings")
 	settings_btn.grab_focus()
