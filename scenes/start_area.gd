@@ -15,7 +15,7 @@ signal load_level(path: String)
 @onready var start_menu: StartMenu = $StartMenu
 @onready var main_menu: MainMenu = $MainMenu
 @onready var levels_menu: LevelsMenu = $LevelsMenu
-@onready var settings_menu: SettingsMenu = $SettingsMenu
+@onready var settings_menu: SettingsMenu3D = $SettingsMenu3D
 @onready var credits_menu: CreditsMenu = $CreditsMenu
 
 @onready var camera_animations: AnimationPlayer = %CameraAnimations
