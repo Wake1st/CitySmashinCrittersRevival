@@ -9,9 +9,9 @@ enum Options {
 }
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var resume_btn: Button = %ResumeBtn
-@onready var settings_btn: Button = %SettingsBtn
-@onready var menu_btn: Button = %MenuBtn
+@onready var resume_btn: TextureButton = %ResumeBtn
+@onready var settings_btn: TextureButton = %SettingsBtn
+@onready var menu_btn: TextureButton = %MenuBtn
 @onready var settings_menu: SettingsMenu = %SettingsMenu
 
 var resume_callable: Callable
