@@ -10,13 +10,14 @@ enum State {
 	CREDITS
 }
 
-signal load_level(option: LevelsMenu.State)
+signal load_level(path: String)
 
 @onready var start_menu: StartMenu = $StartMenu
 @onready var main_menu: MainMenu = $MainMenu
 @onready var levels_menu: LevelsMenu = $LevelsMenu
 @onready var settings_menu: SettingsMenu = $SettingsMenu
 @onready var credits_menu: CreditsMenu = $CreditsMenu
+
 @onready var camera_animations: AnimationPlayer = %CameraAnimations
 
 var state: State
@@ -57,16 +58,14 @@ func _on_main_menu_selection(option: MainMenu.State) -> void:
 			credits_menu.start_music()
 
 
-func _on_levels_menu_level_selected(option: LevelsMenu.State):
+func _on_levels_menu_level_selected(option: LevelsMenu.State) -> void:
 	match option:
 		LevelsMenu.State.PLAINSVIEW:
-			print("PLAINSVIEW")
+			load_level.emit("res://levels/plainsview_level.tscn")
 		LevelsMenu.State.HILLTOP:
-			print("HILLTOP")
+			load_level.emit("res://levels/hill_top_town_level.tscn")
 		LevelsMenu.State.SEACLIFF:
-			print("SEACLIFF")
-	
-	load_level.emit(option)
+			load_level.emit("res://levels/sea_cliff_city_level.tscn")
 
 
 func _on_levels_menu_cancel_selected() -> void:

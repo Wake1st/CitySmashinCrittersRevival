@@ -7,7 +7,7 @@ signal value_changed(value: float)
 const RAY_LENGTH := 1000
 const UI_COLLISION_LAYER: int = 0b00000000_00000000_00000000_00000111
 const PROGRESS_SIZE: float = 2.0
-const SHIFT_AMOUNT: float = 0.1
+const SHIFT_AMOUNT: float = 0.01
 
 @export var value_name: String
 @export_range(0,1) var initialValue = 0.5
@@ -19,6 +19,8 @@ const SHIFT_AMOUNT: float = 0.1
 
 @onready var sub_viewport: SubViewport = %SubViewport
 @onready var label: Label = %Label
+
+var current_value: float
 
 
 var progressStart: Vector3
@@ -34,14 +36,13 @@ func focus() -> void:
 
 
 func adjust(value: float) -> void:
-	var adjustment = knob.position.x + value * SHIFT_AMOUNT
-	set_slider(adjustment)
+	set_slider(current_value + value * SHIFT_AMOUNT)
 
 
 func _ready() -> void:
 	# store the slider values
-	progressStart = -Vector3(PROGRESS_SIZE/2, 0, 0)
-	progressEnd = +Vector3(PROGRESS_SIZE/2, 0, 0)
+	progressStart = -Vector3(1, 0, 0)
+	progressEnd = +Vector3(1, 0, 0)
 	
 	# set the initial position
 	knob.position.x = (initialValue - 0.5) * PROGRESS_SIZE
@@ -57,12 +58,13 @@ func _ready() -> void:
 
 func set_slider(value: float) -> void:
 	# calculate visual information
-	var clamped = clamp(value, progressStart.x, progressEnd.x)
-	var weight = inverse_lerp(progressStart.x, progressEnd.x, clamped)
+	var clamped = clamp(value, 0, progressEnd.x)
+	var weight = inverse_lerp(0, progressEnd.x, clamped)
 	
 	# display changes
 	progressMesh.set_instance_shader_parameter("weight", weight)
 	knob.position.x = (weight - 0.5) * PROGRESS_SIZE
 	
 	# notify listener
-	emit_signal("value_changed", weight)
+	current_value = weight
+	emit_signal("value_changed", value)

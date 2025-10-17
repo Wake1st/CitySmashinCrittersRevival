@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://41iv1krat4s4"]
+
+[ext_resource type="Script" uid="uid://ckyp2rahbtxf2" path="res://scenes/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bjy88qmvly1am" path="res://ui/loading_screen.tscn" id="2_0wfyh"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_o5qli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LoadingScreen" parent="CanvasLayer" instance=ExtResource("2_0wfyh")]
+unique_name_in_owner = true
