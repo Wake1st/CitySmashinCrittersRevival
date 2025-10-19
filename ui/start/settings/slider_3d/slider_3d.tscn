@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbobjnevufop"]
+
+[ext_resource type="Script" uid="uid://dx41hao0ulb4f" path="res://ui/start/settings/slider_3d/slider_3d.gd" id="1_ervk5"]
+[ext_resource type="Shader" uid="uid://dp7ppqyc3w448" path="res://ui/start/settings/slider_3d/slider_3d.gdshader" id="1_qyodx"]
+[ext_resource type="PackedScene" uid="uid://coiuegrlakvy5" path="res://ui/start/settings/slider_3d/slider_knob_3d.tscn" id="2_qyodx"]
+[ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="4_nuag4"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ervk5"]
+data = PackedVector3Array(1, 0, 0.1, -1, 0, 0.1, 1, 0, -0.1, -1, 0, 0.1, -1, 0, -0.1, 1, 0, -0.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ervk5"]
+render_priority = 0
+shader = ExtResource("1_qyodx")
+shader_parameter/background_color = Color(0.48, 0.1856, 0.09599999, 1)
+shader_parameter/foreground_color = Color(0.31764707, 0.972549, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ca27e"]
+material = SubResource("ShaderMaterial_ervk5")
+size = Vector2(2, 0.2)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ca27e"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nuag4"]
+material = SubResource("StandardMaterial3D_ca27e")
+size = Vector2(0.5, 0.2)
+orientation = 1
+
+[node name="Slider3D" type="Node3D"]
+script = ExtResource("1_ervk5")
+
+[node name="StaticBackground" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBackground"]
+shape = SubResource("ConcavePolygonShape3D_ervk5")
+
+[node name="ProgressMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_ca27e")
+
+[node name="SliderKnob3D" parent="." instance=ExtResource("2_qyodx")]
+collision_layer = 0
+
+[node name="LabelMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.357566, 0, 0)
+mesh = SubResource("QuadMesh_nuag4")
+
+[node name="SubViewport" type="SubViewport" parent="LabelMesh"]
+unique_name_in_owner = true
+size = Vector2i(500, 200)
+
+[node name="Panel" type="ColorRect" parent="LabelMesh/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.101960786, 0.14901961, 0.7529412)
+
+[node name="MarginContainer" type="MarginContainer" parent="LabelMesh/SubViewport/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="Label" type="Label" parent="LabelMesh/SubViewport/Panel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_nuag4")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "MASTER"
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="StaticBackground" to="." method="_on_static_background_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBackground" to="." method="_on_static_background_mouse_exited"]
+[connection signal="mouse_entered" from="SliderKnob3D" to="." method="_on_slider_knob_3d_mouse_entered"]
+[connection signal="mouse_exited" from="SliderKnob3D" to="." method="_on_slider_knob_3d_mouse_exited"]

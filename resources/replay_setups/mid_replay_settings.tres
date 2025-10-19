@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ReplaySettings" load_steps=2 format=3 uid="uid://chsyi1do6gslh"]
+
+[ext_resource type="Script" uid="uid://crotkb0doi1bq" path="res://resources/ReplaySettings.gd" id="1_1q3y0"]
+
+[resource]
+script = ExtResource("1_1q3y0")
+min_facing_angle = 18.0
+max_facing_angle = 26.0
+min_sitting_angle = -20.0
+max_sitting_angle = -24.0
+min_distance = 4.0
+max_distance = 10.0
+min_pov = 40.0
+max_pov = 50.0
+metadata/_custom_type_script = "uid://crotkb0doi1bq"

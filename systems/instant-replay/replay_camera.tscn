@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjeqskns26av4"]
+
+[ext_resource type="Script" uid="uid://cap1d8qnhvsoe" path="res://systems/instant-replay/replay_camera.gd" id="1_7obfm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7obfm"]
+sky_top_color = Color(0.93, 0.027899973, 0.19328502, 1)
+sky_horizon_color = Color(1.111361, 0.77800435, 0.70408225, 1)
+ground_bottom_color = Color(0.92, 0.48867336, 0.027599974, 1)
+ground_horizon_color = Color(1.111361, 0.77800435, 0.70408225, 1)
+
+[sub_resource type="Sky" id="Sky_2vrws"]
+sky_material = SubResource("ProceduralSkyMaterial_7obfm")
+
+[sub_resource type="Environment" id="Environment_jxnnj"]
+background_mode = 2
+sky = SubResource("Sky_2vrws")
+tonemap_mode = 2
+
+[node name="ReplayCamera" type="Node3D"]
+script = ExtResource("1_7obfm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(1200, 840)
+render_target_update_mode = 0
+
+[node name="Arm" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Arm"]
+unique_name_in_owner = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_jxnnj")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

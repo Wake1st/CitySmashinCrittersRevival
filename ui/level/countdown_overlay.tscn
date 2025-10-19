@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr4wkylln1cmw"]
+
+[ext_resource type="Script" uid="uid://df21iqxcknmvd" path="res://ui/level/countdown_overlay.gd" id="1_yu6kj"]
+[ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_sjfxj"]
+
+[node name="CountdownOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_yu6kj")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Panel_3" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.96862745, 0.36078432, 0.92941177, 0.20392157)
+
+[node name="Label" type="Label" parent="Panel_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.5
+offset_top = -419.5
+offset_right = 398.5
+offset_bottom = 555.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 1)
+theme_override_colors/font_shadow_color = Color(0.096800014, 0.88, 0.29259998, 1)
+theme_override_fonts/font = ExtResource("2_sjfxj")
+theme_override_font_sizes/font_size = 660
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel_2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.96862745, 0.36078432, 0.92941177, 0.20392157)
+
+[node name="Label" type="Label" parent="Panel_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -405.0
+offset_top = -419.5
+offset_right = 405.0
+offset_bottom = 555.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 1)
+theme_override_fonts/font = ExtResource("2_sjfxj")
+theme_override_font_sizes/font_size = 660
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel_1" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.96862745, 0.36078432, 0.92941177, 0.20392157)
+
+[node name="Label" type="Label" parent="Panel_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.5
+offset_top = -419.5
+offset_right = 200.5
+offset_bottom = 555.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 1)
+theme_override_fonts/font = ExtResource("2_sjfxj")
+theme_override_font_sizes/font_size = 660
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel_0" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.96862745, 0.36078432, 0.92941177, 0.20392157)
+
+[node name="Label" type="Label" parent="Panel_0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.0
+offset_top = -177.5
+offset_right = 567.0
+offset_bottom = 313.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 1)
+theme_override_fonts/font = ExtResource("2_sjfxj")
+theme_override_font_sizes/font_size = 180
+text = "SMASH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

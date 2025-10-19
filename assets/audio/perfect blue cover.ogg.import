@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5o6kvy8rm63p"
+path="res://.godot/imported/perfect blue cover.ogg-5796ce27fd82b203ebde573be7f764ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/perfect blue cover.ogg"
+dest_files=["res://.godot/imported/perfect blue cover.ogg-5796ce27fd82b203ebde573be7f764ee.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

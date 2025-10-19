@@ -1,0 +1,136 @@
+[gd_scene load_steps=5 format=3 uid="uid://brksoipmibqja"]
+
+[ext_resource type="Script" uid="uid://ccrw4cedtbspm" path="res://ui/level/hud.gd" id="1_rbyyf"]
+[ext_resource type="FontFile" uid="uid://c8nxialxb47ff" path="res://assets/fonts/Audiowide/Audiowide-Regular.ttf" id="2_276te"]
+[ext_resource type="Shader" uid="uid://okv255q108f0" path="res://ui/level/power_bar.gdshader" id="3_546lt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ihmi"]
+shader = ExtResource("3_546lt")
+shader_parameter/background_color = Color(0.14132491, 2.1538512e-05, 0.15081763, 1)
+shader_parameter/foreground_color = Color(1, 0.120000005, 0.8093333, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_rbyyf")
+
+[node name="Damage" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -442.0
+offset_top = 16.0
+offset_right = -12.479004
+offset_bottom = 80.0
+grow_horizontal = 0
+rotation = -0.012280256
+color = Color(0.7490196, 1, 0, 0.80784315)
+
+[node name="DamageLbl" type="Label" parent="Damage"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -338.78375
+offset_top = -2.0
+offset_right = -12.783752
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.120000005, 0.8093333, 1)
+theme_override_fonts/font = ExtResource("2_276te")
+theme_override_font_sizes/font_size = 48
+text = "00000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Damage"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_right = 173.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.120000005, 0.8093333, 1)
+theme_override_fonts/font = ExtResource("2_276te")
+theme_override_font_sizes/font_size = 32
+text = "DAMAGE"
+vertical_alignment = 1
+
+[node name="Time" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -373.0
+offset_top = 90.99999
+offset_right = -8.481201
+offset_bottom = 155.0
+grow_horizontal = 0
+rotation = 0.018217297
+color = Color(0.7490196, 1, 0, 0.80784315)
+
+[node name="TimeLbl" type="Label" parent="Time"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.13092
+offset_top = -9.5
+offset_right = -12.13092
+offset_bottom = 9.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.120000005, 0.8093333, 1)
+theme_override_fonts/font = ExtResource("2_276te")
+theme_override_font_sizes/font_size = 48
+text = "000.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Time"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_right = 99.0
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.120000005, 0.8093333, 1)
+theme_override_fonts/font = ExtResource("2_276te")
+theme_override_font_sizes/font_size = 32
+text = "TIME"
+vertical_alignment = 1
+
+[node name="Power" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 37.0
+offset_right = 731.0
+offset_bottom = 135.2976
+rotation = -0.03854929
+color = Color(0.7490196, 1, 0, 0.80784315)
+
+[node name="Bar" type="ColorRect" parent="Power"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_7ihmi")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.297615
+grow_horizontal = 2
+grow_vertical = 2

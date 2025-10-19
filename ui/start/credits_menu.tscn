@@ -1,0 +1,292 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvkxuouuf70ye"]
+
+[ext_resource type="Script" uid="uid://cttdlysftf2ha" path="res://ui/start/credits_menu.gd" id="1_1qjht"]
+[ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="1_t3qtb"]
+[ext_resource type="AudioStream" uid="uid://5o6kvy8rm63p" path="res://assets/audio/perfect blue cover.ogg" id="2_5evho"]
+
+[sub_resource type="Animation" id="Animation_0hh1g"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:b")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.29259998, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.88, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.096800014, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/ColorRect:color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_nl0ht"]
+resource_name = "display_hint"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.03333334, 0, 0, 0, 1, -0.06666667, -0.16666667, 0, 0, 1, -0.13333336, 0, 0, 0, 0, -0.06666665, 0.16666669, 0, 0),
+"times": PackedFloat32Array(0, 0.20000002, 0.6, 1.4000001, 1.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:b")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.29259998, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.88, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.096800014, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/ColorRect:color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.03333334, 0, -2.0545551e-11, -0.03333334, -0.04183007, 0.06666667, 0.08366013, 0.7529412, -0.06666667, 0, 0.19999999, 0, 0.7529412, -0.13333336, 0.08366015, 0.06666665, -0.041830055, 0, -0.3, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.20000002, 0.6, 1.4000001, 1.8)
+}
+
+[sub_resource type="Animation" id="Animation_4xdhh"]
+resource_name = "selected"
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.03333333, 0, 0, 0, 0, -0.13333334, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.19999999, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:b")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.8392157, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.8784314, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/ColorRect/Label:theme_override_colors/font_color:r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.827451, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/ColorRect:color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.7529412, -0.25, 0, 0.25, 0, 0.7529412, -0.03333334, 0.025098044, 0.13333333, -0.100392155, 0, -0.16666667, 0.1254902, 0, 0),
+"times": PackedFloat32Array(0, 0.20000002, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hh1g"]
+_data = {
+&"RESET": SubResource("Animation_0hh1g"),
+&"display_hint": SubResource("Animation_nl0ht"),
+&"selected": SubResource("Animation_4xdhh")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_mkese"]
+size = Vector3(1.5, 0.8, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkese"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_t3qtb"]
+material = SubResource("StandardMaterial3D_mkese")
+size = Vector2(0.78, 0.38)
+
+[node name="CreditsMenu" type="Node3D"]
+script = ExtResource("1_1qjht")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0hh1g")
+}
+
+[node name="CreditsMusic" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23818606, 0.8197006, 0.53007525)
+stream = ExtResource("2_5evho")
+volume_db = -26.6
+bus = &"Music"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("BoxMesh_mkese")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="MeshInstance3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="MeshInstance3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051374912, 0.6918762, -0.5057598)
+size = Vector3(0.8232422, 0.43756104, 0.059448242)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36, -0.26, 0)
+radius = 0.01
+height = 0.1
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36, -0.26, 0)
+radius = 0.01
+height = 0.1
+
+[node name="Billboard" type="MeshInstance3D" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.029830813)
+mesh = SubResource("QuadMesh_t3qtb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.096800014, 0.88, 0.31870663, 0)
+theme_override_fonts/font = ExtResource("1_t3qtb")
+theme_override_font_sizes/font_size = 44
+text = "PRESS 'SPACE' TO START"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.05882353, 0.101960786, 0.14901961, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 0)
+theme_override_fonts/font = ExtResource("1_t3qtb")
+theme_override_font_sizes/font_size = 44
+text = "PRESS 'ESC' TO RETURN"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

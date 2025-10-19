@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://will0ktaigye"
+path="res://.godot/imported/pat attack 8.wav-205e04497ec3fdc4ee4498e9ca0e4618.sample"
+
+[deps]
+
+source_file="res://assets/audio/spectators/pat attack 8.wav"
+dest_files=["res://.godot/imported/pat attack 8.wav-205e04497ec3fdc4ee4498e9ca0e4618.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

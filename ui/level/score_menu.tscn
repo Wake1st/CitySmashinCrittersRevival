@@ -1,0 +1,366 @@
+[gd_scene load_steps=11 format=3 uid="uid://ycmi7iov5vux"]
+
+[ext_resource type="Script" uid="uid://c31mvqjd7uvqq" path="res://ui/level/score_menu.gd" id="1_xv7ky"]
+[ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="2_7kfo8"]
+[ext_resource type="PackedScene" uid="uid://ct5fwjfyxld6l" path="res://systems/profile_camera.tscn" id="2_vc7if"]
+[ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="3_d4see"]
+[ext_resource type="StyleBox" uid="uid://sxwbs5al0nli" path="res://assets/themes/btn_bg_normal.tres" id="4_0h8qq"]
+[ext_resource type="StyleBox" uid="uid://c5245q3vo46do" path="res://assets/themes/btn_bg_pressed.tres" id="5_vc7if"]
+[ext_resource type="StyleBox" uid="uid://bm1hufi44t4oo" path="res://assets/themes/btn_bg_hover.tres" id="6_b4d5r"]
+
+[sub_resource type="Animation" id="Animation_7kfo8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(1225, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(-600, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_xv7ky"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1225, 0, 0, 0.2, -9.6073, 0, -0.1, 3.7716064, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-600, 0, 0, 0.2, 4.5183105, 0, -0.1, 3.7716064, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d4see"]
+_data = {
+&"RESET": SubResource("Animation_7kfo8"),
+&"open": SubResource("Animation_xv7ky")
+}
+
+[node name="ScoreMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xv7ky")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d4see")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1225.0
+offset_top = -600.0
+offset_right = 1225.0005
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="Panel" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.19199999, 0.5504, 0.96, 0.6666667)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = -193.5
+offset_right = 421.0
+offset_bottom = 247.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MarginContainer/Panel/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(842, 441)
+render_target_update_mode = 4
+
+[node name="ProfileCamera" parent="MarginContainer/Panel/SubViewportContainer/SubViewport" instance=ExtResource("2_vc7if")]
+unique_name_in_owner = true
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_right = 288.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
+theme_override_fonts/font = ExtResource("3_d4see")
+theme_override_font_sizes/font_size = 72
+text = "FINAL SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -127.5
+offset_bottom = 178.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 180
+
+[node name="NameLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "DAMAGE"
+
+[node name="DamageLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "00000"
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 180
+
+[node name="NameLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "TIME"
+
+[node name="TimeLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "000.00"
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 180
+
+[node name="NameLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
+layout_mode = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "TOTAL"
+
+[node name="TotalLbl" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HSplitContainer3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.31764707, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "000.00"
+
+[node name="PassPanel" type="ColorRect" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.66504
+offset_top = -52.33203
+offset_right = 285.66504
+offset_bottom = 178.33203
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.20943952
+color = Color(0.101960786, 0.75686276, 1, 0.3529412)
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/PassPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.7, 0.93000007, 1, 1)
+theme_override_font_sizes/font_size = 142
+text = "PASS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FailPanel" type="ColorRect" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.66504
+offset_top = -52.33203
+offset_right = 285.66504
+offset_bottom = 178.33203
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.20943952
+color = Color(0.94, 0.0564, 0.0564, 0.54901963)
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/FailPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.14132491, 2.1538512e-05, 0.15081763, 1)
+theme_override_font_sizes/font_size = 142
+text = "FAIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="ReplayBtn" type="Button" parent="MarginContainer/Panel/ButtonContainer"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../NextBtn")
+focus_neighbor_right = NodePath("../MenuBtn")
+focus_next = NodePath("../MenuBtn")
+focus_previous = NodePath("../NextBtn")
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
+theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
+theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_styles/normal = ExtResource("4_0h8qq")
+theme_override_styles/pressed = ExtResource("5_vc7if")
+theme_override_styles/hover = ExtResource("6_b4d5r")
+text = "REPLAY"
+
+[node name="MenuBtn" type="Button" parent="MarginContainer/Panel/ButtonContainer"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../ReplayBtn")
+focus_neighbor_right = NodePath("../NextBtn")
+focus_next = NodePath("../NextBtn")
+focus_previous = NodePath("../ReplayBtn")
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
+theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
+theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_styles/normal = ExtResource("4_0h8qq")
+theme_override_styles/pressed = ExtResource("5_vc7if")
+theme_override_styles/hover = ExtResource("6_b4d5r")
+text = "QUIT"
+
+[node name="NextBtn" type="Button" parent="MarginContainer/Panel/ButtonContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../MenuBtn")
+focus_neighbor_right = NodePath("../ReplayBtn")
+focus_next = NodePath("../ReplayBtn")
+focus_previous = NodePath("../MenuBtn")
+theme = ExtResource("2_7kfo8")
+theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
+theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
+theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
+theme_override_styles/normal = ExtResource("4_0h8qq")
+theme_override_styles/pressed = ExtResource("5_vc7if")
+theme_override_styles/hover = ExtResource("6_b4d5r")
+text = "NEXT"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/ReplayBtn" to="." method="_on_replay_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/NextBtn" to="." method="_on_next_btn_pressed"]
