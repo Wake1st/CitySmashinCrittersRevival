@@ -1,4 +1,4 @@
-class_name SettingsMenu
+class_name SettingsMenu3D
 extends Menu
 
 

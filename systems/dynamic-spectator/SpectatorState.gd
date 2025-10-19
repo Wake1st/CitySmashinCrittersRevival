@@ -1,4 +1,5 @@
 class_name SpectatorState
+extends Node
 
 
 const PAT_FILLER_1 = preload("uid://kp0mnt66mm3f")
@@ -80,7 +81,6 @@ const WALLY_WRAP_UP_FAIL_2 = preload("uid://cyfjcnuwq1s8b")
 const WALLY_WRAP_UP_1 = preload("uid://bo0727pnjpeui")
 
 enum Flags {
-	FILLER = 0,
 	INTRO = 1 << 0,
 	LOCATION = 1 << 1,
 	CHARACTER = 1 << 2,
@@ -95,8 +95,7 @@ enum Flags {
 	SPECIAL_FAILED = 1 << 11,
 	WRAP_UP_PASS = 1 << 12,
 	WRAP_UP_FAIL = 1 << 13,
-	ANNOUNCER_PAT = 1 << 14,
-	ANNOUNCER_WALLY = 1 << 15
+	FILLER = 1 << 14,
 }
 
 enum Announcers {
@@ -104,17 +103,13 @@ enum Announcers {
 	WALLY
 }
 
-static var current_flags : int = 0
+static var current_flags: int = 0
 static var current_announcer: Announcers = Announcers.PAT
 
 
-func get_next_sound() -> AudioStreamWAV:
+static func get_next_sound() -> AudioStreamWAV:
 	# first, swap announcers
-	match current_announcer:
-		Announcers.PAT:
-			current_announcer = Announcers.WALLY
-		Announcers.WALLY:
-			current_announcer = Announcers.PAT
+	_flip_announcers()
 	
 	# get the audio by highest preferance
 	if (current_flags & Flags.INTRO) && (current_announcer == Announcers.WALLY):
@@ -214,7 +209,7 @@ func get_next_sound() -> AudioStreamWAV:
 			WALLY_ATTACK_10,
 			WALLY_ATTACK_11,
 			WALLY_ATTACK_12
-		][randi_range(0,11)]
+		][randi_range(0,10)] # what happened to track 6? no idea.
 	if (current_flags & Flags.ATTACK) && (current_announcer == Announcers.PAT):
 		return [
 			PAT_ATTACK_1,
@@ -222,6 +217,7 @@ func get_next_sound() -> AudioStreamWAV:
 			PAT_ATTACK_3,
 			PAT_ATTACK_4,
 			PAT_ATTACK_5,
+			PAT_ATTACK_6,
 			PAT_ATTACK_7,
 			PAT_ATTACK_8,
 			PAT_ATTACK_9,
@@ -239,7 +235,7 @@ func get_next_sound() -> AudioStreamWAV:
 			WALLY_FILLER_5,
 			WALLY_FILLER_6
 		][randi_range(0,5)]
-	else: # (current_flags & Flags.FILLER) && (current_announcer == Announcers.PAT):
+	if (current_flags & Flags.FILLER) && (current_announcer == Announcers.PAT):
 		return [
 			PAT_FILLER_1,
 			PAT_FILLER_2,
@@ -248,3 +244,16 @@ func get_next_sound() -> AudioStreamWAV:
 			PAT_FILLER_5,
 			PAT_FILLER_6
 		][randi_range(0,5)]
+	
+	# if no one was called, then return to before
+	_flip_announcers()
+	
+	return null
+
+
+static func _flip_announcers() -> void:
+	match current_announcer:
+		Announcers.PAT:
+			current_announcer = Announcers.WALLY
+		Announcers.WALLY:
+			current_announcer = Announcers.PAT

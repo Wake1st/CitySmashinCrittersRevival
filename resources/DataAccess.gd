@@ -34,4 +34,4 @@ static func _default_data() -> void:
 	UserData.mainVolume = 0.8
 	UserData.musicVolume = 0.8
 	UserData.sfxVolume = 0.6
-	UserData.voiceVolume = 0.6
+	UserData.voiceVolume = 0.5
