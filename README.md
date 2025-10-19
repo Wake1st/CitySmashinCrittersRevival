@@ -32,6 +32,11 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 - [Universal Transition Shader](https://github.com/cashew-olddew/Universal-Transition-Shader)
 
+## Resources
+
+- [Late Noon Groove](https://tinyurl.com/295qfg5b)
+- [Big Stomp](https://tinyurl.com/28sqywyn)
+
 ## Issues
 
 - [ ] there seems to be an issue when using the special a second time

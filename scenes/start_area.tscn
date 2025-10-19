@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bkg8wtwgrulw2" path="res://scenes/start_area.gd" id="1_oyv0q"]
 [ext_resource type="Material" uid="uid://code2do8xta0j" path="res://assets/materials/start_background.tres" id="3_jreqs"]
 [ext_resource type="PackedScene" uid="uid://bvkxuouuf70ye" path="res://ui/start/credits_menu.tscn" id="3_oyv0q"]
-[ext_resource type="PackedScene" uid="uid://bga5qj6twxupd" path="res://ui/start/settings/settings_menu.tscn" id="5_ig5xn"]
+[ext_resource type="PackedScene" uid="uid://bga5qj6twxupd" path="res://ui/start/settings/settings_menu_3d.tscn" id="5_ig5xn"]
 [ext_resource type="PackedScene" uid="uid://bchrd3luyax0g" path="res://ui/start/levels/levels_menu.tscn" id="6_30bs3"]
 [ext_resource type="PackedScene" uid="uid://b8ee0g43b4tny" path="res://destructables/buildings/common/building_com_big_a.tscn" id="8_kywqb"]
 [ext_resource type="PackedScene" uid="uid://cnt8rbgaw85dp" path="res://destructables/buildings/common/building_com_big_b.tscn" id="9_vjb67"]

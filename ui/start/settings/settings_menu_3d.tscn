@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bga5qj6twxupd"]
 
-[ext_resource type="Script" uid="uid://cx5nfendr74eb" path="res://ui/start/settings/settings_menu.gd" id="1_cn7um"]
+[ext_resource type="Script" uid="uid://cx5nfendr74eb" path="res://ui/start/settings/settings_menu_3d.gd" id="1_cn7um"]
 [ext_resource type="PackedScene" uid="uid://cbobjnevufop" path="res://ui/start/settings/slider_3d/slider_3d.tscn" id="2_fh607"]
 [ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="3_ghaot"]
 
