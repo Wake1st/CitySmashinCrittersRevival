@@ -188,7 +188,7 @@ _data = {
 &"selected": SubResource("Animation_4xdhh")
 }
 
-[node name="SettingsMenu" type="Node3D"]
+[node name="SettingsMenu3D" type="Node3D"]
 script = ExtResource("1_cn7um")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
