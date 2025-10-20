@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8dryybnfyevi"]
+[gd_scene load_steps=5 format=3 uid="uid://c8dryybnfyevi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slnms"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,8 +15,6 @@ tonemap_mode = 2
 [sub_resource type="PlaneMesh" id="PlaneMesh_1qtk6"]
 size = Vector2(40, 40)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lf134"]
-
 [node name="TestEnvironment" type="Node"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -28,8 +26,3 @@ shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_1qtk6")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_lf134")

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0qsic6lwc4pl"]
-
-[ext_resource type="Script" uid="uid://ccpxkacnqexfj" path="res://systems/instant-replay/instant_replay_system.gd" id="1_3i5ah"]
-
-[node name="InstantReplaySystem" type="Node3D"]
-script = ExtResource("1_3i5ah")
