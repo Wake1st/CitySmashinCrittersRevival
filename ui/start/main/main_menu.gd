@@ -8,6 +8,7 @@ enum State {
 	CREDITS
 }
 
+signal focus_changed()
 signal selection(state: State)
 
 @onready var levels_option: Option3D = $LevelsOption
@@ -54,3 +55,5 @@ func _update_focus(direction: int) -> void:
 		current_state = index as State
 	
 	options[current_state].focus()
+	
+	focus_changed.emit()

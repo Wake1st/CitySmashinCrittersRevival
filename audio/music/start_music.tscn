@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7od8ymsn0vo6"]
+
+[ext_resource type="Script" uid="uid://bg3jhhspxo0wp" path="res://audio/music/start_music.gd" id="1_bc1jr"]
+
+[sub_resource type="Animation" id="Animation_3l5pp"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ry4bn"]
+resource_name = "fade_in"
+length = 1.8
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(-80, 0, 0, 0.13333333, 0, -79.999985, -0.17541324, 0.027660316, 0.40071034, -0.063186646, 10, -0.39918804, -0.09336662, 0, 0),
+"times": PackedFloat32Array(0, 0.79999995, 1.8)
+}
+
+[sub_resource type="Animation" id="Animation_f1ask"]
+resource_name = "fade_out"
+length = 0.8
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(10, -0.25, 0, 0.4, -0.020367622, -80, -0.4, 0.005004883, 0, 0),
+"times": PackedFloat32Array(0, 0.8)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ry4bn"]
+_data = {
+&"RESET": SubResource("Animation_3l5pp"),
+&"fade_in": SubResource("Animation_ry4bn"),
+&"fade_out": SubResource("Animation_f1ask")
+}
+
+[node name="StartMusic" type="AudioStreamPlayer"]
+volume_db = 10.0
+bus = &"Music"
+script = ExtResource("1_bc1jr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ry4bn")
+}
+
+[connection signal="finished" from="." to="." method="_on_finished"]

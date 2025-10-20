@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 			slider.value -= slider.step
 
 
-func _on_return_btn_pressed():
+func _on_return_btn_pressed() -> void:
 	closed.emit()
 
 

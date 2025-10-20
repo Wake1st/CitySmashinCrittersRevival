@@ -25,12 +25,13 @@ window/size/viewport_height=840
 
 folder_colors={
 "res://assets/": "gray",
+"res://audio/": "yellow",
 "res://characters/": "purple",
 "res://destructables/": "purple",
 "res://levels/": "pink",
 "res://resources/": "gray",
 "res://scenes/": "pink",
-"res://systems/": "green",
+"res://systems/": "yellow",
 "res://tests/": "red",
 "res://ui/": "orange"
 }

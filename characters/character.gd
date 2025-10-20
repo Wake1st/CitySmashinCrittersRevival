@@ -26,6 +26,7 @@ const TARGET_CUTOFF: float = 0.0000001
 @onready var big_slamma: BigSlamma = %BigSlamma
 
 @onready var special_attack: SpecialAttack = %SpecialAttack
+@onready var character_sfx: CharacterSFX = $CharacterSFX
 @onready var drain_timer: Timer = %DrainTimer
 
 var is_rotating: bool
@@ -153,6 +154,7 @@ func _special_activated() -> void:
 	# start chain of animations
 	big_slamma.off()
 	camera_animations.play("special_focus")
+	character_sfx.stomp()
 	
 	# face character forward
 	pivot.rotation.y = 0
