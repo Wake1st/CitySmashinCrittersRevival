@@ -40,6 +40,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 ## Issues
 
 - [ ] there seems to be an issue when using the special a second time
+- [ ] ui sfx on score menu needs time to play (slight delay?)
 
 ## Requirements
 
@@ -114,17 +115,26 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] low poly, simple
 	- [x] should be quirky shaped already
 - [x] common building generator 
+- [x] music
 - [ ] power up: special attack
 	- [x] character charges up special move
 	- [x] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
 	- [x] final shot is far above, high FOV, focused on the path of destruction
 	- [x] after final shot, camera zips to characer with correct FOV
+	- [x] sfx, a shockwave
+	- [ ] vfx, bubble
 	- [ ] special name is displayed in big words while the announcers sound out the name
-	- [ ] vfx and sfx to note the moment
+- [ ] sfx: 
+	- [x] destruction
+	- [x] ui sfx
+	- [ ] post attack sfx
 - [ ] add boundries to each level
-- [ ] sfx: hit sounds, power up
-- [ ] music
 - [ ] fill out levels
+- [ ] add vfx
+- [ ] randomize
+	- [ ] spectator comment
+	- [ ] instant replay length
+
 
 ## Stretch Goals
 - [ ] writing: for the story (just stick with announcers for the jam)
