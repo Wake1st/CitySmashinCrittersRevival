@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csjas4u8kcqsh" path="res://tests/test_settings_menu.gd" id="1_6lnyf"]
 [ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_klnvs"]
-[ext_resource type="PackedScene" uid="uid://bga5qj6twxupd" path="res://ui/start/settings/settings_menu.tscn" id="2_45w6a"]
+[ext_resource type="PackedScene" uid="uid://bga5qj6twxupd" path="res://ui/start/settings/settings_menu_3d.tscn" id="2_45w6a"]
 
 [node name="TestSettingsMenu" type="Node"]
 script = ExtResource("1_6lnyf")
