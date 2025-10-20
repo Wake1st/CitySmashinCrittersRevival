@@ -45,7 +45,7 @@ func _process(_delta) -> void:
 				_handle_exit_level
 			)
 			
-			level.countdown()
+			level.run()
 		
 		# no need for this >:)
 		loading_screen.close()

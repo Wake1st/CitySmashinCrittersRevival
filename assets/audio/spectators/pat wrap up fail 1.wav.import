@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d147b26fmbetx"
+path="res://.godot/imported/pat wrap up fail 1.wav-d2e75cef3b320ae5ae5b6c3ecb1b88a2.sample"
+
+[deps]
+
+source_file="res://assets/audio/spectators/pat wrap up fail 1.wav"
+dest_files=["res://.godot/imported/pat wrap up fail 1.wav-d2e75cef3b320ae5ae5b6c3ecb1b88a2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpcf4knm172ab"]
+
+[ext_resource type="Script" uid="uid://b80qiw7ywbwjn" path="res://systems/dynamic-spectator/spectator_audio.gd" id="1_sb8mp"]
+
+[node name="SpectatorAudio" type="AudioStreamPlayer"]
+bus = &"Voice"
+script = ExtResource("1_sb8mp")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
