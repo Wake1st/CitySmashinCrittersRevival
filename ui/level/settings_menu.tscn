@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://i25ni6j2vywn"]
+[gd_scene load_steps=11 format=3 uid="uid://i25ni6j2vywn"]
 
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="1_keu27"]
 [ext_resource type="Script" uid="uid://bdg40fuu2ytnj" path="res://ui/level/settings_menu.gd" id="1_vii2c"]
 [ext_resource type="Texture2D" uid="uid://ctbe0qwp25tsa" path="res://assets/images/menu_bg_1.png" id="2_4mmpq"]
 [ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="2_vii2c"]
 [ext_resource type="StyleBox" uid="uid://d13rv4w82fbt3" path="res://assets/themes/slider.tres" id="4_4ul3s"]
-[ext_resource type="Texture2D" uid="uid://d4cq1cgaksh4p" path="res://assets/images/slide_icon.png" id="5_4mmpq"]
 [ext_resource type="Texture2D" uid="uid://ckfydae2m64ps" path="res://assets/images/slide_icon_normal.png" id="5_4ul3s"]
 [ext_resource type="StyleBox" uid="uid://djh5fvhpsx5wu" path="res://assets/themes/slider_area.tres" id="5_whojx"]
 [ext_resource type="Texture2D" uid="uid://sxbnldx580ch" path="res://assets/images/slide_icon_highlight.png" id="6_whojx"]
@@ -88,7 +87,6 @@ focus_previous = NodePath("../../ReturnBtn")
 mouse_default_cursor_shape = 10
 theme_override_icons/grabber = ExtResource("5_4ul3s")
 theme_override_icons/grabber_highlight = ExtResource("6_whojx")
-theme_override_icons/grabber_disabled = ExtResource("5_4mmpq")
 theme_override_styles/slider = ExtResource("4_4ul3s")
 theme_override_styles/grabber_area = ExtResource("5_whojx")
 theme_override_styles/grabber_area_highlight = ExtResource("5_whojx")
@@ -121,7 +119,6 @@ focus_previous = NodePath("../../HSplitContainer/MainVolume")
 mouse_default_cursor_shape = 10
 theme_override_icons/grabber = ExtResource("5_4ul3s")
 theme_override_icons/grabber_highlight = ExtResource("6_whojx")
-theme_override_icons/grabber_disabled = ExtResource("5_4mmpq")
 theme_override_styles/slider = ExtResource("4_4ul3s")
 theme_override_styles/grabber_area = ExtResource("5_whojx")
 theme_override_styles/grabber_area_highlight = ExtResource("5_whojx")
@@ -154,7 +151,6 @@ focus_previous = NodePath(".")
 mouse_default_cursor_shape = 10
 theme_override_icons/grabber = ExtResource("5_4ul3s")
 theme_override_icons/grabber_highlight = ExtResource("6_whojx")
-theme_override_icons/grabber_disabled = ExtResource("5_4mmpq")
 theme_override_styles/slider = ExtResource("4_4ul3s")
 theme_override_styles/grabber_area = ExtResource("5_whojx")
 theme_override_styles/grabber_area_highlight = ExtResource("5_whojx")

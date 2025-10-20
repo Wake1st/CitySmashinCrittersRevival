@@ -37,13 +37,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.024162
-offset_top = 53.657837
-offset_right = -495.8194
-offset_bottom = -713.44055
+offset_left = 20.372929
+offset_top = 58.04264
+offset_right = -496.87762
+offset_bottom = -711.3642
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.042314053
+rotation = -0.04693589
 scale = Vector2(1.0232478, 1.1495562)
 
 [node name="DamageLbl" type="Label" parent="TextureRect"]

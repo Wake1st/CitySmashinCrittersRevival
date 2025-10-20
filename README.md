@@ -136,7 +136,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [ ] randomize
 	- [ ] spectator comment
 	- [ ] instant replay length
-R50 G100 B50
+
 
 ## Stretch Goals
 - [ ] writing: for the story (just stick with announcers for the jam)
