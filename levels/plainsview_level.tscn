@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dkvb0fgb3pxmq"]
+[gd_scene load_steps=32 format=3 uid="uid://dkvb0fgb3pxmq"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_cx31d"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_cjusc"]
@@ -21,7 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://bmrtjnsao3mfi" path="res://destructables/buildings/common/building_com_med_f.tscn" id="19_kvwvr"]
 [ext_resource type="PackedScene" uid="uid://cvx8daiusf14g" path="res://destructables/buildings/common/building_com_big_j.tscn" id="20_pnnh7"]
 [ext_resource type="PackedScene" uid="uid://cnt8rbgaw85dp" path="res://destructables/buildings/common/building_com_big_b.tscn" id="21_nmx57"]
+[ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="21_u77vd"]
 [ext_resource type="PackedScene" uid="uid://bkxw6840nvc4m" path="res://destructables/buildings/common/building_com_med_c.tscn" id="22_gawcb"]
+[ext_resource type="PackedScene" uid="uid://dutrne0g4gwoc" path="res://audio/music/level_music.tscn" id="22_tbpxm"]
 [ext_resource type="PackedScene" uid="uid://bpsnqjwyacyua" path="res://destructables/buildings/common/building_com_sml_b.tscn" id="23_fwv7x"]
 [ext_resource type="PackedScene" uid="uid://dl20fcxexbdk2" path="res://destructables/buildings/common/building_com_med_i.tscn" id="24_21n1m"]
 [ext_resource type="PackedScene" uid="uid://smxvsi36xdw0" path="res://destructables/buildings/common/building_com_big_h.tscn" id="26_7ei0b"]
@@ -108,10 +110,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.130572, 0.6148141, -12.4307
 [node name="BuildingComSmlI" parent="Destructables" instance=ExtResource("27_o5slf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.666078, 0.6777482, -11.880355)
 
+[node name="BuildingG2" parent="Destructables" instance=ExtResource("7_aig1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49147, 0.6777478, -9.928853)
+
 [node name="InstantReplaySystem" parent="." instance=ExtResource("8_wu2dn")]
 
 [node name="LevelTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="SpectatorAudio" parent="." instance=ExtResource("21_u77vd")]
+
+[node name="LevelMusic" parent="." instance=ExtResource("22_tbpxm")]
 
 [node name="Node" type="CanvasLayer" parent="."]
 
@@ -143,9 +152,6 @@ metadata/_edit_use_anchors_ = true
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_color = Color(0.91733336, 1, 0.38, 1)
 shadow_enabled = true
-
-[node name="BuildingG" parent="." instance=ExtResource("7_aig1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49147, 0.6777478, -9.928853)
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/level/pause_menu.gd" id="1_50142"]
 [ext_resource type="Texture2D" uid="uid://ctbe0qwp25tsa" path="res://assets/images/menu_bg_1.png" id="2_6bm6f"]
+[ext_resource type="PackedScene" uid="uid://b8oc3p24hynli" path="res://audio/sfx/ui_sfx.tscn" id="2_6bm6f"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="2_avurv"]
 [ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="3_fob5h"]
 [ext_resource type="Texture2D" uid="uid://dr4j87x6w0tx7" path="res://assets/images/button1_normal.png" id="5_6bm6f"]
@@ -191,6 +192,7 @@ offset_right = -13.0
 offset_bottom = -19.0
 grow_horizontal = 1
 grow_vertical = 1
+[node name="UISFX" parent="." instance=ExtResource("2_6bm6f")]
 
 [node name="PauseContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -325,6 +327,9 @@ vertical_alignment = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="closed" from="SettingsMenu" to="." method="_on_settings_menu_closed"]
+[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_handle_element_focused"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_handle_element_focused"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_handle_element_focused"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]

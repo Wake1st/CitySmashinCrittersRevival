@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b77ra4n6ajjgj"]
+[gd_scene load_steps=11 format=3 uid="uid://b77ra4n6ajjgj"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_xb4v1"]
+[ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="3_rtcij"]
+[ext_resource type="PackedScene" uid="uid://dutrne0g4gwoc" path="res://audio/music/level_music.tscn" id="4_ukwr8"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/level/countdown_overlay.tscn" id="5_d5x7l"]
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="5_ukwr8"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/level/hud.tscn" id="6_d5x7l"]
@@ -13,6 +15,10 @@
 script = ExtResource("1_xb4v1")
 
 [node name="InstantReplaySystem" parent="." instance=ExtResource("5_ukwr8")]
+
+[node name="SpectatorAudio" parent="." instance=ExtResource("3_rtcij")]
+
+[node name="LevelMusic" parent="." instance=ExtResource("4_ukwr8")]
 
 [node name="LevelTimer" type="Timer" parent="."]
 one_shot = true

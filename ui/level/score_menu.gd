@@ -16,6 +16,7 @@ const CYCLE_TIME: float = 0.8
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
+@onready var ui_sfx: UISFX = $UISFX
 @onready var profile_camera: ProfileCamera = %ProfileCamera
 
 @onready var damage_lbl: Label = %DamageLbl
@@ -87,14 +88,21 @@ func _input(event) -> void:
 				result()
 
 
+func _handle_focus() -> void:
+	ui_sfx.focus()
+
+
 func _on_replay_btn_pressed() -> void:
 	replay_callable.call()
+	ui_sfx.select()
 
 func _on_menu_btn_pressed() -> void:
 	menu_callable.call()
+	ui_sfx.select()
 
 func _on_next_btn_pressed() -> void:
 	next_callable.call()
+	ui_sfx.select()
 
 
 func _on_animation_player_animation_finished(anim_name) -> void:

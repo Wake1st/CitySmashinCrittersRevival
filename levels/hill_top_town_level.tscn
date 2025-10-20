@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://clgswhp85jlim"]
+[gd_scene load_steps=20 format=3 uid="uid://clgswhp85jlim"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_46jfc"]
 [ext_resource type="PackedScene" uid="uid://bdaq3xll7lesr" path="res://levels/models/hilltoptown_ground.tscn" id="2_llss2"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cxecnd2at0o1r" path="res://destructables/buildings/unique/building_uni_c.tscn" id="5_8wyfq"]
 [ext_resource type="PackedScene" uid="uid://bbvxuws6t7we4" path="res://destructables/buildings/unique/building_uni_d.tscn" id="7_t62e6"]
 [ext_resource type="PackedScene" uid="uid://dvyqojeq1n3xm" path="res://destructables/buildings/unique/building_uni_f.tscn" id="8_1dvpu"]
+[ext_resource type="PackedScene" uid="uid://dutrne0g4gwoc" path="res://audio/music/level_music.tscn" id="9_lb1k2"]
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="9_p3idi"]
+[ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="9_vtyh4"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/level/countdown_overlay.tscn" id="10_lb1k2"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/level/hud.tscn" id="11_vtyh4"]
 [ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/level/pause_menu.tscn" id="12_17lmw"]
@@ -60,6 +62,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.84
 
 [node name="LevelTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="SpectatorAudio" parent="." instance=ExtResource("9_vtyh4")]
+
+[node name="LevelMusic" parent="." instance=ExtResource("9_lb1k2")]
 
 [node name="Node" type="CanvasLayer" parent="."]
 

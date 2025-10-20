@@ -19,6 +19,8 @@ signal load_level(path: String)
 @onready var credits_menu: CreditsMenu = $CreditsMenu
 
 @onready var camera_animations: AnimationPlayer = %CameraAnimations
+@onready var start_music: StartMusic = $StartMusic
+@onready var ui_sfx: UISFX = $UISFX
 
 var state: State
 var current_menu: Menu
@@ -28,6 +30,7 @@ func _ready() -> void:
 	state = State.START
 	current_menu = start_menu
 	start_menu.display()
+	start_music.start_beat()
 
 
 func _input(event: InputEvent) -> void:
@@ -35,13 +38,21 @@ func _input(event: InputEvent) -> void:
 		current_menu.input(event)
 
 
+func _handle_focus_changed() -> void:
+	ui_sfx.focus()
+
+
 func _on_start_menu_selected() -> void:
 	state = State.MAIN
 	current_menu = null
 	camera_animations.play("start_to_main")
+	start_music.start_melody()
+	ui_sfx.select()
 
 
 func _on_main_menu_selection(option: MainMenu.State) -> void:
+	ui_sfx.select()
+	
 	match option:
 		MainMenu.State.LEVELS:
 			state = State.LEVELS
@@ -55,10 +66,13 @@ func _on_main_menu_selection(option: MainMenu.State) -> void:
 			state = State.CREDITS
 			current_menu = credits_menu
 			camera_animations.play("main_to_credits")
+			start_music.fade_out()
 			credits_menu.start_music()
 
 
 func _on_levels_menu_level_selected(option: LevelsMenu.State) -> void:
+	ui_sfx.select()
+	
 	match option:
 		LevelsMenu.State.PLAINSVIEW:
 			load_level.emit("res://levels/plainsview_level.tscn")
@@ -71,16 +85,20 @@ func _on_levels_menu_level_selected(option: LevelsMenu.State) -> void:
 func _on_levels_menu_cancel_selected() -> void:
 	_return_to_main()
 	camera_animations.play_backwards("main_to_levels")
+	ui_sfx.cancel()
 
 
 func _on_settings_menu_canceled() -> void:
 	_return_to_main()
 	camera_animations.play_backwards("main_to_settings")
+	ui_sfx.cancel()
 
 
 func _on_credits_menu_selected() -> void:
 	_return_to_main()
 	camera_animations.play_backwards("main_to_credits")
+	start_music.fade_in()
+	ui_sfx.cancel()
 
 
 func _on_camera_animations_animation_finished(_anim_name: String) -> void:

@@ -26,6 +26,7 @@ const TARGET_CUTOFF: float = 0.0000001
 @onready var big_slamma: BigSlamma = %BigSlamma
 
 @onready var special_attack: SpecialAttack = %SpecialAttack
+@onready var character_sfx: CharacterSFX = $CharacterSFX
 @onready var drain_timer: Timer = %DrainTimer
 
 var is_rotating: bool
@@ -33,6 +34,8 @@ var rotation_target: float
 
 var special_power: float = 0
 var special_ready: bool
+
+var spectator_audio: SpectatorAudio
 
 
 func process(delta) -> void:
@@ -85,13 +88,22 @@ func process(delta) -> void:
 			if did_damage:
 				special_power += 10
 				power_updated.emit(special_power / special_cost)
+				
+				SpectatorState.current_flags |= SpectatorState.Flags.ATTACK
 	
 	# special
 	if not special_ready && special_power >= special_cost:
+		SpectatorState.current_flags |= SpectatorState.Flags.SPECIAL_READY
+		spectator_audio.interupt_segment()
 		_special_ready()
 	
 	if special_ready && CharacterController.get_special():
 		_special_activated()
+	
+	if special_ready:
+		spectator_audio.check_special_time(drain_timer.time_left, drain_time)
+	else:
+		spectator_audio.check_special_charge(special_power, special_cost)
 
 
 func get_drain_ratio() -> float:
@@ -142,6 +154,7 @@ func _special_activated() -> void:
 	# start chain of animations
 	big_slamma.off()
 	camera_animations.play("special_focus")
+	character_sfx.stomp()
 	
 	# face character forward
 	pivot.rotation.y = 0
@@ -168,6 +181,7 @@ func _on_drain_timer_timeout() -> void:
 	# failed to activate
 	_reset_special()
 	camera_animations.play_backwards("special_ready")
+	SpectatorState.current_flags |= SpectatorState.Flags.SPECIAL_FAILED
 
 
 func _on_camera_animations_animation_finished(anim_name):

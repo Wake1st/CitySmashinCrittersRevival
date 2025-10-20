@@ -10,6 +10,7 @@ enum State {
 }
 
 signal canceled()
+signal focus_changed()
 
 const SLIDER_INCREMENT: float = 1
 
@@ -79,6 +80,8 @@ func _update_focus(direction: int) -> void:
 		current_state = index as State
 	
 	sliders[current_state].focus()
+	
+	focus_changed.emit()
 
 
 func _on_master_slider_value_changed(value: float) -> void:

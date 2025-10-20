@@ -16,6 +16,8 @@ enum State {
 @onready var destructables: Node3D = $Destructables
 @onready var level_timer: Timer = $LevelTimer
 @onready var instant_replay_system: InstantReplaySystem = $InstantReplaySystem
+@onready var spectator_audio: SpectatorAudio = $SpectatorAudio
+@onready var level_music: LevelMusic = $LevelMusic
 
 @onready var hud: HUD = %HUD
 @onready var pause_menu: PauseMenu = %PauseMenu
@@ -32,6 +34,7 @@ var score: Score = Score.new()
 func setup(miss: Mission, reset_level: Callable, next_level: Callable, exit_level: Callable) -> void:
 	state = State.SETUP
 	mission = miss
+	character.spectator_audio = spectator_audio
 	
 	character.power_updated.connect(hud.update_power)
 	character.special_activated.connect(_handle_special_activated)
@@ -44,6 +47,12 @@ func setup(miss: Mission, reset_level: Callable, next_level: Callable, exit_leve
 	score_menu.setup(reset_level, exit_level, next_level)
 
 
+func run() -> void:
+	SpectatorState.current_flags |= SpectatorState.Flags.INTRO
+	spectator_audio.play_next_audio_segment()
+	countdown()
+
+
 func countdown() -> void:
 	state = State.COUNTDOWN
 	
@@ -53,6 +62,9 @@ func countdown() -> void:
 
 func start() -> void:
 	level_timer.start(mission.level_time)
+	SpectatorState.current_flags |= SpectatorState.Flags.LEVEL_TIME_FULL
+	level_music.start(3)
+	
 	play()
 
 
@@ -74,12 +86,23 @@ func special() -> void:
 	state = State.SPECIAL
 	level_timer.paused = true
 	
+	# spectators
+	SpectatorState.current_flags |= SpectatorState.Flags.SPECIAL_ACTIVATED
+	spectator_audio.interupt_segment()
+	spectator_audio.pause_when_done()
+	
+	# music
+	level_music.pause()
+	
 	# enter special mode
 	cinematic_frame.frame_on()
 
 
 func finish() -> void:
 	state = State.FINISHED
+	
+	# stop the music
+	level_music.pause()
 	
 	# face the player
 	character.end_level_pose()
@@ -107,6 +130,7 @@ func _input(event) -> void:
 
 
 func _physics_process(delta) -> void:
+	# update when in play
 	match state:
 		State.PLAY:
 			# first - check finished condition
@@ -119,9 +143,14 @@ func _physics_process(delta) -> void:
 			# update time display
 			hud.update_time(level_timer.time_left)
 			
+			# music check
+			level_music.check_crescendo(level_timer.time_left)
+			
 			# check power updates when draining
 			if character.special_ready:
 				hud.update_power(character.get_drain_ratio())
+			else:
+				spectator_audio.check_level_time(level_timer.time_left, mission.level_time)
 
 
 func _handle_unpause() -> void:
@@ -157,6 +186,12 @@ func _end_post_special() -> void:
 	if mission.check_completion(score):
 		finish()
 	else:
+		spectator_audio.clear_special_flags()
+		spectator_audio.unpause()
+		spectator_audio.play_next_audio_segment()
+		
+		level_music.unpause()
+		
 		play()
 
 
@@ -168,9 +203,13 @@ func _on_level_timer_timeout() -> void:
 		finish()
 
 func _on_finished_overlay_finished() -> void:
+	var did_win: bool = mission.check_win(score)
+	
+	spectator_audio.set_win_state(did_win)
+	
 	score_menu.display(
 		score, 
-		mission.check_win(score), 
+		did_win, 
 		character.global_position,
 		character.rotation.y
 	)

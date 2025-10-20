@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbn7uy6e0i0cu"
+path="res://.godot/imported/pat special half empty.wav-2a1fb6effcbc6533a71eb756aee80f4b.sample"
+
+[deps]
+
+source_file="res://assets/audio/spectators/pat special half empty.wav"
+dest_files=["res://.godot/imported/pat special half empty.wav-2a1fb6effcbc6533a71eb756aee80f4b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
