@@ -11,9 +11,9 @@ enum Options {
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ui_sfx: UISFX = $UISFX
 
-@onready var resume_btn: TextureButton = %ResumeBtn
-@onready var settings_btn: TextureButton = %SettingsBtn
-@onready var menu_btn: TextureButton = %MenuBtn
+@onready var resume_btn: UIButton = %ResumeBtn
+@onready var settings_btn: UIButton = %SettingsBtn
+@onready var menu_btn: UIButton = %MenuBtn
 @onready var settings_menu: SettingsMenu = %SettingsMenu
 
 var resume_callable: Callable

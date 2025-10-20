@@ -25,7 +25,7 @@ const CYCLE_TIME: float = 0.8
 @onready var pass_panel: ColorRect = %PassPanel
 @onready var fail_panel: ColorRect = %FailPanel
 @onready var buttons: HBoxContainer = %ButtonContainer
-@onready var next_btn: Button = %NextBtn
+@onready var next_btn: UIButton = %NextBtn
 
 var replay_callable: Callable
 var menu_callable: Callable

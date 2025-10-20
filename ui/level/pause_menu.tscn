@@ -1,14 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://h5ooflav8yup"]
+[gd_scene load_steps=12 format=3 uid="uid://h5ooflav8yup"]
 
 [ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/level/pause_menu.gd" id="1_50142"]
-[ext_resource type="Texture2D" uid="uid://ctbe0qwp25tsa" path="res://assets/images/menu_bg_1.png" id="2_6bm6f"]
 [ext_resource type="PackedScene" uid="uid://b8oc3p24hynli" path="res://audio/sfx/ui_sfx.tscn" id="2_6bm6f"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="2_avurv"]
-[ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="3_fob5h"]
-[ext_resource type="Texture2D" uid="uid://dr4j87x6w0tx7" path="res://assets/images/button1_normal.png" id="5_6bm6f"]
-[ext_resource type="Texture2D" uid="uid://buh60sb6hiv3w" path="res://assets/images/button1_press.png" id="6_yvv33"]
+[ext_resource type="Texture2D" uid="uid://u8n1xa6owmfe" path="res://assets/images/menu_bg_2.png" id="4_yvv33"]
+[ext_resource type="PackedScene" uid="uid://2pn552x78q4r" path="res://ui/level/ui_button.tscn" id="6_60jl5"]
 [ext_resource type="PackedScene" uid="uid://i25ni6j2vywn" path="res://ui/level/settings_menu.tscn" id="7_1br0k"]
-[ext_resource type="Texture2D" uid="uid://bnc2boximk5qv" path="res://assets/images/button1_hover.png" id="7_7omwr"]
 
 [sub_resource type="Animation" id="Animation_d4see"]
 length = 0.001
@@ -192,6 +189,7 @@ offset_right = -13.0
 offset_bottom = -19.0
 grow_horizontal = 1
 grow_vertical = 1
+
 [node name="UISFX" parent="." instance=ExtResource("2_6bm6f")]
 
 [node name="PauseContainer" type="MarginContainer" parent="."]
@@ -205,14 +203,14 @@ offset_right = -1212.9971
 offset_bottom = -858.99817
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 256
-theme_override_constants/margin_top = 127
-theme_override_constants/margin_right = 256
-theme_override_constants/margin_bottom = 128
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 82
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 82
 
 [node name="Panel" type="TextureRect" parent="PauseContainer"]
 layout_mode = 2
-texture = ExtResource("2_6bm6f")
+texture = ExtResource("4_yvv33")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PauseContainer/Panel"]
@@ -222,9 +220,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 104
-theme_override_constants/margin_top = 48
-theme_override_constants/margin_right = 104
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 98
+theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/Panel/MarginContainer"]
@@ -247,89 +245,23 @@ layout_mode = 2
 theme_override_constants/separation = 24
 theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
 
-[node name="ResumeBtn" type="TextureButton" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="ResumeBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
 unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../MenuBtn")
-focus_neighbor_bottom = NodePath("../SettingsBtn")
-focus_next = NodePath("../SettingsBtn")
-focus_previous = NodePath("../MenuBtn")
-theme = ExtResource("3_fob5h")
-button_mask = 0
-texture_normal = ExtResource("5_6bm6f")
-texture_pressed = ExtResource("6_yvv33")
-texture_focused = ExtResource("7_7omwr")
-stretch_mode = 0
+label = "RESUME"
 
-[node name="Label" type="Label" parent="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "RESUME"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SettingsBtn" type="TextureButton" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="SettingsBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
 unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../ResumeBtn")
-focus_neighbor_bottom = NodePath("../MenuBtn")
-focus_next = NodePath("../MenuBtn")
-focus_previous = NodePath("../ResumeBtn")
-theme = ExtResource("3_fob5h")
-button_mask = 0
-texture_normal = ExtResource("5_6bm6f")
-texture_pressed = ExtResource("6_yvv33")
-texture_focused = ExtResource("7_7omwr")
-stretch_mode = 0
+label = "SETTINGS"
 
-[node name="Label" type="Label" parent="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "SETTINGS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MenuBtn" type="TextureButton" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="MenuBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
 unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../SettingsBtn")
-focus_neighbor_bottom = NodePath("../ResumeBtn")
-focus_next = NodePath("../ResumeBtn")
-focus_previous = NodePath("../SettingsBtn")
-theme = ExtResource("3_fob5h")
-button_mask = 0
-texture_normal = ExtResource("5_6bm6f")
-texture_pressed = ExtResource("6_yvv33")
-texture_focused = ExtResource("7_7omwr")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "MENU"
-horizontal_alignment = 1
-vertical_alignment = 1
+label = "MENU"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="closed" from="SettingsMenu" to="." method="_on_settings_menu_closed"]
-[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_handle_element_focused"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
-[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_handle_element_focused"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
-[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_handle_element_focused"]
 [connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://2pn552x78q4r"]
+
+[ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="1_3tq3g"]
+[ext_resource type="Texture2D" uid="uid://dr4j87x6w0tx7" path="res://assets/images/button1_normal.png" id="2_wquaj"]
+[ext_resource type="Texture2D" uid="uid://buh60sb6hiv3w" path="res://assets/images/button1_press.png" id="3_0w6hd"]
+[ext_resource type="Texture2D" uid="uid://bnc2boximk5qv" path="res://assets/images/button1_hover.png" id="4_0by4n"]
+[ext_resource type="Script" uid="uid://c7fjobbe6ryda" path="res://ui/level/ui_button.gd" id="5_xv3x1"]
+
+[node name="UIButton" type="TextureButton"]
+button_mask = 0
+texture_normal = ExtResource("2_wquaj")
+texture_pressed = ExtResource("3_0w6hd")
+texture_focused = ExtResource("4_0by4n")
+stretch_mode = 0
+script = ExtResource("5_xv3x1")
+label = "LABEL"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3tq3g")
+theme_override_colors/font_color = Color(0.19607843, 0.39215687, 0.19607843, 1)
+text = "LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1

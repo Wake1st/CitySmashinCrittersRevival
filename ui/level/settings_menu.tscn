@@ -6,10 +6,10 @@
 [ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="2_vii2c"]
 [ext_resource type="StyleBox" uid="uid://d13rv4w82fbt3" path="res://assets/themes/slider.tres" id="4_4ul3s"]
 [ext_resource type="Texture2D" uid="uid://d4cq1cgaksh4p" path="res://assets/images/slide_icon.png" id="5_4mmpq"]
+[ext_resource type="Texture2D" uid="uid://ckfydae2m64ps" path="res://assets/images/slide_icon_normal.png" id="5_4ul3s"]
 [ext_resource type="StyleBox" uid="uid://djh5fvhpsx5wu" path="res://assets/themes/slider_area.tres" id="5_whojx"]
-[ext_resource type="Texture2D" uid="uid://dr4j87x6w0tx7" path="res://assets/images/button1_normal.png" id="8_4mmpq"]
-[ext_resource type="Texture2D" uid="uid://buh60sb6hiv3w" path="res://assets/images/button1_press.png" id="9_4ul3s"]
-[ext_resource type="Texture2D" uid="uid://bnc2boximk5qv" path="res://assets/images/button1_hover.png" id="10_whojx"]
+[ext_resource type="Texture2D" uid="uid://sxbnldx580ch" path="res://assets/images/slide_icon_highlight.png" id="6_whojx"]
+[ext_resource type="PackedScene" uid="uid://2pn552x78q4r" path="res://ui/level/ui_button.tscn" id="8_keu27"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ejwgg"]
 color = Color(0.87492, 0.8556, 0.92, 1)
@@ -86,8 +86,8 @@ focus_neighbor_bottom = NodePath("../../HSplitContainer2/MusicVolume")
 focus_next = NodePath("../../HSplitContainer2/MusicVolume")
 focus_previous = NodePath("../../ReturnBtn")
 mouse_default_cursor_shape = 10
-theme_override_icons/grabber = ExtResource("5_4mmpq")
-theme_override_icons/grabber_highlight = ExtResource("5_4mmpq")
+theme_override_icons/grabber = ExtResource("5_4ul3s")
+theme_override_icons/grabber_highlight = ExtResource("6_whojx")
 theme_override_icons/grabber_disabled = ExtResource("5_4mmpq")
 theme_override_styles/slider = ExtResource("4_4ul3s")
 theme_override_styles/grabber_area = ExtResource("5_whojx")
@@ -119,8 +119,8 @@ focus_neighbor_bottom = NodePath("../../HSplitContainer3/SfxVolume")
 focus_next = NodePath("../../HSplitContainer3/SfxVolume")
 focus_previous = NodePath("../../HSplitContainer/MainVolume")
 mouse_default_cursor_shape = 10
-theme_override_icons/grabber = ExtResource("5_4mmpq")
-theme_override_icons/grabber_highlight = ExtResource("5_4mmpq")
+theme_override_icons/grabber = ExtResource("5_4ul3s")
+theme_override_icons/grabber_highlight = ExtResource("6_whojx")
 theme_override_icons/grabber_disabled = ExtResource("5_4mmpq")
 theme_override_styles/slider = ExtResource("4_4ul3s")
 theme_override_styles/grabber_area = ExtResource("5_whojx")
@@ -152,8 +152,8 @@ focus_neighbor_bottom = NodePath("../../HSplitContainer4/VoiceVolume")
 focus_next = NodePath("../../HSplitContainer4/VoiceVolume")
 focus_previous = NodePath(".")
 mouse_default_cursor_shape = 10
-theme_override_icons/grabber = ExtResource("5_4mmpq")
-theme_override_icons/grabber_highlight = ExtResource("5_4mmpq")
+theme_override_icons/grabber = ExtResource("5_4ul3s")
+theme_override_icons/grabber_highlight = ExtResource("6_whojx")
 theme_override_icons/grabber_disabled = ExtResource("5_4mmpq")
 theme_override_styles/slider = ExtResource("4_4ul3s")
 theme_override_styles/grabber_area = ExtResource("5_whojx")
@@ -185,8 +185,8 @@ focus_neighbor_bottom = NodePath("../../ReturnBtn")
 focus_next = NodePath("../../ReturnBtn")
 focus_previous = NodePath("../../HSplitContainer3/SfxVolume")
 mouse_default_cursor_shape = 10
-theme_override_icons/grabber = ExtResource("5_4mmpq")
-theme_override_icons/grabber_highlight = ExtResource("5_4mmpq")
+theme_override_icons/grabber = ExtResource("5_4ul3s")
+theme_override_icons/grabber_highlight = ExtResource("6_whojx")
 theme_override_styles/slider = ExtResource("4_4ul3s")
 theme_override_styles/grabber_area = ExtResource("5_whojx")
 theme_override_styles/grabber_area_highlight = ExtResource("5_whojx")
@@ -199,30 +199,13 @@ layout_mode = 2
 theme_override_constants/separation = 16
 theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
 
-[node name="ReturnBtn" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="ReturnBtn" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("8_keu27")]
 layout_mode = 2
 focus_neighbor_top = NodePath("../HSplitContainer4/VoiceVolume")
 focus_neighbor_bottom = NodePath("../HSplitContainer/MainVolume")
 focus_next = NodePath("../HSplitContainer/MainVolume")
 focus_previous = NodePath("../HSplitContainer4/VoiceVolume")
-theme = ExtResource("2_vii2c")
-button_mask = 0
-texture_normal = ExtResource("8_4mmpq")
-texture_pressed = ExtResource("9_4ul3s")
-texture_focused = ExtResource("10_whojx")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ReturnBtn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "RETURN"
-horizontal_alignment = 1
-vertical_alignment = 1
+label = "RETURN"
 
 [connection signal="drag_ended" from="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainVolume" to="." method="_on_main_volume_drag_ended"]
 [connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainVolume" to="." method="_on_main_volume_value_changed"]

@@ -39,8 +39,9 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 ## Issues
 
-- [ ] there seems to be an issue when using the special a second time
+- [ ] there seems to be an issue when using the special a second time (camera?)
 - [ ] ui sfx on score menu needs time to play (slight delay?)
+- [ ] pause menu background missing
 
 ## Requirements
 
@@ -128,13 +129,14 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] destruction
 	- [x] ui sfx
 	- [ ] post attack sfx
+	- [ ] pitch shifting
 - [ ] add boundries to each level
 - [ ] fill out levels
 - [ ] add vfx
 - [ ] randomize
 	- [ ] spectator comment
 	- [ ] instant replay length
-
+R50 G100 B50
 
 ## Stretch Goals
 - [ ] writing: for the story (just stick with announcers for the jam)
