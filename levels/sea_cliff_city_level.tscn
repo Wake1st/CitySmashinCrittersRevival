@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cqcyaxf3cbqt6"]
+[gd_scene load_steps=23 format=3 uid="uid://cqcyaxf3cbqt6"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_7dsjh"]
 [ext_resource type="PackedScene" uid="uid://bqf8sua8m8w82" path="res://levels/models/seacliffcity_ground.tscn" id="2_hof66"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dvyqojeq1n3xm" path="res://destructables/buildings/unique/building_uni_f.tscn" id="9_deldt"]
 [ext_resource type="PackedScene" uid="uid://cxecnd2at0o1r" path="res://destructables/buildings/unique/building_uni_c.tscn" id="10_1t2h4"]
 [ext_resource type="PackedScene" uid="uid://c4hc1gk6gukco" path="res://destructables/buildings/unique/building_uni_e.tscn" id="11_pkwk6"]
+[ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="12_iuyxh"]
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="12_pkwk6"]
+[ext_resource type="PackedScene" uid="uid://dutrne0g4gwoc" path="res://audio/music/level_music.tscn" id="12_poph2"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/level/countdown_overlay.tscn" id="13_poph2"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/level/hud.tscn" id="14_iuyxh"]
 [ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/level/pause_menu.tscn" id="15_1tms5"]
@@ -75,6 +77,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2216473, 5.1547785, 7.7457
 
 [node name="LevelTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="SpectatorAudio" parent="." instance=ExtResource("12_iuyxh")]
+
+[node name="LevelMusic" parent="." instance=ExtResource("12_poph2")]
 
 [node name="Node" type="CanvasLayer" parent="."]
 

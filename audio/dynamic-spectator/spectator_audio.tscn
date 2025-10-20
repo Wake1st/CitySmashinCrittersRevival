@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cpcf4knm172ab"]
 
-[ext_resource type="Script" uid="uid://b80qiw7ywbwjn" path="res://systems/dynamic-spectator/spectator_audio.gd" id="1_sb8mp"]
+[ext_resource type="Script" uid="uid://b80qiw7ywbwjn" path="res://audio/dynamic-spectator/spectator_audio.gd" id="1_sb8mp"]
 
 [node name="SpectatorAudio" type="AudioStreamPlayer"]
 bus = &"Voice"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5y6nutqjbaxg"]
+[gd_scene load_steps=18 format=3 uid="uid://c5y6nutqjbaxg"]
 
 [ext_resource type="Script" uid="uid://drnyabnrvjydg" path="res://characters/character.gd" id="1_54qew"]
+[ext_resource type="PackedScene" uid="uid://d2mtjsg1co6yi" path="res://audio/sfx/character_sfx.tscn" id="2_b1u1o"]
 [ext_resource type="PackedScene" uid="uid://cg3sbqx7hyxn6" path="res://characters/big_slamma.tscn" id="2_mdkfl"]
 [ext_resource type="PackedScene" uid="uid://dr34yrocsq121" path="res://characters/hit_box.tscn" id="2_qqr4u"]
 [ext_resource type="PackedScene" uid="uid://bpdidtl6tvpva" path="res://systems/special_attack.tscn" id="3_3fwhk"]
@@ -457,6 +458,8 @@ floor_constant_speed = true
 floor_max_angle = 0.6981317
 floor_snap_length = 1.0
 script = ExtResource("1_54qew")
+
+[node name="CharacterSFX" parent="." instance=ExtResource("2_b1u1o")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.701416, 0)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ycmi7iov5vux"]
+[gd_scene load_steps=12 format=3 uid="uid://ycmi7iov5vux"]
 
 [ext_resource type="Script" uid="uid://c31mvqjd7uvqq" path="res://ui/level/score_menu.gd" id="1_xv7ky"]
 [ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="2_7kfo8"]
+[ext_resource type="PackedScene" uid="uid://b8oc3p24hynli" path="res://audio/sfx/ui_sfx.tscn" id="2_774fn"]
 [ext_resource type="PackedScene" uid="uid://ct5fwjfyxld6l" path="res://systems/profile_camera.tscn" id="2_vc7if"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="3_d4see"]
 [ext_resource type="StyleBox" uid="uid://sxwbs5al0nli" path="res://assets/themes/btn_bg_normal.tres" id="4_0h8qq"]
@@ -82,6 +83,8 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="UISFX" parent="." instance=ExtResource("2_774fn")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -361,6 +364,9 @@ text = "NEXT"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="focus_entered" from="MarginContainer/Panel/ButtonContainer/ReplayBtn" to="." method="_handle_focus"]
 [connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/ReplayBtn" to="." method="_on_replay_btn_pressed"]
+[connection signal="focus_entered" from="MarginContainer/Panel/ButtonContainer/MenuBtn" to="." method="_handle_focus"]
 [connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="focus_entered" from="MarginContainer/Panel/ButtonContainer/NextBtn" to="." method="_handle_focus"]
 [connection signal="pressed" from="MarginContainer/Panel/ButtonContainer/NextBtn" to="." method="_on_next_btn_pressed"]

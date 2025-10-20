@@ -4,6 +4,8 @@ extends StaticBody3D
 
 signal destroyed(value: float)
 
+const BUILDING_SFX: PackedScene = preload("uid://chab3hjvn7l6k")
+
 const FALLING_RATE: float = 0.4
 const FALLING_CUTOFF: float = -4.0
 const RUMBLE_AMPLITUDE: float = 0.0024
@@ -13,6 +15,7 @@ const RUMBLE_AMPLITUDE: float = 0.0024
 
 @export var rumble_dampen: float = 0.14
 
+var building_sfx: BuildingSfx
 var starting_position: Vector3
 var rumble_magnitude: float
 var is_collapsing: bool
@@ -31,14 +34,20 @@ func damage(value: float) -> bool:
 	# building is dead
 	if health <= 0:
 		destroyed.emit(cost)
+		building_sfx.crumble()
 		is_collapsing = true
 		return false
 	else:
+		building_sfx.hit()
 		return true
 
 
 func _ready() -> void:
 	starting_position = position
+	
+	# too many variants to manually add
+	building_sfx = BUILDING_SFX.instantiate()
+	add_child(building_sfx)
 
 
 func _process(delta) -> void:

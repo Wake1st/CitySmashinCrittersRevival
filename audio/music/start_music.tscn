@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7od8ymsn0vo6"]
+
+[ext_resource type="Script" uid="uid://bg3jhhspxo0wp" path="res://audio/music/start_music.gd" id="1_bc1jr"]
+
+[sub_resource type="Animation" id="Animation_3l5pp"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ry4bn"]
+resource_name = "fade_in"
+length = 1.8
+step = 0.02
+
+[sub_resource type="Animation" id="Animation_f1ask"]
+resource_name = "fade_out"
+length = 0.8
+step = 0.02
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ry4bn"]
+_data = {
+&"RESET": SubResource("Animation_3l5pp"),
+&"fade_in": SubResource("Animation_ry4bn"),
+&"fade_out": SubResource("Animation_f1ask")
+}
+
+[node name="StartMusic" type="AudioStreamPlayer"]
+volume_db = 10.0
+bus = &"Music"
+script = ExtResource("1_bc1jr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ry4bn")
+}
+
+[connection signal="finished" from="." to="." method="_on_finished"]

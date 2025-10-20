@@ -8,8 +8,9 @@ enum State {
 	SEACLIFF
 }
 
-signal level_selected(state: State)
 signal cancel_selected()
+signal focus_changed()
+signal level_selected(state: State)
 
 @onready var plainsview_option: LevelOption = $PlainsviewOption
 @onready var hilltop_option: LevelOption = $HilltopOption
@@ -70,3 +71,5 @@ func _update_focus(direction: int) -> void:
 	
 	options[current_state].focus()
 	lbl_level.text = options[current_state].level_name.to_upper()
+	
+	focus_changed.emit()

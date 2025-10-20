@@ -17,6 +17,7 @@ enum State {
 @onready var level_timer: Timer = $LevelTimer
 @onready var instant_replay_system: InstantReplaySystem = $InstantReplaySystem
 @onready var spectator_audio: SpectatorAudio = $SpectatorAudio
+@onready var level_music: LevelMusic = $LevelMusic
 
 @onready var hud: HUD = %HUD
 @onready var pause_menu: PauseMenu = %PauseMenu
@@ -62,6 +63,7 @@ func countdown() -> void:
 func start() -> void:
 	level_timer.start(mission.level_time)
 	SpectatorState.current_flags |= SpectatorState.Flags.LEVEL_TIME_FULL
+	level_music.start(3)
 	
 	play()
 
@@ -89,12 +91,18 @@ func special() -> void:
 	spectator_audio.interupt_segment()
 	spectator_audio.pause_when_done()
 	
+	# music
+	level_music.pause()
+	
 	# enter special mode
 	cinematic_frame.frame_on()
 
 
 func finish() -> void:
 	state = State.FINISHED
+	
+	# stop the music
+	level_music.pause()
 	
 	# face the player
 	character.end_level_pose()
@@ -134,6 +142,9 @@ func _physics_process(delta) -> void:
 			
 			# update time display
 			hud.update_time(level_timer.time_left)
+			
+			# music check
+			level_music.check_crescendo(level_timer.time_left)
 			
 			# check power updates when draining
 			if character.special_ready:
@@ -178,6 +189,9 @@ func _end_post_special() -> void:
 		spectator_audio.clear_special_flags()
 		spectator_audio.unpause()
 		spectator_audio.play_next_audio_segment()
+		
+		level_music.unpause()
+		
 		play()
 
 

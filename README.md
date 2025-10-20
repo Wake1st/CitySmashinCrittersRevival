@@ -34,7 +34,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 ## Resources
 
-- [Late Noon Groove](https://tinyurl.com/295qfg5b)
+- [Latte Noon Groove](https://tinyurl.com/256yqa7w)
 - [Big Stomp](https://tinyurl.com/28sqywyn)
 
 ## Issues
