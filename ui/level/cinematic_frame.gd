@@ -7,8 +7,17 @@ extends Control
 @onready var special_timer: Timer = $SpecialTimer
 @onready var drum_delay: Timer = $DrumDelay
 
+var showing_hint: bool
+
+
+func special_hint() -> void:
+	if not showing_hint:
+		showing_hint = true
+		animation_player.play("special_hint")
+
 
 func frame_on() -> void:
+	animation_player.stop()
 	animation_player.play("ease in")
 	special_timer.start()
 
@@ -32,3 +41,5 @@ func _on_drum_delay_timeout() -> void:
 func _on_animation_player_animation_finished(anim_name: String) -> void:
 	if anim_name == "special_out":
 		animation_player.play("show_hint")
+		
+		showing_hint = false

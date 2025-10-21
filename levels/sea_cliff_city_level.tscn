@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cqcyaxf3cbqt6"]
+[gd_scene load_steps=26 format=3 uid="uid://cqcyaxf3cbqt6"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_7dsjh"]
 [ext_resource type="PackedScene" uid="uid://bqf8sua8m8w82" path="res://levels/models/seacliffcity_ground.tscn" id="2_hof66"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/level/score_menu.tscn" id="16_fpg8i"]
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/level/finished_overlay.tscn" id="17_u6tl7"]
 [ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/level/cinematic_frame.tscn" id="18_aa5ik"]
+[ext_resource type="PackedScene" uid="uid://bbulq86lrrdy3" path="res://ui/level/instructions.tscn" id="22_fpg8i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pkwk6"]
 sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)
@@ -45,6 +46,11 @@ metadata/_custom_type_script = "uid://r5e2o1b1h4ks"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iuyxh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.56381077, -0.20834276, 0.7991938, -0.2797001, 0.95864606, 0.052589305, -0.7771006, -0.19388416, -0.5987685, 0, 0, 0)
+light_color = Color(0.91733336, 1, 0.38, 1)
+shadow_enabled = true
 
 [node name="seacliffcity_ground" parent="." instance=ExtResource("2_hof66")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
@@ -117,10 +123,8 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.5638107, -0.20834276, 0.79919374, -0.27970007, 0.9586459, 0.052589294, -0.77710056, -0.1938842, -0.5987684, 0, 0, 0)
-light_color = Color(0.91733336, 1, 0.38, 1)
-shadow_enabled = true
+[node name="Instructions" parent="Node" instance=ExtResource("22_fpg8i")]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]

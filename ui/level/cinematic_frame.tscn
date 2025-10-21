@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://x56m7oe7wwmj"]
+[gd_scene load_steps=13 format=3 uid="uid://x56m7oe7wwmj"]
 
 [ext_resource type="Script" uid="uid://xy4nb2ouo1jj" path="res://ui/level/cinematic_frame.gd" id="1_1t4bl"]
 [ext_resource type="AudioStream" uid="uid://baat7ycstpuu8" path="res://assets/audio/sfx/stomp drum.wav" id="2_8q0vy"]
@@ -86,6 +86,28 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 840)]
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SpecialBackground:color:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SpecialBackground/Label:theme_override_colors/font_color:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_ea3on"]
@@ -186,12 +208,41 @@ tracks/1/keys = {
 "values": [Vector2(0, 284), Vector2(0, 840)]
 }
 
+[sub_resource type="Animation" id="Animation_jk0wj"]
+resource_name = "special_hint"
+length = 0.8
+loop_mode = 1
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpecialBackground:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.05011327, 0.00011561462, 0.7529412, -0.049771693, -0.00036275387, 0.09997772, 0.0007286733, 0.7529412, -0.099999994, 0.00094623934, 0.05009681, -0.00047403574, 0, -0.04970473, -2.3882138e-05, 0.016667489, 8.008397e-06, 0, -0.058757305, 0.0028444007, 0, 0),
+"times": PackedFloat32Array(0, 0.099999994, 0.59999996, 0.7, 0.79999995)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpecialBackground/Label:theme_override_colors/font_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.05011327, 0.003728114, 1, -0.049936265, 0.00073824724, 0.08267118, -0.0012221932, 1, -0.09999958, 0.0042235767, 0.05019605, -0.0021200776, 0, -0.04970473, 0.0020153557, 0.016666628, -0.00067577447, 0, -0.038757324, -0.00014129747, 0, 0),
+"times": PackedFloat32Array(0, 0.099999994, 0.59999996, 0.7, 0.79999995)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1t4bl"]
 _data = {
 &"RESET": SubResource("Animation_1t4bl"),
 &"ease in": SubResource("Animation_ea3on"),
 &"show_hint": SubResource("Animation_kwqu8"),
 &"show_special": SubResource("Animation_72bkb"),
+&"special_hint": SubResource("Animation_jk0wj"),
 &"special_out": SubResource("Animation_8q0vy")
 }
 
@@ -224,6 +275,33 @@ stream = ExtResource("2_8q0vy")
 volume_db = 6.0
 pitch_scale = 0.85
 bus = &"SFX"
+
+[node name="SpecialBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.05882353, 0.101960786, 0.14901961, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="SpecialBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 0)
+theme_override_fonts/font = ExtResource("2_kwqu8")
+theme_override_font_sizes/font_size = 44
+text = "PRESS 'SHIFT' FOR SPECIAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TopFrame" type="ColorRect" parent="."]
 layout_mode = 1

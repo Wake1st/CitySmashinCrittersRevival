@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dkvb0fgb3pxmq"]
+[gd_scene load_steps=35 format=3 uid="uid://dkvb0fgb3pxmq"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_cx31d"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_cjusc"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dl20fcxexbdk2" path="res://destructables/buildings/common/building_com_med_i.tscn" id="24_21n1m"]
 [ext_resource type="PackedScene" uid="uid://smxvsi36xdw0" path="res://destructables/buildings/common/building_com_big_h.tscn" id="26_7ei0b"]
 [ext_resource type="PackedScene" uid="uid://cytbyilrg734w" path="res://destructables/buildings/common/building_com_sml_i.tscn" id="27_o5slf"]
+[ext_resource type="PackedScene" uid="uid://bbulq86lrrdy3" path="res://ui/level/instructions.tscn" id="31_60imy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j47ap"]
 sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)
@@ -161,6 +162,9 @@ metadata/_edit_use_anchors_ = true
 [node name="CinematicFrame" parent="Node" instance=ExtResource("14_rwck1")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Instructions" parent="Node" instance=ExtResource("31_60imy")]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]

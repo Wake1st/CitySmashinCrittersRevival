@@ -1,0 +1,253 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbulq86lrrdy3"]
+
+[ext_resource type="Script" uid="uid://bfwu2f5xk1hal" path="res://ui/level/instructions.gd" id="1_3pyss"]
+[ext_resource type="Texture2D" uid="uid://ctbe0qwp25tsa" path="res://assets/images/menu_bg_1.png" id="1_x63h1"]
+[ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_i0oe4"]
+[ext_resource type="FontFile" uid="uid://c8nxialxb47ff" path="res://assets/fonts/Audiowide/Audiowide-Regular.ttf" id="3_3pyss"]
+
+[sub_resource type="Animation" id="Animation_i0oe4"]
+resource_name = "pop_up"
+length = 0.2
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(900, 0, 0, 0, -667.2027, 0, -0.16, 4.947315, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_3pyss"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(900, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Label:theme_override_colors/font_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8neos"]
+resource_name = "display_hint"
+length = 1.8
+loop_mode = 1
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Label:theme_override_colors/font_color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.08000045, 0.00019372691, 0.100397706, -0.00024312036, 1, -0.09960228, -0.00017732382, 0.19999999, 0.00035606374, 1, -0.19903553, 0.0009982586, 0.100686446, -0.0005049908, 0, -0.098897934, 0.0021468252, 0, 0),
+"times": PackedFloat32Array(0, 0.39999998, 0.59999996, 1.5999999, 1.8)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3pyss"]
+_data = {
+&"RESET": SubResource("Animation_3pyss"),
+&"display_hint": SubResource("Animation_8neos"),
+&"pop_up": SubResource("Animation_i0oe4")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8neos"]
+content_margin_top = 8.0
+bg_color = Color(0.84, 1, 0.19999999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0oe4"]
+content_margin_left = 4.0
+bg_color = Color(0.84, 1, 0.19999999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pyss"]
+bg_color = Color(0.84, 1, 0.19999999, 1)
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3pyss")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3pyss")
+}
+
+[node name="Panel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 900.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.101960786, 0.14901961, 0.7529412)
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -420.0
+offset_right = 600.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x63h1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 110
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Label" type="Label" parent="Panel/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_i0oe4")
+theme_override_font_sizes/font_size = 72
+text = "INSTRUCTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxFlat_8neos")
+
+[node name="Label2" type="Label" parent="Panel/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_3pyss")
+theme_override_font_sizes/font_size = 44
+text = "GOALS"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 36
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TextureRect/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_i0oe4")
+
+[node name="Label4" type="Label" parent="Panel/TextureRect/MarginContainer/VBoxContainer/HSplitContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_3pyss")
+theme_override_font_sizes/font_size = 26
+text = "Cause as much destruction as possible before the timer runs out. Destruction is gained by attacking buildings till they collapse. When enough damage is done, use the special ability to create maximum destruction."
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Panel/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_3pyss")
+theme_override_font_sizes/font_size = 44
+text = "CONTROLS"
+
+[node name="HSplitContainer2" type="HBoxContainer" parent="Panel/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TextureRect/MarginContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 36
+theme_override_styles/separator = SubResource("StyleBoxFlat_3pyss")
+
+[node name="Label5" type="Label" parent="Panel/TextureRect/MarginContainer/VBoxContainer/HSplitContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_3pyss")
+theme_override_font_sizes/font_size = 26
+text = "Movement
+Rotation
+Attack
+Special"
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/TextureRect/MarginContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 56
+theme_override_styles/separator = SubResource("StyleBoxFlat_3pyss")
+
+[node name="Label6" type="Label" parent="Panel/TextureRect/MarginContainer/VBoxContainer/HSplitContainer2"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_3pyss")
+theme_override_font_sizes/font_size = 26
+text = "WASD / arrow keys
+Q / E keys
+space
+shift"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.2
+offset_top = 672.0
+offset_bottom = 672.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.096800014, 0.88, 0.29259998, 0)
+theme_override_fonts/font = ExtResource("2_i0oe4")
+theme_override_font_sizes/font_size = 44
+text = "PRESS 'ESC' TO CONTINUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

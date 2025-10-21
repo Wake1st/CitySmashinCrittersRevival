@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b77ra4n6ajjgj"]
+[gd_scene load_steps=13 format=3 uid="uid://b77ra4n6ajjgj"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="3_rtcij"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/level/score_menu.tscn" id="8_ukwr8"]
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/level/finished_overlay.tscn" id="9_rtcij"]
 [ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/level/cinematic_frame.tscn" id="11_pb8y7"]
+[ext_resource type="PackedScene" uid="uid://bbulq86lrrdy3" path="res://ui/level/instructions.tscn" id="12_hy0rb"]
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_xb4v1")
@@ -47,6 +48,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="CinematicFrame" parent="Node" instance=ExtResource("11_pb8y7")]
+unique_name_in_owner = true
+
+[node name="Instructions" parent="Node" instance=ExtResource("12_hy0rb")]
 unique_name_in_owner = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
