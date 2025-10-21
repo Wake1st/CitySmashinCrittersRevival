@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cqcyaxf3cbqt6"]
+[gd_scene load_steps=25 format=3 uid="uid://cqcyaxf3cbqt6"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_7dsjh"]
 [ext_resource type="PackedScene" uid="uid://bqf8sua8m8w82" path="res://levels/models/seacliffcity_ground.tscn" id="2_hof66"]
+[ext_resource type="PackedScene" uid="uid://chxvseeg6fv5a" path="res://levels/boundaries.tscn" id="3_1tms5"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="3_wfnib"]
 [ext_resource type="PackedScene" uid="uid://d1p7a8pryskly" path="res://destructables/buildings/unique/building_uni_g.tscn" id="4_tcbtp"]
 [ext_resource type="PackedScene" uid="uid://dy4tsxpytht7s" path="res://destructables/buildings/unique/building_uni_b.tscn" id="5_r6e60"]
@@ -47,6 +48,8 @@ environment = SubResource("Environment_iuyxh")
 
 [node name="seacliffcity_ground" parent="." instance=ExtResource("2_hof66")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
+
+[node name="Boundaries" parent="." instance=ExtResource("3_1tms5")]
 
 [node name="Character" parent="." instance=ExtResource("3_wfnib")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.459312, 0.60162574, 13.23703)

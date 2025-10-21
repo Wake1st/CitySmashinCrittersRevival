@@ -12,7 +12,8 @@ enum SingleFlags {
 const HALF_TIME: float = 0.5
 const ALMOST_TIME: float = 0.1
 
-const DOWNTIME: float = 3.2
+const DOWNTIME_MIN: float = 2.2
+const DOWNTIME_MAX: float = 4.6
 
 @onready var timer: Timer = $Timer
 
@@ -41,7 +42,7 @@ func play_next_audio_segment() -> void:
 	if stream:
 		play()
 	else:
-		timer.start(DOWNTIME)
+		timer.start(randf_range(DOWNTIME_MIN, DOWNTIME_MAX))
 
 
 func interupt_segment() -> void:

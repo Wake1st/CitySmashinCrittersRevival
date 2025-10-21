@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://dkvb0fgb3pxmq"]
+[gd_scene load_steps=34 format=3 uid="uid://dkvb0fgb3pxmq"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_cx31d"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_cjusc"]
+[ext_resource type="PackedScene" uid="uid://chxvseeg6fv5a" path="res://levels/boundaries.tscn" id="2_g6ctc"]
 [ext_resource type="PackedScene" uid="uid://bui8pcpdmysge" path="res://levels/models/plainsview_ground.tscn" id="2_u40pl"]
 [ext_resource type="PackedScene" uid="uid://c4hc1gk6gukco" path="res://destructables/buildings/unique/building_uni_e.tscn" id="5_2e7c1"]
 [ext_resource type="PackedScene" uid="uid://dy4tsxpytht7s" path="res://destructables/buildings/unique/building_uni_b.tscn" id="5_ecacx"]
@@ -51,12 +52,18 @@ metadata/_custom_type_script = "uid://r5e2o1b1h4ks"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gaxeu")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.91733336, 1, 0.38, 1)
+shadow_enabled = true
+
 [node name="plainsview_ground" parent="." instance=ExtResource("2_u40pl")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
+[node name="Boundaries" parent="." instance=ExtResource("2_g6ctc")]
+
 [node name="Character" parent="." instance=ExtResource("2_cjusc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.246394, 0.40138268, 11.279823)
-special_cost = 10.0
 
 [node name="Destructables" type="Node3D" parent="."]
 
@@ -154,11 +161,6 @@ metadata/_edit_use_anchors_ = true
 [node name="CinematicFrame" parent="Node" instance=ExtResource("14_rwck1")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(0.91733336, 1, 0.38, 1)
-shadow_enabled = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://clgswhp85jlim"]
+[gd_scene load_steps=22 format=3 uid="uid://clgswhp85jlim"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_46jfc"]
 [ext_resource type="PackedScene" uid="uid://bdaq3xll7lesr" path="res://levels/models/hilltoptown_ground.tscn" id="2_llss2"]
+[ext_resource type="PackedScene" uid="uid://chxvseeg6fv5a" path="res://levels/boundaries.tscn" id="3_17lmw"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="3_cw8ye"]
 [ext_resource type="PackedScene" uid="uid://cn5qifuwodakn" path="res://destructables/buildings/unique/building_uni_a.tscn" id="4_ehu5d"]
 [ext_resource type="PackedScene" uid="uid://cxecnd2at0o1r" path="res://destructables/buildings/unique/building_uni_c.tscn" id="5_8wyfq"]
@@ -41,6 +42,8 @@ environment = SubResource("Environment_lb1k2")
 
 [node name="hilltoptown_ground" parent="." instance=ExtResource("2_llss2")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
+
+[node name="Boundaries" parent="." instance=ExtResource("3_17lmw")]
 
 [node name="Character" parent="." instance=ExtResource("3_cw8ye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.558133, 1.8869939, 10.670593)
