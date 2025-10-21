@@ -18,6 +18,7 @@ enum State {
 @onready var instant_replay_system: InstantReplaySystem = $InstantReplaySystem
 @onready var spectator_audio: SpectatorAudio = $SpectatorAudio
 @onready var level_music: LevelMusic = $LevelMusic
+@onready var post_special_sfx: AudioStreamPlayer = $PostSpecialSFX
 
 @onready var hud: HUD = %HUD
 @onready var pause_menu: PauseMenu = %PauseMenu
@@ -34,7 +35,7 @@ var score: Score = Score.new()
 func setup(miss: Mission, reset_level: Callable, next_level: Callable, exit_level: Callable) -> void:
 	state = State.SETUP
 	mission = miss
-	character.spectator_audio = spectator_audio
+	character.setup(spectator_audio)
 	
 	character.power_updated.connect(hud.update_power)
 	character.special_activated.connect(_handle_special_activated)
@@ -176,6 +177,7 @@ func _handle_replay_finished() -> void:
 	state = State.POST_SPECIAL
 	character.post_special()
 	cinematic_frame.show_hint()
+	post_special_sfx.play()
 
 func _end_post_special() -> void:
 	# disable special stuff
@@ -186,6 +188,7 @@ func _end_post_special() -> void:
 	if mission.check_completion(score):
 		finish()
 	else:
+		SpectatorState.clear_all_flags()
 		spectator_audio.clear_special_flags()
 		spectator_audio.unpause()
 		spectator_audio.play_next_audio_segment()

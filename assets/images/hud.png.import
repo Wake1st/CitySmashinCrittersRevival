@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/images/hud.png.import
 uid="uid://b8tcbwvf2xu5y"
 path="res://.godot/imported/hud.png-c1eae29d34fa19f16c09096e0cb82289.ctex"
+========
+uid="uid://d0s6epw7qn7a1"
+path="res://.godot/imported/slamma.png-482093b9769539771d11d5b4f9bd94ba.ctex"
+>>>>>>>> 4f6de9a14648dd454d92afedc6b630bd1975f858:assets/images/slamma.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/images/hud.png.import
 source_file="res://assets/images/hud.png"
 dest_files=["res://.godot/imported/hud.png-c1eae29d34fa19f16c09096e0cb82289.ctex"]
+========
+source_file="res://assets/images/slamma.png"
+dest_files=["res://.godot/imported/slamma.png-482093b9769539771d11d5b4f9bd94ba.ctex"]
+>>>>>>>> 4f6de9a14648dd454d92afedc6b630bd1975f858:assets/images/slamma.png.import
 
 [params]
 

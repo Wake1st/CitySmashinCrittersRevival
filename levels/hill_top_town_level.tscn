@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://clgswhp85jlim"]
+[gd_scene load_steps=21 format=3 uid="uid://clgswhp85jlim"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_46jfc"]
 [ext_resource type="PackedScene" uid="uid://bdaq3xll7lesr" path="res://levels/models/hilltoptown_ground.tscn" id="2_llss2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="9_p3idi"]
 [ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="9_vtyh4"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/level/countdown_overlay.tscn" id="10_lb1k2"]
+[ext_resource type="AudioStream" uid="uid://sqkrs23mxclq" path="res://assets/audio/sfx/block.wav" id="11_17lmw"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/level/hud.tscn" id="11_vtyh4"]
 [ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/level/pause_menu.tscn" id="12_17lmw"]
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/level/score_menu.tscn" id="13_4txpn"]
@@ -42,7 +43,7 @@ environment = SubResource("Environment_lb1k2")
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
 [node name="Character" parent="." instance=ExtResource("3_cw8ye")]
-transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, -13.225298, 0.48172283, -11.821329)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.558133, 1.8869939, 10.670593)
 
 [node name="Destructables" type="Node3D" parent="."]
 
@@ -66,6 +67,11 @@ one_shot = true
 [node name="SpectatorAudio" parent="." instance=ExtResource("9_vtyh4")]
 
 [node name="LevelMusic" parent="." instance=ExtResource("9_lb1k2")]
+
+[node name="PostSpecialSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_17lmw")
+volume_db = 4.0
+bus = &"SFX"
 
 [node name="Node" type="CanvasLayer" parent="."]
 

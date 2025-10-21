@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/images/menu_bg_1.png.import
 uid="uid://ctbe0qwp25tsa"
 path="res://.godot/imported/menu_bg_1.png-24fc9944b0c2d7fef0b0caaf6077025e.ctex"
+========
+uid="uid://cn56wvw5n8q0f"
+path="res://.godot/imported/stomp.png-2c742767a6771507f045be43dba9bdf9.ctex"
+>>>>>>>> 4f6de9a14648dd454d92afedc6b630bd1975f858:assets/images/stomp.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/images/menu_bg_1.png.import
 source_file="res://assets/images/menu_bg_1.png"
 dest_files=["res://.godot/imported/menu_bg_1.png-24fc9944b0c2d7fef0b0caaf6077025e.ctex"]
+========
+source_file="res://assets/images/stomp.png"
+dest_files=["res://.godot/imported/stomp.png-2c742767a6771507f045be43dba9bdf9.ctex"]
+>>>>>>>> 4f6de9a14648dd454d92afedc6b630bd1975f858:assets/images/stomp.png.import
 
 [params]
 
