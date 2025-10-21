@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dkvb0fgb3pxmq"]
+[gd_scene load_steps=33 format=3 uid="uid://dkvb0fgb3pxmq"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_cx31d"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_cjusc"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bkxw6840nvc4m" path="res://destructables/buildings/common/building_com_med_c.tscn" id="22_gawcb"]
 [ext_resource type="PackedScene" uid="uid://dutrne0g4gwoc" path="res://audio/music/level_music.tscn" id="22_tbpxm"]
 [ext_resource type="PackedScene" uid="uid://bpsnqjwyacyua" path="res://destructables/buildings/common/building_com_sml_b.tscn" id="23_fwv7x"]
+[ext_resource type="AudioStream" uid="uid://sqkrs23mxclq" path="res://assets/audio/sfx/block.wav" id="23_muaku"]
 [ext_resource type="PackedScene" uid="uid://dl20fcxexbdk2" path="res://destructables/buildings/common/building_com_med_i.tscn" id="24_21n1m"]
 [ext_resource type="PackedScene" uid="uid://smxvsi36xdw0" path="res://destructables/buildings/common/building_com_big_h.tscn" id="26_7ei0b"]
 [ext_resource type="PackedScene" uid="uid://cytbyilrg734w" path="res://destructables/buildings/common/building_com_sml_i.tscn" id="27_o5slf"]
@@ -55,6 +56,7 @@ transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
 [node name="Character" parent="." instance=ExtResource("2_cjusc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.246394, 0.40138268, 11.279823)
+special_cost = 10.0
 
 [node name="Destructables" type="Node3D" parent="."]
 
@@ -121,6 +123,11 @@ one_shot = true
 [node name="SpectatorAudio" parent="." instance=ExtResource("21_u77vd")]
 
 [node name="LevelMusic" parent="." instance=ExtResource("22_tbpxm")]
+
+[node name="PostSpecialSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_muaku")
+volume_db = 4.0
+bus = &"SFX"
 
 [node name="Node" type="CanvasLayer" parent="."]
 

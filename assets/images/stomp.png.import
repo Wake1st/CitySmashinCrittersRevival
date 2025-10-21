@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdjmvb44u0sdw"
-path="res://.godot/imported/CSC - stomp.png-f0b67e3ecf3f607b2ab4e123c4031081.ctex"
+uid="uid://cn56wvw5n8q0f"
+path="res://.godot/imported/stomp.png-2c742767a6771507f045be43dba9bdf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/CSC - stomp.png"
-dest_files=["res://.godot/imported/CSC - stomp.png-f0b67e3ecf3f607b2ab4e123c4031081.ctex"]
+source_file="res://assets/images/stomp.png"
+dest_files=["res://.godot/imported/stomp.png-2c742767a6771507f045be43dba9bdf9.ctex"]
 
 [params]
 

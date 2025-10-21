@@ -154,20 +154,22 @@ func _special_activated() -> void:
 	# start chain of animations
 	big_slamma.off()
 	camera_animations.play("special_focus")
-	character_sfx.stomp()
 	
 	# face character forward
 	pivot.rotation.y = 0
 
 
-func _special_charge() -> void:
+func _special_jump() -> void:
 	character_animations.play("slamma_stomp")
 	camera_animations.play("special_charging")
+	character_sfx.activate()
 
 
 func _special_fire() -> void:
 	special_attack.attack()
 	special_fired.emit(special_attack.destructables)
+	
+	character_sfx.stomp()
 
 
 func _reset_special() -> void:
@@ -181,12 +183,13 @@ func _on_drain_timer_timeout() -> void:
 	# failed to activate
 	_reset_special()
 	camera_animations.play_backwards("special_ready")
+	character_sfx.fail()
 	SpectatorState.current_flags |= SpectatorState.Flags.SPECIAL_FAILED
 
 
 func _on_camera_animations_animation_finished(anim_name):
 	if anim_name == "special_focus":
-		_special_charge()
+		_special_jump()
 	elif anim_name == "special_charging":
 		_special_fire()
 

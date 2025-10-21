@@ -39,8 +39,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 ## Issues
 
-- [ ] there seems to be an issue when using the special a second time
-- [ ] ui sfx on score menu needs time to play (slight delay?)
+- ui sfx on score menu needs time to play (slight delay?)
 
 ## Requirements
 
@@ -122,21 +121,22 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] final shot is far above, high FOV, focused on the path of destruction
 	- [x] after final shot, camera zips to characer with correct FOV
 	- [x] sfx, a shockwave
+	- [x] special name is displayed in big words while the announcers sound out the name
 	- [ ] vfx, bubble
-	- [ ] special name is displayed in big words while the announcers sound out the name
-- [ ] sfx: 
+- [x] sfx: 
 	- [x] destruction
 	- [x] ui sfx
-	- [ ] post attack sfx
+	- [x] post attack sfx
+- [ ] add vfx
 - [ ] add boundries to each level
 - [ ] fill out levels
-- [ ] add vfx
 - [ ] randomize
 	- [ ] spectator comment
 	- [ ] instant replay length
-
+- [ ] add credits
 
 ## Stretch Goals
+
 - [ ] writing: for the story (just stick with announcers for the jam)
 	- [ ] authoritarian government, monster to fight the tyrany
 	- [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
@@ -179,9 +179,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 		- [ ] quick attacks: chops shapped like an axe
 		- [ ] fast movement: cartwheels!
 		- [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
-- [x] score system: score = damage / time
+- [ ] score system: score = damage / time
 	- [ ] ranking system
 - [ ] mission types
-	- [x] quota: cause a number of damage before timer runs out
-	- [x] timed: destroy as much as possible in the given time
 	- [ ] target: destroy a specific target before the timer runs out

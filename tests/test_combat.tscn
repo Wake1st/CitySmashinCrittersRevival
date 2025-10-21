@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://s4xp23xf8ip1"]
+[gd_scene load_steps=6 format=3 uid="uid://s4xp23xf8ip1"]
 
 [ext_resource type="Script" uid="uid://13r1rbcgnjsa" path="res://tests/test_combat.gd" id="1_4lgrw"]
 [ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_ec73p"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_xwni2"]
+[ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="3_uifw1"]
 [ext_resource type="PackedScene" uid="uid://b8ee0g43b4tny" path="res://destructables/buildings/common/building_com_big_a.tscn" id="4_4lgrw"]
 
 [node name="TestCombat" type="Node"]
 script = ExtResource("1_4lgrw")
 
 [node name="TestEnvironment" parent="." instance=ExtResource("1_ec73p")]
+
+[node name="SpectatorAudio" parent="." instance=ExtResource("3_uifw1")]
 
 [node name="Character" parent="." instance=ExtResource("2_xwni2")]
 

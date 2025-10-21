@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwuwdrjwerrjq"
-path="res://.godot/imported/CSC - slamma.png-029fb4080af18622efd8146dba95f216.ctex"
+uid="uid://d0s6epw7qn7a1"
+path="res://.godot/imported/slamma.png-482093b9769539771d11d5b4f9bd94ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/CSC - slamma.png"
-dest_files=["res://.godot/imported/CSC - slamma.png-029fb4080af18622efd8146dba95f216.ctex"]
+source_file="res://assets/images/slamma.png"
+dest_files=["res://.godot/imported/slamma.png-482093b9769539771d11d5b4f9bd94ba.ctex"]
 
 [params]
 
