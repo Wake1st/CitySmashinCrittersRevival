@@ -8,7 +8,7 @@ func _input(event: InputEvent) -> void:
 	levels_menu.input(event)
 
 
-func _on_levels_menu_selection(state: LevelsMenu.State):
+func _on_levels_menu_level_selected(state: LevelsMenu.State) -> void:
 	print("int: %s" % state)
 	
 	match state:

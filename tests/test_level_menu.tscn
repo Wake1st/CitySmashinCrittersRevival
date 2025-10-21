@@ -16,4 +16,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07886052, 0)
 transform = Transform3D(1, 0, 0, 0, 0.21195592, 0.97727925, 0, -0.97727925, 0.21195592, 0, 31.698364, 7.727087)
 fov = 20.0
 
-[connection signal="selection" from="LevelsMenu" to="." method="_on_levels_menu_selection"]
+[connection signal="level_selected" from="LevelsMenu" to="." method="_on_levels_menu_level_selected"]

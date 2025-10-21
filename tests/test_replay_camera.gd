@@ -8,7 +8,7 @@ extends Node
 
 
 func _ready() -> void:
-	replay_camera.setup(settings)
+	replay_camera.setup(settings, Vector3.ZERO)
 	
 	replay_camera.recording_finished.connect(_handle_recording_finished)
 	replay_camera.playback_finished.connect(_handle_playback_finished)

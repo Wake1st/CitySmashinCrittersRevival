@@ -31,6 +31,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 ## Special Thanks
 
 - [Universal Transition Shader](https://github.com/cashew-olddew/Universal-Transition-Shader)
+- [Shield Shader with Intersection Highlight](https://godotshaders.com/shader/shield-shader-with-intersection-highlight/)
 
 ## Resources
 
