@@ -44,19 +44,19 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 ## Requirements
 
 - [x] character controller: locked axis translation in xz-plane, camera rotate in 90 degree pivots (4 angles)
-  - [x] WASD/arrow keys for movement
-  - [x] Q,E keys for turning
-  - [x] space key for attacking
+	- [x] WASD/arrow keys for movement
+	- [x] Q,E keys for turning
+	- [x] space key for attacking
 - [x] buildings: need 3d mesh that jiggles, hit box, health
-  - [x] area 3d for collision
-  - [x] adjust health function
-  - [x] wobbles
+	- [x] area 3d for collision
+	- [x] adjust health function
+	- [x] wobbles
 - [x] attack/health: critter can strike buildings, buildings crumble when health passes zero
-  - [x] upon contact, health is deducted from destructable
+	- [x] upon contact, health is deducted from destructable
 - [x] HUD UI: avatar, power level, time, damage
-  - [x] time in top right
-  - [x] damage under the time
-  - [x] power bar starting in top left, stretching across the middle, doesn't hit the right
+	- [x] time in top right
+	- [x] damage under the time
+	- [x] power bar starting in top left, stretching across the middle, doesn't hit the right
 - [x] voice acting: sports commentors (facts and feels)
   - [x] facts - Desmond Wallace (Gene Okerlund): give statistics, more factual and clear innuciated
   - [x] feels - Pat Sullivan (John Madden): loosy goosy, "psychological" factor

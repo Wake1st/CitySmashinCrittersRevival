@@ -21,10 +21,10 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	# set initial volume values
-	main_volume.value = UserData.mainVolume
-	music_volume.value = UserData.musicVolume
-	sfx_volume.value = UserData.sfxVolume
-	voice_volume.value = UserData.voiceVolume
+	main_volume.value = 1 # UserData.mainVolume 
+	music_volume.value = 1 # UserData.musicVolume
+	sfx_volume.value = 1 # UserData.sfxVolume
+	voice_volume.value = 1 # UserData.voiceVolume
 
 
 func _process(_delta: float) -> void:

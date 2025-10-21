@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ckfydae2m64ps" path="res://assets/images/slide_icon_normal.png" id="5_4ul3s"]
 [ext_resource type="StyleBox" uid="uid://djh5fvhpsx5wu" path="res://assets/themes/slider_area.tres" id="5_whojx"]
 [ext_resource type="Texture2D" uid="uid://sxbnldx580ch" path="res://assets/images/slide_icon_highlight.png" id="6_whojx"]
-[ext_resource type="PackedScene" uid="uid://2pn552x78q4r" path="res://ui/level/ui_button.tscn" id="8_keu27"]
+[ext_resource type="PackedScene" path="res://ui/level/ui_button.tscn" id="8_keu27"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ejwgg"]
 color = Color(0.87492, 0.8556, 0.92, 1)
