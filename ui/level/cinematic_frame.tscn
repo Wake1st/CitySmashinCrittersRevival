@@ -154,7 +154,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 2),
 "points": PackedFloat32Array(840, -0.25, 0, 0.5866796, 0.008605957, 840.0084, -0.12940612, 0.027153468, 0.13933015, -0.02923584, 284, 0, 516.84155, 0.23955536, -0.013458252, 284, -0.50044465, 0.0066223145, 0, 0),
-"times": PackedFloat32Array(0, 0.89, 1.05, 2)
+"times": PackedFloat32Array(0, 0.94, 1.0999999, 2)
 }
 
 [sub_resource type="Animation" id="Animation_8q0vy"]
@@ -215,7 +215,7 @@ wait_time = 3.04
 one_shot = true
 
 [node name="DrumDelay" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.31
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DrumDelay"]
@@ -273,7 +273,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 840.0083
+offset_bottom = 840.00854
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("4_72bkb")

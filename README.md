@@ -39,8 +39,6 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 ## Issues
 
-- ui sfx on score menu needs time to play (slight delay?)
-
 ## Requirements
 
 - [x] character controller: locked axis translation in xz-plane, camera rotate in 90 degree pivots (4 angles)
