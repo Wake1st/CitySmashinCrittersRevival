@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://x56m7oe7wwmj"]
+[gd_scene load_steps=12 format=3 uid="uid://x56m7oe7wwmj"]
 
 [ext_resource type="Script" uid="uid://xy4nb2ouo1jj" path="res://ui/level/cinematic_frame.gd" id="1_1t4bl"]
+[ext_resource type="AudioStream" uid="uid://baat7ycstpuu8" path="res://assets/audio/sfx/stomp drum.wav" id="2_8q0vy"]
 [ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="2_kwqu8"]
+[ext_resource type="Texture2D" uid="uid://d0s6epw7qn7a1" path="res://assets/images/slamma.png" id="3_6ap6v"]
+[ext_resource type="Texture2D" uid="uid://cn56wvw5n8q0f" path="res://assets/images/stomp.png" id="4_72bkb"]
 
 [sub_resource type="Animation" id="Animation_1t4bl"]
 length = 0.001
@@ -37,6 +40,52 @@ tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Slamma:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(-840, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Stomp:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(840, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Slamma:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -840)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Stomp:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 840)]
 }
 
 [sub_resource type="Animation" id="Animation_ea3on"]
@@ -81,11 +130,69 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.6, 1.4, 1.8000001)
 }
 
+[sub_resource type="Animation" id="Animation_72bkb"]
+resource_name = "show_special"
+length = 2.0
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slamma:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(-840, -0.25, 0, 0.12, 0.27294922, -250, 0, -445.27014, 0.40000004, -0.0049438477, -250, -0.49868584, 0.005279541, 0, 0),
+"times": PackedFloat32Array(0, 0.19999999, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stomp:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 2),
+"points": PackedFloat32Array(840, -0.25, 0, 0.5866796, 0.008605957, 840.0084, -0.12940612, 0.027153468, 0.13933015, -0.02923584, 284, 0, 516.84155, 0.23955536, -0.013458252, 284, -0.50044465, 0.0066223145, 0, 0),
+"times": PackedFloat32Array(0, 0.83, 0.98999995, 2)
+}
+
+[sub_resource type="Animation" id="Animation_8q0vy"]
+resource_name = "special_out"
+length = 0.01
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slamma:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -250), Vector2(0, -840)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stomp:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 284), Vector2(0, 840)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1t4bl"]
 _data = {
 &"RESET": SubResource("Animation_1t4bl"),
 &"ease in": SubResource("Animation_ea3on"),
-&"show_hint": SubResource("Animation_kwqu8")
+&"show_hint": SubResource("Animation_kwqu8"),
+&"show_special": SubResource("Animation_72bkb"),
+&"special_out": SubResource("Animation_8q0vy")
 }
 
 [node name="CinematicFrame" type="Control"]
@@ -102,6 +209,21 @@ script = ExtResource("1_1t4bl")
 libraries = {
 &"": SubResource("AnimationLibrary_1t4bl")
 }
+
+[node name="SpecialTimer" type="Timer" parent="."]
+wait_time = 3.04
+one_shot = true
+
+[node name="DrumDelay" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DrumDelay"]
+unique_name_in_owner = true
+stream = ExtResource("2_8q0vy")
+volume_db = 6.0
+pitch_scale = 0.86
+bus = &"SFX"
 
 [node name="TopFrame" type="ColorRect" parent="."]
 layout_mode = 1
@@ -136,3 +258,26 @@ text = "PRESS 'SPACE' WHEN READY"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Slamma" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -840.0
+grow_horizontal = 2
+texture = ExtResource("3_6ap6v")
+
+[node name="Stomp" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 840.0083
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_72bkb")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="SpecialTimer" to="." method="_on_special_timer_timeout"]
+[connection signal="timeout" from="DrumDelay" to="." method="_on_drum_delay_timeout"]

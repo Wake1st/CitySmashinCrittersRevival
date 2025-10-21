@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dp3mk8fha5mv7" path="res://tests/test_replay_system.gd" id="1_f846r"]
 [ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_kwjbp"]
 [ext_resource type="PackedScene" uid="uid://cuxp1tk3ucica" path="res://destructables/building.tscn" id="2_wfctk"]
-[ext_resource type="PackedScene" uid="uid://bpdidtl6tvpva" path="res://systems/special_attack.tscn" id="3_wfctk"]
+[ext_resource type="PackedScene" uid="uid://bpdidtl6tvpva" path="res://systems/special_attack/special_attack.tscn" id="3_wfctk"]
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="4_wn3tb"]
 
 [node name="TestReplaySystem" type="Node"]

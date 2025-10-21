@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cqcyaxf3cbqt6"]
+[gd_scene load_steps=24 format=3 uid="uid://cqcyaxf3cbqt6"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_7dsjh"]
 [ext_resource type="PackedScene" uid="uid://bqf8sua8m8w82" path="res://levels/models/seacliffcity_ground.tscn" id="2_hof66"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="12_pkwk6"]
 [ext_resource type="PackedScene" uid="uid://dutrne0g4gwoc" path="res://audio/music/level_music.tscn" id="12_poph2"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/level/countdown_overlay.tscn" id="13_poph2"]
+[ext_resource type="AudioStream" uid="uid://sqkrs23mxclq" path="res://assets/audio/sfx/block.wav" id="14_1tms5"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/level/hud.tscn" id="14_iuyxh"]
 [ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/level/pause_menu.tscn" id="15_1tms5"]
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/level/score_menu.tscn" id="16_fpg8i"]
@@ -81,6 +82,11 @@ one_shot = true
 [node name="SpectatorAudio" parent="." instance=ExtResource("12_iuyxh")]
 
 [node name="LevelMusic" parent="." instance=ExtResource("12_poph2")]
+
+[node name="PostSpecialSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_1tms5")
+volume_db = 4.0
+bus = &"SFX"
 
 [node name="Node" type="CanvasLayer" parent="."]
 

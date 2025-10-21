@@ -67,7 +67,7 @@ const WALLY_SPECIAL_HALF_CHARGE = preload("uid://jlvjfgj411jq")
 const WALLY_SPECIAL_READY = preload("uid://kk3fm6cqcpbh")
 const WALLY_SPECIAL_HALF_EMPTY = preload("uid://phul3lqbcceu")
 const WALLY_SPECIAL_FAILURE = preload("uid://cmmwukbr7ooux")
-const SLAMMA_STOMP = preload("uid://sm677tgda8kg")
+const SLAMMA_STOMP = preload("uid://bbeu0bw1eiesb")
 
 const PAT_WRAP_UP_FAIL_1 = preload("uid://d147b26fmbetx")
 const PAT_WRAP_UP_FAIL_2 = preload("uid://bmsuoxhthybf3")
@@ -77,8 +77,6 @@ const WALLY_WRAP_UP_PASS_1 = preload("uid://b2rqn15ihcul7")
 const WALLY_WRAP_UP_PASS_2 = preload("uid://c0r2nygy7lkd6")
 const WALLY_WRAP_UP_FAIL_1 = preload("uid://bfbwkxamtngsu")
 const WALLY_WRAP_UP_FAIL_2 = preload("uid://cyfjcnuwq1s8b")
-
-const WALLY_WRAP_UP_1 = preload("uid://bo0727pnjpeui")
 
 enum Flags {
 	INTRO = 1 << 0,
@@ -105,6 +103,10 @@ enum Announcers {
 
 static var current_flags: int = 0
 static var current_announcer: Announcers = Announcers.PAT
+
+
+static func clear_all_flags() -> void:
+	current_flags = 0
 
 
 static func get_next_sound() -> AudioStreamWAV:

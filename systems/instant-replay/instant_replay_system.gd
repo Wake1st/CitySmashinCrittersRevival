@@ -50,6 +50,8 @@ func _teardown() -> void:
 	for camera: ReplayCamera in get_children():
 		camera.queue_free()
 	camara_count = 0
+	recorded_counter = 0
+	playback_index = 0
 
 
 func _handle_camera_recording_finished() -> void:
