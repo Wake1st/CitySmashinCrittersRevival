@@ -26,9 +26,9 @@ tracks/1/path = NodePath("TopFrame:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(-168, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-180, 0, 0, 0.00016666666, 0, -180, -0.00016666666, 2.0000002, 0, 0),
+"times": PackedFloat32Array(0, 0.0009999999)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -110,7 +110,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(-168, 0, 0, 0, 169.56041, 0, -0.2, 0, 0.2, 0),
+"points": PackedFloat32Array(-180, 0, 0, 0.06666667, 30.000002, 0, -0.2, 0, 0.2, 0),
 "times": PackedFloat32Array(0, 0.4)
 }
 
@@ -154,7 +154,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 2),
 "points": PackedFloat32Array(840, -0.25, 0, 0.5866796, 0.008605957, 840.0084, -0.12940612, 0.027153468, 0.13933015, -0.02923584, 284, 0, 516.84155, 0.23955536, -0.013458252, 284, -0.50044465, 0.0066223145, 0, 0),
-"times": PackedFloat32Array(0, 0.83, 0.98999995, 2)
+"times": PackedFloat32Array(0, 0.89, 1.05, 2)
 }
 
 [sub_resource type="Animation" id="Animation_8q0vy"]
@@ -222,14 +222,14 @@ one_shot = true
 unique_name_in_owner = true
 stream = ExtResource("2_8q0vy")
 volume_db = 6.0
-pitch_scale = 0.86
+pitch_scale = 0.85
 bus = &"SFX"
 
 [node name="TopFrame" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = -168.0
+offset_top = -180.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 1)
 
@@ -239,7 +239,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 168.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 1)

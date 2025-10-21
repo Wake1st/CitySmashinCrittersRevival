@@ -12,8 +12,8 @@ func _ready() -> void:
 
 
 func _handle_resume() -> void:
-	print("resumed")
+	print("resume selected")
 
 
 func _handle_menu() -> void:
-	print("menu")
+	print("menu selected")

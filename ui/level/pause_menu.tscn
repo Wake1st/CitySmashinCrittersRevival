@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://h5ooflav8yup"]
+[gd_scene load_steps=12 format=3 uid="uid://h5ooflav8yup"]
 
 [ext_resource type="Script" uid="uid://bet2ludr1wqmx" path="res://ui/level/pause_menu.gd" id="1_50142"]
 [ext_resource type="PackedScene" uid="uid://b8oc3p24hynli" path="res://audio/sfx/ui_sfx.tscn" id="2_6bm6f"]
 [ext_resource type="FontFile" uid="uid://b354cldnji4jc" path="res://assets/fonts/Quantico/Quantico-BoldItalic.ttf" id="2_avurv"]
-[ext_resource type="Theme" uid="uid://bdukti3wo6tch" path="res://assets/themes/ui_menu_theme.tres" id="3_fob5h"]
-[ext_resource type="StyleBox" uid="uid://sxwbs5al0nli" path="res://assets/themes/btn_bg_normal.tres" id="4_j3kxr"]
-[ext_resource type="StyleBox" uid="uid://c5245q3vo46do" path="res://assets/themes/btn_bg_pressed.tres" id="5_vovkw"]
-[ext_resource type="StyleBox" uid="uid://bm1hufi44t4oo" path="res://assets/themes/btn_bg_hover.tres" id="6_jyvtb"]
+[ext_resource type="Texture2D" uid="uid://u8n1xa6owmfe" path="res://assets/images/menu_bg_2.png" id="4_yvv33"]
+[ext_resource type="PackedScene" uid="uid://2pn552x78q4r" path="res://ui/level/ui_button.tscn" id="6_60jl5"]
 [ext_resource type="PackedScene" uid="uid://i25ni6j2vywn" path="res://ui/level/settings_menu.tscn" id="7_1br0k"]
 
 [sub_resource type="Animation" id="Animation_d4see"]
@@ -160,7 +158,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ejwgg"]
-color = Color(0.096800014, 0.88, 0.29259998, 1)
+color = Color(0.87492, 0.8556, 0.92, 1)
 thickness = 4
 
 [node name="PauseMenu" type="Control"]
@@ -179,109 +177,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_d4see")
 }
 
-[node name="UISFX" parent="." instance=ExtResource("2_6bm6f")]
-
-[node name="PauseContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1213.0
-offset_top = -859.0
-offset_right = -1212.9971
-offset_bottom = -858.99817
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 256
-theme_override_constants/margin_top = 127
-theme_override_constants/margin_right = 256
-theme_override_constants/margin_bottom = 128
-
-[node name="Panel" type="ColorRect" parent="PauseContainer"]
-layout_mode = 2
-color = Color(0.19199999, 0.5504, 0.96, 0.6666667)
-
-[node name="MarginContainer" type="MarginContainer" parent="PauseContainer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 96
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 96
-theme_override_constants/margin_bottom = 32
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/Panel/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 28
-
-[node name="Label" type="Label" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_fonts/font = ExtResource("2_avurv")
-theme_override_font_sizes/font_size = 72
-text = "PAUSE MENU"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 24
-theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
-
-[node name="ResumeBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_top = NodePath("../MenuBtn")
-focus_neighbor_bottom = NodePath("../SettingsBtn")
-focus_next = NodePath("../SettingsBtn")
-focus_previous = NodePath("../MenuBtn")
-theme = ExtResource("3_fob5h")
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
-theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
-theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
-theme_override_styles/normal = ExtResource("4_j3kxr")
-theme_override_styles/pressed = ExtResource("5_vovkw")
-theme_override_styles/hover = ExtResource("6_jyvtb")
-text = "RESUME"
-
-[node name="SettingsBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_top = NodePath("../ResumeBtn")
-focus_neighbor_bottom = NodePath("../MenuBtn")
-focus_next = NodePath("../MenuBtn")
-focus_previous = NodePath("../ResumeBtn")
-theme = ExtResource("3_fob5h")
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
-theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
-theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
-theme_override_styles/normal = ExtResource("4_j3kxr")
-theme_override_styles/pressed = ExtResource("5_vovkw")
-theme_override_styles/hover = ExtResource("6_jyvtb")
-text = "SETTINGS"
-
-[node name="MenuBtn" type="Button" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_top = NodePath("../SettingsBtn")
-focus_neighbor_bottom = NodePath("../ResumeBtn")
-focus_next = NodePath("../ResumeBtn")
-focus_previous = NodePath("../SettingsBtn")
-theme = ExtResource("3_fob5h")
-theme_override_colors/font_color = Color(0.48, 0.1856, 0.09599999, 1)
-theme_override_colors/font_focus_color = Color(0.28, 0.08680002, 0.028000006, 1)
-theme_override_colors/font_pressed_color = Color(0.9, 0.30659997, 0.12599999, 1)
-theme_override_colors/font_hover_color = Color(0.28, 0.08680002, 0.028000006, 1)
-theme_override_styles/normal = ExtResource("4_j3kxr")
-theme_override_styles/pressed = ExtResource("5_vovkw")
-theme_override_styles/hover = ExtResource("6_jyvtb")
-text = "MENU"
-
 [node name="SettingsMenu" parent="." instance=ExtResource("7_1br0k")]
 unique_name_in_owner = true
 layout_mode = 0
@@ -295,11 +190,78 @@ offset_bottom = -19.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="UISFX" parent="." instance=ExtResource("2_6bm6f")]
+
+[node name="PauseContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1213.0
+offset_top = -859.0
+offset_right = -1212.9971
+offset_bottom = -858.99817
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 82
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 82
+
+[node name="Panel" type="TextureRect" parent="PauseContainer"]
+layout_mode = 2
+texture = ExtResource("4_yvv33")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 98
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87492, 0.8556, 0.92, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("2_avurv")
+theme_override_font_sizes/font_size = 72
+text = "PAUSE MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PauseContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
+
+[node name="ResumeBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "RESUME"
+
+[node name="SettingsBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "SETTINGS"
+
+[node name="MenuBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "MENU"
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_handle_element_focused"]
-[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
-[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_handle_element_focused"]
-[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
-[connection signal="focus_entered" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_handle_element_focused"]
-[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
 [connection signal="closed" from="SettingsMenu" to="." method="_on_settings_menu_closed"]
+[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="PauseContainer/Panel/MarginContainer/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]

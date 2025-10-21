@@ -58,128 +58,128 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] damage under the time
 	- [x] power bar starting in top left, stretching across the middle, doesn't hit the right
 - [x] voice acting: sports commentors (facts and feels)
-	- [x] facts - Desmond Wallace (Gene Okerlund): give statistics, more factual and clear innuciated
-	- [x] feels - Pat Sullivan (John Madden): loosy goosy, "psychological" factor
-	- [x] maybe out of scope ~~excitement matches destruction per minute~~
-	- [x] scream out the special names
-	- [x] lines
-		- [x] introductions (they introduce each other)
-		- [x] locations (each talks about the level)
-		- [x] character intros
-		- [x] level time
-			- [x] 100%
-			- [x] 50%
-			- [x] 5%
-		- [x] wrap up
-			- [x] pass
-			- [x] fail
-		- [x] special
-			- [x] 50% charged
-			- [x] ready
-			- [x] 50% empty
-			- [x] activated (at the same time)
-			- [x] failed
-		- [x] attack
-		- [x] filler
+  - [x] facts - Desmond Wallace (Gene Okerlund): give statistics, more factual and clear innuciated
+  - [x] feels - Pat Sullivan (John Madden): loosy goosy, "psychological" factor
+  - [x] maybe out of scope ~~excitement matches destruction per minute~~
+  - [x] scream out the special names
+  - [x] lines
+    - [x] introductions (they introduce each other)
+    - [x] locations (each talks about the level)
+    - [x] character intros
+    - [x] level time
+      - [x] 100%
+      - [x] 50%
+      - [x] 5%
+    - [x] wrap up
+      - [x] pass
+      - [x] fail
+    - [x] special
+      - [x] 50% charged
+      - [x] ready
+      - [x] 50% empty
+      - [x] activated (at the same time)
+      - [x] failed
+    - [x] attack
+    - [x] filler
 - [x] pause UI
 - [x] score UI: card showing viewport of posing critter, overlayed with metrics. buttons to replay, menu, or continue
-	- [x] slide in UI
-	- [x] score values should overlay, each counting upward, playing rising sfx (a little jiggle when done?)
-	- [x] viewport without UI: can/should it be framed?
-	- [x] camera in different scene with the character, must slide and snap into stable (use animation player)
-	- [x] allow skipping counting if any button pressed
-	- [x] after counting finished, display buttons for: MENU, RESTART, NEXT
+  - [x] slide in UI
+  - [x] score values should overlay, each counting upward, playing rising sfx (a little jiggle when done?)
+  - [x] viewport without UI: can/should it be framed?
+  - [x] camera in different scene with the character, must slide and snap into stable (use animation player)
+  - [x] allow skipping counting if any button pressed
+  - [x] after counting finished, display buttons for: MENU, RESTART, NEXT
 - [x] terrain: simple mesh, nothing complicated
 - [x] score system: score = damage / time
 - [x] mission types
-	- [x] quota: cause a number of damage before timer runs out
-	- [x] timed: destroy as much as possible in the given time
+  - [x] quota: cause a number of damage before timer runs out
+  - [x] timed: destroy as much as possible in the given time
 - [x] characters
-	- [x] Big Slamma: thicc, sumo fury, circular shaped, serious eyes
-		- [x] heavy attack: punching with wide stance
-		- [x] slow movement: bow legged swagger
-		- [x] Slamma-Stomp special: jumps up and slams down, destroying in a wave
+  - [x] Big Slamma: thicc, sumo fury, circular shaped, serious eyes
+    - [x] heavy attack: punching with wide stance
+    - [x] slow movement: bow legged swagger
+    - [x] Slamma-Stomp special: jumps up and slams down, destroying in a wave
 - [x] menu UI: levels, settings, credits
 - [x] start screen
 - [x] dynamic dialog system
-	- [x] use bitflags
-	- [x] play highest priority
-	- [x] build state while audio plays (wipe clean for each cycle)
-	- [x] swap announcers
+  - [x] use bitflags
+  - [x] play highest priority
+  - [x] build state while audio plays (wipe clean for each cycle)
+  - [x] swap announcers
 - [x] levels
-	- [x] 1) Plainsview:
-	- [x] 2) Hill Top Town (Frog Town?):
-	- [x] 3) Sea Cliff City:
+  - [x] 1) Plainsview:
+  - [x] 2) Hill Top Town (Frog Town?):
+  - [x] 3) Sea Cliff City:
 - [x] 3D assets: rectangle buildings, cars, trees, special buildings
-	- [x] low poly, simple
-	- [x] should be quirky shaped already
-- [x] common building generator 
+  - [x] low poly, simple
+  - [x] should be quirky shaped already
+- [x] common building generator
 - [x] music
 - [x] power up: special attack
-	- [x] character charges up special move
-	- [x] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
-	- [x] final shot is far above, high FOV, focused on the path of destruction
-	- [x] after final shot, camera zips to characer with correct FOV
-	- [x] sfx, a shockwave
-	- [x] special name is displayed in big words while the announcers sound out the name
-	- [x] vfx, bubble
-- [x] sfx: 
-	- [x] destruction
-	- [x] ui sfx
-	- [x] post attack sfx
+  - [x] character charges up special move
+  - [x] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
+  - [x] final shot is far above, high FOV, focused on the path of destruction
+  - [x] after final shot, camera zips to characer with correct FOV
+  - [x] sfx, a shockwave
+  - [x] special name is displayed in big words while the announcers sound out the name
+  - [x] vfx, bubble
+- [x] sfx:
+  - [x] destruction
+  - [x] ui sfx
+  - [x] post attack sfx
 - [x] add vfx
 - [ ] add boundries to each level
 - [ ] fill out levels
 - [ ] randomize
-	- [ ] spectator comment
-	- [ ] instant replay length
+  - [ ] spectator comment
+  - [ ] instant replay length
 - [ ] add credits
 
 ## Stretch Goals
 
 - [ ] writing: for the story (just stick with announcers for the jam)
-	- [ ] authoritarian government, monster to fight the tyrany
-	- [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
+  - [ ] authoritarian government, monster to fight the tyrany
+  - [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
 - [ ] levels
-	- [ ] 4) Woody Valley:
-	- [ ] 5) Sludge Corp:
-	- [ ] 6) Copperton:
-	- [ ] 7) Plant Hell:
-	- [ ] 8) The Garden:
-	- [ ] 9) Serpents Tower: small
-- [ ] common building generator 
-	- [ ] editor inputs for file name
-	- [ ] grey out the colors more?
-	- [ ] configure health and cost with size enums
+  - [ ] 4) Woody Valley:
+  - [ ] 5) Sludge Corp:
+  - [ ] 6) Copperton:
+  - [ ] 7) Plant Hell:
+  - [ ] 8) The Garden:
+  - [ ] 9) Serpents Tower: small
+- [ ] common building generator
+  - [ ] editor inputs for file name
+  - [ ] grey out the colors more?
+  - [ ] configure health and cost with size enums
 - [ ] music: metal (Judas Priest, KGLW)
-	- [ ] menu music: layers
-		- [ ] main: sets a thump beat
-		- [ ] levels: adds a guitar
-		- [ ] settings: adds chimes/piano
-		- [ ] credits: adds singing
-	- [ ] levels: layers
-		- [ ] idle: sets a simple beat
-		- [ ] movement: adds another layer
-		- [ ] striking: more layers
-		- [ ] special-charging: the higher the meter, the more complex the soundtrack
-		- [ ] special-charged: when charged, starts building a bridge
-		- [ ] special-execution: big finaly!
-	- [ ] characters: each their own theme
-		- [ ] Big Slamma: grunge metal, throat singing
-		- [ ] Crazy Teri: psychadelic prog rock, harmony vocals
-		- [ ] Sue Slicer: jungle dnb, gregorian vocals
+  - [ ] menu music: layers
+    - [ ] main: sets a thump beat
+    - [ ] levels: adds a guitar
+    - [ ] settings: adds chimes/piano
+    - [ ] credits: adds singing
+  - [ ] levels: layers
+    - [ ] idle: sets a simple beat
+    - [ ] movement: adds another layer
+    - [ ] striking: more layers
+    - [ ] special-charging: the higher the meter, the more complex the soundtrack
+    - [ ] special-charged: when charged, starts building a bridge
+    - [ ] special-execution: big finaly!
+  - [ ] characters: each their own theme
+    - [ ] Big Slamma: grunge metal, throat singing
+    - [ ] Crazy Teri: psychadelic prog rock, harmony vocals
+    - [ ] Sue Slicer: jungle dnb, gregorian vocals
 - [ ] menu UI: levels, settings, credits
-	- [ ] voice lines on focused
+  - [ ] voice lines on focused
 - [ ] characters
-	- [ ] Crazy Teri: floppy and spinny, triangular shaped, silly eyes
-		- [ ] random attacks: twirl and wobble
-		- [ ] med movement: arm windmills while power walking
-		- [ ] Teri-Twister special:  random pattern of destruction
-	- [ ] Sue Slicer: tall and slender, like an axe handle, mad eyes
-		- [ ] quick attacks: chops shapped like an axe
-		- [ ] fast movement: cartwheels!
-		- [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
+  - [ ] Crazy Teri: floppy and spinny, triangular shaped, silly eyes
+    - [ ] random attacks: twirl and wobble
+    - [ ] med movement: arm windmills while power walking
+    - [ ] Teri-Twister special:  random pattern of destruction
+  - [ ] Sue Slicer: tall and slender, like an axe handle, mad eyes
+    - [ ] quick attacks: chops shapped like an axe
+    - [ ] fast movement: cartwheels!
+    - [ ] Concussive Wall Shock special: multiple slams pointed at one direction send a flat showckwave destroying everything in a straight line
 - [ ] score system: score = damage / time
-	- [ ] ranking system
+  - [ ] ranking system
 - [ ] mission types
-	- [ ] target: destroy a specific target before the timer runs out
+  - [ ] target: destroy a specific target before the timer runs out
