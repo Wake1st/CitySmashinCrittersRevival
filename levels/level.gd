@@ -35,7 +35,7 @@ var score: Score = Score.new()
 func setup(miss: Mission, reset_level: Callable, next_level: Callable, exit_level: Callable) -> void:
 	state = State.SETUP
 	mission = miss
-	character.spectator_audio = spectator_audio
+	character.setup(spectator_audio)
 	
 	character.power_updated.connect(hud.update_power)
 	character.special_activated.connect(_handle_special_activated)

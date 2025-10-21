@@ -115,19 +115,19 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [x] should be quirky shaped already
 - [x] common building generator 
 - [x] music
-- [ ] power up: special attack
+- [x] power up: special attack
 	- [x] character charges up special move
 	- [x] camera showing multiple angles depending on the damange done (3-5), replaying the destruction per shot
 	- [x] final shot is far above, high FOV, focused on the path of destruction
 	- [x] after final shot, camera zips to characer with correct FOV
 	- [x] sfx, a shockwave
 	- [x] special name is displayed in big words while the announcers sound out the name
-	- [ ] vfx, bubble
+	- [x] vfx, bubble
 - [x] sfx: 
 	- [x] destruction
 	- [x] ui sfx
 	- [x] post attack sfx
-- [ ] add vfx
+- [x] add vfx
 - [ ] add boundries to each level
 - [ ] fill out levels
 - [ ] randomize

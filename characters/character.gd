@@ -38,6 +38,10 @@ var special_ready: bool
 var spectator_audio: SpectatorAudio
 
 
+func setup(audio: SpectatorAudio) -> void:
+	spectator_audio = audio
+
+
 func process(delta) -> void:
 	# always have gravity
 	velocity.x = 0.0
@@ -113,8 +117,10 @@ func get_drain_ratio() -> float:
 func setup_post_special() -> void:
 	camera_animations.play("setup_post_special")
 
+
 func post_special() -> void:
 	camera_animations.play("post_special_zoom")
+
 
 func resume_normal() -> void:
 	_reset_special()
@@ -139,7 +145,7 @@ func _set_pivot_face(direction: Vector2) -> void:
 
 func _special_ready() -> void:
 	special_ready = true
-	special_attack.visible = true
+	special_attack.ready()
 	camera_animations.play("special_ready")
 	drain_timer.start(drain_time)
 
@@ -173,7 +179,7 @@ func _special_fire() -> void:
 
 
 func _reset_special() -> void:
-	special_attack.visible = false
+	special_attack.reset()
 	special_ready = false
 	special_power = 0.0
 	power_updated.emit(0.0)
