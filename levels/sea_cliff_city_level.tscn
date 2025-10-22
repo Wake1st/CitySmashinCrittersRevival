@@ -88,7 +88,7 @@ transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 [node name="Boundaries" parent="." instance=ExtResource("3_1tms5")]
 
 [node name="Character" parent="." instance=ExtResource("3_wfnib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.459312, 0.60162574, 13.23703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.061933, 0.5758212, 13.23703)
 
 [node name="Destructables" type="Node3D" parent="."]
 

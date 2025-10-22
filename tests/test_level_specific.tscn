@@ -10,3 +10,4 @@ test_amount = 5000.0
 metadata/_custom_type_script = "uid://bdpbpbjpuu3y"
 
 [node name="PlainsviewLevel" parent="." instance=ExtResource("2_idri8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00011253357, 0.023802757, -0.004796028)
