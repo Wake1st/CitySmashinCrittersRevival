@@ -105,6 +105,11 @@ static var current_flags: int = 0
 static var current_announcer: Announcers = Announcers.PAT
 
 
+static func reset_state() -> void:
+	current_flags = Flags.INTRO
+	current_announcer = Announcers.PAT
+
+
 static func clear_all_flags() -> void:
 	current_flags = 0
 

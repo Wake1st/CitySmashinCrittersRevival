@@ -40,8 +40,6 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 ## Issues
 
-- attacking during a walk cycle allows to cheat the cooldown
-
 ## Requirements
 
 - [x] character controller: locked axis translation in xz-plane, camera rotate in 90 degree pivots (4 angles)
@@ -134,7 +132,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [x] instant replay length
   - [x] spectator comment
 - [x] add boundries to each level
-- [ ] fill out levels
+- [x] fill out levels
 
 ## Stretch Goals
 

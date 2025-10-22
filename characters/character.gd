@@ -43,58 +43,6 @@ func setup(audio: SpectatorAudio) -> void:
 
 
 func process(delta) -> void:
-	# always have gravity
-	velocity.x = 0.0
-	velocity.z = 0.0
-	velocity.y -= GRAVITY
-	
-	# strafing
-	var direction = CharacterController.get_movement()
-	if direction != Vector2.ZERO:
-		# translate
-		var dir_3d: Vector3 = Vector3(direction.x, 0, -direction.y)
-		velocity += global_basis * dir_3d * strafe_speed * delta
-		
-		# set facing direction
-		_set_pivot_face(direction)
-		
-		# animate
-		big_slamma.walk()
-	elif not big_slamma.is_attacking():
-		big_slamma.idle()
-	
-	# translate with physics engine
-	move_and_slide()
-	
-	# rotation
-	var rotation_direction = CharacterController.get_rotation()
-	if !is_rotating && rotation_direction != 0.0:
-		is_rotating = true
-		
-		# shift in 90 degree angles
-		rotation_target = rotation_target + rotation_direction * PI/2
-		
-		# get the target that falls within the angle range
-		rotation_target = _loop_angle(rotation_target)
-	
-	if is_rotating:
-		rotation.y = lerp_angle(rotation.y, rotation_target, rotate_speed)
-		if is_equal_approx(rotation.y, rotation_target):
-			is_rotating = false
-			rotation.y = rotation_target
-	
-	# attack
-	if CharacterController.get_attack():
-		# cant attack when already attacking
-		if not big_slamma.is_attacking():
-			big_slamma.attack()
-			var did_damage = hit_box.attack(attack)
-			if did_damage:
-				special_power += 10
-				power_updated.emit(special_power / special_cost)
-				
-				SpectatorState.current_flags |= SpectatorState.Flags.ATTACK
-	
 	# special
 	if not special_ready && special_power >= special_cost:
 		SpectatorState.current_flags |= SpectatorState.Flags.SPECIAL_READY
@@ -108,6 +56,59 @@ func process(delta) -> void:
 		spectator_audio.check_special_time(drain_timer.time_left, drain_time)
 	else:
 		spectator_audio.check_special_charge(special_power, special_cost)
+	
+	# attack
+	if CharacterController.get_attack():
+		# cant attack when already attacking
+		if not big_slamma.is_attacking():
+			big_slamma.attack()
+			var did_damage = hit_box.attack(attack)
+			if did_damage:
+				special_power += 10
+				power_updated.emit(special_power / special_cost)
+				
+				SpectatorState.current_flags |= SpectatorState.Flags.ATTACK
+	
+	# always have gravity
+	velocity.x = 0.0
+	velocity.z = 0.0
+	velocity.y -= GRAVITY
+	
+	# strafing
+	var direction = CharacterController.get_movement()
+	if not big_slamma.is_attacking():
+		if direction != Vector2.ZERO:
+			# translate
+			var dir_3d: Vector3 = Vector3(direction.x, 0, -direction.y)
+			velocity += global_basis * dir_3d * strafe_speed * delta
+			
+			# set facing direction
+			_set_pivot_face(direction)
+			
+			# animate
+			big_slamma.walk()
+		else:
+			big_slamma.idle()
+	
+	# translate with physics engine
+	move_and_slide()
+	
+	# rotation
+	var rotation_direction = CharacterController.get_rotation()
+	if not big_slamma.is_attacking() && !is_rotating && rotation_direction != 0.0:
+		is_rotating = true
+		
+		# shift in 90 degree angles
+		rotation_target = rotation_target + rotation_direction * PI/2
+		
+		# get the target that falls within the angle range
+		rotation_target = _loop_angle(rotation_target)
+	
+	if is_rotating:
+		rotation.y = lerp_angle(rotation.y, rotation_target, rotate_speed)
+		if is_equal_approx(rotation.y, rotation_target):
+			is_rotating = false
+			rotation.y = rotation_target
 
 
 func get_drain_ratio() -> float:
