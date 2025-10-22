@@ -86,14 +86,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4607135, 0.5340453, 7.5778
 
 [node name="BuildingB" parent="Destructables" instance=ExtResource("5_ecacx")]
 transform = Transform3D(-0.86602545, 0, -0.49999994, 0, 1, 0, 0.49999994, 0, -0.86602545, 6.856827, 0.8024019, 2.3747811)
+health = 70.0
 cost = 720.0
 
 [node name="BuildingE" parent="Destructables" instance=ExtResource("5_2e7c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.884711, 0.95839655, -2.8654442)
+health = 65.0
 cost = 900.0
 
 [node name="BuildingG" parent="Destructables" instance=ExtResource("7_aig1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.627121, 0.5023146, 10.913905)
+health = 75.0
 cost = 840.0
 
 [node name="BuildingComBigA" parent="Destructables" instance=ExtResource("14_u77vd")]
@@ -164,6 +167,7 @@ cost = 150.0
 
 [node name="BuildingG2" parent="Destructables" instance=ExtResource("7_aig1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49147, 0.6777478, -9.928853)
+health = 75.0
 cost = 840.0
 
 [node name="BuildingComBigB2" parent="Destructables" instance=ExtResource("21_nmx57")]

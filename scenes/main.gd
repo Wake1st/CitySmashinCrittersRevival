@@ -5,9 +5,9 @@ extends Node
 const OPENING_SCENE: String = "res://scenes/start_area.tscn"
 
 var levels: Dictionary[String, Mission] = {
-	"res://levels/plainsview_level.tscn": QuotaMission.new(180, 8000),
-	"res://levels/hill_top_town_level.tscn": TimedMission.new(120, 10000),
-	"res://levels/sea_cliff_city_level.tscn": QuotaMission.new(300, 15000)
+	"res://levels/plainsview_level.tscn": QuotaMission.new(180, 7000),
+	"res://levels/hill_top_town_level.tscn": TimedMission.new(120, 4000),
+	"res://levels/sea_cliff_city_level.tscn": QuotaMission.new(300, 10000)
 }
 
 @onready var loading_screen: LoadingScreen = %LoadingScreen
