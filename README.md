@@ -2,7 +2,9 @@
 
 Made for the Society of Play's [Revival Jam 2025](https://itch.io/jam/revival-jam-2025).
 
-I choose to revive the first 3d game I worked on - [City Smashin Critters](https://github.com/Wake1st/CitySmashinCritters). This time around, I'm using Godot instead of Unity.
+I choose to revive the first 3d game I worked on - [City Smashin Critters](https://github.com/Wake1st/CitySmashinCritters). \
+This time around, I'm using Godot instead of Unity, and it's been encouraging to see \
+how much better I've gotten at game development. 
 
 ## Contributions
 
@@ -31,6 +33,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 ## Special Thanks
 
 - [Universal Transition Shader](https://github.com/cashew-olddew/Universal-Transition-Shader)
+- [Shield Shader with Intersection Highlight](https://godotshaders.com/shader/shield-shader-with-intersection-highlight/)
 
 ## Resources
 
@@ -39,7 +42,6 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 ## Issues
 
-- ui sfx on score menu needs time to play (slight delay?)
 
 ## Requirements
 
@@ -128,12 +130,13 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
   - [x] ui sfx
   - [x] post attack sfx
 - [x] add vfx
-- [ ] add boundries to each level
-- [ ] fill out levels
-- [ ] randomize
-  - [ ] spectator comment
-  - [ ] instant replay length
-- [ ] add credits
+- [x] add credits
+- [x] randomize
+  - [x] instant replay length
+  - [x] spectator comment
+- [x] add boundries to each level
+- [x] fill out levels
+- [x] start screen pulses with the beat
 
 ## Stretch Goals
 

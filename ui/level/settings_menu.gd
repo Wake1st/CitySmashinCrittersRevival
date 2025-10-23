@@ -21,10 +21,10 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	# set initial volume values
-	main_volume.value = 1 # UserData.mainVolume 
-	music_volume.value = 1 # UserData.musicVolume
-	sfx_volume.value = 1 # UserData.sfxVolume
-	voice_volume.value = 1 # UserData.voiceVolume
+	main_volume.value = UserData.mainVolume 
+	music_volume.value = UserData.musicVolume
+	sfx_volume.value = UserData.sfxVolume
+	voice_volume.value = UserData.voiceVolume
 
 
 func _process(_delta: float) -> void:
@@ -45,49 +45,22 @@ func _on_return_btn_pressed() -> void:
 	closed.emit()
 
 
-#region VolumeSliders
 func _on_main_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index("Master"), 
-		value
-	)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)
+	UserData.mainVolume = value
+	DataAccess.save_user_data()
 
 func _on_music_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index("Music"), 
-		value
-	)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), value)
+	UserData.musicVolume = value
+	DataAccess.save_user_data()
 
 func _on_sfx_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index("SFX"), 
-		value
-	)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), value)
+	UserData.sfxVolume = value
+	DataAccess.save_user_data()
 
 func _on_voice_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index("Voice"), 
-		value
-	)
-
-
-func _on_main_volume_drag_ended(value_changed: float) -> void:
-	if value_changed:
-		UserData.mainVolume = main_volume.value
-		DataAccess.save_user_data()
-
-func _on_music_volume_drag_ended(value_changed: float) -> void:
-	if value_changed:
-		UserData.musicVolume = music_volume.value
-		DataAccess.save_user_data()
-
-func _on_sfx_volume_drag_ended(value_changed: float) -> void:
-	if value_changed:
-		UserData.sfxVolume = sfx_volume.value
-		DataAccess.save_user_data()
-
-func _on_voice_volume_drag_ended(value_changed: float) -> void:
-	if value_changed:
-		UserData.voiceVolume = voice_volume.value
-		DataAccess.save_user_data()
-#endregion
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Voice"), value)
+	UserData.voiceVolume = value
+	DataAccess.save_user_data()

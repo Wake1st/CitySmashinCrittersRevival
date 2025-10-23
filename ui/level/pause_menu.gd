@@ -53,20 +53,20 @@ func _on_animation_player_animation_finished(_anim_name) -> void:
 
 
 func _on_resume_btn_pressed() -> void:
-	close()
 	ui_sfx.select()
+	close()
 
 
 func _on_settings_btn_pressed() -> void:
 	animation_player.play("open_settings")
-	settings_menu.open()
 	ui_sfx.select()
+	settings_menu.open()
 
 
 func _on_menu_btn_pressed() -> void:
 	get_tree().paused = false
-	menu_callable.call()
 	ui_sfx.select()
+	menu_callable.call()
 
 
 func _on_settings_menu_closed() -> void:

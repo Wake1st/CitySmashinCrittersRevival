@@ -31,7 +31,6 @@ func attack() -> void:
 func reset() -> void:
 	animation.play("RESET")
 	wave_mesh.visible = false
-	
 
 
 func _on_body_entered(body: Building) -> void:

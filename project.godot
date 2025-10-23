@@ -20,6 +20,7 @@ config/icon="res://assets/images/icon.svg"
 
 window/size/viewport_width=1200
 window/size/viewport_height=840
+window/size/resizable=false
 
 [file_customization]
 
@@ -33,7 +34,8 @@ folder_colors={
 "res://scenes/": "pink",
 "res://systems/": "yellow",
 "res://tests/": "red",
-"res://ui/": "orange"
+"res://ui/": "orange",
+"res://vfx/": "yellow"
 }
 
 [input]

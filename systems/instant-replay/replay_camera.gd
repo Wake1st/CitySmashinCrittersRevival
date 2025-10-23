@@ -6,7 +6,6 @@ signal recording_finished()
 signal playback_finished()
 
 @export var frames_per_second: int = 48
-@export var recording_length: float = 0.4
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var viewpath: SubViewport = %SubViewport
@@ -14,6 +13,7 @@ signal playback_finished()
 @onready var camera: Camera3D = %Camera3D
 @onready var texture_rect: TextureRect = %TextureRect
 
+var recording_length: float
 var frame_time: float = 1.0 / frames_per_second
 var max_frame_count: int = floor(recording_length * frames_per_second)
 
@@ -30,11 +30,13 @@ func setup(settings: ReplaySettings, location: Vector3) -> void:
 	# ensure the camera arm is set to the correct position
 	arm.global_position = location
 	
+	# set a rand record time
+	
 	# the Y angle should always be random
 	arm.rotation.y = randf_range(0, 2*PI)
 	
 	# the recording length needs a bit of variety
-	recording_length = randf_range(0.4, 0.6)
+	recording_length = randf_range(0.2, 0.5)
 	max_frame_count = floor(recording_length * frames_per_second)
 	
 	# camera arm settings

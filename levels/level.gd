@@ -26,6 +26,7 @@ enum State {
 @onready var countdown_overlay: CountdownOverlay = %CountdownOverlay
 @onready var finished_overlay: FinishedOverlay = %FinishedOverlay
 @onready var cinematic_frame: CinematicFrame = %CinematicFrame
+@onready var instructions: Instructions = %Instructions
 
 var mission: Mission
 var state: State = State.SETUP
@@ -49,9 +50,17 @@ func setup(miss: Mission, reset_level: Callable, next_level: Callable, exit_leve
 
 
 func run() -> void:
-	SpectatorState.current_flags |= SpectatorState.Flags.INTRO
-	spectator_audio.play_next_audio_segment()
-	countdown()
+	if UserData.first_playthrough:
+		instructions.open()
+		
+		UserData.first_playthrough = false
+		DataAccess.save_user_data()
+	else:
+		SpectatorState.current_flags |= SpectatorState.Flags.INTRO
+		SpectatorState.current_announcer = SpectatorState.Announcers.PAT
+		spectator_audio.play_next_audio_segment()
+		
+		countdown()
 
 
 func countdown() -> void:
@@ -123,8 +132,14 @@ func _ready() -> void:
 
 
 func _input(event) -> void:
-	# toggle pause
-	if event.is_action_pressed("pause") && state != State.FINISHED:
+	if instructions.is_open && event.is_action_pressed("pause"):
+		instructions.close()
+		
+		SpectatorState.current_flags |= SpectatorState.Flags.INTRO
+		spectator_audio.play_next_audio_segment()
+		
+		countdown()
+	elif event.is_action_pressed("pause") && state != State.FINISHED:
 		pause()
 	elif event.is_action_pressed("attack") && state == State.POST_SPECIAL:
 		_end_post_special()
@@ -150,6 +165,7 @@ func _physics_process(delta) -> void:
 			# check power updates when draining
 			if character.special_ready:
 				hud.update_power(character.get_drain_ratio())
+				cinematic_frame.special_hint()
 			else:
 				spectator_audio.check_level_time(level_timer.time_left, mission.level_time)
 

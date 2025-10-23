@@ -1,22 +1,52 @@
-[gd_scene load_steps=21 format=3 uid="uid://clgswhp85jlim"]
+[gd_scene load_steps=51 format=3 uid="uid://clgswhp85jlim"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_46jfc"]
 [ext_resource type="PackedScene" uid="uid://bdaq3xll7lesr" path="res://levels/models/hilltoptown_ground.tscn" id="2_llss2"]
+[ext_resource type="PackedScene" uid="uid://chxvseeg6fv5a" path="res://levels/boundaries.tscn" id="3_17lmw"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="3_cw8ye"]
 [ext_resource type="PackedScene" uid="uid://cn5qifuwodakn" path="res://destructables/buildings/unique/building_uni_a.tscn" id="4_ehu5d"]
 [ext_resource type="PackedScene" uid="uid://cxecnd2at0o1r" path="res://destructables/buildings/unique/building_uni_c.tscn" id="5_8wyfq"]
 [ext_resource type="PackedScene" uid="uid://bbvxuws6t7we4" path="res://destructables/buildings/unique/building_uni_d.tscn" id="7_t62e6"]
 [ext_resource type="PackedScene" uid="uid://dvyqojeq1n3xm" path="res://destructables/buildings/unique/building_uni_f.tscn" id="8_1dvpu"]
+[ext_resource type="PackedScene" uid="uid://defxkya8tg32c" path="res://destructables/buildings/common/building_com_med_j.tscn" id="9_j66qs"]
 [ext_resource type="PackedScene" uid="uid://dutrne0g4gwoc" path="res://audio/music/level_music.tscn" id="9_lb1k2"]
 [ext_resource type="PackedScene" uid="uid://d0qsic6lwc4pl" path="res://systems/instant-replay/instant_replay_system.tscn" id="9_p3idi"]
 [ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="9_vtyh4"]
 [ext_resource type="PackedScene" uid="uid://cr4wkylln1cmw" path="res://ui/level/countdown_overlay.tscn" id="10_lb1k2"]
+[ext_resource type="PackedScene" uid="uid://bmrtjnsao3mfi" path="res://destructables/buildings/common/building_com_med_f.tscn" id="10_ot4i6"]
+[ext_resource type="PackedScene" uid="uid://m4twhus6cxuu" path="res://destructables/buildings/common/building_com_big_g.tscn" id="11_2axif"]
 [ext_resource type="AudioStream" uid="uid://sqkrs23mxclq" path="res://assets/audio/sfx/block.wav" id="11_17lmw"]
 [ext_resource type="PackedScene" uid="uid://brksoipmibqja" path="res://ui/level/hud.tscn" id="11_vtyh4"]
+[ext_resource type="PackedScene" uid="uid://cvx8daiusf14g" path="res://destructables/buildings/common/building_com_big_j.tscn" id="12_6f7lu"]
 [ext_resource type="PackedScene" uid="uid://h5ooflav8yup" path="res://ui/level/pause_menu.tscn" id="12_17lmw"]
 [ext_resource type="PackedScene" uid="uid://ycmi7iov5vux" path="res://ui/level/score_menu.tscn" id="13_4txpn"]
+[ext_resource type="PackedScene" uid="uid://c1itu3wrv8iti" path="res://destructables/buildings/common/building_com_med_a.tscn" id="13_hdcmf"]
+[ext_resource type="PackedScene" uid="uid://bg55agxccepnv" path="res://destructables/buildings/common/building_com_med_e.tscn" id="14_uw4w2"]
 [ext_resource type="PackedScene" uid="uid://bjk0rsklbs68f" path="res://ui/level/finished_overlay.tscn" id="14_xnwwk"]
 [ext_resource type="PackedScene" uid="uid://x56m7oe7wwmj" path="res://ui/level/cinematic_frame.tscn" id="15_hp8hp"]
+[ext_resource type="PackedScene" uid="uid://bbulq86lrrdy3" path="res://ui/level/instructions.tscn" id="19_4txpn"]
+[ext_resource type="PackedScene" uid="uid://cw3hfxjtoh2v3" path="res://destructables/buildings/common/building_com_med_g.tscn" id="26_g6j6t"]
+[ext_resource type="PackedScene" uid="uid://d2t7ij1is2ffu" path="res://destructables/buildings/common/building_com_med_h.tscn" id="27_ib10h"]
+[ext_resource type="PackedScene" uid="uid://cce0rjgwj8s5k" path="res://destructables/buildings/common/building_com_big_i.tscn" id="28_74uf4"]
+[ext_resource type="PackedScene" uid="uid://kj4yavpj2xft" path="res://destructables/buildings/common/building_com_big_f.tscn" id="29_m6x7n"]
+[ext_resource type="PackedScene" uid="uid://1pbbrfjbnsok" path="res://destructables/buildings/common/building_com_sml_d.tscn" id="30_yrke7"]
+[ext_resource type="PackedScene" uid="uid://uberj3hjxo4f" path="res://destructables/buildings/common/building_com_sml_f.tscn" id="31_8q1tm"]
+[ext_resource type="PackedScene" uid="uid://c3a0uap8dfwsu" path="res://destructables/buildings/common/building_com_sml_g.tscn" id="32_2lfbi"]
+[ext_resource type="PackedScene" uid="uid://c5meb0kuqskii" path="res://destructables/buildings/common/building_com_sml_a.tscn" id="33_s80n7"]
+[ext_resource type="PackedScene" uid="uid://bpsnqjwyacyua" path="res://destructables/buildings/common/building_com_sml_b.tscn" id="34_804dc"]
+[ext_resource type="PackedScene" uid="uid://dpfdj6kump0gi" path="res://destructables/buildings/common/building_com_sml_e.tscn" id="35_4x5sm"]
+[ext_resource type="PackedScene" uid="uid://dgnagkc67ce0d" path="res://destructables/buildings/common/building_com_sml_j.tscn" id="36_bmj6y"]
+[ext_resource type="PackedScene" uid="uid://cytbyilrg734w" path="res://destructables/buildings/common/building_com_sml_i.tscn" id="37_pw56v"]
+[ext_resource type="PackedScene" uid="uid://cmaqbsgkrughv" path="res://destructables/buildings/common/building_com_med_d.tscn" id="38_gaxib"]
+[ext_resource type="PackedScene" uid="uid://cnt8rbgaw85dp" path="res://destructables/buildings/common/building_com_big_b.tscn" id="39_181gb"]
+[ext_resource type="PackedScene" uid="uid://b34bw8ltlxfl5" path="res://destructables/buildings/common/building_com_big_c.tscn" id="40_kaxsw"]
+[ext_resource type="PackedScene" uid="uid://1na8i247e3av" path="res://destructables/buildings/common/building_com_big_d.tscn" id="41_qk4sg"]
+[ext_resource type="PackedScene" uid="uid://dwhtbllf8hj3b" path="res://destructables/buildings/common/building_com_big_e.tscn" id="42_5i7qp"]
+[ext_resource type="PackedScene" uid="uid://bkxw6840nvc4m" path="res://destructables/buildings/common/building_com_med_c.tscn" id="43_2axif"]
+[ext_resource type="PackedScene" uid="uid://dl20fcxexbdk2" path="res://destructables/buildings/common/building_com_med_i.tscn" id="44_6f7lu"]
+[ext_resource type="PackedScene" uid="uid://smxvsi36xdw0" path="res://destructables/buildings/common/building_com_big_h.tscn" id="45_uw4w2"]
+[ext_resource type="PackedScene" uid="uid://ctr60cusogg7k" path="res://destructables/buildings/common/building_com_sml_h.tscn" id="46_g6j6t"]
+[ext_resource type="PackedScene" uid="uid://yhh343ykhyg0" path="res://destructables/buildings/common/building_com_med_b.tscn" id="47_ib10h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p3idi"]
 sky_top_color = Color(0.17423815, 0.33108467, 0.9630415, 1)
@@ -39,25 +69,234 @@ metadata/_custom_type_script = "uid://r5e2o1b1h4ks"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lb1k2")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.91733336, 1, 0.38, 1)
+shadow_enabled = true
+
 [node name="hilltoptown_ground" parent="." instance=ExtResource("2_llss2")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
+[node name="Boundaries" parent="." instance=ExtResource("3_17lmw")]
+
 [node name="Character" parent="." instance=ExtResource("3_cw8ye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.558133, 1.8869939, 10.670593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.206602, 1.2751977, 7.9523478)
 
 [node name="Destructables" type="Node3D" parent="."]
 
 [node name="BuildingA" parent="Destructables" instance=ExtResource("4_ehu5d")]
-transform = Transform3D(-0.81611735, 0, 0.57788616, 0, 1, 0, -0.57788616, 0, -0.81611735, -4.037639, 1.3602669, -4.7691507)
+transform = Transform3D(-0.81611735, 0, 0.57788616, 0, 1, 0, -0.57788616, 0, -0.81611735, -5.807125, 1.143425, -7.7897687)
+health = 65.0
+cost = 750.0
 
 [node name="BuildingC" parent="Destructables" instance=ExtResource("5_8wyfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.750909, 3.5870175, 9.01086)
+health = 1.0
+cost = 500.0
 
 [node name="BuildingD" parent="Destructables" instance=ExtResource("7_t62e6")]
 transform = Transform3D(-0.36948732, 0, 0.92923576, 0, 1, 0, -0.92923576, 0, -0.36948732, 12.360352, 1.8691368, 11.242716)
+health = 40.0
+cost = 800.0
 
 [node name="BuildingF" parent="Destructables" instance=ExtResource("8_1dvpu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.84745, 2.0957725, -1.7729174)
+health = 80.0
+cost = 1000.0
+
+[node name="BuildingComMedJ" parent="Destructables" instance=ExtResource("9_j66qs")]
+transform = Transform3D(0.99822843, 0, -0.059498023, 0, 1, 0, 0.059498023, 0, 0.99822843, -4.3887577, 1.3140324, -4.256971)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedF" parent="Destructables" instance=ExtResource("10_ot4i6")]
+transform = Transform3D(0.8863895, 0, 0.46294025, 0, 1, 0, -0.46294025, 0, 0.8863895, -1.3462586, 3.1786966, 5.444202)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComBigG" parent="Destructables" instance=ExtResource("11_2axif")]
+transform = Transform3D(0.9965496, 0, -0.082999535, 0, 1, 0, 0.082999535, 0, 0.9965496, -4.146366, 3.294094, 6.156133)
+cost = 250.0
+
+[node name="BuildingComBigJ" parent="Destructables" instance=ExtResource("12_6f7lu")]
+transform = Transform3D(0.9958241, 0, 0.09129305, 0, 1, 0, -0.09129305, 0, 0.9958241, -7.794181, 2.4664938, 10.081872)
+cost = 250.0
+
+[node name="BuildingComMedA" parent="Destructables" instance=ExtResource("13_hdcmf")]
+transform = Transform3D(0.9880542, 0, -0.15410684, 0, 1, 0, 0.15410684, 0, 0.9880542, 10.370732, 2.3496528, -4.7384033)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedE" parent="Destructables" instance=ExtResource("14_uw4w2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.656676, 2.827426, -10.343849)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedF2" parent="Destructables" instance=ExtResource("10_ot4i6")]
+transform = Transform3D(0.008447264, 0, -0.9999643, 0, 1, 0, 0.9999643, 0, 0.008447264, -7.056356, 0.99054885, -11.417353)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedG" parent="Destructables" instance=ExtResource("26_g6j6t")]
+transform = Transform3D(0.018551791, 0, 0.9998279, 0, 1, 0, -0.9998279, 0, 0.018551791, -7.411743, 1.3603516, -4.5003595)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedH" parent="Destructables" instance=ExtResource("27_ib10h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.241941, 2.9390512, -10.03926)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComBigI" parent="Destructables" instance=ExtResource("28_74uf4")]
+transform = Transform3D(0.99998176, 0, -0.006038802, 0, 1, 0, 0.006038802, 0, 0.99998176, 10.052127, 2.65868, -6.759008)
+cost = 250.0
+
+[node name="BuildingComBigF" parent="Destructables" instance=ExtResource("29_m6x7n")]
+transform = Transform3D(0.98705524, 0, 0.16038081, 0, 1, 0, -0.16038081, 0, 0.98705524, 10.165863, 1.6176829, 9.530837)
+cost = 250.0
+
+[node name="BuildingComSmlD" parent="Destructables" instance=ExtResource("30_yrke7")]
+transform = Transform3D(0.11691338, 0, 0.9931421, 0, 1, 0, -0.9931421, 0, 0.11691338, 11.059205, 1.849052, 11.838456)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlF" parent="Destructables" instance=ExtResource("31_8q1tm")]
+transform = Transform3D(0.019563932, 0, 0.9998086, 0, 1, 0, -0.9998086, 0, 0.019563932, 6.4853797, 1.3656496, 11.02485)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlG" parent="Destructables" instance=ExtResource("32_2lfbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.901832, 2.718361, -4.8730717)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlA" parent="Destructables" instance=ExtResource("33_s80n7")]
+transform = Transform3D(0.07214159, 0, 0.9973944, 0, 1, 0, -0.9973944, 0, 0.07214159, 7.0835943, 2.9776795, -7.236677)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlG2" parent="Destructables" instance=ExtResource("32_2lfbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0702026, 3.3476174, 7.305947)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlA2" parent="Destructables" instance=ExtResource("33_s80n7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.742995, 2.6834273, 6.7202625)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlB" parent="Destructables" instance=ExtResource("34_804dc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4031577, 2.93334, 10.812524)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlE" parent="Destructables" instance=ExtResource("35_4x5sm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.061612, 1.0399168, -11.783272)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlJ" parent="Destructables" instance=ExtResource("36_bmj6y")]
+transform = Transform3D(0.84212315, 0, -0.5392853, 0, 1, 0, 0.5392853, 0, 0.84212315, -4.2453403, 1.0267291, -10.525664)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlI" parent="Destructables" instance=ExtResource("37_pw56v")]
+transform = Transform3D(-0.99984866, 0, 0.017400146, 0, 1, 0, -0.017400146, 0, -0.99984866, -9.49638, 0.9694514, -10.167251)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComMedJ2" parent="Destructables" instance=ExtResource("9_j66qs")]
+transform = Transform3D(0.117450744, 0, 0.9930787, 0, 1, 0, -0.9930787, 0, 0.117450744, 9.129175, 1.5285487, 11.55105)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedE2" parent="Destructables" instance=ExtResource("14_uw4w2")]
+transform = Transform3D(0.9938803, 0, -0.1104629, 0, 1, 0, 0.1104629, 0, 0.9938803, -7.615698, 2.685347, 4.683888)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedD" parent="Destructables" instance=ExtResource("38_gaxib")]
+transform = Transform3D(0.99980897, 0, 0.019546444, 0, 1, 0, -0.019546444, 0, 0.99980897, -3.6804569, 3.5493605, 8.708437)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComBigB" parent="Destructables" instance=ExtResource("39_181gb")]
+transform = Transform3D(0.99795264, 0, 0.06395754, 0, 1, 0, -0.06395754, 0, 0.99795264, -9.167164, 0.7571398, -7.918075)
+cost = 250.0
+
+[node name="BuildingComBigC" parent="Destructables" instance=ExtResource("40_kaxsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5552602, 1.0306237, -8.477554)
+cost = 250.0
+
+[node name="BuildingComBigD" parent="Destructables" instance=ExtResource("41_qk4sg")]
+transform = Transform3D(0.04070726, 0, 0.9991711, 0, 1, 0, -0.9991711, 0, 0.04070726, -1.673851, 1.364457, -5.051353)
+cost = 250.0
+
+[node name="BuildingComBigE" parent="Destructables" instance=ExtResource("42_5i7qp")]
+transform = Transform3D(0.9748118, 0, -0.22302894, 0, 1, 0, 0.22302894, 0, 0.9748118, 5.889893, 2.0383384, -3.2971013)
+cost = 250.0
+
+[node name="BuildingComBigF2" parent="Destructables" instance=ExtResource("29_m6x7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.273421, 2.1325119, -7.6494355)
+cost = 250.0
+
+[node name="BuildingComBigI2" parent="Destructables" instance=ExtResource("28_74uf4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.3557568, 2.515327, 11.72208)
+cost = 250.0
+
+[node name="BuildingComMedC" parent="Destructables" instance=ExtResource("43_2axif")]
+transform = Transform3D(0.20852624, 0, 0.9780168, 0, 1, 0, -0.9780168, 0, 0.20852624, 4.1056385, 2.0924542, -4.3799124)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComSmlD2" parent="Destructables" instance=ExtResource("30_yrke7")]
+transform = Transform3D(-0.99864864, 0, -0.05196986, 0, 1, 0, 0.05196986, 0, -0.99864864, 5.9146676, 2.8601713, -5.927018)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlG3" parent="Destructables" instance=ExtResource("32_2lfbi")]
+transform = Transform3D(0.917373, 0, -0.39802867, 0, 1, 0, 0.39802867, 0, 0.917373, 5.2754645, 2.3680403, -10.069352)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComMedE3" parent="Destructables" instance=ExtResource("14_uw4w2")]
+transform = Transform3D(-0.05048838, 0, -0.99872464, 0, 1, 0, 0.99872464, 0, -0.05048838, -1.7764399, 1.1437325, -11.35895)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedI" parent="Destructables" instance=ExtResource("44_6f7lu")]
+transform = Transform3D(0.99991643, 0, 0.012932546, 0, 1, 0, -0.012932546, 0, 0.99991643, -1.2714329, 3.0813394, 9.293674)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComBigH" parent="Destructables" instance=ExtResource("45_uw4w2")]
+transform = Transform3D(0.5614047, 0, 0.82754135, 0, 1, 0, -0.82754135, 0, 0.5614047, 7.359638, 1.2815259, 7.182433)
+cost = 250.0
+
+[node name="BuildingComSmlH" parent="Destructables" instance=ExtResource("46_g6j6t")]
+transform = Transform3D(0.98313385, 0, 0.1828876, 0, 1, 0, -0.1828876, 0, 0.98313385, 8.711075, 1.7847302, 9.498921)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComMedG2" parent="Destructables" instance=ExtResource("26_g6j6t")]
+transform = Transform3D(0.0379169, 0, 0.9992809, 0, 1, 0, -0.9992809, 0, 0.0379169, 10.883679, 1.2545489, 6.240851)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComMedB" parent="Destructables" instance=ExtResource("47_ib10h")]
+transform = Transform3D(-0.99719304, 0, -0.07487423, 0, 1, 0, 0.07487423, 0, -0.99719304, 11.633509, 1.8324585, -1.3354832)
+health = 20.0
+cost = 200.0
+
+[node name="BuildingComSmlD3" parent="Destructables" instance=ExtResource("30_yrke7")]
+transform = Transform3D(0.9999543, 0, 0.009564258, 0, 1, 0, -0.009564258, 0, 0.9999543, 7.152265, 2.0690663, -1.632731)
+health = 10.0
+cost = 150.0
+
+[node name="BuildingComSmlI2" parent="Destructables" instance=ExtResource("37_pw56v")]
+transform = Transform3D(0.9971457, 0, -0.075500846, 0, 1, 0, 0.075500846, 0, 0.9971457, 4.481676, 2.0850062, -1.1399946)
+health = 10.0
+cost = 150.0
 
 [node name="InstantReplaySystem" parent="." instance=ExtResource("9_p3idi")]
 
@@ -99,10 +338,8 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(0.91733336, 1, 0.38, 1)
-shadow_enabled = true
+[node name="Instructions" parent="Node" instance=ExtResource("19_4txpn")]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="finished" from="Node/CountdownOverlay" to="." method="_on_countdown_overlay_finished"]

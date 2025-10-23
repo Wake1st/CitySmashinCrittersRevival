@@ -27,6 +27,7 @@ func damage(value: float) -> bool:
 		return false
 	
 	health -= value
+	building_sfx.hit()
 	
 	# animate rumble
 	rumble_magnitude = value * RUMBLE_AMPLITUDE
@@ -36,10 +37,9 @@ func damage(value: float) -> bool:
 		destroyed.emit(cost)
 		building_sfx.crumble()
 		is_collapsing = true
-		return false
-	else:
-		building_sfx.hit()
-		return true
+	
+	# assumes he made damage
+	return true
 
 
 func _ready() -> void:

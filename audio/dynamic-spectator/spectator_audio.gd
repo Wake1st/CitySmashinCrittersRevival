@@ -12,7 +12,8 @@ enum SingleFlags {
 const HALF_TIME: float = 0.5
 const ALMOST_TIME: float = 0.1
 
-const DOWNTIME: float = 3.2
+const DOWNTIME_MIN: float = 2.2
+const DOWNTIME_MAX: float = 4.6
 
 @onready var timer: Timer = $Timer
 
@@ -25,6 +26,10 @@ func play_next_audio_segment() -> void:
 		return
 	
 	stream = SpectatorState.get_next_sound()
+	if stream:
+		play()
+	else:
+		timer.start(randf_range(DOWNTIME_MIN, DOWNTIME_MAX))
 	
 	# reset unless intro
 	if (SpectatorState.current_flags & SpectatorState.Flags.INTRO
@@ -37,11 +42,6 @@ func play_next_audio_segment() -> void:
 		pause_when_done() 
 	else:
 		SpectatorState.current_flags = 0
-	
-	if stream:
-		play()
-	else:
-		timer.start(DOWNTIME)
 
 
 func interupt_segment() -> void:

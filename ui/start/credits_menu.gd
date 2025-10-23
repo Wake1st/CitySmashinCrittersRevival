@@ -7,6 +7,9 @@ signal selected()
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var credits_music: AudioStreamPlayer3D = $CreditsMusic
 
+@onready var billboard: MeshInstance3D = %Billboard
+@onready var sub_viewport: SubViewport = %SubViewport
+
 
 func start_music() -> void:
 	if not credits_music.playing:
@@ -24,3 +27,13 @@ func input(event: InputEvent) -> void:
 			animation_player.play("selected")
 		
 		selected.emit()
+
+
+func _ready() -> void:
+	var screen_material = StandardMaterial3D.new()
+	screen_material.albedo_color = Color(1,1,1,1)
+	
+	var viewport_texture: ViewportTexture = sub_viewport.get_texture()
+	screen_material.albedo_texture = viewport_texture
+	
+	(billboard.mesh as QuadMesh).material = screen_material

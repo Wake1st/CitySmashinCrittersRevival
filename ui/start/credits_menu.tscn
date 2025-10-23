@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvkxuouuf70ye"]
+[gd_scene load_steps=12 format=3 uid="uid://bvkxuouuf70ye"]
 
 [ext_resource type="Script" uid="uid://cttdlysftf2ha" path="res://ui/start/credits_menu.gd" id="1_1qjht"]
 [ext_resource type="FontFile" uid="uid://dqa6cgjahvk6" path="res://assets/fonts/Stalinist_One/StalinistOne-Regular.ttf" id="1_t3qtb"]
 [ext_resource type="AudioStream" uid="uid://5o6kvy8rm63p" path="res://assets/audio/music/perfect blue cover.ogg" id="2_5evho"]
+[ext_resource type="FontFile" uid="uid://c8nxialxb47ff" path="res://assets/fonts/Audiowide/Audiowide-Regular.ttf" id="3_11bu6"]
 
 [sub_resource type="Animation" id="Animation_0hh1g"]
 length = 0.001
@@ -231,8 +232,113 @@ radius = 0.01
 height = 0.1
 
 [node name="Billboard" type="MeshInstance3D" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.029830813)
 mesh = SubResource("QuadMesh_t3qtb")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard"]
+unique_name_in_owner = true
+size = Vector2i(2050, 1000)
+
+[node name="ColorRect" type="ColorRect" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14132491, 2.1538512e-05, 0.15081763, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 110
+theme_override_constants/margin_right = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 72
+
+[node name="Label" type="Label" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_fonts/font = ExtResource("1_t3qtb")
+theme_override_font_sizes/font_size = 140
+text = "CREDITS"
+horizontal_alignment = 1
+
+[node name="LblDustin" type="Label" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_fonts/font = ExtResource("3_11bu6")
+theme_override_font_sizes/font_size = 74
+text = "Dustin S"
+
+[node name="LblDustinCredit" type="Label" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect/MarginContainer/VBoxContainer/LblDustin"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -611.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_fonts/font = ExtResource("3_11bu6")
+theme_override_font_sizes/font_size = 60
+text = "3D Artist / Rigger"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LblMax" type="Label" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_fonts/font = ExtResource("3_11bu6")
+theme_override_font_sizes/font_size = 74
+text = "Max Pietsch"
+
+[node name="LblMaxCredit" type="Label" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect/MarginContainer/VBoxContainer/LblMax"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -847.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_fonts/font = ExtResource("3_11bu6")
+theme_override_font_sizes/font_size = 60
+text = "Artist / Graphic Designer"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LblJoel" type="Label" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_fonts/font = ExtResource("3_11bu6")
+theme_override_font_sizes/font_size = 74
+text = "Joel Wakefield"
+
+[node name="LblJoelCredit" type="Label" parent="MeshInstance3D/CSGCombiner3D/CSGBox3D/Billboard/SubViewport/ColorRect/MarginContainer/VBoxContainer/LblJoel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -982.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.84, 1, 0.19999999, 1)
+theme_override_fonts/font = ExtResource("3_11bu6")
+theme_override_font_sizes/font_size = 60
+text = "Game Designer / Developer / Sound"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -244,23 +350,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -122.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.096800014, 0.88, 0.31870663, 0)
-theme_override_fonts/font = ExtResource("1_t3qtb")
-theme_override_font_sizes/font_size = 44
-text = "PRESS 'SPACE' TO START"
-horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]

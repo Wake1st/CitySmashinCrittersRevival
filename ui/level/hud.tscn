@@ -1,14 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://brksoipmibqja"]
+[gd_scene load_steps=7 format=3 uid="uid://brksoipmibqja"]
 
 [ext_resource type="Script" uid="uid://ccrw4cedtbspm" path="res://ui/level/hud.gd" id="1_rbyyf"]
 [ext_resource type="FontFile" uid="uid://c8nxialxb47ff" path="res://assets/fonts/Audiowide/Audiowide-Regular.ttf" id="2_276te"]
 [ext_resource type="Texture2D" uid="uid://b8tcbwvf2xu5y" path="res://assets/images/hud.png" id="2_lucar"]
 [ext_resource type="Shader" uid="uid://okv255q108f0" path="res://ui/level/power_bar.gdshader" id="3_546lt"]
+[ext_resource type="Texture2D" uid="uid://x8dqx1j01igk" path="res://assets/images/powerbar_fullcharge.png" id="5_6ge7q"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ihmi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ge7q"]
 shader = ExtResource("3_546lt")
-shader_parameter/background_color = Color(0.14132491, 2.1538512e-05, 0.15081763, 1)
-shader_parameter/foreground_color = Color(1, 0.120000005, 0.8093333, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -30,21 +29,22 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_lucar")
 
-[node name="Bar" type="ColorRect" parent="TextureRect"]
+[node name="Bar" type="TextureRect" parent="TextureRect"]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_7ihmi")
+material = SubResource("ShaderMaterial_6ge7q")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.372929
-offset_top = 58.04264
-offset_right = -496.87762
-offset_bottom = -711.3642
+offset_left = -7.0
+offset_top = -11.0
+offset_right = -475.01703
+offset_bottom = -690.06836
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.04693589
 scale = Vector2(1.0232478, 1.1495562)
+texture = ExtResource("5_6ge7q")
+expand_mode = 1
 
 [node name="DamageLbl" type="Label" parent="TextureRect"]
 unique_name_in_owner = true

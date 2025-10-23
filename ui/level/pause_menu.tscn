@@ -177,6 +177,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_d4see")
 }
 
+[node name="UISFX" parent="." instance=ExtResource("2_6bm6f")]
+
 [node name="SettingsMenu" parent="." instance=ExtResource("7_1br0k")]
 unique_name_in_owner = true
 layout_mode = 0
@@ -189,8 +191,6 @@ offset_right = -13.0
 offset_bottom = -19.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="UISFX" parent="." instance=ExtResource("2_6bm6f")]
 
 [node name="PauseContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -248,16 +248,28 @@ theme_override_styles/separator = SubResource("StyleBoxLine_ejwgg")
 [node name="ResumeBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../MenuBtn")
+focus_neighbor_bottom = NodePath("../SettingsBtn")
+focus_next = NodePath("../SettingsBtn")
+focus_previous = NodePath("../MenuBtn")
 label = "RESUME"
 
 [node name="SettingsBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeBtn")
+focus_neighbor_bottom = NodePath("../MenuBtn")
+focus_next = NodePath("../MenuBtn")
+focus_previous = NodePath("../ResumeBtn")
 label = "SETTINGS"
 
 [node name="MenuBtn" parent="PauseContainer/Panel/MarginContainer/VBoxContainer" instance=ExtResource("6_60jl5")]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../SettingsBtn")
+focus_neighbor_bottom = NodePath("../ResumeBtn")
+focus_next = NodePath("../ResumeBtn")
+focus_previous = NodePath("../SettingsBtn")
 label = "MENU"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

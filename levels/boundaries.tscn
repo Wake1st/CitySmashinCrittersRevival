@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://chxvseeg6fv5a"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6lkrk"]
+plane = Plane(1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_84d5j"]
+plane = Plane(-1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hacnv"]
+plane = Plane(0, 0, 1, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0lmt2"]
+plane = Plane(0, 0, -1, 0)
+
+[node name="Boundaries" type="Node3D"]
+
+[node name="WesternWall" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WesternWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_6lkrk")
+debug_color = Color(1, 0, 0, 0.84705883)
+
+[node name="EasternWall" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EasternWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_84d5j")
+debug_color = Color(1, 0, 0, 0.84705883)
+
+[node name="NorthernWall" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NorthernWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+shape = SubResource("WorldBoundaryShape3D_hacnv")
+debug_color = Color(1, 0, 0, 0.84705883)
+
+[node name="SouthernWall" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SouthernWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+shape = SubResource("WorldBoundaryShape3D_0lmt2")
+debug_color = Color(1, 0, 0, 0.84705883)
