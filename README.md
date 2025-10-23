@@ -136,6 +136,7 @@ how much better I've gotten at game development.
   - [x] spectator comment
 - [x] add boundries to each level
 - [x] fill out levels
+- [x] start screen pulses with the beat
 
 ## Stretch Goals
 
