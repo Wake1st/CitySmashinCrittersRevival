@@ -109,12 +109,12 @@ cost = 750.0
 
 [node name="BuildingA" parent="Destructables" instance=ExtResource("8_2jw6g")]
 transform = Transform3D(0.12441542, 0, -0.99223024, 0, 1, 0, 0.99223024, 0, 0.12441542, 7.1800013, 2.6367369, -14.856023)
-health = 60.0
+health = 65.0
 cost = 720.0
 
 [node name="BuildingF" parent="Destructables" instance=ExtResource("9_deldt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.1606987, 3.7199368, -13.894203)
-health = 900.0
+health = 80.0
 cost = 1000.0
 
 [node name="BuildingC" parent="Destructables" instance=ExtResource("10_1t2h4")]

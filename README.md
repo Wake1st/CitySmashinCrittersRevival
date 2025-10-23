@@ -2,7 +2,9 @@
 
 Made for the Society of Play's [Revival Jam 2025](https://itch.io/jam/revival-jam-2025).
 
-I choose to revive the first 3d game I worked on - [City Smashin Critters](https://github.com/Wake1st/CitySmashinCritters). This time around, I'm using Godot instead of Unity.
+I choose to revive the first 3d game I worked on - [City Smashin Critters](https://github.com/Wake1st/CitySmashinCritters). \
+This time around, I'm using Godot instead of Unity, and it's been encouraging to see \
+how much better I've gotten at game development. 
 
 ## Contributions
 
@@ -39,6 +41,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [Big Stomp](https://tinyurl.com/28sqywyn)
 
 ## Issues
+
 
 ## Requirements
 

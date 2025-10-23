@@ -106,7 +106,7 @@ static var current_announcer: Announcers = Announcers.PAT
 
 
 static func reset_state() -> void:
-	current_flags = Flags.INTRO
+	current_flags |= Flags.INTRO
 	current_announcer = Announcers.PAT
 
 

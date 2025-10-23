@@ -5,9 +5,9 @@ extends Node
 const OPENING_SCENE: String = "res://scenes/start_area.tscn"
 
 var levels: Dictionary[String, Mission] = {
-	"res://levels/plainsview_level.tscn": QuotaMission.new(180, 7000),
-	"res://levels/hill_top_town_level.tscn": TimedMission.new(120, 4000),
-	"res://levels/sea_cliff_city_level.tscn": QuotaMission.new(300, 10000)
+	"res://levels/plainsview_level.tscn": QuotaMission.new(180, 10000),
+	"res://levels/hill_top_town_level.tscn": QuotaMission.new(120, 7000),
+	"res://levels/sea_cliff_city_level.tscn": QuotaMission.new(250, 18000)
 }
 
 @onready var loading_screen: LoadingScreen = %LoadingScreen
@@ -60,14 +60,13 @@ func _handle_replay_level() -> void:
 
 
 func _handle_next_level() -> void:
-	var current_level_index = levels.keys().rfind(scene_path)
-	current_level_index += 1
-	
-	if current_level_index == levels.size():
+	var next_level_index = levels.keys().rfind(scene_path) + 1
+	if next_level_index == levels.size():
 		# game over man
 		_load_scene(OPENING_SCENE)
+		next_level_index = 0
 	else:
-		var path = levels.keys()[current_level_index]
+		var path = levels.keys()[next_level_index]
 		_load_scene(path)
 
 

@@ -26,6 +26,10 @@ func play_next_audio_segment() -> void:
 		return
 	
 	stream = SpectatorState.get_next_sound()
+	if stream:
+		play()
+	else:
+		timer.start(randf_range(DOWNTIME_MIN, DOWNTIME_MAX))
 	
 	# reset unless intro
 	if (SpectatorState.current_flags & SpectatorState.Flags.INTRO
@@ -38,11 +42,6 @@ func play_next_audio_segment() -> void:
 		pause_when_done() 
 	else:
 		SpectatorState.current_flags = 0
-	
-	if stream:
-		play()
-	else:
-		timer.start(randf_range(DOWNTIME_MIN, DOWNTIME_MAX))
 
 
 func interupt_segment() -> void:

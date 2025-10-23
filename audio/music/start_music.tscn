@@ -11,8 +11,8 @@ tracks/0/path = NodePath(".:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -28,7 +28,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(2, 2, 2),
-"points": PackedFloat32Array(-80, 0, 0, 0.13333333, 0, -79.999985, -0.17541324, 0.027660316, 0.40071034, -0.063186646, 10, -0.39918804, -0.09336662, 0, 0),
+"points": PackedFloat32Array(-80, 0, 0, 0.13333333, 0, -79.999985, -0.17541324, 0.027660316, 0.40071034, -0.063186646, 0, -0.39933872, -0.2935416, 0, 0),
 "times": PackedFloat32Array(0, 0.79999995, 1.8)
 }
 
@@ -43,8 +43,8 @@ tracks/0/path = NodePath(".:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(10, -0.25, 0, 0.4, -0.020367622, -80, -0.4, 0.005004883, 0, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.4, -1.5644243, -80, -0.4, 0.16415405, 0, 0),
 "times": PackedFloat32Array(0, 0.8)
 }
 
@@ -56,7 +56,6 @@ _data = {
 }
 
 [node name="StartMusic" type="AudioStreamPlayer"]
-volume_db = 10.0
 bus = &"Music"
 script = ExtResource("1_bc1jr")
 

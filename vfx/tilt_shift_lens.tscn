@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://6yipwc278v"]
+
+[ext_resource type="Shader" uid="uid://cbq7atfsb63g8" path="res://vfx/tilt_shift_lens.gdshader" id="1_17j04"]
+[ext_resource type="Script" uid="uid://d143gdowwg6kb" path="res://vfx/tilt_shift_lens.gd" id="2_vhwp0"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_oe5k3"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_il1lu"]
+render_priority = 0
+shader = ExtResource("1_17j04")
+shader_parameter/focal_point = Vector3(0, 0, 0)
+shader_parameter/DoF = 5.0
+shader_parameter/blur_cap = 2.0
+shader_parameter/blur_rate = 2.0
+shader_parameter/vertical_bias = 1.0
+
+[node name="TiltShiftLens" type="MeshInstance3D"]
+mesh = SubResource("QuadMesh_oe5k3")
+surface_material_override/0 = SubResource("ShaderMaterial_il1lu")
+script = ExtResource("2_vhwp0")

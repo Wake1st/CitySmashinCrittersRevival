@@ -14,7 +14,7 @@ const TARGET_CUTOFF: float = 0.0000001
 
 @export var attack: float = 5
 @export var attack_speed: float = 0.4
-@export var special_cost: float = 300
+@export var special_cost: float = 500
 @export var drain_time: float = 8.0
 
 @onready var camera_animations: AnimationPlayer = %CameraAnimations
@@ -51,6 +51,7 @@ func process(delta) -> void:
 	
 	if special_ready && CharacterController.get_special():
 		_special_activated()
+		return
 	
 	if special_ready:
 		spectator_audio.check_special_time(drain_timer.time_left, drain_time)

@@ -17,7 +17,10 @@ const CYCLE_TIME: float = 0.8
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
 @onready var ui_sfx: UISFX = $UISFX
+@onready var failure_sfx: AudioStreamPlayer = $FailureSfx
+@onready var victory_sfx: AudioStreamPlayer = $VictorySfx
 @onready var profile_camera: ProfileCamera = %ProfileCamera
+
 
 @onready var damage_lbl: Label = %DamageLbl
 @onready var time_lbl: Label = %TimeLbl
@@ -69,6 +72,12 @@ func result() -> void:
 	state = State.RESULT
 	pass_panel.visible = passed_level
 	fail_panel.visible = !passed_level
+	
+	# play audio cue
+	if passed_level:
+		victory_sfx.play()
+	else:
+		failure_sfx.play()
 
 func options() -> void:
 	state = State.OPTIONS
@@ -93,16 +102,16 @@ func _handle_focus() -> void:
 
 
 func _on_replay_btn_pressed() -> void:
-	replay_callable.call()
 	ui_sfx.select()
+	replay_callable.call()
 
 func _on_menu_btn_pressed() -> void:
-	menu_callable.call()
 	ui_sfx.select()
+	menu_callable.call()
 
 func _on_next_btn_pressed() -> void:
-	next_callable.call()
 	ui_sfx.select()
+	next_callable.call()
 
 
 func _on_animation_player_animation_finished(anim_name) -> void:

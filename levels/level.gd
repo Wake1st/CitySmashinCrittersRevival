@@ -56,7 +56,8 @@ func run() -> void:
 		UserData.first_playthrough = false
 		DataAccess.save_user_data()
 	else:
-		SpectatorState.reset_state()
+		SpectatorState.current_flags |= SpectatorState.Flags.INTRO
+		SpectatorState.current_announcer = SpectatorState.Announcers.PAT
 		spectator_audio.play_next_audio_segment()
 		
 		countdown()
