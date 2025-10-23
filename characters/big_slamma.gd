@@ -21,6 +21,7 @@ func is_attacking() -> bool:
 
 func off() -> void:
 	current_state = State.NONE
+	animation_player.play("Idle")
 	animation_player.stop()
 
 
