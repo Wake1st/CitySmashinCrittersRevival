@@ -1,0 +1,75 @@
+class_name LevelsMenu
+extends Menu
+
+
+enum State {
+	PLAINSVIEW,
+	HILLTOP,
+	SEACLIFF
+}
+
+signal cancel_selected()
+signal focus_changed()
+signal level_selected(state: State)
+
+@onready var plainsview_option: LevelOption = $PlainsviewOption
+@onready var hilltop_option: LevelOption = $HilltopOption
+@onready var seacliff_option: LevelOption = $SeacliffOption
+
+@onready var lbl_level: Label = %LblLevel
+
+var current_state: State
+var options: Array[LevelOption]
+
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
+func display() -> void:
+	animation_player.play("display_hint")
+	current_state = State.PLAINSVIEW
+	
+	# manually set the initial focus
+	plainsview_option.focus()
+	hilltop_option.normal()
+	seacliff_option.normal()
+
+
+func input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_focus_next") || event.is_action_pressed("ui_right"):
+		_update_focus(1)
+	elif event.is_action_pressed("ui_focus_prev") || event.is_action_pressed("ui_left"):
+		_update_focus(-1)
+	elif event.is_action_pressed("ui_accept"):
+		options[current_state].select()
+		animation_player.play("level_selected")
+		
+		level_selected.emit(current_state)
+	elif event.is_action_pressed("ui_cancel"):
+		# dont show the selection play if the hint isn't displayed
+		if animation_player.is_playing():
+			animation_player.play("cancel_selected")
+		
+		cancel_selected.emit()
+
+
+func _ready() -> void:
+	# store options
+	for child in get_children():
+		if child is LevelOption:
+			options.push_back(child)
+
+
+func _update_focus(direction: int) -> void:
+	options[current_state].normal()
+	
+	var index: int = (current_state + direction) % State.size()
+	if index < 0:
+		current_state = (index + State.size()) as State
+	else:
+		current_state = index as State
+	
+	options[current_state].focus()
+	lbl_level.text = options[current_state].level_name.to_upper()
+	
+	focus_changed.emit()

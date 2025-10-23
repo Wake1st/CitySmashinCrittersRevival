@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gnh4xa01eshm"
+path="res://.godot/imported/Big Stomp Beat.mp3-2d8487912cbee88dae9609a987aa66ce.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Big Stomp Beat.mp3"
+dest_files=["res://.godot/imported/Big Stomp Beat.mp3-2d8487912cbee88dae9609a987aa66ce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

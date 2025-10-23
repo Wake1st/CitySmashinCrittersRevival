@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuxp1tk3ucica"]
+
+[ext_resource type="Script" uid="uid://c6b2gluwmiuaw" path="res://destructables/building.gd" id="1_015fk"]
+
+[node name="Building" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_015fk")
+health = 30.0
+cost = 280.0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jlvjfgj411jq"
+path="res://.godot/imported/wally special half charge.wav-ba98ddcab9dccda04b2841bacc439dee.sample"
+
+[deps]
+
+source_file="res://assets/audio/spectators/wally special half charge.wav"
+dest_files=["res://.godot/imported/wally special half charge.wav-ba98ddcab9dccda04b2841bacc439dee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

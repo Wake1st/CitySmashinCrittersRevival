@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chab3hjvn7l6k"]
+
+[ext_resource type="Script" uid="uid://bgy32n0ptrxb6" path="res://audio/sfx/building_sfx.gd" id="1_7ktix"]
+
+[node name="BuildingSfx" type="Node"]
+script = ExtResource("1_7ktix")

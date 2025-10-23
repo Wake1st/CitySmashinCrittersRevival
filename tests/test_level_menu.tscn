@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2d3nrfyi74sy"]
+
+[ext_resource type="Script" uid="uid://bua2ewm2vqqph" path="res://tests/test_level_menu.gd" id="1_tsw3m"]
+[ext_resource type="PackedScene" uid="uid://bchrd3luyax0g" path="res://ui/start/levels/levels_menu.tscn" id="1_y2tii"]
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="2_g3kpy"]
+
+[node name="TestLevelMenu" type="Node"]
+script = ExtResource("1_tsw3m")
+
+[node name="TestEnvironment" parent="." instance=ExtResource("2_g3kpy")]
+
+[node name="LevelsMenu" parent="." instance=ExtResource("1_y2tii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07886052, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.21195592, 0.97727925, 0, -0.97727925, 0.21195592, 0, 31.698364, 7.727087)
+fov = 20.0
+
+[connection signal="level_selected" from="LevelsMenu" to="." method="_on_levels_menu_level_selected"]

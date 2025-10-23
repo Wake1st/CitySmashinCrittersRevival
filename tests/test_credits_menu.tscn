@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ytbi265jltj"]
+
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_82n4m"]
+[ext_resource type="PackedScene" uid="uid://bvkxuouuf70ye" path="res://ui/start/credits_menu.tscn" id="2_l8wb5"]
+
+[node name="TestCreditsMenu" type="Node"]
+
+[node name="TestEnvironment" parent="." instance=ExtResource("1_82n4m")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0821738, 0.027340174)
+
+[node name="CreditsMenu" parent="." instance=ExtResource("2_l8wb5")]

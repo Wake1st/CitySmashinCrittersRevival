@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbkayvyjonuvd"]
+
+[ext_resource type="Script" uid="uid://bwcb0n0espic0" path="res://tests/test_replay_camera.gd" id="1_1xbns"]
+[ext_resource type="PackedScene" uid="uid://bjeqskns26av4" path="res://systems/instant-replay/replay_camera.tscn" id="1_m3wdd"]
+[ext_resource type="Resource" uid="uid://dxj56pg3x63ev" path="res://resources/replay_setups/low_replay_settings.tres" id="2_ldj4g"]
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="2_sv1gt"]
+[ext_resource type="PackedScene" uid="uid://cuxp1tk3ucica" path="res://destructables/building.tscn" id="3_2djm5"]
+
+[node name="TestReplayCamera" type="Node"]
+script = ExtResource("1_1xbns")
+settings = ExtResource("2_ldj4g")
+
+[node name="ReplayCamera" parent="." instance=ExtResource("1_m3wdd")]
+
+[node name="TestEnvironment" parent="." instance=ExtResource("2_sv1gt")]
+
+[node name="Building" parent="." instance=ExtResource("3_2djm5")]
+health = 60.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6091318, 2.4676282)
