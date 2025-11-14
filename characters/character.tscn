@@ -89,4 +89,6 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 one_shot = true
 
+[connection signal="special_buildup_finished" from="ShakeCam" to="." method="_on_shake_cam_special_buildup_finished"]
+[connection signal="special_focus_finished" from="ShakeCam" to="." method="_on_shake_cam_special_focus_finished"]
 [connection signal="timeout" from="SpecialAttack/DrainTimer" to="." method="_on_drain_timer_timeout"]

@@ -67,9 +67,9 @@ func process(delta) -> void:
 				special_power += 10
 				power_updated.emit(special_power / special_cost)
 				
-				SpectatorState.current_flags |= SpectatorState.Flags.ATTACK
-				
 				camera.shake()
+				
+				SpectatorState.current_flags |= SpectatorState.Flags.ATTACK
 	
 	# always have gravity
 	velocity.x = 0.0
@@ -170,7 +170,7 @@ func _special_activated() -> void:
 
 func _special_jump() -> void:
 	character_animations.play("slamma_stomp")
-	camera.animate("special_charging")
+	camera.animate("special_buildup")
 	character_sfx.activate()
 
 
@@ -188,6 +188,14 @@ func _reset_special() -> void:
 	power_updated.emit(0.0)
 
 
+func _loop_angle(angle : float) -> float:
+	if angle > PI:
+		angle -= PI * 2
+	elif angle < -PI:
+		angle += PI * 2
+	return angle
+
+
 func _on_drain_timer_timeout() -> void:
 	# failed to activate
 	_reset_special()
@@ -196,16 +204,9 @@ func _on_drain_timer_timeout() -> void:
 	SpectatorState.current_flags |= SpectatorState.Flags.SPECIAL_FAILED
 
 
-func _on_camera_animations_animation_finished(anim_name):
-	if anim_name == "special_focus":
-		_special_jump()
-	elif anim_name == "special_charging":
-		_special_fire()
+func _on_shake_cam_special_focus_finished() -> void:
+	_special_jump()
 
 
-func _loop_angle(angle : float) -> float:
-	if angle > PI:
-		angle -= PI * 2
-	elif angle < -PI:
-		angle += PI * 2
-	return angle
+func _on_shake_cam_special_buildup_finished() -> void:
+	_special_fire()
