@@ -4,6 +4,7 @@ extends Node
 
 func _play(stream: AudioStreamWAV) -> void:
 	var player: SfxPlayer = SfxPlayer.new()
+	player.bus = "SFX"
 	player.stream = stream
 	player.volume_db = -4.0
 	add_child(player)
