@@ -17,9 +17,8 @@ const TARGET_CUTOFF: float = 0.0000001
 @export var special_cost: float = 500
 @export var drain_time: float = 8.0
 
-@onready var camera_animations: AnimationPlayer = %CameraAnimations
 @onready var character_animations: AnimationPlayer = %CharacterAnimations
-@onready var camera: Camera3D = %Camera3D
+@onready var camera: ShakeCam = %ShakeCam
 
 @onready var pivot: Node3D = %Pivot
 @onready var hit_box: HitBox = %HitBox
@@ -69,6 +68,8 @@ func process(delta) -> void:
 				power_updated.emit(special_power / special_cost)
 				
 				SpectatorState.current_flags |= SpectatorState.Flags.ATTACK
+				
+				camera.shake()
 	
 	# always have gravity
 	velocity.x = 0.0
@@ -117,16 +118,16 @@ func get_drain_ratio() -> float:
 
 
 func setup_post_special() -> void:
-	camera_animations.play("setup_post_special")
+	camera.animate("setup_post_special")
 
 
 func post_special() -> void:
-	camera_animations.play("post_special_zoom")
+	camera.animate("post_special_zoom")
 
 
 func resume_normal() -> void:
 	_reset_special()
-	camera_animations.play("return_to_normal")
+	camera.animate("return_to_normal")
 
 
 func end_level_pose() -> void:
@@ -148,7 +149,7 @@ func _set_pivot_face(direction: Vector2) -> void:
 func _special_ready() -> void:
 	special_ready = true
 	special_attack.ready()
-	camera_animations.play("special_ready")
+	camera.animate("special_ready")
 	drain_timer.start(drain_time)
 
 
@@ -161,7 +162,7 @@ func _special_activated() -> void:
 	
 	# start chain of animations
 	big_slamma.off()
-	camera_animations.play("special_focus")
+	camera.animate("special_focus")
 	
 	# face character forward
 	pivot.rotation.y = 0
@@ -169,7 +170,7 @@ func _special_activated() -> void:
 
 func _special_jump() -> void:
 	character_animations.play("slamma_stomp")
-	camera_animations.play("special_charging")
+	camera.animate("special_charging")
 	character_sfx.activate()
 
 
@@ -190,7 +191,7 @@ func _reset_special() -> void:
 func _on_drain_timer_timeout() -> void:
 	# failed to activate
 	_reset_special()
-	camera_animations.play_backwards("special_ready")
+	camera.animations_backwards("special_ready")
 	character_sfx.fail()
 	SpectatorState.current_flags |= SpectatorState.Flags.SPECIAL_FAILED
 
