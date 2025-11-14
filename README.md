@@ -135,8 +135,28 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [x] fill out levels
 - [x] start screen pulses with the beat
 
+## Post Jam Feedback
+
+- [x] camera shake
+- [ ] sprint feature
+- [ ] flying debris
+- [ ] dust clouds
+- [ ] action lines
+- [ ] explosions
+- [ ] more sfx
+
 ## Stretch Goals
 
+- [ ] features
+	- [ ] throw buildings (cost energy)
+	- [ ] sprint tackle (cost energy / or stamina?)
+	- [ ] broken building bits / debris
+	- [ ] footstep shake?
+	- [ ] water (go in, hit boats)
+	- [ ] light/heavy attack
+	- [ ] eating (for energy)
+	- [ ] building physics
+	- [ ] small stuff (planes, cars, trees)
 - [ ] writing: for the story (just stick with announcers for the jam)
   - [ ] authoritarian government, monster to fight the tyrany
   - [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
