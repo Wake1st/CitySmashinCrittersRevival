@@ -15,3 +15,7 @@ static func get_attack() -> bool:
 
 static func get_special() -> bool:
 	return Input.is_action_just_pressed("special")
+
+
+static func get_dash() -> bool:
+	return Input.is_action_pressed("dash")

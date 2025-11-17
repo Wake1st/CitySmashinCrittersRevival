@@ -10,6 +10,7 @@ const GRAVITY: float = 0.06
 const TARGET_CUTOFF: float = 0.0000001
 
 @export var strafe_speed: float = 80
+@export var sprint_speed: float = 200
 @export var rotate_speed: float = 0.3
 
 @export var attack: float = 5
@@ -25,6 +26,7 @@ const TARGET_CUTOFF: float = 0.0000001
 @onready var big_slamma: BigSlamma = %BigSlamma
 
 @onready var special_attack: SpecialAttack = %SpecialAttack
+@onready var impact_spawner: ImpactSpawner = %ImpactSpawner
 @onready var character_sfx: CharacterSFX = $CharacterSFX
 @onready var drain_timer: Timer = %DrainTimer
 
@@ -68,6 +70,7 @@ func process(delta) -> void:
 				power_updated.emit(special_power / special_cost)
 				
 				camera.shake()
+				impact_spawner.spawn()
 				
 				SpectatorState.current_flags |= SpectatorState.Flags.ATTACK
 	
@@ -82,7 +85,10 @@ func process(delta) -> void:
 		if direction != Vector2.ZERO:
 			# translate
 			var dir_3d: Vector3 = Vector3(direction.x, 0, -direction.y)
-			velocity += global_basis * dir_3d * strafe_speed * delta
+			
+			if CharacterController.get_dash():velocity += global_basis * dir_3d * sprint_speed * delta
+			else:
+				velocity += global_basis * dir_3d * strafe_speed * delta
 			
 			# set facing direction
 			_set_pivot_face(direction)

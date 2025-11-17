@@ -1,0 +1,154 @@
+[gd_scene load_steps=9 format=3 uid="uid://dw0fg676xwcgd"]
+
+[ext_resource type="Script" uid="uid://dq3u7osffaukf" path="res://systems/impact/impact.gd" id="1_1xqh1"]
+[ext_resource type="Shader" uid="uid://bklocqa7od7hy" path="res://systems/special_attack/stomp_wave.gdshader" id="2_mvhfv"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_mvhfv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_plsxt"]
+radius = 0.01
+height = 0.02
+radial_segments = 24
+rings = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gnknr"]
+render_priority = 0
+shader = ExtResource("2_mvhfv")
+shader_parameter/color1 = Color(0.9666667, 0, 1, 1)
+shader_parameter/color2 = Color(0.98766667, 0.63, 1, 0.8235294)
+shader_parameter/threshold = 0.6
+shader_parameter/fresnel_sharpness = 0.4
+
+[sub_resource type="Animation" id="Animation_plsxt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveMesh:mesh:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.01, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaveMesh:mesh:height")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.02, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WaveMesh:surface_material_override/0:shader_parameter/color2:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.8235294, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WaveMesh:surface_material_override/0:shader_parameter/fresnel_sharpness")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.4, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mvhfv"]
+resource_name = "pulse"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveMesh:mesh:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.01, -0.1, 0, 0, 3.0002792, 4, -0.1, -0.02690649, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaveMesh:mesh:height")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.02, -0.1, 0, 0, 6.313692, 8, -0.1, -0.24543476, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WaveMesh:surface_material_override/0:shader_parameter/color2:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.47058824, 0, 0, 0, -0.32249779, 0, -0.1, 0.0074418024, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WaveMesh:surface_material_override/0:shader_parameter/fresnel_sharpness")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.4, -0.1, 0, 0, 7.053168, 10, -0.1, -0.0925951, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnknr"]
+_data = {
+&"RESET": SubResource("Animation_plsxt"),
+&"pulse": SubResource("Animation_mvhfv")
+}
+
+[node name="Impact" type="Node3D"]
+script = ExtResource("1_1xqh1")
+
+[node name="DebrisEmitter" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 10
+lifetime = 8.0
+one_shot = true
+speed_scale = 36.0
+explosiveness = 0.2
+randomness = 0.6
+mesh = SubResource("QuadMesh_mvhfv")
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -0.02, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.4
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+
+[node name="WaveMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_plsxt")
+surface_material_override/0 = SubResource("ShaderMaterial_gnknr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gnknr")
+}
+
+[connection signal="finished" from="DebrisEmitter" to="." method="_on_debris_emitter_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

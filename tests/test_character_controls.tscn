@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx10ox4nma0a5"]
+[gd_scene load_steps=5 format=3 uid="uid://dx10ox4nma0a5"]
 
 [ext_resource type="Script" uid="uid://b86gvdagm114u" path="res://tests/test_character_controls.gd" id="1_mtrd8"]
 [ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_nafe7"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_mtrd8"]
+[ext_resource type="PackedScene" uid="uid://cpcf4knm172ab" path="res://audio/dynamic-spectator/spectator_audio.tscn" id="3_doguu"]
 
 [node name="TestCharacterControls" type="Node"]
 script = ExtResource("1_mtrd8")
 
 [node name="TestEnvironment" parent="." instance=ExtResource("1_nafe7")]
+
+[node name="SpectatorAudio" parent="." instance=ExtResource("3_doguu")]
 
 [node name="Character" parent="." instance=ExtResource("2_mtrd8")]
 strafe_speed = 20.0

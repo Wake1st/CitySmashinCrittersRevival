@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5y6nutqjbaxg"]
+[gd_scene load_steps=12 format=3 uid="uid://c5y6nutqjbaxg"]
 
 [ext_resource type="Script" uid="uid://drnyabnrvjydg" path="res://characters/character.gd" id="1_54qew"]
 [ext_resource type="PackedScene" uid="uid://d2mtjsg1co6yi" path="res://audio/sfx/character_sfx.tscn" id="2_b1u1o"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dr34yrocsq121" path="res://characters/hit_box.tscn" id="2_qqr4u"]
 [ext_resource type="PackedScene" uid="uid://bpdidtl6tvpva" path="res://systems/special_attack/special_attack.tscn" id="3_3fwhk"]
 [ext_resource type="PackedScene" uid="uid://7w4cpthovfey" path="res://vfx/shake_cam.tscn" id="4_jfi6v"]
+[ext_resource type="PackedScene" uid="uid://d0k7nmq532o1" path="res://systems/impact/impact_spawner.tscn" id="7_jfi6v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mdkfl"]
 height = 1.402832
@@ -81,6 +82,10 @@ transform = Transform3D(-1.2, 0, 1.8119498e-07, 0, 1.2, 0, -1.8119498e-07, 0, -1
 
 [node name="HitBox" parent="Pivot" instance=ExtResource("2_qqr4u")]
 unique_name_in_owner = true
+
+[node name="ImpactSpawner" parent="Pivot" instance=ExtResource("7_jfi6v")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74151134, -1.2904602)
 
 [node name="SpecialAttack" parent="." instance=ExtResource("3_3fwhk")]
 unique_name_in_owner = true

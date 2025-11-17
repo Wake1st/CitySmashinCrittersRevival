@@ -138,8 +138,8 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 ## Post Jam Feedback
 
 - [x] camera shake
-- [ ] sprint feature
-- [ ] flying debris
+- [x] sprint feature
+- [x] flying debris
 - [ ] dust clouds
 - [ ] action lines
 - [ ] explosions
