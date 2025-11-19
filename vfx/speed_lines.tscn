@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://bthiukpqgw0pn"]
+
+[ext_resource type="Script" uid="uid://det23q4x0q0sy" path="res://vfx/speed_lines.gd" id="1_c2okt"]
+[ext_resource type="Shader" uid="uid://blurdqojquvaf" path="res://vfx/speed_lines.gdshader" id="1_qnvof"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qnvof"]
+frequency = 0.26
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c2okt"]
+noise = SubResource("FastNoiseLite_qnvof")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2lpn7"]
+shader = ExtResource("1_qnvof")
+shader_parameter/noise = SubResource("NoiseTexture2D_c2okt")
+shader_parameter/line_color = Color(1, 1, 1, 0.7058824)
+shader_parameter/line_count = 1.15000001713638
+shader_parameter/line_density = 0.0
+shader_parameter/line_faloff = 0.62000002945
+shader_parameter/mask_size = 0.082000003895
+shader_parameter/mask_edge = 0.802000038095
+shader_parameter/animation_speed = 12.0000005225
+
+[sub_resource type="Animation" id="Animation_c2okt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/line_density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mahyp"]
+resource_name = "speed"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/line_density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.033333335, 0.14466669, 0.86800003, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcb12"]
+_data = {
+&"RESET": SubResource("Animation_c2okt"),
+&"speed": SubResource("Animation_mahyp")
+}
+
+[node name="SpeedLines" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_c2okt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2lpn7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xcb12")
+}

@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbswl0ewqc8gs"]
+
+[ext_resource type="Script" uid="uid://dov66d53jvbeu" path="res://vfx/dust_cloud.gd" id="1_w2x1v"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qat2n"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_5of0v"]
+noise = SubResource("FastNoiseLite_qat2n")
+
+[sub_resource type="FogMaterial" id="FogMaterial_qat2n"]
+density = 6.0
+albedo = Color(0.09998589, 0.099986084, 0.099985905, 1)
+emission = Color(0.741384, 0.74138486, 0.7413842, 1)
+edge_fade = 0.02102239
+density_texture = SubResource("NoiseTexture3D_5of0v")
+
+[sub_resource type="Animation" id="Animation_w2x1v"]
+resource_name = "puff"
+length = 0.6
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 3.4668932, 6, -0.02506895, 0.0012074539, 0.10000001, -0.004816532, 0, -0.55, 0.061181545, 0, 0),
+"times": PackedFloat32Array(0, 0.05, 0.6)
+}
+
+[sub_resource type="Animation" id="Animation_7ilqx"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ilqx"]
+_data = {
+&"RESET": SubResource("Animation_7ilqx"),
+&"puff": SubResource("Animation_w2x1v")
+}
+
+[node name="DustCloud" type="FogVolume"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23388672, 0, 0)
+material = SubResource("FogMaterial_qat2n")
+script = ExtResource("1_w2x1v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7ilqx")
+}

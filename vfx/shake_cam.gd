@@ -16,14 +16,21 @@ signal special_buildup_finished()
 
 
 func animate(animation_name: String) -> void:
-	camera_animations.play(animation_name)
+	if camera_animations.has_animation(animation_name):
+		camera_animations.play(animation_name)
+	else:
+		animation.play(animation_name)
 
 
 func animate_backwards(animation_name: String) -> void:
-	camera_animations.play_backwards(animation_name)
+	if camera_animations.has_animation(animation_name):
+		camera_animations.play_backwards(animation_name)
+	else:
+		animation.play_backwards(animation_name)
 
 
 func shake() -> void:
+	animation.stop()
 	animation.play("shake")
 
 
@@ -36,9 +43,10 @@ func _physics_process(_delta: float) -> void:
 		)
 
  
-func _on_animation_player_animation_finished(_anim_name: String) -> void:
-	camera.position = home_position
-	strength = 0
+func _on_animation_player_animation_finished(anim_name: String) -> void:
+	if anim_name == "skake":
+		camera.position = home_position
+		strength = 0
 
 
 func _on_camera_animations_animation_finished(anim_name: String) -> void:

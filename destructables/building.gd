@@ -4,6 +4,7 @@ extends StaticBody3D
 
 signal destroyed(value: float)
 
+const DUST_CLOUD_PATH: String = "uid://dbswl0ewqc8gs"
 const BUILDING_SFX: PackedScene = preload("uid://chab3hjvn7l6k")
 
 const FALLING_RATE: float = 0.4
@@ -71,3 +72,10 @@ func _process(delta) -> void:
 		# don't keep around if destroyed
 		if position.y < FALLING_CUTOFF:
 			queue_free()
+
+
+func _emit_dust() -> void:
+	var scene: PackedScene = load(DUST_CLOUD_PATH)
+	var dust: DustCloud = scene.instantiate()
+	add_child(dust)
+	dust.activate()

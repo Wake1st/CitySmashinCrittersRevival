@@ -28,6 +28,7 @@ const TARGET_CUTOFF: float = 0.0000001
 @onready var special_attack: SpecialAttack = %SpecialAttack
 @onready var impact_spawner: ImpactSpawner = %ImpactSpawner
 @onready var character_sfx: CharacterSFX = $CharacterSFX
+@onready var speed_lines: SpeedLines = %SpeedLines
 @onready var drain_timer: Timer = %DrainTimer
 
 var is_rotating: bool
@@ -86,15 +87,21 @@ func process(delta) -> void:
 			# translate
 			var dir_3d: Vector3 = Vector3(direction.x, 0, -direction.y)
 			
-			if CharacterController.get_dash():velocity += global_basis * dir_3d * sprint_speed * delta
+			if CharacterController.get_dash():
+				velocity += global_basis * dir_3d * sprint_speed * delta
+				
+				# toggle moveing animations
+				if not big_slamma.is_dashing():
+					big_slamma.dash()
 			else:
 				velocity += global_basis * dir_3d * strafe_speed * delta
+				
+				# toggle moveing animations
+				if not big_slamma.is_walking():
+					big_slamma.walk()
 			
 			# set facing direction
 			_set_pivot_face(direction)
-			
-			# animate
-			big_slamma.walk()
 		else:
 			big_slamma.idle()
 	
@@ -216,3 +223,12 @@ func _on_shake_cam_special_focus_finished() -> void:
 
 func _on_shake_cam_special_buildup_finished() -> void:
 	_special_fire()
+
+
+func _on_big_slamma_dash_toggled(value: bool) -> void:
+	if value:
+		camera.animate("dash_zoom")
+		speed_lines.toggle(true)
+	else:
+		camera.animate_backwards("dash_zoom")
+		speed_lines.toggle(false)

@@ -32,6 +32,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 - [Universal Transition Shader](https://github.com/cashew-olddew/Universal-Transition-Shader)
 - [Shield Shader with Intersection Highlight](https://godotshaders.com/shader/shield-shader-with-intersection-highlight/)
+- [Speed Lines Shader](https://godotshaders.com/shader/speed-lines-shader-for-godot-4/)
 
 ## Resources
 
@@ -140,23 +141,32 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [x] camera shake
 - [x] sprint feature
 - [x] flying debris
-- [ ] dust clouds
-- [ ] action lines
+- [x] action lines (for sprinting | only one type)
+- [x] dust clouds
 - [ ] explosions
 - [ ] more sfx
 
 ## Stretch Goals
 
 - [ ] features
-	- [ ] throw buildings (cost energy)
-	- [ ] sprint tackle (cost energy / or stamina?)
-	- [ ] broken building bits / debris
-	- [ ] footstep shake?
-	- [ ] water (go in, hit boats)
-	- [ ] light/heavy attack
-	- [ ] eating (for energy)
-	- [ ] building physics
-	- [ ] small stuff (planes, cars, trees)
+  - [ ] throw buildings (cost energy)
+  - [ ] sprint tackle (cost energy / or stamina?)
+  - [ ] broken building bits / debris
+  - [ ] footstep shake?
+  - [ ] water (go in, hit boats)
+  - [ ] light/heavy attack
+  - [ ] eating (for energy)
+  - [ ] building physics
+  - [ ] small stuff (planes, cars, trees)
+- [ ] vfx
+  - [ ] action lines
+    - [ ] building shake
+    - [ ] dash (multiple directions)
+    - [ ] special?
+  - [ ] dust clouds
+    - [ ] fit to building mesh
+		- [ ] wind effected
+		- [ ] volumetric fog tweaking
 - [ ] writing: for the story (just stick with announcers for the jam)
   - [ ] authoritarian government, monster to fight the tyrany
   - [ ] summons [Buddha](https://www.youtube.com/watch?v=FmEntfLk8Qk&list=PLIdROkqAzq9C8_iwRdPp7JhPAnbzah2uk), who purifies the corrupt with beams of pure light
