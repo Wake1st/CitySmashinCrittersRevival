@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brksoipmibqja"]
+[gd_scene load_steps=9 format=3 uid="uid://brksoipmibqja"]
 
 [ext_resource type="Script" uid="uid://ccrw4cedtbspm" path="res://ui/level/hud.gd" id="1_rbyyf"]
 [ext_resource type="FontFile" uid="uid://c8nxialxb47ff" path="res://assets/fonts/Audiowide/Audiowide-Regular.ttf" id="2_276te"]
@@ -8,6 +8,20 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ge7q"]
 shader = ExtResource("3_546lt")
+
+[sub_resource type="Shader" id="Shader_6ge7q"]
+code = "shader_type canvas_item;
+
+instance uniform float weight = 0.0;
+
+void fragment() {
+	if (UV.x > weight) {
+		COLOR.a = 0.0;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkhqh"]
+shader = SubResource("Shader_6ge7q")
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -29,7 +43,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_lucar")
 
-[node name="Bar" type="TextureRect" parent="TextureRect"]
+[node name="PowerBar" type="TextureRect" parent="TextureRect"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_6ge7q")
 layout_mode = 1
@@ -40,6 +54,23 @@ offset_left = -7.0
 offset_top = -11.0
 offset_right = -475.01703
 offset_bottom = -690.06836
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0232478, 1.1495562)
+texture = ExtResource("5_6ge7q")
+expand_mode = 1
+
+[node name="StamBar" type="TextureRect" parent="TextureRect"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_dkhqh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 116.0
+offset_right = -458.01703
+offset_bottom = -563.06836
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0232478, 1.1495562)

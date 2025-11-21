@@ -140,6 +140,7 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 
 - [x] camera shake
 - [x] sprint feature
+	- [ ] stamina bar (stalls on empty, need a cooldown before refilling)
 - [x] flying debris
 - [x] action lines (for sprinting | only one type)
 - [x] dust clouds

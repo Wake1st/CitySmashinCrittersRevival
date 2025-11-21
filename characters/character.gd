@@ -2,13 +2,19 @@ class_name Character
 extends CharacterBody3D
 
 
+signal stamina_updated(value: float)
 signal power_updated(value: float)
 signal special_activated()
 signal special_fired(destructables: Array[Building])
 
 const GRAVITY: float = 0.06
 const TARGET_CUTOFF: float = 0.0000001
+const POWER_GAIN: float = 10
+const STAMINA_REFILL: float = 0.2
+const STAMINA_DASH_COST: float = 0.6
+const STAMINA_HIT_COST: float = 10
 
+@export var stamina_max: float = 60
 @export var strafe_speed: float = 80
 @export var sprint_speed: float = 200
 @export var rotate_speed: float = 0.3
@@ -34,6 +40,7 @@ const TARGET_CUTOFF: float = 0.0000001
 var is_rotating: bool
 var rotation_target: float
 
+var stamina: float = 0
 var special_power: float = 0
 var special_ready: bool
 
@@ -45,6 +52,9 @@ func setup(audio: SpectatorAudio) -> void:
 
 
 func process(delta) -> void:
+	# recharge stamina
+	_change_stamina(STAMINA_REFILL)
+	
 	# special
 	if not special_ready && special_power >= special_cost:
 		SpectatorState.current_flags |= SpectatorState.Flags.SPECIAL_READY
@@ -63,11 +73,14 @@ func process(delta) -> void:
 	# attack
 	if CharacterController.get_attack():
 		# cant attack when already attacking
-		if not big_slamma.is_attacking():
+		if not big_slamma.is_attacking() && STAMINA_HIT_COST < stamina:
 			big_slamma.attack()
+			
+			_change_stamina(-STAMINA_HIT_COST)
+			
 			var did_damage = hit_box.attack(attack)
 			if did_damage:
-				special_power += 10
+				special_power += POWER_GAIN
 				power_updated.emit(special_power / special_cost)
 				
 				camera.shake()
@@ -87,8 +100,10 @@ func process(delta) -> void:
 			# translate
 			var dir_3d: Vector3 = Vector3(direction.x, 0, -direction.y)
 			
-			if CharacterController.get_dash():
+			if CharacterController.get_dash() && STAMINA_DASH_COST < stamina:
 				velocity += global_basis * dir_3d * sprint_speed * delta
+				
+				_change_stamina(-STAMINA_DASH_COST)
 				
 				# toggle moveing animations
 				if not big_slamma.is_dashing():
@@ -146,6 +161,11 @@ func resume_normal() -> void:
 func end_level_pose() -> void:
 	big_slamma.idle()
 	pivot.rotation.y = PI
+
+
+func _ready() -> void:
+	stamina = stamina_max
+	stamina_updated.emit(1.0)
 
 
 func _set_pivot_face(direction: Vector2) -> void:
@@ -207,6 +227,11 @@ func _loop_angle(angle : float) -> float:
 	elif angle < -PI:
 		angle += PI * 2
 	return angle
+
+
+func _change_stamina(value: float) -> void:
+	stamina = clampf(stamina + value, 0, stamina_max)
+	stamina_updated.emit(stamina / stamina_max)
 
 
 func _on_drain_timer_timeout() -> void:

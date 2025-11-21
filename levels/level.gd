@@ -38,6 +38,7 @@ func setup(miss: Mission, reset_level: Callable, next_level: Callable, exit_leve
 	mission = miss
 	character.setup(spectator_audio)
 	
+	character.stamina_updated.connect(hud.update_stamina)
 	character.power_updated.connect(hud.update_power)
 	character.special_activated.connect(_handle_special_activated)
 	character.special_fired.connect(_handle_special_fired)
