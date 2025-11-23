@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5y6nutqjbaxg"]
+[gd_scene load_steps=14 format=3 uid="uid://c5y6nutqjbaxg"]
 
 [ext_resource type="Script" uid="uid://drnyabnrvjydg" path="res://characters/character.gd" id="1_54qew"]
 [ext_resource type="PackedScene" uid="uid://d2mtjsg1co6yi" path="res://audio/sfx/character_sfx.tscn" id="2_b1u1o"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://7w4cpthovfey" path="res://vfx/shake_cam.tscn" id="4_jfi6v"]
 [ext_resource type="PackedScene" uid="uid://d0k7nmq532o1" path="res://systems/impact/impact_spawner.tscn" id="7_jfi6v"]
 [ext_resource type="PackedScene" uid="uid://bthiukpqgw0pn" path="res://vfx/speed_lines.tscn" id="8_f0775"]
+[ext_resource type="PackedScene" uid="uid://1nv87oypjtvu" path="res://systems/stamina_system.tscn" id="8_vliyq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mdkfl"]
 height = 1.402832
@@ -96,6 +97,8 @@ visible = false
 unique_name_in_owner = true
 one_shot = true
 
+[node name="StaminaSystem" parent="." instance=ExtResource("8_vliyq")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SpeedLines" parent="CanvasLayer" instance=ExtResource("8_f0775")]
@@ -106,3 +109,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="special_focus_finished" from="ShakeCam" to="." method="_on_shake_cam_special_focus_finished"]
 [connection signal="dash_toggled" from="Pivot/BigSlamma" to="." method="_on_big_slamma_dash_toggled"]
 [connection signal="timeout" from="SpecialAttack/DrainTimer" to="." method="_on_drain_timer_timeout"]
+[connection signal="cooldown_activated" from="StaminaSystem" to="." method="_on_stamina_system_cooldown_activated"]

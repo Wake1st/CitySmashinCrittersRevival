@@ -10,11 +10,7 @@ signal special_fired(destructables: Array[Building])
 const GRAVITY: float = 0.06
 const TARGET_CUTOFF: float = 0.0000001
 const POWER_GAIN: float = 10
-const STAMINA_REFILL: float = 0.2
-const STAMINA_DASH_COST: float = 0.6
-const STAMINA_HIT_COST: float = 10
 
-@export var stamina_max: float = 60
 @export var strafe_speed: float = 80
 @export var sprint_speed: float = 200
 @export var rotate_speed: float = 0.3
@@ -26,6 +22,7 @@ const STAMINA_HIT_COST: float = 10
 
 @onready var character_animations: AnimationPlayer = %CharacterAnimations
 @onready var camera: ShakeCam = %ShakeCam
+@onready var stamina: StaminaSystem = $StaminaSystem
 
 @onready var pivot: Node3D = %Pivot
 @onready var hit_box: HitBox = %HitBox
@@ -40,7 +37,6 @@ const STAMINA_HIT_COST: float = 10
 var is_rotating: bool
 var rotation_target: float
 
-var stamina: float = 0
 var special_power: float = 0
 var special_ready: bool
 
@@ -53,7 +49,8 @@ func setup(audio: SpectatorAudio) -> void:
 
 func process(delta) -> void:
 	# recharge stamina
-	_change_stamina(STAMINA_REFILL)
+	stamina.refill(delta)
+	stamina_updated.emit(stamina.ratio())
 	
 	# special
 	if not special_ready && special_power >= special_cost:
@@ -73,10 +70,9 @@ func process(delta) -> void:
 	# attack
 	if CharacterController.get_attack():
 		# cant attack when already attacking
-		if not big_slamma.is_attacking() && STAMINA_HIT_COST < stamina:
+		if not big_slamma.is_attacking() && stamina.try_hit():
 			big_slamma.attack()
-			
-			_change_stamina(-STAMINA_HIT_COST)
+			stamina_updated.emit(stamina.ratio())
 			
 			var did_damage = hit_box.attack(attack)
 			if did_damage:
@@ -100,10 +96,9 @@ func process(delta) -> void:
 			# translate
 			var dir_3d: Vector3 = Vector3(direction.x, 0, -direction.y)
 			
-			if CharacterController.get_dash() && STAMINA_DASH_COST < stamina:
+			if CharacterController.get_dash() && stamina.try_dash(delta):
 				velocity += global_basis * dir_3d * sprint_speed * delta
-				
-				_change_stamina(-STAMINA_DASH_COST)
+				stamina_updated.emit(stamina.ratio())
 				
 				# toggle moveing animations
 				if not big_slamma.is_dashing():
@@ -164,8 +159,8 @@ func end_level_pose() -> void:
 
 
 func _ready() -> void:
-	stamina = stamina_max
-	stamina_updated.emit(1.0)
+	stamina.reset()
+	stamina_updated.emit(stamina.ratio())
 
 
 func _set_pivot_face(direction: Vector2) -> void:
@@ -190,7 +185,7 @@ func _special_activated() -> void:
 	# reset special states
 	drain_timer.stop()
 	
-	# attack
+	# notify level
 	special_activated.emit()
 	
 	# start chain of animations
@@ -199,6 +194,10 @@ func _special_activated() -> void:
 	
 	# face character forward
 	pivot.rotation.y = 0
+	
+	# reset stamina
+	stamina.reset()
+	stamina_updated.emit(stamina.ratio())
 
 
 func _special_jump() -> void:
@@ -229,11 +228,6 @@ func _loop_angle(angle : float) -> float:
 	return angle
 
 
-func _change_stamina(value: float) -> void:
-	stamina = clampf(stamina + value, 0, stamina_max)
-	stamina_updated.emit(stamina / stamina_max)
-
-
 func _on_drain_timer_timeout() -> void:
 	# failed to activate
 	_reset_special()
@@ -257,3 +251,10 @@ func _on_big_slamma_dash_toggled(value: bool) -> void:
 	else:
 		camera.animate_backwards("dash_zoom")
 		speed_lines.toggle(false)
+
+
+func _on_stamina_system_cooldown_activated() -> void:
+	# the negative tells us it's drained
+	stamina_updated.emit(-1)
+	
+	# animation and sfx response ??

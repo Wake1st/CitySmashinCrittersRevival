@@ -31,6 +31,12 @@ func update_power(value: float) -> void:
 
 
 func update_stamina(value: float) -> void:
+	# invert if drained
+	if value == -1:
+		stam_bar.set_instance_shader_parameter("invert", true)
+	elif value == 1:
+		stam_bar.set_instance_shader_parameter("invert", false)
+	
 	# only the middle 90% of the power stam bar is visible
 	var relative_value = EDGE_PERCENT + value * RELATIVE_RATIO
 	if value == 0:
