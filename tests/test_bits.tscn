@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfav8x2627lfh"]
+
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_ydj23"]
+[ext_resource type="PackedScene" uid="uid://cnpox5d32kjo6" path="res://destructables/bits/building_bit.tscn" id="2_g8jr6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g8jr6"]
+
+[node name="TestBits" type="Node"]
+
+[node name="TestEnvironment" parent="." instance=ExtResource("1_ydj23")]
+
+[node name="BuildingBit" parent="." instance=ExtResource("2_g8jr6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9191315, 0)
+gravity_scale = 0.6
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.91177636, 0.41068703, 0, -0.41068703, 0.91177636, 0, 3.302258, 4.4838533)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32896322, 0.76900256, 0.058891535)
+collision_layer = 4
+collision_mask = 33
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_g8jr6")
+
+[editable path="TestEnvironment"]

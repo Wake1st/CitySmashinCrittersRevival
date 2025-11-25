@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://2rwtq5mtt32w"]
+
+[ext_resource type="Script" uid="uid://dvywg2c6ypnxr" path="res://destructables/bits/bit_manager.gd" id="1_6s15h"]
+[ext_resource type="PackedScene" uid="uid://chab3hjvn7l6k" path="res://audio/sfx/building_sfx.tscn" id="2_gd4rv"]
+
+[node name="BitManager" type="Node3D"]
+script = ExtResource("1_6s15h")
+
+[node name="BuildingSfx" parent="." instance=ExtResource("2_gd4rv")]

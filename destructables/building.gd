@@ -2,7 +2,7 @@ class_name Building
 extends StaticBody3D
 
 
-signal destroyed(value: float)
+signal destroyed(value: float, building: Building, direction: Vector3)
 
 const DUST_CLOUD_PATH: String = "uid://dbswl0ewqc8gs"
 const BUILDING_SFX: PackedScene = preload("uid://chab3hjvn7l6k")
@@ -13,13 +13,15 @@ const RUMBLE_AMPLITUDE: float = 0.0024
 
 @export var health: float = 100
 @export var cost: float = 400
-
 @export var rumble_dampen: float = 0.14
+
+@export var geometry_pieces: Array[GeometryInstance3D]
 
 var building_sfx: BuildingSfx
 var starting_position: Vector3
 var rumble_magnitude: float
 var is_collapsing: bool
+
 
 
 func damage(value: float) -> bool:
@@ -35,9 +37,11 @@ func damage(value: float) -> bool:
 	
 	# building is dead
 	if health <= 0:
-		destroyed.emit(cost)
-		building_sfx.crumble()
-		is_collapsing = true
+		destroyed.emit(cost, self, Vector3.UP * value)
+		queue_free()
+		
+		#building_sfx.crumble()
+		#is_collapsing = true
 	
 	# assumes he made damage
 	return true

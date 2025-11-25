@@ -61,14 +61,14 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 - [ ] features
 	- [ ] throw buildings (cost energy)
 	- [ ] sprint tackle (cost energy / or stamina?)
-	- [ ] broken building bits / debris
-	- [ ] footstep shake?
+	- [x] broken building bits / debris
+	- [ ] footstep shake?you
 	- [ ] water (go in, hit boats)
 	- [ ] light/heavy attack
 	- [ ] eating (for energy)
 	- [ ] building physics
 	- [ ] small stuff (planes, cars, trees)
-- [ ] vfx
+- [ ] vfx 
 	- [ ] action lines
 		- [ ] building shake
 		- [ ] dash (multiple directions)

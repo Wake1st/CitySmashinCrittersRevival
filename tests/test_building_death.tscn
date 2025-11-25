@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cifd1j8jqukyb"]
+
+[ext_resource type="PackedScene" uid="uid://c8dryybnfyevi" path="res://tests/test_environment.tscn" id="1_1c37x"]
+[ext_resource type="Script" uid="uid://dmka3r2opt3tg" path="res://tests/test_building_death.gd" id="1_ukaow"]
+[ext_resource type="PackedScene" uid="uid://2rwtq5mtt32w" path="res://destructables/bits/bit_manager.tscn" id="3_lqphm"]
+[ext_resource type="PackedScene" uid="uid://duhvtk3airl5m" path="res://destructables/buildings/test.tscn" id="4_ukaow"]
+
+[node name="TestBuildingDeath" type="Node"]
+script = ExtResource("1_ukaow")
+
+[node name="TestEnvironment" parent="." instance=ExtResource("1_1c37x")]
+
+[node name="BitManager" parent="." instance=ExtResource("3_lqphm")]
+
+[node name="Test" parent="." instance=ExtResource("4_ukaow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2347691, 0, -1.3370848)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4401236, 7.789896)

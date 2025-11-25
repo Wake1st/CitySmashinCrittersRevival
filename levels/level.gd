@@ -14,6 +14,7 @@ enum State {
 
 @onready var character: Character = $Character
 @onready var destructables: Node3D = $Destructables
+@onready var bit_manager: BitManager = %BitManager
 @onready var level_timer: Timer = $LevelTimer
 @onready var instant_replay_system: InstantReplaySystem = $InstantReplaySystem
 @onready var spectator_audio: SpectatorAudio = $SpectatorAudio
@@ -174,11 +175,13 @@ func _physics_process(delta) -> void:
 func _handle_unpause() -> void:
 	play()
 
-func _handle_destruction(value: float) -> void:
+func _handle_destruction(value: float, building: Building, direction: Vector3) -> void:
 	score.damage += value
 	
 	# update damage display
 	hud.update_damage(score.damage)
+	
+	bit_manager.generate(building, direction)
 
 func _handle_special_activated() -> void:
 	special()

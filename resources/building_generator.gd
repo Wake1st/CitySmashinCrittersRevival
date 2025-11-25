@@ -35,6 +35,9 @@ func _generate() -> void:
 	# clear previous results
 	remove_child(get_child(0))
 	
+	# store geometry instances
+	var pieces: Array[GeometryInstance3D]
+	
 	# generate building class
 	var building: Building = BUILDING.instantiate()
 	add_child(building)
@@ -47,12 +50,14 @@ func _generate() -> void:
 	
 	# spawn a base box
 	var base: CSGBox3D = _spawn_box(combiner)
+	pieces.push_back(base)
 	base.material = _get_random_material()
 	
 	# spawn a cluster of boxes
 	var segments = randi_range(1, 3)
 	for i in segments:
 		var box: CSGBox3D = _spawn_box(combiner)
+		pieces.push_back(box)
 		box.material = _get_random_material()
 		
 		# attach to base
@@ -65,6 +70,8 @@ func _generate() -> void:
 	node.shape = shape
 	building.add_child(node)
 	node.owner = self
+	
+	building.geometry_pieces = pieces
 
 
 func _spawn_box(combiner: CSGCombiner3D) -> CSGBox3D:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cqcyaxf3cbqt6"]
+[gd_scene load_steps=57 format=3 uid="uid://cqcyaxf3cbqt6"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_7dsjh"]
 [ext_resource type="PackedScene" uid="uid://bqf8sua8m8w82" path="res://levels/models/seacliffcity_ground.tscn" id="2_hof66"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://cce0rjgwj8s5k" path="res://destructables/buildings/common/building_com_big_i.tscn" id="40_jgsku"]
 [ext_resource type="PackedScene" uid="uid://cvx8daiusf14g" path="res://destructables/buildings/common/building_com_big_j.tscn" id="41_wcfyr"]
 [ext_resource type="PackedScene" uid="uid://dl20fcxexbdk2" path="res://destructables/buildings/common/building_com_med_i.tscn" id="42_q3x76"]
+[ext_resource type="PackedScene" uid="uid://2rwtq5mtt32w" path="res://destructables/bits/bit_manager.tscn" id="42_vqxpt"]
 [ext_resource type="PackedScene" uid="uid://dgnagkc67ce0d" path="res://destructables/buildings/common/building_com_sml_j.tscn" id="43_b2sir"]
 [ext_resource type="PackedScene" uid="uid://ctr60cusogg7k" path="res://destructables/buildings/common/building_com_sml_h.tscn" id="44_nc4xy"]
 [ext_resource type="PackedScene" uid="uid://cytbyilrg734w" path="res://destructables/buildings/common/building_com_sml_i.tscn" id="45_kuh5e"]
@@ -472,6 +473,9 @@ cost = 200.0
 transform = Transform3D(-0.9999232, 0, 0.01239164, 0, 1, 0, -0.01239164, 0, -0.9999232, -2.4204502, 5.1416907, 8.758128)
 health = 20.0
 cost = 200.0
+
+[node name="BitManager" parent="." instance=ExtResource("42_vqxpt")]
+unique_name_in_owner = true
 
 [node name="InstantReplaySystem" parent="." instance=ExtResource("12_pkwk6")]
 

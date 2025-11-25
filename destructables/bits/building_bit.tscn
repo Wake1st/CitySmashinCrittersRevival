@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnpox5d32kjo6"]
+
+[ext_resource type="Script" uid="uid://b2eyknls4ocfn" path="res://destructables/bits/building_bit.gd" id="1_ftkge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jk2ao"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk2ao"]
+albedo_color = Color(0.9673334, 0.01999998, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jk2ao"]
+material = SubResource("StandardMaterial3D_jk2ao")
+
+[node name="BuildingBit" type="RigidBody3D"]
+collision_layer = 32
+collision_mask = 7
+gravity_scale = 0.2
+script = ExtResource("1_ftkge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jk2ao")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_jk2ao")

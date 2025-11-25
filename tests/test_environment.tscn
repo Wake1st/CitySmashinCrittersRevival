@@ -30,6 +30,7 @@ shadow_enabled = true
 mesh = SubResource("PlaneMesh_1qtk6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 38
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_lf134")

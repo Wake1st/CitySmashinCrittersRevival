@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dkvb0fgb3pxmq"]
+[gd_scene load_steps=52 format=3 uid="uid://dkvb0fgb3pxmq"]
 
 [ext_resource type="Script" uid="uid://r5e2o1b1h4ks" path="res://levels/level.gd" id="1_cx31d"]
 [ext_resource type="PackedScene" uid="uid://c5y6nutqjbaxg" path="res://characters/character.tscn" id="2_cjusc"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://cmaqbsgkrughv" path="res://destructables/buildings/common/building_com_med_d.tscn" id="34_nyq7n"]
 [ext_resource type="PackedScene" uid="uid://dgnagkc67ce0d" path="res://destructables/buildings/common/building_com_sml_j.tscn" id="35_v8fyv"]
 [ext_resource type="PackedScene" uid="uid://1pbbrfjbnsok" path="res://destructables/buildings/common/building_com_sml_d.tscn" id="36_vsjfr"]
+[ext_resource type="PackedScene" uid="uid://2rwtq5mtt32w" path="res://destructables/bits/bit_manager.tscn" id="37_losar"]
 [ext_resource type="PackedScene" uid="uid://defxkya8tg32c" path="res://destructables/buildings/common/building_com_med_j.tscn" id="37_lpd8k"]
 [ext_resource type="PackedScene" uid="uid://c3a0uap8dfwsu" path="res://destructables/buildings/common/building_com_sml_g.tscn" id="38_losar"]
 [ext_resource type="PackedScene" uid="uid://kj4yavpj2xft" path="res://destructables/buildings/common/building_com_big_f.tscn" id="39_g6i4k"]
@@ -432,6 +433,9 @@ cost = 200.0
 transform = Transform3D(-0.04321839, 0, -0.99906576, 0, 1, 0, 0.99906576, 0, -0.04321839, -4.894546, 0.52022195, 1.2948449)
 health = 10.0
 cost = 150.0
+
+[node name="BitManager" parent="." instance=ExtResource("37_losar")]
+unique_name_in_owner = true
 
 [node name="InstantReplaySystem" parent="." instance=ExtResource("8_wu2dn")]
 
