@@ -37,10 +37,11 @@ func push(direction: Vector3) -> void:
 	apply_impulse(direction)
 
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
+	# REVIEW: this might not be worth it
 	# sink into the ground
-	if is_sinking:
-		move_and_collide(Vector3(0, -FALLING_RATE * delta,0))
+	#if is_sinking:
+		#move_and_collide(Vector3(0, -FALLING_RATE * delta,0))
 	
 	# don't keep around if destroyed
 	if position.y < FALLING_CUTOFF:
