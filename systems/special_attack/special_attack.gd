@@ -15,12 +15,15 @@ func ready() -> void:
 	targetting_mesh.visible = true
 
 
-func attack() -> void:
+func attack(origin: Vector3) -> void:
 	# destroy buildings
 	for destructable in destructables:
 		# we cant attack a destroyed building
 		if not destructable.is_collapsing:
-			destructable.damage(MAX_ATTACK)
+			destructable.damage(
+				MAX_ATTACK, 
+				origin.direction_to(destructable.global_position) + Vector3.UP/4
+			)
 	
 	# vfx
 	targetting_mesh.visible = false

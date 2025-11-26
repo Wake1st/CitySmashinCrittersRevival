@@ -175,8 +175,8 @@ func _physics_process(delta) -> void:
 func _handle_unpause() -> void:
 	play()
 
-func _handle_destruction(value: float, building: Building, direction: Vector3) -> void:
-	score.damage += value
+func _handle_destruction(cost: float, building: Building, direction: Vector3) -> void:
+	score.damage += cost
 	
 	# update damage display
 	hud.update_damage(score.damage)

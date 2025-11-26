@@ -10,8 +10,8 @@ func _ready() -> void:
 
 func _input(event) -> void:
 	if event.is_action_pressed("ui_accept"):
-		building.damage(30)
+		building.damage(30, Vector3.FORWARD + Vector3.UP/4)
 
 
-func _on_building_destroyed(_value, build, direction) -> void:
+func _on_building_destroyed(_cost, build, direction) -> void:
 	bit_manager.generate(build, direction)

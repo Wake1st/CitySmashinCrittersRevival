@@ -11,6 +11,7 @@ script = ExtResource("1_ukaow")
 [node name="TestEnvironment" parent="." instance=ExtResource("1_1c37x")]
 
 [node name="BitManager" parent="." instance=ExtResource("3_lqphm")]
+blast_fraction = 0.132
 
 [node name="Test" parent="." instance=ExtResource("4_ukaow")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2347691, 0, -1.3370848)

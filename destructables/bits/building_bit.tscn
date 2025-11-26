@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnpox5d32kjo6"]
+[gd_scene load_steps=6 format=3 uid="uid://cnpox5d32kjo6"]
 
 [ext_resource type="Script" uid="uid://b2eyknls4ocfn" path="res://destructables/bits/building_bit.gd" id="1_ftkge"]
 
@@ -10,9 +10,11 @@ albedo_color = Color(0.9673334, 0.01999998, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_jk2ao"]
 material = SubResource("StandardMaterial3D_jk2ao")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ftkge"]
+
 [node name="BuildingBit" type="RigidBody3D"]
 collision_layer = 32
-collision_mask = 7
+collision_mask = 6
 gravity_scale = 0.2
 script = ExtResource("1_ftkge")
 
@@ -21,3 +23,15 @@ shape = SubResource("BoxShape3D_jk2ao")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_jk2ao")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 32
+
+[node name="DetectionShape" type="CollisionShape3D" parent="Area3D"]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_ftkge")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

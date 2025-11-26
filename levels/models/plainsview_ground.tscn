@@ -9,3 +9,6 @@ albedo_color = Color(0.08235294, 0.23137255, 0.17254902, 1)
 
 [node name="Grid" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_jy8jg")
+
+[node name="StaticBody3D" parent="Grid" index="0" groups=["ground"]]
+collision_mask = 34

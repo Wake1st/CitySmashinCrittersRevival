@@ -62,7 +62,11 @@ I choose to revive the first 3d game I worked on - [City Smashin Critters](https
 	- [ ] throw buildings (cost energy)
 	- [ ] sprint tackle (cost energy / or stamina?)
 	- [x] broken building bits / debris
-	- [ ] footstep shake?you
+		- [x] bits should sink into the ground
+		- [x] bits should be hittable
+		- [ ] bits should damage buildings when colliding
+		- [ ] building types should be regenerated for bit data
+	- [ ] footstep shake?
 	- [ ] water (go in, hit boats)
 	- [ ] light/heavy attack
 	- [ ] eating (for energy)

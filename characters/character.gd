@@ -74,7 +74,9 @@ func process(delta) -> void:
 			big_slamma.attack()
 			stamina_updated.emit(stamina.ratio())
 			
-			var did_damage = hit_box.attack(attack)
+			var hit_direction = pivot.global_position.direction_to(
+				hit_box.global_position)
+			var did_damage = hit_box.attack(attack, hit_direction)
 			if did_damage:
 				special_power += POWER_GAIN
 				power_updated.emit(special_power / special_cost)
@@ -207,7 +209,7 @@ func _special_jump() -> void:
 
 
 func _special_fire() -> void:
-	special_attack.attack()
+	special_attack.attack(global_position)
 	special_fired.emit(special_attack.destructables)
 	
 	character_sfx.stomp()

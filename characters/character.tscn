@@ -84,6 +84,7 @@ transform = Transform3D(-1.2, 0, 1.8119498e-07, 0, 1.2, 0, -1.8119498e-07, 0, -1
 
 [node name="HitBox" parent="Pivot" instance=ExtResource("2_qqr4u")]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.4)
 
 [node name="ImpactSpawner" parent="Pivot" instance=ExtResource("7_jfi6v")]
 unique_name_in_owner = true

@@ -7,8 +7,6 @@ signal destroyed(value: float, building: Building, direction: Vector3)
 const DUST_CLOUD_PATH: String = "uid://dbswl0ewqc8gs"
 const BUILDING_SFX: PackedScene = preload("uid://chab3hjvn7l6k")
 
-const FALLING_RATE: float = 0.4
-const FALLING_CUTOFF: float = -4.0
 const RUMBLE_AMPLITUDE: float = 0.0024
 
 @export var health: float = 100
@@ -23,8 +21,7 @@ var rumble_magnitude: float
 var is_collapsing: bool
 
 
-
-func damage(value: float) -> bool:
+func damage(value: float, direction: Vector3) -> bool:
 	# no more damage if already destroyed
 	if is_collapsing:
 		return false
@@ -37,13 +34,10 @@ func damage(value: float) -> bool:
 	
 	# building is dead
 	if health <= 0:
-		destroyed.emit(cost, self, Vector3.UP * value)
+		destroyed.emit(cost, self, direction * value)
 		queue_free()
-		
-		#building_sfx.crumble()
-		#is_collapsing = true
 	
-	# assumes he made damage
+	# assumes damage
 	return true
 
 
@@ -64,18 +58,6 @@ func _process(delta) -> void:
 		
 		# reduce magnitude
 		rumble_magnitude -= rumble_dampen * delta
-	
-	# sink into the ground
-	if is_collapsing:
-		# slide into the ground
-		move_and_collide(Vector3(0, -FALLING_RATE * delta, 0))
-		
-		# keep rumblin
-		rumble_magnitude += rumble_dampen * delta
-		
-		# don't keep around if destroyed
-		if position.y < FALLING_CUTOFF:
-			queue_free()
 
 
 func _emit_dust() -> void:
